@@ -1,0 +1,478 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Repaso HTML + CSS — 4°B | Apuntes Basti</title>
+<style>
+  :root { --dark: #1a1a2e; --blue: #2980b9; --green: #27ae60; --orange: #e67e22; --red: #e74c3c; --purple: #8e44ad; --text: #222; --muted: #666; --bg: #f5f5f7; --card: #fff; --border: #e5e5e5; --code-bg: #1e293b; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; background: var(--bg); color: var(--text); line-height: 1.6; }
+
+  header { background: var(--dark); color: #fff; padding: 40px 24px 32px; }
+  .header-inner { max-width: 860px; margin: 0 auto; }
+  header h1 { font-size: 1.8rem; font-weight: 700; }
+  header h1 span { color: var(--blue); }
+  header p { color: #aaa; margin-top: 6px; }
+  .breadcrumb { margin-top: 12px; font-size: 0.82rem; }
+  .breadcrumb a { color: #888; text-decoration: none; }
+  .breadcrumb a:hover { color: #fff; }
+
+  main { max-width: 860px; margin: 0 auto; padding: 32px 24px 60px; }
+
+  .toc { background: var(--card); border: 1px solid var(--border); border-radius: 12px; padding: 20px 24px; margin-bottom: 32px; }
+  .toc h2 { font-size: 0.85rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 10px; }
+  .toc ol { padding-left: 20px; }
+  .toc li { margin: 4px 0; }
+  .toc a { color: var(--blue); text-decoration: none; font-size: 0.92rem; }
+  .toc a:hover { text-decoration: underline; }
+
+  .section { margin-bottom: 40px; }
+  .section h2 { font-size: 1.3rem; font-weight: 700; color: var(--text); margin-bottom: 16px; padding-bottom: 8px; border-bottom: 2px solid var(--border); }
+  .section h3 { font-size: 1.05rem; font-weight: 600; margin: 20px 0 8px; color: var(--dark); }
+
+  p, ul, ol { margin-bottom: 12px; font-size: 0.94rem; }
+  ul, ol { padding-left: 24px; }
+  li { margin-bottom: 4px; }
+
+  .tag-label { display: inline-block; padding: 2px 10px; border-radius: 20px; font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; }
+  .tag-html { background: #fef2f2; color: var(--red); }
+  .tag-css { background: #eef2ff; color: var(--blue); }
+  .tag-layout { background: #f0fdf4; color: var(--green); }
+  .tag-tip { background: #fefce8; color: var(--orange); }
+
+  /* Code blocks */
+  pre { background: var(--code-bg); color: #e2e8f0; padding: 16px 20px; border-radius: 10px; overflow-x: auto; font-size: 0.85rem; line-height: 1.7; margin: 12px 0 16px; font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', Consolas, monospace; }
+  code { font-family: 'SF Mono', 'JetBrains Mono', 'Fira Code', Consolas, monospace; font-size: 0.85rem; }
+  p code, li code { background: #f1f5f9; color: #c0392b; padding: 1px 6px; border-radius: 4px; font-size: 0.82rem; }
+  .comment { color: #64748b; }
+  .tag { color: #f472b6; }
+  .attr { color: #a78bfa; }
+  .val { color: #34d399; }
+  .prop { color: #60a5fa; }
+  .sel { color: #fbbf24; }
+
+  /* Visual examples */
+  .example-box { background: var(--card); border: 1px solid var(--border); border-radius: 10px; padding: 20px; margin: 12px 0 16px; }
+  .example-label { font-size: 0.72rem; text-transform: uppercase; letter-spacing: 1px; color: var(--muted); margin-bottom: 8px; font-weight: 600; }
+
+  /* Flex demo */
+  .flex-demo { display: flex; gap: 10px; padding: 12px; background: #f8fafc; border-radius: 8px; }
+  .flex-demo .box { background: var(--blue); color: #fff; padding: 12px 20px; border-radius: 6px; font-size: 0.82rem; font-weight: 600; text-align: center; }
+  .flex-demo.col { flex-direction: column; }
+  .flex-demo.center { justify-content: center; align-items: center; min-height: 100px; }
+  .flex-demo.between { justify-content: space-between; }
+  .flex-demo.evenly { justify-content: space-evenly; }
+  .flex-demo.around { justify-content: space-around; }
+
+  /* Comparison table */
+  .comparison { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .comparison > div { padding: 16px; border-radius: 8px; }
+  .comparison .before { background: #fef2f2; border: 1px solid #fecaca; }
+  .comparison .after { background: #f0fdf4; border: 1px solid #bbf7d0; }
+  .comparison .label { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; margin-bottom: 6px; }
+  .comparison .before .label { color: var(--red); }
+  .comparison .after .label { color: var(--green); }
+
+  /* Callout */
+  .callout { padding: 14px 18px; border-radius: 8px; margin: 12px 0; font-size: 0.9rem; }
+  .callout.tip { background: #fefce8; border-left: 4px solid var(--orange); }
+  .callout.warn { background: #fef2f2; border-left: 4px solid var(--red); }
+  .callout.info { background: #eef2ff; border-left: 4px solid var(--blue); }
+  .callout strong { font-weight: 600; }
+
+  /* Cheatsheet grid */
+  .cheat-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(240px, 1fr)); gap: 12px; margin: 16px 0; }
+  .cheat-card { background: var(--card); border: 1px solid var(--border); border-radius: 8px; padding: 14px 16px; }
+  .cheat-card h4 { font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+  .cheat-card p { font-size: 0.82rem; color: var(--muted); margin: 0; }
+
+  footer { text-align: center; color: var(--muted); font-size: 0.82rem; padding: 24px; }
+  footer a { color: inherit; }
+
+  @media (max-width: 600px) {
+    .comparison { grid-template-columns: 1fr; }
+    .cheat-grid { grid-template-columns: 1fr; }
+    header h1 { font-size: 1.4rem; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="header-inner">
+    <div class="breadcrumb"><a href="/">← Apuntes</a> / 4°B / Repaso</div>
+    <h1>🔄 Repaso <span>HTML + CSS</span></h1>
+    <p>Vuelta de vacaciones — Recordemos lo esencial antes de seguir avanzando</p>
+  </div>
+</header>
+
+<main>
+
+<!-- TOC -->
+<div class="toc">
+  <h2>📑 Contenido</h2>
+  <ol>
+    <li><a href="#estructura">Estructura básica de HTML</a></li>
+    <li><a href="#etiquetas">Etiquetas HTML más usadas</a></li>
+    <li><a href="#css-basico">CSS — Cómo darle estilo</a></li>
+    <li><a href="#selectores">Selectores CSS</a></li>
+    <li><a href="#box-model">El Box Model</a></li>
+    <li><a href="#flexbox">Flexbox — Alinear cosas</a></li>
+    <li><a href="#ejemplo">Ejemplo práctico: Página de Currículum</a></li>
+    <li><a href="#cheatsheet">Cheatsheet rápido</a></li>
+  </ol>
+</div>
+
+<!-- 1. ESTRUCTURA HTML -->
+<div class="section" id="estructura">
+  <h2><span class="tag-label tag-html">HTML</span> 1. Estructura básica de HTML</h2>
+
+  <p>Todo archivo HTML tiene la misma estructura base. Es como el esqueleto de la página:</p>
+
+  <pre><span class="comment">&lt;!-- Esto le dice al navegador que es HTML5 --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang=</span><span class="val">"es"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="comment">&lt;!-- Lo que va en &lt;head&gt; NO se ve en la página --&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attr">charset=</span><span class="val">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attr">name=</span><span class="val">"viewport"</span> <span class="attr">content=</span><span class="val">"width=device-width, initial-scale=1.0"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Mi Página<span class="tag">&lt;/title&gt;</span>
+    <span class="tag">&lt;link</span> <span class="attr">rel=</span><span class="val">"stylesheet"</span> <span class="attr">href=</span><span class="val">"styles.css"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="comment">&lt;!-- Todo lo visible va dentro de &lt;body&gt; --&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>¡Hola mundo!<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+
+  <div class="callout info">
+    <strong>💡 Recuerda:</strong> <code>&lt;head&gt;</code> es la configuración (no se ve). <code>&lt;body&gt;</code> es el contenido visible.
+  </div>
+</div>
+
+<!-- 2. ETIQUETAS -->
+<div class="section" id="etiquetas">
+  <h2><span class="tag-label tag-html">HTML</span> 2. Etiquetas HTML más usadas</h2>
+
+  <h3>Títulos y texto</h3>
+  <pre><span class="tag">&lt;h1&gt;</span>Título principal<span class="tag">&lt;/h1&gt;</span>      <span class="comment">&lt;!-- El más grande, solo 1 por página --&gt;</span>
+<span class="tag">&lt;h2&gt;</span>Subtítulo<span class="tag">&lt;/h2&gt;</span>             <span class="comment">&lt;!-- Sección --&gt;</span>
+<span class="tag">&lt;h3&gt;</span>Sub-subtítulo<span class="tag">&lt;/h3&gt;</span>         <span class="comment">&lt;!-- Sub-sección --&gt;</span>
+<span class="tag">&lt;p&gt;</span>Un párrafo de texto.<span class="tag">&lt;/p&gt;</span>   <span class="comment">&lt;!-- Texto normal --&gt;</span></pre>
+
+  <h3>Enlaces y botones</h3>
+  <pre><span class="comment">&lt;!-- Enlace: te lleva a otra página --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href=</span><span class="val">"https://google.com"</span><span class="tag">&gt;</span>Ir a Google<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Enlace a otra página de tu sitio --&gt;</span>
+<span class="tag">&lt;a</span> <span class="attr">href=</span><span class="val">"proyecto1.html"</span><span class="tag">&gt;</span>Ver Proyecto 1<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Botón --&gt;</span>
+<span class="tag">&lt;button&gt;</span>Contacto<span class="tag">&lt;/button&gt;</span></pre>
+
+  <h3>Imágenes</h3>
+  <pre><span class="comment">&lt;!-- Imagen local (en la misma carpeta) --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src=</span><span class="val">"foto.jpg"</span> <span class="attr">alt=</span><span class="val">"Descripción de la foto"</span><span class="tag">&gt;</span>
+
+<span class="comment">&lt;!-- Imagen de internet --&gt;</span>
+<span class="tag">&lt;img</span> <span class="attr">src=</span><span class="val">"https://example.com/foto.jpg"</span> <span class="attr">alt=</span><span class="val">"Foto"</span><span class="tag">&gt;</span></pre>
+
+  <div class="callout tip">
+    <strong>⚡ Tip:</strong> Siempre pon el atributo <code>alt=""</code> en las imágenes. Describe qué es la foto. Ayuda a personas con discapacidad visual y a Google.
+  </div>
+
+  <h3>Contenedores (div)</h3>
+  <pre><span class="comment">&lt;!-- div = "caja" para agrupar elementos --&gt;</span>
+<span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"padre"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"hijo1"</span><span class="tag">&gt;</span>Contenido 1<span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"hijo2"</span><span class="tag">&gt;</span>Contenido 2<span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/div&gt;</span></pre>
+
+  <div class="callout info">
+    <strong>🧱 ¿Para qué sirve el div?</strong> Por sí solo no hace nada visual. Pero es la pieza clave para organizar tu página y aplicar CSS (especialmente Flexbox).
+  </div>
+</div>
+
+<!-- 3. CSS BÁSICO -->
+<div class="section" id="css-basico">
+  <h2><span class="tag-label tag-css">CSS</span> 3. CSS — Cómo darle estilo</h2>
+
+  <p>CSS controla cómo se <strong>ve</strong> la página. Se escribe en un archivo aparte (<code>styles.css</code>) y se conecta con:</p>
+  <pre><span class="tag">&lt;link</span> <span class="attr">rel=</span><span class="val">"stylesheet"</span> <span class="attr">href=</span><span class="val">"styles.css"</span><span class="tag">&gt;</span></pre>
+
+  <h3>Estructura de una regla CSS</h3>
+  <pre><span class="sel">selector</span> {
+    <span class="prop">propiedad</span>: <span class="val">valor</span>;
+    <span class="prop">otra-propiedad</span>: <span class="val">otro-valor</span>;
+}</pre>
+
+  <h3>Propiedades más comunes</h3>
+  <pre><span class="sel">body</span> {
+    <span class="prop">background-color</span>: <span class="val">#f0f0f0</span>;    <span class="comment">/* Color de fondo */</span>
+    <span class="prop">font-family</span>: <span class="val">Arial, sans-serif</span>; <span class="comment">/* Tipografía */</span>
+    <span class="prop">margin</span>: <span class="val">0</span>;                     <span class="comment">/* Quitar márgenes por defecto */</span>
+    <span class="prop">color</span>: <span class="val">#333</span>;                   <span class="comment">/* Color del texto */</span>
+}
+
+<span class="sel">h1</span> {
+    <span class="prop">font-size</span>: <span class="val">24px</span>;               <span class="comment">/* Tamaño del texto */</span>
+    <span class="prop">color</span>: <span class="val">#2c3e50</span>;               <span class="comment">/* Color del título */</span>
+    <span class="prop">text-align</span>: <span class="val">center</span>;            <span class="comment">/* Centrar texto */</span>
+}
+
+<span class="sel">img</span> {
+    <span class="prop">width</span>: <span class="val">200px</span>;                  <span class="comment">/* Ancho fijo */</span>
+    <span class="prop">height</span>: <span class="val">200px</span>;                 <span class="comment">/* Alto fijo */</span>
+    <span class="prop">border-radius</span>: <span class="val">100%</span>;           <span class="comment">/* Círculo perfecto */</span>
+}
+
+<span class="sel">button</span> {
+    <span class="prop">background-color</span>: <span class="val">#3498db</span>;    <span class="comment">/* Fondo del botón */</span>
+    <span class="prop">color</span>: <span class="val">white</span>;                  <span class="comment">/* Texto blanco */</span>
+    <span class="prop">padding</span>: <span class="val">10px 20px</span>;            <span class="comment">/* Espacio interno */</span>
+    <span class="prop">border</span>: <span class="val">none</span>;                  <span class="comment">/* Sin borde */</span>
+    <span class="prop">border-radius</span>: <span class="val">8px</span>;            <span class="comment">/* Bordes redondeados */</span>
+    <span class="prop">cursor</span>: <span class="val">pointer</span>;               <span class="comment">/* Manito al pasar mouse */</span>
+}</pre>
+</div>
+
+<!-- 4. SELECTORES -->
+<div class="section" id="selectores">
+  <h2><span class="tag-label tag-css">CSS</span> 4. Selectores CSS</h2>
+
+  <p>Los selectores le dicen al CSS <strong>a qué elemento</strong> aplicar el estilo:</p>
+
+  <pre><span class="comment">/* Por etiqueta — afecta a TODOS los h1 */</span>
+<span class="sel">h1</span> { <span class="prop">color</span>: <span class="val">blue</span>; }
+
+<span class="comment">/* Por clase — afecta solo a los que tengan class="padre" */</span>
+<span class="sel">.padre</span> { <span class="prop">display</span>: <span class="val">flex</span>; }
+
+<span class="comment">/* Hijo dentro de padre — img que está DENTRO de .hijo1 */</span>
+<span class="sel">.hijo1 img</span> { <span class="prop">width</span>: <span class="val">200px</span>; }
+
+<span class="comment">/* Por ID — afecta solo al que tenga id="titulo" (único) */</span>
+<span class="sel">#titulo</span> { <span class="prop">font-size</span>: <span class="val">32px</span>; }</pre>
+
+  <div class="callout tip">
+    <strong>⚡ Regla de oro:</strong> Usa <strong>clases</strong> (<code>.nombre</code>) para todo. Los IDs (<code>#nombre</code>) son para cosas únicas. Las etiquetas (<code>h1</code>, <code>p</code>) para estilos globales.
+  </div>
+</div>
+
+<!-- 5. BOX MODEL -->
+<div class="section" id="box-model">
+  <h2><span class="tag-label tag-css">CSS</span> 5. El Box Model</h2>
+
+  <p>Cada elemento en HTML es una <strong>caja</strong> con 4 capas:</p>
+
+  <div class="example-box" style="text-align:center;">
+    <div style="background:#fed7aa;padding:20px;border-radius:8px;display:inline-block;">
+      <div style="font-size:0.72rem;color:#9a3412;margin-bottom:4px;">margin (espacio afuera)</div>
+      <div style="background:#bfdbfe;padding:16px;border:3px solid #2563eb;border-radius:6px;">
+        <div style="font-size:0.72rem;color:#1e40af;margin-bottom:4px;">border (borde)</div>
+        <div style="background:#bbf7d0;padding:16px;border-radius:4px;">
+          <div style="font-size:0.72rem;color:#166534;margin-bottom:4px;">padding (espacio adentro)</div>
+          <div style="background:#fff;padding:12px;border-radius:4px;font-weight:600;">
+            Contenido
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <pre><span class="sel">.caja</span> {
+    <span class="prop">margin</span>: <span class="val">20px</span>;       <span class="comment">/* Espacio AFUERA de la caja */</span>
+    <span class="prop">border</span>: <span class="val">2px solid black</span>; <span class="comment">/* Borde visible */</span>
+    <span class="prop">padding</span>: <span class="val">15px</span>;      <span class="comment">/* Espacio ADENTRO de la caja */</span>
+}
+
+<span class="comment">/* Atajo: margin y padding con 4 valores */</span>
+<span class="sel">.caja</span> {
+    <span class="prop">margin</span>: <span class="val">10px 20px 10px 20px</span>;  <span class="comment">/* arriba derecha abajo izquierda */</span>
+    <span class="prop">padding</span>: <span class="val">10px 20px</span>;           <span class="comment">/* arriba-abajo  derecha-izquierda */</span>
+}</pre>
+
+  <div class="callout warn">
+    <strong>❌ Error clásico:</strong> No entender por qué hay "espacio de más" entre elementos. Casi siempre es por el <code>margin</code> o <code>padding</code> por defecto. Usa <code>margin: 0</code> en el <code>body</code> para empezar limpio.
+  </div>
+</div>
+
+<!-- 6. FLEXBOX -->
+<div class="section" id="flexbox">
+  <h2><span class="tag-label tag-layout">Layout</span> 6. Flexbox — Alinear cosas</h2>
+
+  <p>Flexbox es la forma más fácil de <strong>alinear elementos</strong>. Se activa en el <strong>padre</strong>:</p>
+
+  <pre><span class="sel">.padre</span> {
+    <span class="prop">display</span>: <span class="val">flex</span>;              <span class="comment">/* ¡Activa Flexbox! */</span>
+    <span class="prop">justify-content</span>: <span class="val">center</span>;   <span class="comment">/* Centrar horizontalmente */</span>
+    <span class="prop">align-items</span>: <span class="val">center</span>;       <span class="comment">/* Centrar verticalmente */</span>
+}</pre>
+
+  <h3>flex-direction: ¿fila o columna?</h3>
+
+  <div class="comparison">
+    <div class="before">
+      <div class="label">row (por defecto) →</div>
+      <div class="flex-demo"><div class="box">A</div><div class="box">B</div><div class="box">C</div></div>
+    </div>
+    <div class="after">
+      <div class="label">column ↓</div>
+      <div class="flex-demo col"><div class="box">A</div><div class="box">B</div><div class="box">C</div></div>
+    </div>
+  </div>
+
+  <h3>justify-content: distribuir en el eje principal</h3>
+
+  <div class="example-box">
+    <div class="example-label">center</div>
+    <div class="flex-demo center"><div class="box">A</div><div class="box">B</div><div class="box">C</div></div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-label">space-between</div>
+    <div class="flex-demo between"><div class="box">A</div><div class="box">B</div><div class="box">C</div></div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-label">space-evenly</div>
+    <div class="flex-demo evenly"><div class="box">A</div><div class="box">B</div><div class="box">C</div></div>
+  </div>
+
+  <div class="example-box">
+    <div class="example-label">space-around</div>
+    <div class="flex-demo around"><div class="box">A</div><div class="box">B</div><div class="box">C</div></div>
+  </div>
+
+  <div class="callout info">
+    <strong>📐 Resumen rápido:</strong><br>
+    <code>justify-content</code> → distribuye en el eje principal (horizontal por defecto)<br>
+    <code>align-items</code> → alinea en el eje cruzado (vertical por defecto)
+  </div>
+</div>
+
+<!-- 7. EJEMPLO PRÁCTICO -->
+<div class="section" id="ejemplo">
+  <h2><span class="tag-label tag-html">HTML</span> <span class="tag-label tag-css">CSS</span> 7. Ejemplo: Página de Currículum</h2>
+
+  <p>Esto es lo que construimos hoy en clase. Un CV con foto, nombre y proyectos:</p>
+
+  <h3>HTML (index.html)</h3>
+  <pre><span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html</span> <span class="attr">lang=</span><span class="val">"es"</span><span class="tag">&gt;</span>
+<span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;link</span> <span class="attr">rel=</span><span class="val">"stylesheet"</span> <span class="attr">href=</span><span class="val">"styles.css"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;meta</span> <span class="attr">charset=</span><span class="val">"UTF-8"</span><span class="tag">&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Mi Currículum<span class="tag">&lt;/title&gt;</span>
+<span class="tag">&lt;/head&gt;</span>
+<span class="tag">&lt;body&gt;</span>
+    <span class="comment">&lt;!-- Sección superior: foto + nombre --&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"padre"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"hijo1"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;img</span> <span class="attr">src=</span><span class="val">"foto.jpg"</span> <span class="attr">alt=</span><span class="val">"Mi foto"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"hijo2"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h1&gt;</span>Nombre: Juan Pérez<span class="tag">&lt;/h1&gt;</span>
+            <span class="tag">&lt;h2&gt;</span>Descripción:<span class="tag">&lt;/h2&gt;</span>
+            <span class="tag">&lt;button&gt;</span>Contacto<span class="tag">&lt;/button&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+
+    <span class="comment">&lt;!-- Sección de proyectos --&gt;</span>
+    <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"proyectos"</span><span class="tag">&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"proy1"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h1&gt;&lt;a</span> <span class="attr">href=</span><span class="val">"proyecto1.html"</span><span class="tag">&gt;</span>Proyecto 1<span class="tag">&lt;/a&gt;&lt;/h1&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+        <span class="tag">&lt;div</span> <span class="attr">class=</span><span class="val">"proy2"</span><span class="tag">&gt;</span>
+            <span class="tag">&lt;h1&gt;&lt;a</span> <span class="attr">href=</span><span class="val">"proyecto2.html"</span><span class="tag">&gt;</span>Proyecto 2<span class="tag">&lt;/a&gt;&lt;/h1&gt;</span>
+        <span class="tag">&lt;/div&gt;</span>
+    <span class="tag">&lt;/div&gt;</span>
+<span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span></pre>
+
+  <h3>CSS (styles.css)</h3>
+  <pre><span class="comment">/* Estilos globales */</span>
+<span class="sel">body</span> {
+    <span class="prop">background-color</span>: <span class="val">#f0f0f0</span>;
+    <span class="prop">font-family</span>: <span class="val">Arial, sans-serif</span>;
+    <span class="prop">margin</span>: <span class="val">0</span>;
+}
+
+<span class="comment">/* Header: foto + info lado a lado */</span>
+<span class="sel">.padre</span> {
+    <span class="prop">display</span>: <span class="val">flex</span>;               <span class="comment">/* Pone hijos en fila */</span>
+    <span class="prop">justify-content</span>: <span class="val">center</span>;    <span class="comment">/* Centra horizontalmente */</span>
+    <span class="prop">align-items</span>: <span class="val">center</span>;        <span class="comment">/* Centra verticalmente */</span>
+}
+
+<span class="comment">/* Foto circular */</span>
+<span class="sel">.hijo1 img</span> {
+    <span class="prop">width</span>: <span class="val">200px</span>;
+    <span class="prop">height</span>: <span class="val">200px</span>;
+    <span class="prop">border-radius</span>: <span class="val">100%</span>;        <span class="comment">/* Círculo */</span>
+    <span class="prop">margin-right</span>: <span class="val">20px</span>;         <span class="comment">/* Espacio entre foto y texto */</span>
+}
+
+<span class="comment">/* Proyectos en fila, distribuidos */</span>
+<span class="sel">.proyectos</span> {
+    <span class="prop">display</span>: <span class="val">flex</span>;
+    <span class="prop">flex-direction</span>: <span class="val">row</span>;
+    <span class="prop">justify-content</span>: <span class="val">space-evenly</span>; <span class="comment">/* Espacio igual entre cada uno */</span>
+    <span class="prop">align-items</span>: <span class="val">center</span>;
+}</pre>
+</div>
+
+<!-- 8. CHEATSHEET -->
+<div class="section" id="cheatsheet">
+  <h2>📋 8. Cheatsheet Rápido</h2>
+
+  <h3>Etiquetas HTML</h3>
+  <div class="cheat-grid">
+    <div class="cheat-card"><h4><code>&lt;h1&gt;</code> a <code>&lt;h6&gt;</code></h4><p>Títulos (h1 más grande, h6 más chico)</p></div>
+    <div class="cheat-card"><h4><code>&lt;p&gt;</code></h4><p>Párrafo de texto</p></div>
+    <div class="cheat-card"><h4><code>&lt;a href="url"&gt;</code></h4><p>Enlace a otra página</p></div>
+    <div class="cheat-card"><h4><code>&lt;img src="foto.jpg"&gt;</code></h4><p>Imagen</p></div>
+    <div class="cheat-card"><h4><code>&lt;div class="x"&gt;</code></h4><p>Contenedor / caja</p></div>
+    <div class="cheat-card"><h4><code>&lt;button&gt;</code></h4><p>Botón clickeable</p></div>
+    <div class="cheat-card"><h4><code>&lt;ul&gt; &lt;li&gt;</code></h4><p>Lista con viñetas</p></div>
+    <div class="cheat-card"><h4><code>&lt;ol&gt; &lt;li&gt;</code></h4><p>Lista numerada</p></div>
+  </div>
+
+  <h3>Propiedades CSS</h3>
+  <div class="cheat-grid">
+    <div class="cheat-card"><h4><code>background-color</code></h4><p>Color de fondo</p></div>
+    <div class="cheat-card"><h4><code>color</code></h4><p>Color del texto</p></div>
+    <div class="cheat-card"><h4><code>font-size</code></h4><p>Tamaño de letra</p></div>
+    <div class="cheat-card"><h4><code>font-family</code></h4><p>Tipografía</p></div>
+    <div class="cheat-card"><h4><code>margin</code></h4><p>Espacio afuera</p></div>
+    <div class="cheat-card"><h4><code>padding</code></h4><p>Espacio adentro</p></div>
+    <div class="cheat-card"><h4><code>border</code></h4><p>Borde visible</p></div>
+    <div class="cheat-card"><h4><code>border-radius</code></h4><p>Bordes redondeados</p></div>
+    <div class="cheat-card"><h4><code>width / height</code></h4><p>Ancho y alto</p></div>
+    <div class="cheat-card"><h4><code>display: flex</code></h4><p>Activar Flexbox</p></div>
+    <div class="cheat-card"><h4><code>justify-content</code></h4><p>Distribuir en eje X</p></div>
+    <div class="cheat-card"><h4><code>align-items</code></h4><p>Alinear en eje Y</p></div>
+  </div>
+
+  <h3>Colores útiles</h3>
+  <div class="cheat-grid">
+    <div class="cheat-card" style="border-left:4px solid #e74c3c"><h4><code>#e74c3c</code></h4><p style="color:#e74c3c">■ Rojo</p></div>
+    <div class="cheat-card" style="border-left:4px solid #3498db"><h4><code>#3498db</code></h4><p style="color:#3498db">■ Azul</p></div>
+    <div class="cheat-card" style="border-left:4px solid #2ecc71"><h4><code>#2ecc71</code></h4><p style="color:#2ecc71">■ Verde</p></div>
+    <div class="cheat-card" style="border-left:4px solid #f39c12"><h4><code>#f39c12</code></h4><p style="color:#f39c12">■ Naranja</p></div>
+    <div class="cheat-card" style="border-left:4px solid #9b59b6"><h4><code>#9b59b6</code></h4><p style="color:#9b59b6">■ Morado</p></div>
+    <div class="cheat-card" style="border-left:4px solid #1abc9c"><h4><code>#1abc9c</code></h4><p style="color:#1abc9c">■ Turquesa</p></div>
+    <div class="cheat-card" style="border-left:4px solid #f0f0f0"><h4><code>#f0f0f0</code></h4><p>■ Gris claro (fondo)</p></div>
+    <div class="cheat-card" style="border-left:4px solid #2c3e50"><h4><code>#2c3e50</code></h4><p style="color:#2c3e50">■ Azul oscuro</p></div>
+  </div>
+</div>
+
+</main>
+
+<footer>
+  <a href="/">← Volver a Apuntes</a> · 4°B — 9 marzo 2026 · <a href="https://basti.cl">basti.cl</a>
+</footer>
+
+</body>
+</html>
