@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Chino Mandarín — Apuntes Basti</title>
+<style>
+  :root { --red: #c0392b; --dark: #1a1a2e; --border: #e5e5e5; --muted: #888; }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; background: #f5f5f7; color: #222; }
+  header { background: var(--dark); color: #fff; padding: 40px 24px 32px; }
+  .header-inner { max-width: 860px; margin: 0 auto; }
+  .breadcrumb { font-size: 0.82rem; color: #777; margin-bottom: 12px; }
+  .breadcrumb a { color: #e74c3c; text-decoration: none; }
+  .breadcrumb a:hover { text-decoration: underline; }
+  header h1 { font-size: 1.9rem; font-weight: 700; }
+  header p { color: #aaa; margin-top: 6px; font-size: 0.9rem; }
+  main { max-width: 860px; margin: 0 auto; padding: 40px 24px 80px; }
+  .section-title { font-size: 0.8rem; font-weight: 700; color: var(--muted); text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 14px; margin-top: 36px; }
+  .section-title:first-child { margin-top: 0; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
+  .card { background: #fff; border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; text-decoration: none; color: inherit; display: block; transition: box-shadow .15s, transform .15s; }
+  .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.1); transform: translateY(-2px); }
+  .card.tool { border: 1.5px dashed var(--red); }
+  .card-tag { font-size: 0.72rem; font-weight: 700; text-transform: uppercase; letter-spacing: .8px; color: var(--red); margin-bottom: 8px; }
+  .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
+  .card p { font-size: 0.83rem; color: var(--muted); line-height: 1.45; }
+  .card-meta { margin-top: 12px; display: flex; gap: 6px; flex-wrap: wrap; }
+  .badge { display: inline-block; background: #f0f0f0; color: #555; border-radius: 20px; padding: 2px 10px; font-size: 0.73rem; }
+  .badge.done { background: #d4edda; color: #155724; }
+  footer { text-align: center; color: var(--muted); font-size: 0.82rem; padding: 24px; }
+  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-inner">
+    <div class="breadcrumb"><a href="/">← Apuntes</a> / Chino Mandarín</div>
+    <h1>🀄 Chino Mandarín</h1>
+    <p>Centro Cultural Chino · Básico 1 y Básico 2</p>
+  </div>
+</header>
+<main>
+
+  <div class="section-title">Básico 1 — Diciembre 2025</div>
+  <div class="grid">
+    <a class="card" href="/chino/basico1/">
+      <div class="card-tag">Básico 1 · Completo</div>
+      <h3>你好 → Conversación básica</h3>
+      <p>Saludos, números, familia, habilidades, descripciones físicas. 10+ clases.</p>
+      <div class="card-meta">
+        <span class="badge done">✓ Completo</span>
+        <span class="badge">你好 谢谢 会 有</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-title">Básico 2 — Marzo 2026</div>
+  <div class="grid">
+    <a class="card" href="/chino/basico2/clase03.html">
+      <div class="card-tag">Clase 03 · 21 mar 2026</div>
+      <h3>今天几号 · 星期 · 去</h3>
+      <p>Fechas, meses, días de la semana, nombres chinos, tonos bisilábicos, radicales.</p>
+      <div class="card-meta">
+        <span class="badge">今天 星期 去</span>
+        <span class="badge">13 secciones</span>
+      </div>
+    </a>
+    <a class="card" href="/chino/basico2/clase02.html">
+      <div class="card-tag">Clase 02 · 14 mar 2026</div>
+      <h3>怎么 · 好看 · 好吃</h3>
+      <p>怎么 (¿cómo?), adjetivos con 好/难, vocabulario de clase, diálogos.</p>
+      <div class="card-meta">
+        <span class="badge">怎么 好吃 难吃</span>
+      </div>
+    </a>
+    <a class="card" href="/chino/basico2/clase01.html">
+      <div class="card-tag">Clase 01 · 7 mar 2026</div>
+      <h3>会 · 有 · 的</h3>
+      <p>Saber hacer, tener, posesión. Familia, adjetivos físicos, preguntas.</p>
+      <div class="card-meta">
+        <span class="badge">会 有 的 很</span>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-title">Herramientas</div>
+  <div class="grid">
+    <a class="card tool" href="/chino/flashcards.html">
+      <div class="card-tag">Interactivo</div>
+      <h3>🃏 Flashcards — Básico 2</h3>
+      <p>111 tarjetas de vocabulario. Modo interactivo + imprimible.</p>
+      <div class="card-meta">
+        <span class="badge">111 tarjetas</span>
+      </div>
+    </a>
+    <a class="card tool" href="/chino/buscador.html">
+      <div class="card-tag">Búsqueda</div>
+      <h3>🔍 Buscador de Caracteres</h3>
+      <p>Busca por hanzi, pinyin o español en todo el vocabulario.</p>
+      <div class="card-meta">
+        <span class="badge">100+ caracteres</span>
+      </div>
+    </a>
+  </div>
+
+</main>
+<footer>Chino Mandarín · <a href="https://basti.cl" style="color:inherit">basti.cl</a></footer>
+</body>
+</html>

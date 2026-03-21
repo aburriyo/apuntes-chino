@@ -6,30 +6,35 @@
 <title>Apuntes — Basti</title>
 <style>
   :root {
-    --red: #c0392b; --dark: #1a1a2e; --card-bg: #fff;
-    --text: #222; --muted: #888; --border: #e5e5e5;
-    --green: #27ae60; --blue: #2980b9; --gold: #f39c12;
+    --dark: #1a1a2e; --text: #222; --muted: #888; --border: #e5e5e5;
+    --red: #c0392b; --blue: #2980b9; --green: #27ae60;
+    --purple: #8e44ad; --orange: #e67e22;
   }
   * { box-sizing: border-box; margin: 0; padding: 0; }
-  body { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; background: #f5f5f7; color: var(--text); }
-  header { background: var(--dark); color: #fff; padding: 40px 24px 32px; }
-  .header-inner { max-width: 900px; margin: 0 auto; }
-  header h1 { font-size: 2rem; font-weight: 700; letter-spacing: -0.5px; }
+  body { font-family: -apple-system, 'Segoe UI', Arial, sans-serif; background: #f5f5f7; color: var(--text); min-height: 100vh; }
+  header { background: var(--dark); color: #fff; padding: 48px 24px 40px; }
+  .header-inner { max-width: 860px; margin: 0 auto; }
+  header h1 { font-size: 2.2rem; font-weight: 700; letter-spacing: -0.5px; }
   header h1 span { color: #e74c3c; }
-  header p { color: #aaa; margin-top: 6px; font-size: 0.95rem; }
-  main { max-width: 900px; margin: 40px auto; padding: 0 24px 60px; }
-  h2.section-title { font-size: 1rem; font-weight: 600; color: var(--muted); text-transform: uppercase; letter-spacing: 1px; margin-bottom: 16px; margin-top: 36px; }
-  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 16px; }
-  .card { background: var(--card-bg); border: 1px solid var(--border); border-radius: 12px; padding: 20px 22px; text-decoration: none; color: inherit; display: block; transition: box-shadow .15s, transform .15s; }
-  .card:hover { box-shadow: 0 4px 20px rgba(0,0,0,.1); transform: translateY(-2px); }
-  .card-tag { font-size: 0.75rem; font-weight: 600; text-transform: uppercase; letter-spacing: .8px; margin-bottom: 8px; }
-  .card-tag.chino { color: var(--red); }
-  .card-tag.prog { color: var(--blue); }
-  .card h3 { font-size: 1rem; font-weight: 600; margin-bottom: 4px; }
-  .card p { font-size: 0.85rem; color: var(--muted); line-height: 1.4; }
-  .card-meta { margin-top: 12px; font-size: 0.78rem; color: #bbb; }
-  .badge { display: inline-block; background: #f0f0f0; color: #555; border-radius: 20px; padding: 2px 10px; font-size: 0.75rem; }
-  footer { text-align: center; color: var(--muted); font-size: 0.82rem; padding: 24px; }
+  header p { color: #999; margin-top: 8px; font-size: 0.95rem; }
+  main { max-width: 860px; margin: 0 auto; padding: 48px 24px 80px; }
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(380px, 1fr)); gap: 20px; }
+  .cat-card { background: #fff; border: 1px solid var(--border); border-radius: 16px; padding: 28px 28px 24px; text-decoration: none; color: inherit; display: block; transition: box-shadow .15s, transform .15s; position: relative; overflow: hidden; }
+  .cat-card:hover { box-shadow: 0 6px 28px rgba(0,0,0,.1); transform: translateY(-3px); }
+  .cat-card .accent { position: absolute; top: 0; left: 0; width: 4px; height: 100%; border-radius: 16px 0 0 16px; }
+  .cat-card.chino .accent { background: var(--red); }
+  .cat-card.usm .accent { background: var(--blue); }
+  .cat-card.prog .accent { background: var(--green); }
+  .cat-card.robo .accent { background: var(--purple); }
+  .cat-emoji { font-size: 2.2rem; margin-bottom: 14px; display: block; }
+  .cat-card h2 { font-size: 1.25rem; font-weight: 700; margin-bottom: 6px; }
+  .cat-card p { font-size: 0.875rem; color: var(--muted); line-height: 1.55; }
+  .cat-meta { margin-top: 16px; display: flex; gap: 8px; flex-wrap: wrap; align-items: center; }
+  .badge { display: inline-block; background: #f0f0f0; color: #555; border-radius: 20px; padding: 3px 11px; font-size: 0.75rem; font-weight: 500; }
+  .badge.new { background: #fef3cd; color: #856404; }
+  .arrow { margin-left: auto; color: #ccc; font-size: 1.1rem; position: absolute; right: 24px; top: 50%; transform: translateY(-50%); }
+  footer { text-align: center; color: var(--muted); font-size: 0.82rem; padding: 28px; }
+  @media (max-width: 480px) { .grid { grid-template-columns: 1fr; } header h1 { font-size: 1.7rem; } }
 </style>
 </head>
 <body>
@@ -40,54 +45,59 @@
   </div>
 </header>
 <main>
-  <h2 class="section-title">🀄 Chino Mandarín</h2>
   <div class="grid">
-    <a class="card" href="/chino/basico1/">
-      <div class="card-tag chino">Básico 1</div>
-      <h3>Completo — 你好 a conversación básica</h3>
-      <p>Saludos, números, familia, habilidades, descripciones. 10+ clases de diciembre 2025.</p>
-      <div class="card-meta"><span class="badge">dic 2025</span> <span class="badge">你好 谢谢 会 有</span></div>
-    </a>
-    <a class="card" href="/chino/basico2/clase03.html">
-      <div class="card-tag chino">Básico 2</div>
-      <h3>Clase 03 — 今天几号 · 星期 · 去</h3>
-      <p>Fechas, días de la semana, 有/没有, nombres chinos, tonos bisilábicos, estructura de caracteres.</p>
-      <div class="card-meta"><span class="badge">21 mar 2026</span> <span class="badge">今天 星期 去 请问</span></div>
-    </a>
-    <a class="card" href="/chino/basico2/clase02.html">
-      <div class="card-tag chino">Básico 2</div>
-      <h3>Clase 02 — 怎么 · 好看 · 好吃</h3>
-      <p>怎么 (¿cómo?), adjetivos con 好/难, vocabulario de clase, diálogos.</p>
-      <div class="card-meta"><span class="badge">14 mar 2026</span> <span class="badge">怎么 好吃 难吃</span></div>
-    </a>
-    <a class="card" href="/chino/basico2/clase01.html">
-      <div class="card-tag chino">Básico 2</div>
-      <h3>Clase 01 — 会 · 有 · 的</h3>
-      <p>Saber hacer, tener, posesión. Vocabulario de familia, adjetivos físicos.</p>
-      <div class="card-meta"><span class="badge">7 mar 2026</span> <span class="badge">会 有 的 很</span></div>
-    </a>
-    <a class="card" href="/chino/flashcards.html" style="border: 1.5px dashed #c0392b;">
-      <div class="card-tag chino">Herramienta</div>
-      <h3>🃏 Flashcards — Básico 2</h3>
-      <p>Practica todo el vocabulario de las clases 01-03. Modo interactivo + imprimible.</p>
-      <div class="card-meta"><span class="badge">interactivo</span> <span class="badge">111 tarjetas</span></div>
-    </a>
-    <a class="card" href="/chino/buscador.html" style="border: 1.5px dashed #c0392b;">
-      <div class="card-tag chino">Herramienta</div>
-      <h3>🔍 Buscador de Caracteres</h3>
-      <p>Busca por hanzi, pinyin o español en todo el vocabulario de Básico 2.</p>
-      <div class="card-meta"><span class="badge">búsqueda</span> <span class="badge">100+ caracteres</span></div>
-    </a>
-  </div>
 
-  <h2 class="section-title">💻 Programación</h2>
-  <div class="grid">
-    <a class="card" href="/4b/repaso-html-css/">
-      <div class="card-tag prog">4°B — Repaso</div>
-      <h3>HTML + CSS — Vuelta de vacaciones</h3>
-      <p>Estructura HTML, etiquetas, selectores CSS, box model, Flexbox, ejemplo práctico de CV.</p>
-      <div class="card-meta"><span class="badge">9 mar 2026</span> <span class="badge">html css flexbox</span></div>
+    <a class="cat-card chino" href="/chino/">
+      <div class="accent"></div>
+      <span class="cat-emoji">🀄</span>
+      <h2>Chino Mandarín</h2>
+      <p>Básico 1 completo · Básico 2 en curso. Clases del Centro Cultural Chino, flashcards y buscador de caracteres.</p>
+      <div class="cat-meta">
+        <span class="badge">Básico 1 ✓</span>
+        <span class="badge">Básico 2</span>
+        <span class="badge new">Clase 03 nueva</span>
+      </div>
+      <span class="arrow">›</span>
     </a>
+
+    <a class="cat-card usm" href="/usm/">
+      <div class="accent"></div>
+      <span class="cat-emoji">🎓</span>
+      <h2>USM</h2>
+      <p>Ingeniería de Software. Apuntes de ramos, ejercicios y resúmenes. Martes, miércoles y jueves.</p>
+      <div class="cat-meta">
+        <span class="badge">Ing. Software</span>
+        <span class="badge">2026</span>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="cat-card prog" href="/programacion/">
+      <div class="accent"></div>
+      <span class="cat-emoji">💻</span>
+      <h2>Programación</h2>
+      <p>Material de clases para alumnos, snippets útiles, referencias de HTML/CSS/Python y más.</p>
+      <div class="cat-meta">
+        <span class="badge">HTML + CSS</span>
+        <span class="badge">Python</span>
+        <span class="badge">4°M</span>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
+    <a class="cat-card robo" href="/robotica/">
+      <div class="accent"></div>
+      <span class="cat-emoji">🤖</span>
+      <h2>Robótica & IA</h2>
+      <p>Computer vision, OpenCV, robots educativos. Notas de proyectos y cursos sobre inteligencia artificial.</p>
+      <div class="cat-meta">
+        <span class="badge">OpenCV</span>
+        <span class="badge">Computer Vision</span>
+        <span class="badge">IA</span>
+      </div>
+      <span class="arrow">›</span>
+    </a>
+
   </div>
 </main>
 <footer>Basti · <a href="https://basti.cl" style="color:inherit">basti.cl</a></footer>
