@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 2 — Clase 01 · Apuntes Chino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; color: #222; font-size: 15px; background: #fafafa; }
+  header { background: #1a1a2e; color: #fff; padding: 28px 28px 22px; border-radius: 12px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6em; margin: 0 0 4px; color: #e74c3c; }
+  header p { margin: 0; color: #aaa; font-size: 0.88em; }
+  nav { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  nav h3 { margin: 0 0 10px; font-size: 0.82em; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  nav ol { margin: 0; padding-left: 20px; }
+  nav li { margin: 3px 0; font-size: 0.9em; }
+  nav a { color: #c0392b; text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  h2 { font-size: 1.1em; color: #fff; background: #c0392b; padding: 9px 16px; border-radius: 8px; margin-top: 36px; margin-bottom: 14px; }
+  h2.green { background: #27ae60; }
+  h2.blue { background: #2980b9; }
+  h2.gold { background: #d4820a; }
+  h2.gray { background: #555; }
+  h3 { color: #444; font-size: 0.95em; margin: 16px 0 8px; border-left: 3px solid #e74c3c; padding-left: 10px; }
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.structure { background: #fdecea; border: 1.5px solid #c0392b; }
+  .box.note { background: #e8f5e9; border-left: 4px solid #27ae60; border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid #1976d2; border-radius: 0 8px 8px 0; }
+  .box.preview { background: #f5f5f5; border: 1px solid #ddd; }
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; box-shadow: 0 1px 4px rgba(0,0,0,.06); }
+  th { background: #c0392b; color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .hz { font-size: 1.15em; font-weight: bold; color: #c0392b; }
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid #e5e5e5; padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .ex { background: #fffde7; border: 1px solid #f9a825; border-radius: 8px; padding: 14px 18px; margin: 10px 0; }
+  .ex ol { margin: 8px 0 0; padding-left: 22px; }
+  .ex li { margin: 7px 0; }
+  .blank { display: inline-block; min-width: 160px; border-bottom: 1px solid #999; }
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Básico 2 — Clase 01</h1>
+  <p>📅 7 de marzo, 2026 · Centro Cultural Chino · <a href="/chino/" style="color:#e74c3c">← Volver al índice</a></p>
+</header>
+
+<nav>
+  <h3>Índice</h3>
+  <ol>
+    <li><a href="#s1">会 (huì) — Saber / Poder hacer</a></li>
+    <li><a href="#s2">有 (yǒu) — Tener / Haber</a></li>
+    <li><a href="#s3">的 (de) — Partícula Posesiva</a></li>
+    <li><a href="#s4">Preguntas sobre la Familia</a></li>
+    <li><a href="#s5">Notas Gramaticales</a></li>
+    <li><a href="#s6">Diálogos de Práctica</a></li>
+    <li><a href="#s7">Vocabulario Completo</a></li>
+    <li><a href="#s8">很 (hěn) — Adverbio de Grado + Adjetivos</a></li>
+    <li><a href="#s9">Ejercicios de Práctica</a></li>
+  </ol>
+</nav>
+
+<!-- SECCIÓN 1 -->
+<h2 id="s1">1. 会 (huì) — Saber / Poder hacer</h2>
+<div class="box grammar">
+  <strong><span class="hz">会</span></strong> expresa una <strong>habilidad aprendida</strong> (practicada o estudiada). <em>No</em> se usa para habilidades innatas (como ver u oír).
+</div>
+<div class="box structure">
+  ✅ Afirmativo: <code>Sujeto + 会 + Verbo + Objeto</code><br>
+  ❌ Negativo: <code>Sujeto + 不会 + Verbo + Objeto</code><br>
+  ❓ Pregunta 吗: <code>Sujeto + 会 + Verbo + Objeto + 吗?</code><br>
+  ❓ V-no-V: <code>Sujeto + 会不会 + Verbo + Objeto?</code><br>
+  <span class="hz">会</span> = Sí, sé/puedo &emsp; <span class="hz">不会</span> = No, no sé/no puedo
+</div>
+
+<h3>✅ Afirmativo</h3>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz">我会说汉语</td><td>Wǒ huì shuō Hànyǔ</td><td>Yo sé hablar chino</td></tr>
+  <tr><td class="hz">我会写汉字</td><td>Wǒ huì xiě Hànzì</td><td>Yo sé escribir caracteres</td></tr>
+  <tr><td class="hz">我会做中国菜</td><td>Wǒ huì zuò Zhōngguó cài</td><td>Yo sé cocinar comida china</td></tr>
+  <tr><td class="hz">我会游泳</td><td>Wǒ huì yóuyǒng</td><td>Yo sé nadar</td></tr>
+  <tr><td class="hz">我会开车</td><td>Wǒ huì kāichē</td><td>Yo sé manejar</td></tr>
+  <tr><td class="hz">我会弹吉他</td><td>Wǒ huì tán jítā</td><td>Yo sé tocar guitarra</td></tr>
+</table>
+
+<h3>❌ Negativo</h3>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz">我不会说汉语</td><td>Wǒ bú huì shuō Hànyǔ</td><td>No sé hablar chino</td></tr>
+  <tr><td class="hz">我不会写汉字</td><td>Wǒ bú huì xiě Hànzì</td><td>No sé escribir caracteres</td></tr>
+  <tr><td class="hz">我不会做中国菜</td><td>Wǒ bú huì zuò Zhōngguó cài</td><td>No sé cocinar comida china</td></tr>
+  <tr><td class="hz">我不会游泳</td><td>Wǒ bú huì yóuyǒng</td><td>No sé nadar</td></tr>
+  <tr><td class="hz">他不会开车</td><td>Tā bú huì kāichē</td><td>Él no sabe manejar</td></tr>
+</table>
+
+<h3>❓ Preguntas</h3>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz">你会说汉语吗？</td><td>Nǐ huì shuō Hànyǔ ma?</td><td>¿Sabes hablar chino?</td></tr>
+  <tr><td class="hz">你会不会做饭？</td><td>Nǐ huì bú huì zuòfàn?</td><td>¿Sabes cocinar?</td></tr>
+  <tr><td class="hz">她会游泳吗？</td><td>Tā huì yóuyǒng ma?</td><td>¿Ella sabe nadar?</td></tr>
+  <tr><td class="hz">你会不会开车？</td><td>Nǐ huì bú huì kāichē?</td><td>¿Sabes manejar?</td></tr>
+</table>
+
+<h3>Con otros sujetos</h3>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz">他会说汉语</td><td>Tā huì shuō Hànyǔ</td><td>Él sabe hablar chino</td></tr>
+  <tr><td class="hz">她会做中国菜</td><td>Tā huì zuò Zhōngguó cài</td><td>Ella sabe cocinar comida china</td></tr>
+  <tr><td class="hz">我们会写汉字</td><td>Wǒmen huì xiě Hànzì</td><td>Nosotros sabemos escribir</td></tr>
+  <tr><td class="hz">妈妈会做饭</td><td>Māma huì zuòfàn</td><td>Mamá sabe cocinar</td></tr>
+  <tr><td class="hz">我也会游泳</td><td>Wǒ yě huì yóuyǒng</td><td>Yo también sé nadar</td></tr>
+</table>
+
+<!-- SECCIÓN 2 -->
+<h2 id="s2" class="green">2. 有 (yǒu) — Tener / Haber</h2>
+<div class="box structure">
+  ✅ Afirmativo: <code>Sujeto + 有 + Objeto</code><br>
+  ❌ Negativo: <code>Sujeto + 没有 (méiyǒu) + Objeto</code><br>
+  ❓ Pregunta 吗: <code>Sujeto + 有 + Objeto + 吗?</code><br>
+  ❓ V-no-V: <code>Sujeto + 有没有 + Objeto?</code><br>
+  <span class="hz">有</span> = Sí, tengo &emsp; <span class="hz">没有</span> = No, no tengo
+</div>
+
+<h3>Hermanos</h3>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz">我有哥哥。</td><td>Wǒ yǒu gēge.</td><td>Tengo hermano mayor.</td></tr>
+  <tr><td class="hz">我有姐姐。</td><td>Wǒ yǒu jiějie.</td><td>Tengo hermana mayor.</td></tr>
+  <tr><td class="hz">我有弟弟。</td><td>Wǒ yǒu dìdi.</td><td>Tengo hermano menor.</td></tr>
+  <tr><td class="hz">我有妹妹。</td><td>Wǒ yǒu mèimei.</td><td>Tengo hermana menor.</td></tr>
+  <tr><td class="hz">我没有哥哥。</td><td>Wǒ méiyǒu gēge.</td><td>No tengo hermano mayor.</td></tr>
+  <tr><td class="hz">我没有妹妹。</td><td>Wǒ méiyǒu mèimei.</td><td>No tengo hermana menor.</td></tr>
+</table>
+
+<h3>Preguntas con 有</h3>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz">你有哥哥吗？</td><td>Nǐ yǒu gēge ma?</td><td>¿Tienes hermano mayor?</td></tr>
+  <tr><td class="hz">你有姐姐吗？</td><td>Nǐ yǒu jiějie ma?</td><td>¿Tienes hermana mayor?</td></tr>
+  <tr><td class="hz">你有弟弟吗？</td><td>Nǐ yǒu dìdi ma?</td><td>¿Tienes hermano menor?</td></tr>
+  <tr><td class="hz">你有妹妹吗？</td><td>Nǐ yǒu mèimei ma?</td><td>¿Tienes hermana menor?</td></tr>
+  <tr><td class="hz">你有没有哥哥？</td><td>Nǐ yǒu méiyǒu gēge?</td><td>¿Tienes hermano mayor?</td></tr>
+</table>
+
+<div class="box warn">
+  ⚠️ <strong>¡Importante!</strong> <span class="hz">有</span> se niega SIEMPRE con <strong>没</strong>, nunca con 不:<br>
+  ✅ <span class="hz">我没有哥哥。</span> &emsp; ❌ <del><span class="hz">我不有哥哥。</span></del>
+</div>
+
+<!-- SECCIÓN 3 -->
+<h2 id="s3" class="blue">3. 的 (de) — Partícula Posesiva</h2>
+<div class="box structure">
+  Estructura: <code>Persona + 的 + Sustantivo</code> — indica posesión (como "de" en español o "'s" en inglés).
+</div>
+
+<h3>Con familia y mascotas</h3>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz">他的妹妹</td><td>Tā de mèimei</td><td>La hermana menor de él</td></tr>
+  <tr><td class="hz">她的哥哥</td><td>Tā de gēge</td><td>El hermano mayor de ella</td></tr>
+  <tr><td class="hz">他的妈妈</td><td>Tā de māma</td><td>La mamá de él</td></tr>
+  <tr><td class="hz">她的爸爸</td><td>Tā de bàba</td><td>El papá de ella</td></tr>
+  <tr><td class="hz">他的猫 / 她的狗</td><td>Tā de māo / gǒu</td><td>Su gato / Su perro</td></tr>
+  <tr><td class="hz">我的猫 / 你的狗</td><td>Wǒ de māo / Nǐ de gǒu</td><td>Mi gato / Tu perro</td></tr>
+</table>
+
+<h3>Oraciones completas</h3>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz">他的妹妹会唱歌。</td><td>Tā de mèimei huì chànggē.</td><td>Su hermana menor sabe cantar.</td></tr>
+  <tr><td class="hz">她的哥哥会说汉语。</td><td>Tā de gēge huì shuō Hànyǔ.</td><td>Su hermano mayor sabe hablar chino.</td></tr>
+  <tr><td class="hz">他的妈妈会做中国菜。</td><td>Tā de māma huì zuò Zhōngguó cài.</td><td>Su mamá sabe cocinar comida china.</td></tr>
+  <tr><td class="hz">她的猫不会游泳。</td><td>Tā de māo bú huì yóuyǒng.</td><td>Su gato no sabe nadar.</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>Cuándo omitir 的:</strong><br>
+  • Familia propia: opcional → <span class="hz">我的妈妈 = 我妈妈</span><br>
+  • Familia de otros: más formal con 的 → <span class="hz">他的妹妹</span> (claro) vs <span class="hz">他妹妹</span> (casual)<br>
+  • Objetos/mascotas: <strong>siempre</strong> usar 的 → <span class="hz">他的猫、我的车</span>
+</div>
+
+<!-- SECCIÓN 4 -->
+<h2 id="s4">4. Preguntas sobre la Familia</h2>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz">你妈妈会说汉语吗？</td><td>Nǐ māma huì shuō Hànyǔ ma?</td><td>¿Tu mamá sabe hablar chino?</td></tr>
+  <tr><td class="hz">你爸爸会说汉语吗？</td><td>Nǐ bàba huì shuō Hànyǔ ma?</td><td>¿Tu papá sabe hablar chino?</td></tr>
+  <tr><td class="hz">你妈妈会写汉字吗？</td><td>Nǐ māma huì xiě Hànzì ma?</td><td>¿Tu mamá sabe escribir?</td></tr>
+  <tr><td class="hz">你爸爸会做饭吗？</td><td>Nǐ bàba huì zuòfàn ma?</td><td>¿Tu papá sabe cocinar?</td></tr>
+  <tr><td class="hz">你哥哥会说汉语吗？</td><td>Nǐ gēge huì shuō Hànyǔ ma?</td><td>¿Tu hermano mayor sabe hablar chino?</td></tr>
+  <tr><td class="hz">你姐姐会说汉语吗？</td><td>Nǐ jiějie huì shuō Hànyǔ ma?</td><td>¿Tu hermana mayor sabe hablar chino?</td></tr>
+  <tr><td class="hz">你弟弟会写汉字吗？</td><td>Nǐ dìdi huì xiě Hànzì ma?</td><td>¿Tu hermano menor sabe escribir?</td></tr>
+  <tr><td class="hz">你妹妹会唱歌吗？</td><td>Nǐ mèimei huì chànggē ma?</td><td>¿Tu hermana menor sabe cantar?</td></tr>
+</table>
+
+<h3>Respuestas de ejemplo</h3>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz">我妈妈会说汉语。</td><td>Wǒ māma huì shuō Hànyǔ.</td><td>Mi mamá sabe hablar chino.</td></tr>
+  <tr><td class="hz">我爸爸不会写汉字。</td><td>Wǒ bàba bú huì xiě Hànzì.</td><td>Mi papá no sabe escribir.</td></tr>
+  <tr><td class="hz">我爸爸也会做饭。</td><td>Wǒ bàba yě huì zuòfàn.</td><td>Mi papá también sabe cocinar.</td></tr>
+  <tr><td class="hz">我妹妹会唱歌。</td><td>Wǒ mèimei huì chànggē.</td><td>Mi hermana menor sabe cantar.</td></tr>
+</table>
+
+<!-- SECCIÓN 5 -->
+<h2 id="s5" class="gold">5. Notas Gramaticales</h2>
+
+<div class="box note"><strong>1. Posición de 也 (yě) — también</strong><br>
+  也 va siempre <em>antes</em> del verbo modal: <code>Sujeto + 也 + 会 + Verbo</code><br>
+  <span class="hz">我也会说汉语。</span> — Yo también sé hablar chino.</div>
+
+<div class="box note"><strong>2. 你 al preguntar · 我 al responder</strong><br>
+  <span class="hz">你</span>妈妈、<span class="hz">你</span>爸爸 → preguntar &emsp;|&emsp; <span class="hz">我</span>妈妈、<span class="hz">我</span>爸爸 → responder</div>
+
+<div class="box note"><strong>3. Omitir 我 con familia (contexto claro)</strong><br>
+  <span class="hz">你妹妹会唱歌吗？→ 妹妹会唱歌。</span> (como "mamá sabe cocinar" en español)</div>
+
+<div class="box preview">
+  <strong>Vista previa: 会 vs 能 vs 可以</strong>
+  <table style="margin-top:8px">
+    <tr><th>Hanzi</th><th>Pinyin</th><th>Uso</th></tr>
+    <tr><td class="hz">会</td><td>huì</td><td>Habilidad <strong>aprendida</strong> (idioma, nadar, cocinar)</td></tr>
+    <tr><td class="hz">能</td><td>néng</td><td>Capacidad física o circunstancial</td></tr>
+    <tr><td class="hz">可以</td><td>kěyǐ</td><td>Permiso o posibilidad</td></tr>
+  </table>
+  <em style="font-size:.85em">Por ahora, enfocarse en dominar 会. Los otros se verán en clases futuras.</em>
+</div>
+
+<!-- SECCIÓN 6 -->
+<h2 id="s6" class="green">6. Diálogos de Práctica</h2>
+
+<h3>Conversación 1: Habilidades y familia</h3>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">你好！你会说汉语吗？</span><br><em>Nǐ hǎo! — ¡Hola! ¿Sabes hablar chino?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz">会，我会说一点儿汉语。</span><br><em>Huì, wǒ huì shuō yìdiǎnr Hànyǔ. — Sí, sé hablar un poco de chino.</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz">你会写汉字吗？</span><br><em>Nǐ huì xiě Hànzì ma? — ¿Sabes escribir caracteres?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz">不会，我不会写。</span><br><em>Bú huì, wǒ bú huì xiě. — No, no sé escribir.</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz">你妈妈会说汉语吗？</span><br><em>Nǐ māma huì shuō Hànyǔ ma? — ¿Tu mamá sabe hablar chino?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz">我妈妈不会说汉语。</span><br><em>Wǒ māma bú huì shuō Hànyǔ. — Mi mamá no sabe hablar chino.</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz">你爸爸会做中国菜吗？</span><br><em>Nǐ bàba huì zuò Zhōngguó cài ma? — ¿Tu papá sabe cocinar comida china?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz">不会，但是我妈妈会做。</span><br><em>Bú huì, dànshì wǒ māma huì zuò. — No, pero mi mamá sabe cocinar.</em></div>
+</div>
+
+<h3>Conversación 2: Sobre comida china</h3>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">中国菜好吃吗？</span><br><em>Zhōngguó cài hǎochī ma? — ¿La comida china es deliciosa?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz">中国菜很好吃！</span><br><em>Zhōngguó cài hěn hǎochī! — ¡La comida china es muy deliciosa!</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz">你会做中国菜吗？</span><br><em>Nǐ huì zuò Zhōngguó cài ma? — ¿Sabes cocinar comida china?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz">我不会做。</span><br><em>Wǒ bú huì zuò. — No sé cocinar.</em></div>
+</div>
+
+<!-- SECCIÓN 7 -->
+<h2 id="s7" class="blue">7. Vocabulario Completo</h2>
+<table>
+  <tr><th colspan="3" style="background:#555">👨‍👩‍👧 Familia</th></tr>
+  <tr><td class="hz">妈妈 / 爸爸</td><td>māma / bàba</td><td>Mamá / Papá</td></tr>
+  <tr><td class="hz">哥哥 / 姐姐</td><td>gēge / jiějie</td><td>Hermano mayor / Hermana mayor</td></tr>
+  <tr><td class="hz">弟弟 / 妹妹</td><td>dìdi / mèimei</td><td>Hermano menor / Hermana menor</td></tr>
+  <tr><th colspan="3" style="background:#555">📦 Sustantivos</th></tr>
+  <tr><td class="hz">汉字 / 汉语</td><td>Hànzì / Hànyǔ</td><td>Caracteres chinos / Chino (mandarín)</td></tr>
+  <tr><td class="hz">中国菜 / 中文</td><td>Zhōngguó cài / Zhōngwén</td><td>Comida china / Chino (escrito)</td></tr>
+  <tr><td class="hz">吉他 / 车 / 饭</td><td>jítā / chē / fàn</td><td>Guitarra / Carro / Comida-arroz</td></tr>
+  <tr><td class="hz">猫 / 狗</td><td>māo / gǒu</td><td>Gato / Perro</td></tr>
+  <tr><th colspan="3" style="background:#555">🏃 Verbos</th></tr>
+  <tr><td class="hz">会 / 有</td><td>huì / yǒu</td><td>Saber-poder / Tener-haber</td></tr>
+  <tr><td class="hz">说 / 写 / 做</td><td>shuō / xiě / zuò</td><td>Hablar / Escribir / Hacer</td></tr>
+  <tr><td class="hz">做饭 / 游泳 / 开车</td><td>zuòfàn / yóuyǒng / kāichē</td><td>Cocinar / Nadar / Manejar</td></tr>
+  <tr><td class="hz">弹 / 唱歌</td><td>tán / chànggē</td><td>Tocar (cuerda) / Cantar</td></tr>
+  <tr><th colspan="3" style="background:#555">🔤 Partículas y Adverbios</th></tr>
+  <tr><td class="hz">不 / 没 / 没有</td><td>bù / méi / méiyǒu</td><td>No (general) / No (de 有) / No tener</td></tr>
+  <tr><td class="hz">吗 / 的 / 也 / 很</td><td>ma / de / yě / hěn</td><td>Interrogativa / Posesiva / También / Muy</td></tr>
+  <tr><td class="hz">好吃 / 一点儿 / 但是</td><td>hǎochī / yìdiǎnr / dànshì</td><td>Delicioso / Un poco / Pero</td></tr>
+</table>
+
+<!-- SECCIÓN 8 -->
+<h2 id="s8" class="gold">8. 很 (hěn) — Adverbio de Grado + Adjetivos</h2>
+<div class="box grammar">
+  Estructura: <strong>Sujeto + 很 + adjetivo</strong> → el adjetivo describe la naturaleza o estado de alguien/algo.<br>
+  Negativa: <code>Sujeto + 不 + adjetivo</code>
+</div>
+
+<table>
+  <tr><th>Sujeto</th><th>Adverbio / 不</th><th>Adjetivo</th></tr>
+  <tr><td class="hz">我</td><td class="hz">很</td><td class="hz">好。</td></tr>
+  <tr><td class="hz">我妈妈的汉语</td><td class="hz">不</td><td class="hz">好。</td></tr>
+  <tr><td class="hz">中国菜</td><td class="hz">很</td><td class="hz">好吃。</td></tr>
+</table>
+
+<h3>👤 Características físicas</h3>
+<table>
+  <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th><th>Ejemplo</th></tr>
+  <tr><td class="hz">高</td><td>gāo</td><td>alto</td><td class="hz">他很高。</td></tr>
+  <tr><td class="hz">矮</td><td>ǎi</td><td>bajo</td><td class="hz">她很矮。</td></tr>
+  <tr><td class="hz">胖</td><td>pàng</td><td>gordo / robusto</td><td class="hz">他不胖。</td></tr>
+  <tr><td class="hz">瘦</td><td>shòu</td><td>delgado / flaco</td><td class="hz">她很瘦。</td></tr>
+</table>
+
+<!-- SECCIÓN 9 -->
+<h2 id="s9">9. Ejercicios de Práctica</h2>
+
+<div class="ex">
+  <strong>Ejercicio 1: Completa con 会 o 不会</strong>
+  <ol>
+    <li>我 ___ 说汉语。 <em>(Yo sé hablar chino)</em></li>
+    <li>他 ___ 游泳。 <em>(Él no sabe nadar)</em></li>
+    <li>妈妈 ___ 做中国菜。 <em>(Mamá sabe cocinar comida china)</em></li>
+    <li>你 ___ 写汉字吗？ <em>(¿Sabes escribir caracteres?)</em></li>
+    <li>我们 ___ 开车。 <em>(Nosotros no sabemos manejar)</em></li>
+  </ol>
+</div>
+
+<div class="ex">
+  <strong>Ejercicio 2: Traduce al chino</strong>
+  <ol>
+    <li>Yo sé nadar. <span class="blank"></span></li>
+    <li>Ella no sabe cocinar. <span class="blank"></span></li>
+    <li>¿Sabes hablar chino? (con 吗) <span class="blank"></span></li>
+    <li>Él también sabe escribir caracteres. <span class="blank"></span></li>
+    <li>Mi mamá sabe cocinar comida china. <span class="blank"></span></li>
+    <li>¿Tu papá sabe hablar chino? <span class="blank"></span></li>
+    <li>Mi papá no sabe escribir caracteres. <span class="blank"></span></li>
+  </ol>
+</div>
+
+<div class="ex">
+  <strong>Ejercicio 3: Responde con oraciones completas</strong>
+  <ol>
+    <li><span class="hz">你会说汉语吗？</span> <span class="blank"></span></li>
+    <li><span class="hz">你会不会游泳？</span> <span class="blank"></span></li>
+    <li><span class="hz">你会做中国菜吗？</span> <span class="blank"></span></li>
+    <li><span class="hz">你会不会开车？</span> <span class="blank"></span></li>
+    <li><span class="hz">你妈妈会说汉语吗？</span> <span class="blank"></span></li>
+    <li><span class="hz">你爸爸会写汉字吗？</span> <span class="blank"></span></li>
+  </ol>
+</div>
+
+<footer>apuntes.basti.cl · Básico 2 Clase 01 · 7 mar 2026</footer>
+</body>
+</html>
