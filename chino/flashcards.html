@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Flashcards · Apuntes Chino — Basti</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; background: #f5f5f7; color: #222; min-height: 100vh; }
+
+  /* Header */
+  .header { background: #1a1a2e; color: #fff; padding: 28px 24px 22px; text-align: center; }
+  .header h1 { font-size: 1.6em; color: #e74c3c; }
+  .header p { color: #aaa; font-size: 0.88em; margin-top: 4px; }
+  .header a { color: #e74c3c; text-decoration: none; }
+
+  /* Tabs */
+  .tabs { display: flex; justify-content: center; gap: 8px; padding: 16px 24px; flex-wrap: wrap; }
+  .tab { padding: 8px 18px; border-radius: 20px; border: 1.5px solid #ddd; background: #fff; cursor: pointer; font-size: 0.85em; font-weight: 600; transition: all .2s; }
+  .tab:hover { border-color: #c0392b; color: #c0392b; }
+  .tab.active { background: #c0392b; color: #fff; border-color: #c0392b; }
+
+  /* Controls */
+  .controls { display: flex; justify-content: center; gap: 10px; padding: 8px 24px 16px; flex-wrap: wrap; }
+  .btn { padding: 8px 18px; border-radius: 8px; border: none; cursor: pointer; font-size: 0.85em; font-weight: 600; transition: all .15s; }
+  .btn-dark { background: #1a1a2e; color: #fff; }
+  .btn-dark:hover { background: #2c2c54; }
+  .btn-outline { background: #fff; color: #555; border: 1.5px solid #ddd; }
+  .btn-outline:hover { border-color: #c0392b; color: #c0392b; }
+  .btn-green { background: #27ae60; color: #fff; }
+  .btn-green:hover { background: #219a52; }
+
+  /* Stats */
+  .stats { text-align: center; padding: 0 24px 12px; font-size: 0.85em; color: #888; }
+  .stats strong { color: #c0392b; }
+
+  /* Card area */
+  .card-area { display: flex; justify-content: center; align-items: center; padding: 20px 24px; min-height: 320px; }
+  .card { perspective: 800px; width: 320px; height: 260px; cursor: pointer; }
+  .card-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s; transform-style: preserve-3d; border-radius: 16px; }
+  .card.flipped .card-inner { transform: rotateY(180deg); }
+  .card-front, .card-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 16px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 24px; }
+  .card-front { background: linear-gradient(135deg, #1a1a2e, #2c2c54); color: #fff; box-shadow: 0 8px 30px rgba(26,26,46,.3); }
+  .card-front .card-hz { font-size: 4rem; font-weight: 700; }
+  .card-front .card-class { font-size: 0.7em; color: #aaa; margin-top: 12px; }
+  .card-front .card-hint { font-size: 0.75em; color: #666; margin-top: 16px; }
+  .card-back { background: #fff; border: 2px solid #e5e5e5; transform: rotateY(180deg); box-shadow: 0 8px 30px rgba(0,0,0,.08); }
+  .card-back .card-py { font-size: 1.4em; color: #c0392b; font-weight: 700; }
+  .card-back .card-es { font-size: 1.1em; color: #555; margin-top: 10px; }
+  .card-back .card-audio { margin-top: 14px; background: none; border: 1.5px solid #ddd; border-radius: 20px; padding: 6px 16px; cursor: pointer; font-size: 0.9em; }
+  .card-back .card-audio:hover { border-color: #c0392b; }
+
+  /* Grid mode */
+  .grid-area { display: none; padding: 16px 24px; max-width: 960px; margin: 0 auto; }
+  .grid-area.visible { display: block; }
+  .fc-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 14px; }
+  .fc-mini { perspective: 600px; height: 170px; cursor: pointer; }
+  .fc-mini-inner { position: relative; width: 100%; height: 100%; transition: transform 0.5s; transform-style: preserve-3d; border-radius: 10px; }
+  .fc-mini.flipped .fc-mini-inner { transform: rotateY(180deg); }
+  .fc-mini-front, .fc-mini-back { position: absolute; width: 100%; height: 100%; backface-visibility: hidden; border-radius: 10px; display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 12px; }
+  .fc-mini-front { background: linear-gradient(135deg, #1a1a2e, #2c2c54); color: #fff; }
+  .fc-mini-front .mini-hz { font-size: 2.2rem; font-weight: 700; }
+  .fc-mini-back { background: #fff; border: 1.5px solid #e5e5e5; transform: rotateY(180deg); }
+  .fc-mini-back .mini-py { font-size: 1em; color: #c0392b; font-weight: 600; }
+  .fc-mini-back .mini-es { font-size: 0.82em; color: #555; margin-top: 4px; text-align: center; }
+
+  /* Navigation arrows */
+  .nav-arrows { display: flex; justify-content: center; gap: 16px; padding: 16px; }
+  .nav-btn { width: 48px; height: 48px; border-radius: 50%; border: 1.5px solid #ddd; background: #fff; cursor: pointer; font-size: 1.2em; transition: all .15s; display: flex; align-items: center; justify-content: center; }
+  .nav-btn:hover { border-color: #c0392b; color: #c0392b; }
+
+  /* Footer */
+  .footer { text-align: center; color: #bbb; font-size: 0.82em; padding: 30px 24px; }
+
+  /* Print */
+  @media print {
+    .header, .tabs, .controls, .stats, .card-area, .nav-arrows, .footer, .grid-area, .no-print { display: none !important; }
+    .print-area { display: block !important; }
+    .print-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; padding: 20px; }
+    .print-card { border: 2px dashed #999; border-radius: 10px; padding: 20px 12px; text-align: center; page-break-inside: avoid; }
+    .print-card .p-hz { font-size: 2.4rem; font-weight: 700; color: #c0392b; }
+    .print-card .p-line { border-top: 1px dotted #ccc; margin: 10px 0; }
+    .print-card .p-py { font-size: 1em; color: #555; }
+    .print-card .p-es { font-size: 0.85em; color: #888; margin-top: 4px; }
+    .print-card .p-class { font-size: 0.7em; color: #bbb; margin-top: 6px; }
+  }
+  .print-area { display: none; }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h1>🀄 Flashcards</h1>
+  <p>Básico 2 · <a href="/chino/">← Volver a apuntes</a></p>
+</div>
+
+<div class="tabs" id="tabs"></div>
+
+<div class="controls no-print">
+  <button class="btn btn-dark" onclick="shuffle()">🔀 Mezclar</button>
+  <button class="btn btn-outline" id="modeBtn" onclick="toggleMode()">📋 Ver todas</button>
+  <button class="btn btn-outline" onclick="resetAll()">↩️ Reiniciar</button>
+  <button class="btn btn-green" onclick="window.print()">🖨️ Imprimir</button>
+</div>
+
+<div class="stats" id="stats"></div>
+
+<!-- Single card mode -->
+<div class="card-area" id="cardArea">
+  <div class="card" id="mainCard" onclick="flipCard()">
+    <div class="card-inner">
+      <div class="card-front">
+        <div class="card-hz" id="cardHz"></div>
+        <div class="card-class" id="cardClass"></div>
+        <div class="card-hint">toca para voltear</div>
+      </div>
+      <div class="card-back">
+        <div class="card-py" id="cardPy"></div>
+        <div class="card-es" id="cardEs"></div>
+        <button class="card-audio" onclick="event.stopPropagation(); speakCurrent()">🔊 Escuchar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="nav-arrows" id="navArrows">
+  <button class="nav-btn" onclick="prev()">◀</button>
+  <button class="nav-btn" onclick="next()">▶</button>
+</div>
+
+<!-- Grid mode -->
+<div class="grid-area" id="gridArea"></div>
+
+<!-- Print area -->
+<div class="print-area" id="printArea"></div>
+
+<div class="footer no-print">Flashcards · Apuntes Chino · <a href="https://basti.cl" style="color:inherit">basti.cl</a></div>
+
+<script>
+// === VOCABULARY DATA ===
+const decks = {
+  "Clase 01": [
+    {hz:"妈妈",py:"māma",es:"Mamá"},{hz:"爸爸",py:"bàba",es:"Papá"},
+    {hz:"哥哥",py:"gēge",es:"Hermano mayor"},{hz:"姐姐",py:"jiějie",es:"Hermana mayor"},
+    {hz:"弟弟",py:"dìdi",es:"Hermano menor"},{hz:"妹妹",py:"mèimei",es:"Hermana menor"},
+    {hz:"汉字",py:"Hànzì",es:"Caracteres chinos"},{hz:"汉语",py:"Hànyǔ",es:"Chino (mandarín)"},
+    {hz:"中国菜",py:"Zhōngguó cài",es:"Comida china"},{hz:"中文",py:"Zhōngwén",es:"Chino (escrito)"},
+    {hz:"吉他",py:"jítā",es:"Guitarra"},{hz:"车",py:"chē",es:"Carro / auto"},
+    {hz:"饭",py:"fàn",es:"Comida / arroz"},{hz:"猫",py:"māo",es:"Gato"},{hz:"狗",py:"gǒu",es:"Perro"},
+    {hz:"会",py:"huì",es:"Saber / poder hacer"},{hz:"有",py:"yǒu",es:"Tener / haber"},
+    {hz:"说",py:"shuō",es:"Hablar"},{hz:"写",py:"xiě",es:"Escribir"},{hz:"做",py:"zuò",es:"Hacer"},
+    {hz:"做饭",py:"zuòfàn",es:"Cocinar"},{hz:"游泳",py:"yóuyǒng",es:"Nadar"},
+    {hz:"开车",py:"kāichē",es:"Manejar"},{hz:"唱歌",py:"chànggē",es:"Cantar"},
+    {hz:"不",py:"bù",es:"No (negación general)"},{hz:"没有",py:"méiyǒu",es:"No tener"},
+    {hz:"吗",py:"ma",es:"Partícula de pregunta"},{hz:"的",py:"de",es:"Partícula posesiva"},
+    {hz:"也",py:"yě",es:"También"},{hz:"很",py:"hěn",es:"Muy"},
+    {hz:"高",py:"gāo",es:"Alto"},{hz:"矮",py:"ǎi",es:"Bajo (estatura)"},
+    {hz:"胖",py:"pàng",es:"Gordo"},{hz:"瘦",py:"shòu",es:"Delgado"},
+    {hz:"好吃",py:"hǎochī",es:"Delicioso"},{hz:"一点儿",py:"yìdiǎnr",es:"Un poquito"},
+    {hz:"但是",py:"dànshì",es:"Pero"}
+  ],
+  "Clase 02": [
+    {hz:"画画",py:"huàhuà",es:"Pintar / dibujar"},{hz:"跳舞",py:"tiàowǔ",es:"Bailar"},
+    {hz:"读",py:"dú",es:"Leer (en voz alta)"},{hz:"看书",py:"kànshū",es:"Leer (libro, silencio)"},
+    {hz:"学",py:"xué",es:"Aprender"},{hz:"学习",py:"xuéxí",es:"Estudiar"},
+    {hz:"烧",py:"shāo",es:"Quemar / asar"},
+    {hz:"生词",py:"shēngcí",es:"Vocabulario nuevo"},{hz:"会话",py:"huìhuà",es:"Conversación"},
+    {hz:"练习",py:"liànxí",es:"Ejercicio / practicar"},{hz:"汉字",py:"Hànzì",es:"Caracteres chinos"},
+    {hz:"怎么",py:"zěnme",es:"¿Cómo?"},{hz:"对不起",py:"duìbuqǐ",es:"Lo siento"},
+    {hz:"这个",py:"zhège",es:"Este / esto"},{hz:"字",py:"zì",es:"Carácter / letra"},
+    {hz:"学生",py:"xuéshēng",es:"Estudiante"},{hz:"同学",py:"tóngxué",es:"Compañero de clase"},
+    {hz:"学校",py:"xuéxiào",es:"Escuela"},{hz:"大学",py:"dàxué",es:"Universidad"},
+    {hz:"中学",py:"zhōngxué",es:"Secundaria"},{hz:"小学",py:"xiǎoxué",es:"Primaria"},
+    {hz:"种",py:"zhǒng",es:"Tipo / clase"},{hz:"运动",py:"yùndòng",es:"Deporte"},
+    {hz:"动物",py:"dòngwù",es:"Animal"},{hz:"活动",py:"huódòng",es:"Actividad"},
+    {hz:"烧烤",py:"shāokǎo",es:"Asado / BBQ"},
+    {hz:"好看",py:"hǎokàn",es:"Bonito"},{hz:"难看",py:"nánkàn",es:"Feo"},
+    {hz:"好吃",py:"hǎochī",es:"Delicioso"},{hz:"难吃",py:"nánchī",es:"Asqueroso"},
+    {hz:"好喝",py:"hǎohē",es:"Sabroso (bebida)"},{hz:"难喝",py:"nánhē",es:"Asqueroso (bebida)"},
+    {hz:"好听",py:"hǎotīng",es:"Suena bien"},{hz:"难听",py:"nántīng",es:"Suena mal"}
+  ],
+  "Clase 03": [
+    {hz:"有",py:"yǒu",es:"Tener / haber"},{hz:"没有",py:"méi yǒu",es:"No tener"},
+    {hz:"都",py:"dōu",es:"Todos / ambos"},{hz:"我们",py:"wǒmen",es:"Nosotros"},
+    {hz:"您",py:"nín",es:"Usted (formal)"},{hz:"您们",py:"nínmen",es:"Ustedes (formal)"},
+    {hz:"汉语名字",py:"hànyǔ míngzì",es:"Nombre chino"},
+    {hz:"咖啡",py:"kāfēi",es:"Café"},{hz:"公园",py:"gōngyuán",es:"Parque"},
+    {hz:"机场",py:"jīchǎng",es:"Aeropuerto"},{hz:"车站",py:"chēzhàn",es:"Estación"},
+    {hz:"今天",py:"jīntiān",es:"Hoy"},{hz:"今年",py:"jīnnián",es:"Este año"},
+    {hz:"公司",py:"gōngsī",es:"Empresa"},{hz:"欢迎",py:"huānyíng",es:"Bienvenido"},
+    {hz:"开始",py:"kāishǐ",es:"Empezar"},{hz:"高兴",py:"gāoxìng",es:"Contento"},
+    {hz:"鸡蛋",py:"jīdàn",es:"Huevo"},{hz:"机会",py:"jīhuì",es:"Oportunidad"},
+    {hz:"关心",py:"guānxīn",es:"Preocuparse"},{hz:"关于",py:"guānyú",es:"Acerca de"},
+    {hz:"经理",py:"jīnglǐ",es:"Gerente"},{hz:"精彩",py:"jīngcǎi",es:"Genial / brillante"},
+    {hz:"昨天",py:"zuótiān",es:"Ayer"},{hz:"明天",py:"míngtiān",es:"Mañana"},
+    {hz:"星期",py:"xīngqī",es:"Semana / día de la semana"},
+    {hz:"去",py:"qù",es:"Ir"},{hz:"看",py:"kàn",es:"Ver / mirar / leer"},
+    {hz:"看书",py:"kàn shū",es:"Leer un libro"},{hz:"书",py:"shū",es:"Libro"},
+    {hz:"问",py:"wèn",es:"Preguntar"},{hz:"请",py:"qǐng",es:"Por favor"},
+    {hz:"请问",py:"qǐngwèn",es:"Disculpe... (preguntar)"},
+    {hz:"呢",py:"ne",es:"¿Y tú? / ¿Y ___?"},
+    {hz:"朋友",py:"péngyou",es:"Amigo"},{hz:"学校",py:"xuéxiào",es:"Escuela"}
+  ]
+};
+
+// === STATE ===
+let currentFilter = "Todas";
+let currentCards = [];
+let currentIndex = 0;
+let gridMode = false;
+
+// === INIT ===
+function init() {
+  buildTabs();
+  filterCards("Todas");
+}
+
+function buildTabs() {
+  const container = document.getElementById('tabs');
+  const allTab = document.createElement('button');
+  allTab.className = 'tab active';
+  allTab.textContent = `Todas (${Object.values(decks).flat().length})`;
+  allTab.onclick = () => filterCards("Todas");
+  container.appendChild(allTab);
+  for (const [name, cards] of Object.entries(decks)) {
+    const tab = document.createElement('button');
+    tab.className = 'tab';
+    tab.textContent = `${name} (${cards.length})`;
+    tab.onclick = () => filterCards(name);
+    container.appendChild(tab);
+  }
+}
+
+function filterCards(name) {
+  currentFilter = name;
+  if (name === "Todas") {
+    currentCards = Object.entries(decks).flatMap(([cls, cards]) => cards.map(c => ({...c, cls})));
+  } else {
+    currentCards = decks[name].map(c => ({...c, cls: name}));
+  }
+  currentIndex = 0;
+  updateTabs();
+  renderCard();
+  renderGrid();
+  renderPrint();
+  updateStats();
+}
+
+function updateTabs() {
+  document.querySelectorAll('.tab').forEach(t => {
+    t.classList.toggle('active', t.textContent.includes(currentFilter === "Todas" ? "Todas" : currentFilter));
+  });
+}
+
+// === SINGLE CARD ===
+function renderCard() {
+  const c = currentCards[currentIndex];
+  if (!c) return;
+  document.getElementById('cardHz').textContent = c.hz;
+  document.getElementById('cardPy').textContent = c.py;
+  document.getElementById('cardEs').textContent = c.es;
+  document.getElementById('cardClass').textContent = c.cls;
+  document.getElementById('mainCard').classList.remove('flipped');
+}
+
+function flipCard() { document.getElementById('mainCard').classList.toggle('flipped'); }
+function next() { currentIndex = (currentIndex + 1) % currentCards.length; renderCard(); updateStats(); }
+function prev() { currentIndex = (currentIndex - 1 + currentCards.length) % currentCards.length; renderCard(); updateStats(); }
+
+// === GRID ===
+function renderGrid() {
+  const container = document.getElementById('gridArea');
+  container.innerHTML = '<div class="fc-grid"></div>';
+  const grid = container.querySelector('.fc-grid');
+  currentCards.forEach(c => {
+    grid.innerHTML += `
+      <div class="fc-mini" onclick="this.classList.toggle('flipped')"><div class="fc-mini-inner">
+        <div class="fc-mini-front"><div class="mini-hz">${c.hz}</div></div>
+        <div class="fc-mini-back"><div class="mini-py">${c.py}</div><div class="mini-es">${c.es}</div></div>
+      </div></div>`;
+  });
+}
+
+function toggleMode() {
+  gridMode = !gridMode;
+  document.getElementById('cardArea').style.display = gridMode ? 'none' : 'flex';
+  document.getElementById('navArrows').style.display = gridMode ? 'none' : 'flex';
+  document.getElementById('gridArea').classList.toggle('visible', gridMode);
+  document.getElementById('modeBtn').textContent = gridMode ? '🃏 Una a una' : '📋 Ver todas';
+}
+
+// === CONTROLS ===
+function shuffle() {
+  for (let i = currentCards.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [currentCards[i], currentCards[j]] = [currentCards[j], currentCards[i]];
+  }
+  currentIndex = 0;
+  renderCard();
+  renderGrid();
+  updateStats();
+}
+
+function resetAll() {
+  filterCards(currentFilter);
+  document.querySelectorAll('.fc-mini.flipped').forEach(el => el.classList.remove('flipped'));
+}
+
+function updateStats() {
+  document.getElementById('stats').innerHTML = `Tarjeta <strong>${currentIndex + 1}</strong> de <strong>${currentCards.length}</strong>`;
+}
+
+// === AUDIO ===
+function speakCurrent() {
+  const c = currentCards[currentIndex];
+  if (!c) return;
+  const u = new SpeechSynthesisUtterance(c.hz);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+// === PRINT ===
+function renderPrint() {
+  const container = document.getElementById('printArea');
+  let html = `<h2 style="text-align:center; margin: 20px 0 10px;">Flashcards — ${currentFilter === "Todas" ? "Básico 2 Completo" : currentFilter}</h2>`;
+  html += '<div class="print-grid">';
+  currentCards.forEach(c => {
+    html += `<div class="print-card">
+      <div class="p-hz">${c.hz}</div>
+      <div class="p-line"></div>
+      <div class="p-py">${c.py}</div>
+      <div class="p-es">${c.es}</div>
+      <div class="p-class">${c.cls}</div>
+    </div>`;
+  });
+  html += '</div>';
+  container.innerHTML = html;
+}
+
+// === KEYBOARD ===
+document.addEventListener('keydown', e => {
+  if (e.key === 'ArrowRight') next();
+  if (e.key === 'ArrowLeft') prev();
+  if (e.key === ' ') { e.preventDefault(); flipCard(); }
+});
+
+init();
+</script>
+</body>
+</html>

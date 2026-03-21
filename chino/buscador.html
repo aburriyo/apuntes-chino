@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Buscador de Caracteres · Apuntes Chino — Basti</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; background: #f5f5f7; color: #222; min-height: 100vh; }
+  .header { background: #1a1a2e; color: #fff; padding: 28px 24px 22px; text-align: center; }
+  .header h1 { font-size: 1.5em; color: #e74c3c; }
+  .header p { color: #aaa; font-size: 0.88em; margin-top: 4px; }
+  .header a { color: #e74c3c; text-decoration: none; }
+  .search-area { max-width: 600px; margin: 24px auto; padding: 0 24px; }
+  .search-box { width: 100%; padding: 14px 20px; font-size: 1.1em; border: 2px solid #ddd; border-radius: 12px; outline: none; font-family: inherit; transition: border-color .2s; }
+  .search-box:focus { border-color: #c0392b; }
+  .search-hint { text-align: center; color: #aaa; font-size: 0.82em; margin-top: 8px; }
+  .results { max-width: 600px; margin: 16px auto; padding: 0 24px; }
+  .result-count { font-size: 0.85em; color: #888; margin-bottom: 12px; }
+  .result-card { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 14px 18px; margin-bottom: 10px; display: flex; align-items: center; gap: 16px; transition: box-shadow .15s; cursor: pointer; }
+  .result-card:hover { box-shadow: 0 3px 12px rgba(0,0,0,.08); }
+  .r-hz { font-size: 2rem; font-weight: 700; color: #c0392b; min-width: 50px; text-align: center; }
+  .r-hz a { color: #c0392b; text-decoration: none; border-bottom: 1px dotted #c0392b; }
+  .r-hz a:hover { color: #e74c3c; }
+  .r-info { flex: 1; }
+  .r-py { font-size: 1em; font-weight: 600; color: #333; }
+  .r-es { font-size: 0.85em; color: #888; }
+  .r-source { font-size: 0.72em; color: #bbb; margin-top: 4px; }
+  .r-audio { background: none; border: none; font-size: 1.2em; cursor: pointer; opacity: 0.5; transition: opacity .2s; }
+  .r-audio:hover { opacity: 1; }
+  .empty { text-align: center; color: #ccc; font-size: 1.1em; margin-top: 60px; }
+  footer { text-align: center; color: #bbb; font-size: 0.82em; padding: 30px 24px; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>🔍 Buscador de Caracteres</h1>
+  <p>Busca por hanzi, pinyin o español · <a href="/chino/">← Apuntes</a></p>
+</div>
+
+<div class="search-area">
+  <input type="text" class="search-box" id="searchInput" placeholder="Buscar: 你, nǐ, tú, hablar..." autofocus>
+  <div class="search-hint">Busca en todo el vocabulario de Básico 2 (clases 01-03)</div>
+</div>
+
+<div class="results" id="results">
+  <div class="empty">Escribe algo para buscar</div>
+</div>
+
+<footer>Buscador · Apuntes Chino · <a href="https://basti.cl" style="color:inherit">basti.cl</a></footer>
+
+<script>
+const vocab = [
+  // Clase 01
+  {hz:"妈妈",py:"māma",es:"Mamá",src:"Clase 01"},
+  {hz:"爸爸",py:"bàba",es:"Papá",src:"Clase 01"},
+  {hz:"哥哥",py:"gēge",es:"Hermano mayor",src:"Clase 01"},
+  {hz:"姐姐",py:"jiějie",es:"Hermana mayor",src:"Clase 01"},
+  {hz:"弟弟",py:"dìdi",es:"Hermano menor",src:"Clase 01"},
+  {hz:"妹妹",py:"mèimei",es:"Hermana menor",src:"Clase 01"},
+  {hz:"汉字",py:"Hànzì",es:"Caracteres chinos",src:"Clase 01"},
+  {hz:"汉语",py:"Hànyǔ",es:"Chino mandarín",src:"Clase 01"},
+  {hz:"中国菜",py:"Zhōngguó cài",es:"Comida china",src:"Clase 01"},
+  {hz:"中文",py:"Zhōngwén",es:"Chino escrito",src:"Clase 01"},
+  {hz:"吉他",py:"jítā",es:"Guitarra",src:"Clase 01"},
+  {hz:"车",py:"chē",es:"Carro / auto",src:"Clase 01"},
+  {hz:"饭",py:"fàn",es:"Comida / arroz",src:"Clase 01"},
+  {hz:"猫",py:"māo",es:"Gato",src:"Clase 01"},
+  {hz:"狗",py:"gǒu",es:"Perro",src:"Clase 01"},
+  {hz:"会",py:"huì",es:"Saber / poder hacer",src:"Clase 01"},
+  {hz:"有",py:"yǒu",es:"Tener / haber",src:"Clase 01"},
+  {hz:"说",py:"shuō",es:"Hablar",src:"Clase 01"},
+  {hz:"写",py:"xiě",es:"Escribir",src:"Clase 01"},
+  {hz:"做",py:"zuò",es:"Hacer",src:"Clase 01"},
+  {hz:"做饭",py:"zuòfàn",es:"Cocinar",src:"Clase 01"},
+  {hz:"游泳",py:"yóuyǒng",es:"Nadar",src:"Clase 01"},
+  {hz:"开车",py:"kāichē",es:"Manejar",src:"Clase 01"},
+  {hz:"唱歌",py:"chànggē",es:"Cantar",src:"Clase 01"},
+  {hz:"不",py:"bù",es:"No (negación general)",src:"Clase 01"},
+  {hz:"没有",py:"méiyǒu",es:"No tener",src:"Clase 01"},
+  {hz:"吗",py:"ma",es:"Partícula de pregunta",src:"Clase 01"},
+  {hz:"的",py:"de",es:"Partícula posesiva",src:"Clase 01"},
+  {hz:"也",py:"yě",es:"También",src:"Clase 01"},
+  {hz:"很",py:"hěn",es:"Muy",src:"Clase 01"},
+  {hz:"高",py:"gāo",es:"Alto",src:"Clase 01"},
+  {hz:"矮",py:"ǎi",es:"Bajo (estatura)",src:"Clase 01"},
+  {hz:"胖",py:"pàng",es:"Gordo",src:"Clase 01"},
+  {hz:"瘦",py:"shòu",es:"Delgado",src:"Clase 01"},
+  {hz:"好吃",py:"hǎochī",es:"Delicioso",src:"Clase 01"},
+  {hz:"一点儿",py:"yìdiǎnr",es:"Un poquito",src:"Clase 01"},
+  {hz:"但是",py:"dànshì",es:"Pero",src:"Clase 01"},
+  // Clase 02
+  {hz:"画画",py:"huàhuà",es:"Pintar / dibujar",src:"Clase 02"},
+  {hz:"跳舞",py:"tiàowǔ",es:"Bailar",src:"Clase 02"},
+  {hz:"读",py:"dú",es:"Leer (en voz alta)",src:"Clase 02"},
+  {hz:"看书",py:"kànshū",es:"Leer un libro",src:"Clase 02"},
+  {hz:"学",py:"xué",es:"Aprender",src:"Clase 02"},
+  {hz:"学习",py:"xuéxí",es:"Estudiar",src:"Clase 02"},
+  {hz:"烧",py:"shāo",es:"Quemar / asar",src:"Clase 02"},
+  {hz:"生词",py:"shēngcí",es:"Vocabulario nuevo",src:"Clase 02"},
+  {hz:"会话",py:"huìhuà",es:"Conversación",src:"Clase 02"},
+  {hz:"练习",py:"liànxí",es:"Ejercicio / practicar",src:"Clase 02"},
+  {hz:"怎么",py:"zěnme",es:"¿Cómo?",src:"Clase 02"},
+  {hz:"对不起",py:"duìbuqǐ",es:"Lo siento",src:"Clase 02"},
+  {hz:"这个",py:"zhège",es:"Este / esto",src:"Clase 02"},
+  {hz:"字",py:"zì",es:"Carácter / letra",src:"Clase 02"},
+  {hz:"学生",py:"xuéshēng",es:"Estudiante",src:"Clase 02"},
+  {hz:"同学",py:"tóngxué",es:"Compañero de clase",src:"Clase 02"},
+  {hz:"学校",py:"xuéxiào",es:"Escuela",src:"Clase 02"},
+  {hz:"大学",py:"dàxué",es:"Universidad",src:"Clase 02"},
+  {hz:"种",py:"zhǒng",es:"Tipo / clase",src:"Clase 02"},
+  {hz:"运动",py:"yùndòng",es:"Deporte",src:"Clase 02"},
+  {hz:"动物",py:"dòngwù",es:"Animal",src:"Clase 02"},
+  {hz:"烧烤",py:"shāokǎo",es:"Asado / BBQ",src:"Clase 02"},
+  {hz:"好看",py:"hǎokàn",es:"Bonito",src:"Clase 02"},
+  {hz:"难看",py:"nánkàn",es:"Feo",src:"Clase 02"},
+  {hz:"难吃",py:"nánchī",es:"Asqueroso",src:"Clase 02"},
+  {hz:"好喝",py:"hǎohē",es:"Sabroso (bebida)",src:"Clase 02"},
+  {hz:"难喝",py:"nánhē",es:"Asqueroso (bebida)",src:"Clase 02"},
+  {hz:"好听",py:"hǎotīng",es:"Suena bien",src:"Clase 02"},
+  {hz:"难听",py:"nántīng",es:"Suena mal",src:"Clase 02"},
+  // Clase 03
+  {hz:"都",py:"dōu",es:"Todos / ambos",src:"Clase 03"},
+  {hz:"我们",py:"wǒmen",es:"Nosotros",src:"Clase 03"},
+  {hz:"您",py:"nín",es:"Usted (formal)",src:"Clase 03"},
+  {hz:"您们",py:"nínmen",es:"Ustedes (formal)",src:"Clase 03"},
+  {hz:"汉语名字",py:"hànyǔ míngzì",es:"Nombre chino",src:"Clase 03"},
+  {hz:"今天",py:"jīntiān",es:"Hoy",src:"Clase 03"},
+  {hz:"昨天",py:"zuótiān",es:"Ayer",src:"Clase 03"},
+  {hz:"明天",py:"míngtiān",es:"Mañana",src:"Clase 03"},
+  {hz:"月",py:"yuè",es:"Mes",src:"Clase 03"},
+  {hz:"号",py:"hào",es:"Día del mes",src:"Clase 03"},
+  {hz:"星期",py:"xīngqī",es:"Semana / día de la semana",src:"Clase 03"},
+  {hz:"几",py:"jǐ",es:"¿Cuántos? / ¿Cuál?",src:"Clase 03"},
+  {hz:"去",py:"qù",es:"Ir",src:"Clase 03"},
+  {hz:"看",py:"kàn",es:"Ver / mirar / leer",src:"Clase 03"},
+  {hz:"书",py:"shū",es:"Libro",src:"Clase 03"},
+  {hz:"问",py:"wèn",es:"Preguntar",src:"Clase 03"},
+  {hz:"请",py:"qǐng",es:"Por favor",src:"Clase 03"},
+  {hz:"请问",py:"qǐngwèn",es:"Disculpe (para preguntar)",src:"Clase 03"},
+  {hz:"呢",py:"ne",es:"¿Y tú? / ¿Y ___?",src:"Clase 03"},
+  {hz:"朋友",py:"péngyou",es:"Amigo",src:"Clase 03"},
+  {hz:"咖啡",py:"kāfēi",es:"Café",src:"Clase 03"},
+  {hz:"公园",py:"gōngyuán",es:"Parque",src:"Clase 03"},
+  {hz:"机场",py:"jīchǎng",es:"Aeropuerto",src:"Clase 03"},
+  {hz:"车站",py:"chēzhàn",es:"Estación",src:"Clase 03"},
+  {hz:"高兴",py:"gāoxìng",es:"Contento",src:"Clase 03"},
+  {hz:"欢迎",py:"huānyíng",es:"Bienvenido",src:"Clase 03"},
+  {hz:"开始",py:"kāishǐ",es:"Empezar",src:"Clase 03"},
+  {hz:"鸡蛋",py:"jīdàn",es:"Huevo",src:"Clase 03"},
+  {hz:"机会",py:"jīhuì",es:"Oportunidad",src:"Clase 03"},
+  {hz:"公司",py:"gōngsī",es:"Empresa",src:"Clase 03"},
+  {hz:"经理",py:"jīnglǐ",es:"Gerente",src:"Clase 03"},
+  {hz:"精彩",py:"jīngcǎi",es:"Genial / brillante",src:"Clase 03"},
+  {hz:"关心",py:"guānxīn",es:"Preocuparse",src:"Clase 03"},
+  {hz:"关于",py:"guānyú",es:"Acerca de",src:"Clase 03"},
+];
+
+function normalize(str) {
+  return str.toLowerCase()
+    .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
+    .replace(/[üǖǘǚǜ]/g, 'u');
+}
+
+function speak(text) {
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+function search(query) {
+  if (!query.trim()) return [];
+  const q = normalize(query.trim());
+  return vocab.filter(v =>
+    v.hz.includes(query) ||
+    normalize(v.py).includes(q) ||
+    normalize(v.es).includes(q)
+  );
+}
+
+function render(results, query) {
+  const container = document.getElementById('results');
+  if (!query.trim()) {
+    container.innerHTML = '<div class="empty">Escribe algo para buscar</div>';
+    return;
+  }
+  if (results.length === 0) {
+    container.innerHTML = '<div class="empty">No se encontró "' + query + '"</div>';
+    return;
+  }
+  let html = `<div class="result-count">${results.length} resultado${results.length > 1 ? 's' : ''}</div>`;
+  results.forEach(v => {
+    const link = `https://www.dong-chinese.com/wiki/${encodeURIComponent(v.hz.charAt(0))}`;
+    html += `<div class="result-card" onclick="speak('${v.hz}')">
+      <div class="r-hz"><a href="${link}" target="_blank" onclick="event.stopPropagation()">${v.hz}</a></div>
+      <div class="r-info">
+        <div class="r-py">${v.py}</div>
+        <div class="r-es">${v.es}</div>
+        <div class="r-source">${v.src}</div>
+      </div>
+      <button class="r-audio" onclick="event.stopPropagation(); speak('${v.hz}')">🔊</button>
+    </div>`;
+  });
+  container.innerHTML = html;
+}
+
+document.getElementById('searchInput').addEventListener('input', e => {
+  const results = search(e.target.value);
+  render(results, e.target.value);
+});
+</script>
+</body>
+</html>

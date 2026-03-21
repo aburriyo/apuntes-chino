@@ -43,6 +43,17 @@
   .ex ol { margin: 8px 0 0; padding-left: 22px; }
   .ex li { margin: 7px 0; }
   .blank { display: inline-block; min-width: 160px; border-bottom: 1px solid #999; }
+  /* Audio button */
+  .audio-btn { background: none; border: none; cursor: pointer; font-size: 1em; padding: 2px 4px; opacity: 0.5; transition: opacity .2s; vertical-align: middle; }
+  .audio-btn:hover { opacity: 1; }
+  /* Pinyin toggle */
+  .pinyin-toggle { position: fixed; bottom: 20px; right: 20px; background: #1a1a2e; color: #fff; border: none; padding: 10px 16px; border-radius: 30px; cursor: pointer; font-size: 0.85em; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,.25); transition: background .2s; }
+  .pinyin-toggle:hover { background: #c0392b; }
+  .hide-pinyin .pinyin-col { visibility: hidden; }
+  /* Print styles */
+  @media print {
+    .no-print, .pinyin-toggle, .audio-btn { display: none !important; }
+  }
   footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
 </style>
 </head>
@@ -73,33 +84,33 @@
   ✅ Afirmativo: <code>Sujeto + 会 + Verbo + Objeto</code><br>
   ❌ Negativo: <code>Sujeto + 不会 + Verbo + Objeto</code><br>
   ❓ Pregunta: <code>Sujeto + 会 + Verbo + Objeto + 吗？</code><br>
-  Respuesta: <span class="hz">会</span> (sí, sé) / <span class="hz">不会</span> (no, no sé)<br>
+  Respuesta: <span class="hz"><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a></span> (sí, sé) / <span class="hz"><a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a></span> (no, no sé)<br>
   🤏 Modesto/tierno: <code>Sujeto + 会 + 一点儿 (yìdiǎnr)</code> → Sé un poquito
 </div>
 
 <h3>🤏 会一点儿 — Sé un poquito (forma modesta/tierna)</h3>
 <div class="box note">
-  🔑 Agregar <span class="hz">一点儿</span> (yìdiǎnr) después de 会 suaviza la respuesta. Es más humilde y tierno, como decir "sé un poquito nada más".
+  🔑 Agregar <span class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/点" target="_blank">点</a><a href="https://www.dong-chinese.com/wiki/儿" target="_blank">儿</a></span> (yìdiǎnr) después de 会 suaviza la respuesta. Es más humilde y tierno, como decir "sé un poquito nada más".
 </div>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">我会一点儿。</td><td>Wǒ huì yìdiǎnr.</td><td>Sé un poquito.</td></tr>
-  <tr><td class="hz">我会说一点儿汉语。</td><td>Wǒ huì shuō yìdiǎnr Hànyǔ.</td><td>Sé hablar un poquito de chino.</td></tr>
-  <tr><td class="hz">我会写一点儿汉字。</td><td>Wǒ huì xiě yìdiǎnr Hànzì.</td><td>Sé escribir un poquito de caracteres.</td></tr>
-  <tr><td class="hz">我会做一点儿中国菜。</td><td>Wǒ huì zuò yìdiǎnr Zhōngguó cài.</td><td>Sé cocinar un poquito de comida china.</td></tr>
-  <tr><td class="hz">我会画一点儿画。</td><td>Wǒ huì huà yìdiǎnr huà.</td><td>Sé pintar/dibujar un poquito.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/点" target="_blank">点</a><a href="https://www.dong-chinese.com/wiki/儿" target="_blank">儿</a>。</td><td>Wǒ huì yìdiǎnr.</td><td>Sé un poquito.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/说" target="_blank">说</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/点" target="_blank">点</a><a href="https://www.dong-chinese.com/wiki/儿" target="_blank">儿</a><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/语" target="_blank">语</a>。</td><td>Wǒ huì shuō yìdiǎnr Hànyǔ.</td><td>Sé hablar un poquito de chino.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/点" target="_blank">点</a><a href="https://www.dong-chinese.com/wiki/儿" target="_blank">儿</a><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a>。</td><td>Wǒ huì xiě yìdiǎnr Hànzì.</td><td>Sé escribir un poquito de caracteres.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/点" target="_blank">点</a><a href="https://www.dong-chinese.com/wiki/儿" target="_blank">儿</a><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/国" target="_blank">国</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a>。</td><td>Wǒ huì zuò yìdiǎnr Zhōngguó cài.</td><td>Sé cocinar un poquito de comida china.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/点" target="_blank">点</a><a href="https://www.dong-chinese.com/wiki/儿" target="_blank">儿</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a>。</td><td>Wǒ huì huà yìdiǎnr huà.</td><td>Sé pintar/dibujar un poquito.</td></tr>
 </table>
 
 <h3>✅ Ejemplos afirmativo / negativo</h3>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">我会说汉语。</td><td>Wǒ huì shuō Hànyǔ.</td><td>Yo sé hablar chino.</td></tr>
-  <tr><td class="hz">我会写汉字。</td><td>Wǒ huì xiě Hànzì.</td><td>Yo sé escribir caracteres.</td></tr>
-  <tr><td class="hz">我会做饭。</td><td>Wǒ huì zuòfàn.</td><td>Yo sé cocinar.</td></tr>
-  <tr><td class="hz">我会游泳。</td><td>Wǒ huì yóuyǒng.</td><td>Yo sé nadar.</td></tr>
-  <tr><td class="hz">我会开车。</td><td>Wǒ huì kāichē.</td><td>Yo sé manejar.</td></tr>
-  <tr><td class="hz">我会唱歌。</td><td>Wǒ huì chànggē.</td><td>Yo sé cantar.</td></tr>
-  <tr><td class="hz">我不会做中国菜。</td><td>Wǒ bú huì zuò Zhōngguó cài.</td><td>No sé cocinar comida china.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/说" target="_blank">说</a><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/语" target="_blank">语</a>。</td><td>Wǒ huì shuō Hànyǔ.</td><td>Yo sé hablar chino.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a>。</td><td>Wǒ huì xiě Hànzì.</td><td>Yo sé escribir caracteres.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/饭" target="_blank">饭</a>。</td><td>Wǒ huì zuòfàn.</td><td>Yo sé cocinar.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/游" target="_blank">游</a><a href="https://www.dong-chinese.com/wiki/泳" target="_blank">泳</a>。</td><td>Wǒ huì yóuyǒng.</td><td>Yo sé nadar.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/开" target="_blank">开</a><a href="https://www.dong-chinese.com/wiki/车" target="_blank">车</a>。</td><td>Wǒ huì kāichē.</td><td>Yo sé manejar.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/唱" target="_blank">唱</a><a href="https://www.dong-chinese.com/wiki/歌" target="_blank">歌</a>。</td><td>Wǒ huì chànggē.</td><td>Yo sé cantar.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/国" target="_blank">国</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a>。</td><td>Wǒ bú huì zuò Zhōngguó cài.</td><td>No sé cocinar comida china.</td></tr>
 </table>
 
 <h3>❓ 你会 ___ 吗？ — ¿Sabes / puedes ___?</h3>
@@ -108,50 +119,50 @@
 </div>
 <table>
   <tr><th>Pregunta</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">你会说汉语吗？</td><td>Nǐ huì shuō Hànyǔ ma?</td><td>¿Sabes hablar chino?</td></tr>
-  <tr><td class="hz">你会写汉字吗？</td><td>Nǐ huì xiě Hànzì ma?</td><td>¿Sabes escribir caracteres?</td></tr>
-  <tr><td class="hz">你会做饭吗？</td><td>Nǐ huì zuòfàn ma?</td><td>¿Sabes cocinar?</td></tr>
-  <tr><td class="hz">你会游泳吗？</td><td>Nǐ huì yóuyǒng ma?</td><td>¿Sabes nadar?</td></tr>
-  <tr><td class="hz">你会开车吗？</td><td>Nǐ huì kāichē ma?</td><td>¿Sabes manejar?</td></tr>
-  <tr><td class="hz">你会唱歌吗？</td><td>Nǐ huì chànggē ma?</td><td>¿Sabes cantar?</td></tr>
-  <tr><td class="hz">你会弹吉他吗？</td><td>Nǐ huì tán jítā ma?</td><td>¿Sabes tocar guitarra?</td></tr>
-  <tr><td class="hz">你会跳舞吗？</td><td>Nǐ huì tiàowǔ ma?</td><td>¿Sabes bailar?</td></tr>
-  <tr><td class="hz">你会画画吗？</td><td>Nǐ huì huàhuà ma?</td><td>¿Sabes dibujar/pintar?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/说" target="_blank">说</a><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/语" target="_blank">语</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</td><td>Nǐ huì shuō Hànyǔ ma?</td><td>¿Sabes hablar chino?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</td><td>Nǐ huì xiě Hànzì ma?</td><td>¿Sabes escribir caracteres?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/饭" target="_blank">饭</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</td><td>Nǐ huì zuòfàn ma?</td><td>¿Sabes cocinar?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/游" target="_blank">游</a><a href="https://www.dong-chinese.com/wiki/泳" target="_blank">泳</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</td><td>Nǐ huì yóuyǒng ma?</td><td>¿Sabes nadar?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/开" target="_blank">开</a><a href="https://www.dong-chinese.com/wiki/车" target="_blank">车</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</td><td>Nǐ huì kāichē ma?</td><td>¿Sabes manejar?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/唱" target="_blank">唱</a><a href="https://www.dong-chinese.com/wiki/歌" target="_blank">歌</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</td><td>Nǐ huì chànggē ma?</td><td>¿Sabes cantar?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/弹" target="_blank">弹</a><a href="https://www.dong-chinese.com/wiki/吉" target="_blank">吉</a><a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</td><td>Nǐ huì tán jítā ma?</td><td>¿Sabes tocar guitarra?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/跳" target="_blank">跳</a><a href="https://www.dong-chinese.com/wiki/舞" target="_blank">舞</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</td><td>Nǐ huì tiàowǔ ma?</td><td>¿Sabes bailar?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</td><td>Nǐ huì huàhuà ma?</td><td>¿Sabes dibujar/pintar?</td></tr>
 </table>
 
 <h3>🎨 画画 (huàhuà) — Pintar / Dibujar</h3>
 <div class="box note">
-  🔑 <span class="hz">画</span> (huà) tiene doble función:<br>
-  • Como <strong>verbo</strong>: pintar, dibujar → <span class="hz">我会画。</span> (Sé pintar.)<br>
-  • Como <strong>sustantivo</strong>: pintura, dibujo → <span class="hz">这幅画很美。</span> (Esta pintura es muy bella.)<br><br>
-  <span class="hz">画画</span> (huàhuà) = verbo + objeto → literalmente "pintar pinturas". Forma completa y natural.
+  🔑 <span class="hz"><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a></span> (huà) tiene doble función:<br>
+  • Como <strong>verbo</strong>: pintar, dibujar → <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a>。</span> (Sé pintar.)<br>
+  • Como <strong>sustantivo</strong>: pintura, dibujo → <span class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/幅" target="_blank">幅</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/美" target="_blank">美</a>。</span> (Esta pintura es muy bella.)<br><br>
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a></span> (huàhuà) = verbo + objeto → literalmente "pintar pinturas". Forma completa y natural.
 </div>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">我会画画。</td><td>Wǒ huì huàhuà.</td><td>Yo sé pintar/dibujar.</td></tr>
-  <tr><td class="hz">我不会画画。</td><td>Wǒ bú huì huàhuà.</td><td>No sé pintar/dibujar.</td></tr>
-  <tr><td class="hz">她很会画画。</td><td>Tā hěn huì huàhuà.</td><td>Ella pinta/dibuja muy bien.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a>。</td><td>Wǒ huì huàhuà.</td><td>Yo sé pintar/dibujar.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a>。</td><td>Wǒ bú huì huàhuà.</td><td>No sé pintar/dibujar.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/她" target="_blank">她</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a>。</td><td>Tā hěn huì huàhuà.</td><td>Ella pinta/dibuja muy bien.</td></tr>
 </table>
 
 <h3>💃 跳舞 (tiàowǔ) — Bailar</h3>
 <div class="box note">
   🔑 Mismo patrón verbo + sustantivo:<br>
-  • <span class="hz">跳</span> (tiào) = <strong>saltar</strong> · <span class="hz">舞</span> (wǔ) = <strong>baile</strong><br>
-  • <span class="hz">跳舞</span> (tiàowǔ) = literalmente "saltar baile" → <strong>bailar</strong>
+  • <span class="hz"><a href="https://www.dong-chinese.com/wiki/跳" target="_blank">跳</a></span> (tiào) = <strong>saltar</strong> · <span class="hz"><a href="https://www.dong-chinese.com/wiki/舞" target="_blank">舞</a></span> (wǔ) = <strong>baile</strong><br>
+  • <span class="hz"><a href="https://www.dong-chinese.com/wiki/跳" target="_blank">跳</a><a href="https://www.dong-chinese.com/wiki/舞" target="_blank">舞</a></span> (tiàowǔ) = literalmente "saltar baile" → <strong>bailar</strong>
 </div>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">我会跳舞。</td><td>Wǒ huì tiàowǔ.</td><td>Yo sé bailar.</td></tr>
-  <tr><td class="hz">我不会跳舞。</td><td>Wǒ bú huì tiàowǔ.</td><td>No sé bailar.</td></tr>
-  <tr><td class="hz">她很会跳舞。</td><td>Tā hěn huì tiàowǔ.</td><td>Ella baila muy bien.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/跳" target="_blank">跳</a><a href="https://www.dong-chinese.com/wiki/舞" target="_blank">舞</a>。</td><td>Wǒ huì tiàowǔ.</td><td>Yo sé bailar.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/跳" target="_blank">跳</a><a href="https://www.dong-chinese.com/wiki/舞" target="_blank">舞</a>。</td><td>Wǒ bú huì tiàowǔ.</td><td>No sé bailar.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/她" target="_blank">她</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/跳" target="_blank">跳</a><a href="https://www.dong-chinese.com/wiki/舞" target="_blank">舞</a>。</td><td>Tā hěn huì tiàowǔ.</td><td>Ella baila muy bien.</td></tr>
 </table>
 
 <div class="box tip">
   💡 <strong>Patrón verbo + sustantivo:</strong> Muchos verbos en chino funcionan así:<br>
-  • <span class="hz">唱歌</span> (chànggē) = cantar (唱) + canción (歌)<br>
-  • <span class="hz">跳舞</span> (tiàowǔ) = saltar (跳) + baile (舞)<br>
-  • <span class="hz">画画</span> (huàhuà) = pintar (画) + pintura (画)<br>
-  • <span class="hz">做饭</span> (zuòfàn) = hacer (做) + comida (饭)
+  • <span class="hz"><a href="https://www.dong-chinese.com/wiki/唱" target="_blank">唱</a><a href="https://www.dong-chinese.com/wiki/歌" target="_blank">歌</a></span> (chànggē) = cantar (唱) + canción (歌)<br>
+  • <span class="hz"><a href="https://www.dong-chinese.com/wiki/跳" target="_blank">跳</a><a href="https://www.dong-chinese.com/wiki/舞" target="_blank">舞</a></span> (tiàowǔ) = saltar (跳) + baile (舞)<br>
+  • <span class="hz"><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a></span> (huàhuà) = pintar (画) + pintura (画)<br>
+  • <span class="hz"><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/饭" target="_blank">饭</a></span> (zuòfàn) = hacer (做) + comida (饭)
 </div>
 
 <!-- ═══════════════════════════════════════ -->
@@ -166,60 +177,60 @@
 <h3>Describir personas</h3>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">她很矮。</td><td>Tā hěn ǎi.</td><td>Ella es muy baja.</td></tr>
-  <tr><td class="hz">他很高。</td><td>Tā hěn gāo.</td><td>Él es muy alto.</td></tr>
-  <tr><td class="hz">她很瘦。</td><td>Tā hěn shòu.</td><td>Ella es muy delgada.</td></tr>
-  <tr><td class="hz">他很胖。</td><td>Tā hěn pàng.</td><td>Él es muy gordo.</td></tr>
-  <tr><td class="hz">她很漂亮。</td><td>Tā hěn piàoliang.</td><td>Ella es muy bonita.</td></tr>
-  <tr><td class="hz">他很帅。</td><td>Tā hěn shuài.</td><td>Él es muy guapo.</td></tr>
-  <tr><td class="hz">他很聪明。</td><td>Tā hěn cōngming.</td><td>Él es muy inteligente.</td></tr>
-  <tr><td class="hz">他不高。</td><td>Tā bù gāo.</td><td>Él no es alto.</td></tr>
-  <tr><td class="hz">她不丑。</td><td>Tā bù chǒu.</td><td>Ella no es fea.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/她" target="_blank">她</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/矮" target="_blank">矮</a>。</td><td>Tā hěn ǎi.</td><td>Ella es muy baja.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/高" target="_blank">高</a>。</td><td>Tā hěn gāo.</td><td>Él es muy alto.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/她" target="_blank">她</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/瘦" target="_blank">瘦</a>。</td><td>Tā hěn shòu.</td><td>Ella es muy delgada.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/胖" target="_blank">胖</a>。</td><td>Tā hěn pàng.</td><td>Él es muy gordo.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/她" target="_blank">她</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/漂" target="_blank">漂</a><a href="https://www.dong-chinese.com/wiki/亮" target="_blank">亮</a>。</td><td>Tā hěn piàoliang.</td><td>Ella es muy bonita.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/帅" target="_blank">帅</a>。</td><td>Tā hěn shuài.</td><td>Él es muy guapo.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/聪" target="_blank">聪</a><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a>。</td><td>Tā hěn cōngming.</td><td>Él es muy inteligente.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/高" target="_blank">高</a>。</td><td>Tā bù gāo.</td><td>Él no es alto.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/她" target="_blank">她</a><a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/丑" target="_blank">丑</a>。</td><td>Tā bù chǒu.</td><td>Ella no es fea.</td></tr>
 </table>
 
 <h3>👁️ 好看 (hǎokàn) — Bonito (para cosas)</h3>
 <div class="box grammar">
-  <span class="hz">好看</span> = <span class="hz">好</span> (bueno) + <span class="hz">看</span> (ver) → "bueno de ver" → <strong>bonito</strong>.<br>
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a></span> = <span class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a></span> (bueno) + <span class="hz"><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a></span> (ver) → "bueno de ver" → <strong>bonito</strong>.<br>
   Según la profesora: se usa más para <strong>cosas, películas, libros, ropa</strong>, no tanto para personas.
 </div>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">这个电影很好看。</td><td>Zhège diànyǐng hěn hǎokàn.</td><td>Esta película es muy buena.</td></tr>
-  <tr><td class="hz">这本书很好看。</td><td>Zhè běn shū hěn hǎokàn.</td><td>Este libro es muy bueno.</td></tr>
-  <tr><td class="hz">你的衣服很好看。</td><td>Nǐ de yīfu hěn hǎokàn.</td><td>Tu ropa es muy bonita.</td></tr>
-  <tr><td class="hz">这个不好看。</td><td>Zhège bù hǎokàn.</td><td>Esto no es bonito.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/电" target="_blank">电</a><a href="https://www.dong-chinese.com/wiki/影" target="_blank">影</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a>。</td><td>Zhège diànyǐng hěn hǎokàn.</td><td>Esta película es muy buena.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/本" target="_blank">本</a><a href="https://www.dong-chinese.com/wiki/书" target="_blank">书</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a>。</td><td>Zhè běn shū hěn hǎokàn.</td><td>Este libro es muy bueno.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/衣" target="_blank">衣</a><a href="https://www.dong-chinese.com/wiki/服" target="_blank">服</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a>。</td><td>Nǐ de yīfu hěn hǎokàn.</td><td>Tu ropa es muy bonita.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a>。</td><td>Zhège bù hǎokàn.</td><td>Esto no es bonito.</td></tr>
 </table>
 
 <h3>🍜 好吃 (hǎochī) — Delicioso</h3>
 <div class="box grammar">
-  <span class="hz">好吃</span> = <span class="hz">好</span> (bueno) + <span class="hz">吃</span> (comer) → "bueno de comer" → <strong>delicioso</strong>.
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a></span> = <span class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a></span> (bueno) + <span class="hz"><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a></span> (comer) → "bueno de comer" → <strong>delicioso</strong>.
 </div>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">中国菜很好吃。</td><td>Zhōngguó cài hěn hǎochī.</td><td>La comida china es muy deliciosa.</td></tr>
-  <tr><td class="hz">智利菜很好吃！</td><td>Zhìlì cài hěn hǎochī!</td><td>¡La comida chilena es muy deliciosa!</td></tr>
-  <tr><td class="hz">炒饭很好吃。</td><td>Chǎofàn hěn hǎochī.</td><td>El arroz frito es muy delicioso.</td></tr>
-  <tr><td class="hz">火锅很好吃。</td><td>Huǒguō hěn hǎochī.</td><td>El hot pot es muy delicioso.</td></tr>
-  <tr><td class="hz">包子好吃吗？</td><td>Bāozi hǎochī ma?</td><td>¿Los baozi son deliciosos?</td></tr>
-  <tr><td class="hz">中国菜不好吃。</td><td>Zhōngguó cài bù hǎochī.</td><td>La comida china no es deliciosa.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/国" target="_blank">国</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a>。</td><td>Zhōngguó cài hěn hǎochī.</td><td>La comida china es muy deliciosa.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/智" target="_blank">智</a><a href="https://www.dong-chinese.com/wiki/利" target="_blank">利</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a>！</td><td>Zhìlì cài hěn hǎochī!</td><td>¡La comida chilena es muy deliciosa!</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/炒" target="_blank">炒</a><a href="https://www.dong-chinese.com/wiki/饭" target="_blank">饭</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a>。</td><td>Chǎofàn hěn hǎochī.</td><td>El arroz frito es muy delicioso.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/火" target="_blank">火</a><a href="https://www.dong-chinese.com/wiki/锅" target="_blank">锅</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a>。</td><td>Huǒguō hěn hǎochī.</td><td>El hot pot es muy delicioso.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/包" target="_blank">包</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</td><td>Bāozi hǎochī ma?</td><td>¿Los baozi son deliciosos?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/国" target="_blank">国</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a><a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a>。</td><td>Zhōngguó cài bù hǎochī.</td><td>La comida china no es deliciosa.</td></tr>
 </table>
 
 <h3>🤢 好 vs 难 — Bueno vs Malo</h3>
 <div class="box grammar">
-  <span class="hz">难</span> (nán) = difícil / malo → es el <strong>opuesto</strong> de 好 cuando se combina con verbos.
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a></span> (nán) = difícil / malo → es el <strong>opuesto</strong> de 好 cuando se combina con verbos.
 </div>
 <table>
   <tr><th>好 (hǎo) — Bueno</th><th>难 (nán) — Malo</th></tr>
-  <tr><td class="hz">好吃 (hǎochī) — delicioso</td><td class="hz">难吃 (nánchī) — asqueroso</td></tr>
-  <tr><td class="hz">好看 (hǎokàn) — bonito</td><td class="hz">难看 (nánkàn) — feo</td></tr>
-  <tr><td class="hz">好喝 (hǎohē) — sabroso (bebida)</td><td class="hz">难喝 (nánhē) — asqueroso (bebida)</td></tr>
-  <tr><td class="hz">好听 (hǎotīng) — suena bien</td><td class="hz">难听 (nántīng) — suena mal</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a> (hǎochī) — delicioso</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a> (nánchī) — asqueroso</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a> (hǎokàn) — bonito</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a> (nánkàn) — feo</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a> (hǎohē) — sabroso (bebida)</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a> (nánhē) — asqueroso (bebida)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/听" target="_blank">听</a> (hǎotīng) — suena bien</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/听" target="_blank">听</a> (nántīng) — suena mal</td></tr>
 </table>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">这个菜很难吃。</td><td>Zhège cài hěn nánchī.</td><td>Este plato es muy feo/asqueroso.</td></tr>
-  <tr><td class="hz">这个电影很难看。</td><td>Zhège diànyǐng hěn nánkàn.</td><td>Esta película es muy mala.</td></tr>
-  <tr><td class="hz">这个歌很难听。</td><td>Zhège gē hěn nántīng.</td><td>Esta canción suena muy mal.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a>。</td><td>Zhège cài hěn nánchī.</td><td>Este plato es muy feo/asqueroso.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/电" target="_blank">电</a><a href="https://www.dong-chinese.com/wiki/影" target="_blank">影</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a>。</td><td>Zhège diànyǐng hěn nánkàn.</td><td>Esta película es muy mala.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/歌" target="_blank">歌</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/听" target="_blank">听</a>。</td><td>Zhège gē hěn nántīng.</td><td>Esta canción suena muy mal.</td></tr>
 </table>
 
 <!-- ═══════════════════════════════════════ -->
@@ -227,7 +238,7 @@
 <!-- ═══════════════════════════════════════ -->
 <h2 id="s3">3. 怎么 (zěnme) — ¿Cómo?</h2>
 <div class="box grammar">
-  <strong>Concepto importante:</strong> <span class="hz">怎么</span> (zěnme) siempre va <strong>antes de un verbo</strong>. Pregunta la manera o el método de hacer algo.
+  <strong>Concepto importante:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a></span> (zěnme) siempre va <strong>antes de un verbo</strong>. Pregunta la manera o el método de hacer algo.
 </div>
 <div class="box structure">
   Estructura: <code>Sujeto / Objeto + 怎么 + Verbo ？</code>
@@ -235,40 +246,40 @@
 
 <div class="box warn">
   ⚠️ 怎么 va <strong>antes</strong> del verbo, nunca después:<br>
-  ✅ <span class="hz">这个字怎么写？</span> (Correcto)<br>
-  ❌ <span class="hz">这个字写怎么？</span> (Incorrecto)
+  ✅ <span class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a>？</span> (Correcto)<br>
+  ❌ <span class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a>？</span> (Incorrecto)
 </div>
 
 <h3>怎么 + diferentes verbos</h3>
 <table>
   <tr><th>怎么 + Verbo</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">怎么写</td><td>zěnme xiě</td><td>¿Cómo se escribe?</td></tr>
-  <tr><td class="hz">怎么读</td><td>zěnme dú</td><td>¿Cómo se lee/pronuncia?</td></tr>
-  <tr><td class="hz">怎么说</td><td>zěnme shuō</td><td>¿Cómo se dice?</td></tr>
-  <tr><td class="hz">怎么做</td><td>zěnme zuò</td><td>¿Cómo se hace?</td></tr>
-  <tr><td class="hz">怎么去</td><td>zěnme qù</td><td>¿Cómo se va? / ¿Cómo llego?</td></tr>
-  <tr><td class="hz">怎么吃</td><td>zěnme chī</td><td>¿Cómo se come (esto)?</td></tr>
-  <tr><td class="hz">怎么用</td><td>zěnme yòng</td><td>¿Cómo se usa?</td></tr>
-  <tr><td class="hz">怎么学</td><td>zěnme xué</td><td>¿Cómo se aprende?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a></td><td>zěnme xiě</td><td>¿Cómo se escribe?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/读" target="_blank">读</a></td><td>zěnme dú</td><td>¿Cómo se lee/pronuncia?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/说" target="_blank">说</a></td><td>zěnme shuō</td><td>¿Cómo se dice?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a></td><td>zěnme zuò</td><td>¿Cómo se hace?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/去" target="_blank">去</a></td><td>zěnme qù</td><td>¿Cómo se va? / ¿Cómo llego?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a></td><td>zěnme chī</td><td>¿Cómo se come (esto)?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/用" target="_blank">用</a></td><td>zěnme yòng</td><td>¿Cómo se usa?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a></td><td>zěnme xué</td><td>¿Cómo se aprende?</td></tr>
 </table>
 
 <h3>Ejemplos en oraciones completas</h3>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">这个字怎么写？</td><td>Zhège zì zěnme xiě?</td><td>¿Cómo se escribe este carácter?</td></tr>
-  <tr><td class="hz">这个汉字怎么读？</td><td>Zhège Hànzì zěnme dú?</td><td>¿Cómo se lee este carácter?</td></tr>
-  <tr><td class="hz">这个怎么说？</td><td>Zhège zěnme shuō?</td><td>¿Cómo se dice esto?</td></tr>
-  <tr><td class="hz">你的名字怎么说？</td><td>Nǐ de míngzi zěnme shuō?</td><td>¿Cómo se dice/pronuncia tu nombre?</td></tr>
-  <tr><td class="hz">"hola"用汉语怎么说？</td><td>"Hola" yòng Hànyǔ zěnme shuō?</td><td>¿Cómo se dice "hola" en chino?</td></tr>
-  <tr><td class="hz">这个用汉语怎么说？</td><td>Zhège yòng Hànyǔ zěnme shuō?</td><td>¿Cómo se dice esto en chino?</td></tr>
-  <tr><td class="hz">这个菜怎么做？</td><td>Zhège cài zěnme zuò?</td><td>¿Cómo se cocina este plato?</td></tr>
-  <tr><td class="hz">汉语怎么学？</td><td>Hànyǔ zěnme xué?</td><td>¿Cómo se aprende chino?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a>？</td><td>Zhège zì zěnme xiě?</td><td>¿Cómo se escribe este carácter?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/读" target="_blank">读</a>？</td><td>Zhège Hànzì zěnme dú?</td><td>¿Cómo se lee este carácter?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/说" target="_blank">说</a>？</td><td>Zhège zěnme shuō?</td><td>¿Cómo se dice esto?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/名" target="_blank">名</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/说" target="_blank">说</a>？</td><td>Nǐ de míngzi zěnme shuō?</td><td>¿Cómo se dice/pronuncia tu nombre?</td></tr>
+  <tr><td class="hz">"hola"<a href="https://www.dong-chinese.com/wiki/用" target="_blank">用</a><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/语" target="_blank">语</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/说" target="_blank">说</a>？</td><td>"Hola" yòng Hànyǔ zěnme shuō?</td><td>¿Cómo se dice "hola" en chino?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/用" target="_blank">用</a><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/语" target="_blank">语</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/说" target="_blank">说</a>？</td><td>Zhège yòng Hànyǔ zěnme shuō?</td><td>¿Cómo se dice esto en chino?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a>？</td><td>Zhège cài zěnme zuò?</td><td>¿Cómo se cocina este plato?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/语" target="_blank">语</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a>？</td><td>Hànyǔ zěnme xué?</td><td>¿Cómo se aprende chino?</td></tr>
 </table>
 
 <div class="box tip">
   💡 <strong>Para preguntar el nombre es más natural usar:</strong><br>
-  <span class="hz">你叫什么名字？</span> (Nǐ jiào shénme míngzi?) — ¿Cómo te llamas?<br>
-  <span class="hz">你的名字怎么说？</span> es más como "¿cómo se pronuncia tu nombre?"
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/叫" target="_blank">叫</a><a href="https://www.dong-chinese.com/wiki/什" target="_blank">什</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/名" target="_blank">名</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a>？</span> (Nǐ jiào shénme míngzi?) — ¿Cómo te llamas?<br>
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/名" target="_blank">名</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/说" target="_blank">说</a>？</span> es más como "¿cómo se pronuncia tu nombre?"
 </div>
 
 <!-- ═══════════════════════════════════════ -->
@@ -279,41 +290,41 @@
 <h3>📚 学 (xué) — Aprender / Estudiar</h3>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th><th>Desglose</th></tr>
-  <tr><td class="hz">学生</td><td>xuéshēng</td><td>Estudiante</td><td>学 (estudiar) + 生 (persona)</td></tr>
-  <tr><td class="hz">同学</td><td>tóngxué</td><td>Compañero de clase</td><td>同 (mismo) + 学 (estudio)</td></tr>
-  <tr><td class="hz">学校</td><td>xuéxiào</td><td>Escuela</td><td>学 (estudio) + 校 (institución)</td></tr>
-  <tr><td class="hz">学习</td><td>xuéxí</td><td>Estudiar / aprender</td><td>学 (aprender) + 习 (practicar)</td></tr>
-  <tr><td class="hz">大学</td><td>dàxué</td><td>Universidad</td><td>大 (grande) + 学 (estudio)</td></tr>
-  <tr><td class="hz">中学</td><td>zhōngxué</td><td>Secundaria</td><td>中 (medio) + 学 (estudio)</td></tr>
-  <tr><td class="hz">小学</td><td>xiǎoxué</td><td>Primaria</td><td>小 (pequeño) + 学 (estudio)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/生" target="_blank">生</a></td><td>xuéshēng</td><td>Estudiante</td><td>学 (estudiar) + 生 (persona)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/同" target="_blank">同</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a></td><td>tóngxué</td><td>Compañero de clase</td><td>同 (mismo) + 学 (estudio)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/校" target="_blank">校</a></td><td>xuéxiào</td><td>Escuela</td><td>学 (estudio) + 校 (institución)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/习" target="_blank">习</a></td><td>xuéxí</td><td>Estudiar / aprender</td><td>学 (aprender) + 习 (practicar)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/大" target="_blank">大</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a></td><td>dàxué</td><td>Universidad</td><td>大 (grande) + 学 (estudio)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a></td><td>zhōngxué</td><td>Secundaria</td><td>中 (medio) + 学 (estudio)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a></td><td>xiǎoxué</td><td>Primaria</td><td>小 (pequeño) + 学 (estudio)</td></tr>
 </table>
 
 <h3>🏷️ 种 (zhǒng) — Tipo / Clase / Especie</h3>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">这种菜很好吃。</td><td>Zhè zhǒng cài hěn hǎochī.</td><td>Este tipo de comida es muy deliciosa.</td></tr>
-  <tr><td class="hz">哪种？</td><td>Nǎ zhǒng?</td><td>¿Qué tipo? / ¿Cuál?</td></tr>
-  <tr><td class="hz">很多种。</td><td>Hěn duō zhǒng.</td><td>Muchos tipos.</td></tr>
-  <tr><td class="hz">两种。</td><td>Liǎng zhǒng.</td><td>Dos tipos.</td></tr>
-  <tr><td class="hz">中国有很多种菜。</td><td>Zhōngguó yǒu hěn duō zhǒng cài.</td><td>China tiene muchos tipos de comida.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/种" target="_blank">种</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a>。</td><td>Zhè zhǒng cài hěn hǎochī.</td><td>Este tipo de comida es muy deliciosa.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/哪" target="_blank">哪</a><a href="https://www.dong-chinese.com/wiki/种" target="_blank">种</a>？</td><td>Nǎ zhǒng?</td><td>¿Qué tipo? / ¿Cuál?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/种" target="_blank">种</a>。</td><td>Hěn duō zhǒng.</td><td>Muchos tipos.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/两" target="_blank">两</a><a href="https://www.dong-chinese.com/wiki/种" target="_blank">种</a>。</td><td>Liǎng zhǒng.</td><td>Dos tipos.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/国" target="_blank">国</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/很" target="_blank">很</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/种" target="_blank">种</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a>。</td><td>Zhōngguó yǒu hěn duō zhǒng cài.</td><td>China tiene muchos tipos de comida.</td></tr>
 </table>
 
 <h3>🔥 动 (dòng) — Mover / Movimiento</h3>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th><th>Desglose</th></tr>
-  <tr><td class="hz">运动</td><td>yùndòng</td><td>Ejercicio / deporte</td><td>运 (transportar) + 动 (mover)</td></tr>
-  <tr><td class="hz">动物</td><td>dòngwù</td><td>Animal</td><td>动 (mover) + 物 (cosa/ser)</td></tr>
-  <tr><td class="hz">活动</td><td>huódòng</td><td>Actividad</td><td>活 (vivir) + 动 (mover)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/运" target="_blank">运</a><a href="https://www.dong-chinese.com/wiki/动" target="_blank">动</a></td><td>yùndòng</td><td>Ejercicio / deporte</td><td>运 (transportar) + 动 (mover)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/动" target="_blank">动</a><a href="https://www.dong-chinese.com/wiki/物" target="_blank">物</a></td><td>dòngwù</td><td>Animal</td><td>动 (mover) + 物 (cosa/ser)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/活" target="_blank">活</a><a href="https://www.dong-chinese.com/wiki/动" target="_blank">动</a></td><td>huódòng</td><td>Actividad</td><td>活 (vivir) + 动 (mover)</td></tr>
 </table>
 
 <h3>🍳 做 (zuò) — Hacer (muy versátil)</h3>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th></tr>
-  <tr><td class="hz">做饭</td><td>zuòfàn</td><td>Cocinar</td></tr>
-  <tr><td class="hz">做菜</td><td>zuòcài</td><td>Cocinar platos</td></tr>
-  <tr><td class="hz">做中国菜</td><td>zuò Zhōngguó cài</td><td>Cocinar comida china</td></tr>
-  <tr><td class="hz">做睫毛</td><td>zuò jiémáo</td><td>Hacerse las pestañas</td></tr>
-  <tr><td class="hz">做指甲</td><td>zuò zhǐjia</td><td>Hacerse las uñas</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/饭" target="_blank">饭</a></td><td>zuòfàn</td><td>Cocinar</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a></td><td>zuòcài</td><td>Cocinar platos</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/国" target="_blank">国</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a></td><td>zuò Zhōngguó cài</td><td>Cocinar comida china</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/睫" target="_blank">睫</a><a href="https://www.dong-chinese.com/wiki/毛" target="_blank">毛</a></td><td>zuò jiémáo</td><td>Hacerse las pestañas</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/指" target="_blank">指</a><a href="https://www.dong-chinese.com/wiki/甲" target="_blank">甲</a></td><td>zuò zhǐjia</td><td>Hacerse las uñas</td></tr>
 </table>
 <div class="box tip">
   💡 <strong>做 (zuò) es muy versátil:</strong> cocinar, hacer, procedimientos estéticos... todo es 做.
@@ -322,9 +333,9 @@
 <h3>🔥 烧 (shāo) — Quemar / Asar</h3>
 <table>
   <tr><th>Hanzi</th><th>Pinyin</th><th>Español</th><th>Desglose</th></tr>
-  <tr><td class="hz">烧</td><td>shāo</td><td>Quemar / asar</td><td>Cocción con fuego directo</td></tr>
-  <tr><td class="hz">烧烤</td><td>shāokǎo</td><td>Asado / BBQ</td><td>烧 (quemar) + 烤 (asar)</td></tr>
-  <tr><td class="hz">燃烧卡路里</td><td>ránshāo kǎlùlǐ</td><td>Quemar calorías</td><td>燃烧 (combustión) + 卡路里 (calorías)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/烧" target="_blank">烧</a></td><td>shāo</td><td>Quemar / asar</td><td>Cocción con fuego directo</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/烧" target="_blank">烧</a><a href="https://www.dong-chinese.com/wiki/烤" target="_blank">烤</a></td><td>shāokǎo</td><td>Asado / BBQ</td><td>烧 (quemar) + 烤 (asar)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/燃" target="_blank">燃</a><a href="https://www.dong-chinese.com/wiki/烧" target="_blank">烧</a><a href="https://www.dong-chinese.com/wiki/卡" target="_blank">卡</a><a href="https://www.dong-chinese.com/wiki/路" target="_blank">路</a><a href="https://www.dong-chinese.com/wiki/里" target="_blank">里</a></td><td>ránshāo kǎlùlǐ</td><td>Quemar calorías</td><td>燃烧 (combustión) + 卡路里 (calorías)</td></tr>
 </table>
 
 <!-- ═══════════════════════════════════════ -->
@@ -334,14 +345,14 @@
 
 <h3>Conversación 1: ¿Sabes escribir caracteres?</h3>
 <div class="dialog">
-  <div class="da"><strong>A:</strong> <span class="hz">你会写汉字吗？</span><br><em>Nǐ huì xiě Hànzì ma? — ¿Sabes escribir caracteres chinos?</em></div>
-  <div class="db"><strong>B:</strong> <span class="hz">我会写。</span><br><em>Wǒ huì xiě. — Sé escribir.</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a><a href="https://www.dong-chinese.com/wiki/吗" target="_blank">吗</a>？</span><br><em>Nǐ huì xiě Hànzì ma? — ¿Sabes escribir caracteres chinos?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a>。</span><br><em>Wǒ huì xiě. — Sé escribir.</em></div>
 </div>
 
 <h3>Conversación 2: ¿Cómo se escribe este carácter?</h3>
 <div class="dialog">
-  <div class="da"><strong>A:</strong> <span class="hz">这个字怎么写？</span><br><em>Zhège zì zěnme xiě? — ¿Cómo se escribe este carácter?</em></div>
-  <div class="db"><strong>B:</strong> <span class="hz">对不起，这个字我会读，不会写。</span><br><em>Duìbuqǐ, zhège zì wǒ huì dú, bú huì xiě. — Lo siento, este carácter sé leerlo, pero no sé escribirlo.</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a>？</span><br><em>Zhège zì zěnme xiě? — ¿Cómo se escribe este carácter?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/对" target="_blank">对</a><a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/起" target="_blank">起</a>，<a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/读" target="_blank">读</a>，<a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a>。</span><br><em>Duìbuqǐ, zhège zì wǒ huì dú, bú huì xiě. — Lo siento, este carácter sé leerlo, pero no sé escribirlo.</em></div>
 </div>
 
 <!-- ═══════════════════════════════════════ -->
@@ -351,48 +362,102 @@
 
 <table>
   <tr><th colspan="3" style="background:#555">🏃 Verbos nuevos</th></tr>
-  <tr><td class="hz">画画</td><td>huàhuà</td><td>Pintar / dibujar</td></tr>
-  <tr><td class="hz">跳舞</td><td>tiàowǔ</td><td>Bailar</td></tr>
-  <tr><td class="hz">读</td><td>dú</td><td>Leer (en voz alta)</td></tr>
-  <tr><td class="hz">看书</td><td>kànshū</td><td>Leer (un libro, en silencio)</td></tr>
-  <tr><td class="hz">学 / 学习</td><td>xué / xuéxí</td><td>Aprender / estudiar</td></tr>
-  <tr><td class="hz">做</td><td>zuò</td><td>Hacer (cocinar, pestañas, uñas...)</td></tr>
-  <tr><td class="hz">烧</td><td>shāo</td><td>Quemar / asar</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a><a href="https://www.dong-chinese.com/wiki/画" target="_blank">画</a></td><td>huàhuà</td><td>Pintar / dibujar</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/跳" target="_blank">跳</a><a href="https://www.dong-chinese.com/wiki/舞" target="_blank">舞</a></td><td>tiàowǔ</td><td>Bailar</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/读" target="_blank">读</a></td><td>dú</td><td>Leer (en voz alta)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a><a href="https://www.dong-chinese.com/wiki/书" target="_blank">书</a></td><td>kànshū</td><td>Leer (un libro, en silencio)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a> / <a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/习" target="_blank">习</a></td><td>xué / xuéxí</td><td>Aprender / estudiar</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a></td><td>zuò</td><td>Hacer (cocinar, pestañas, uñas...)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/烧" target="_blank">烧</a></td><td>shāo</td><td>Quemar / asar</td></tr>
   <tr><th colspan="3" style="background:#555">📖 Vocabulario de clase</th></tr>
-  <tr><td class="hz">生词</td><td>shēngcí</td><td>Palabra nueva / vocabulario nuevo</td></tr>
-  <tr><td class="hz">会话</td><td>huìhuà</td><td>Conversación / diálogo</td></tr>
-  <tr><td class="hz">练习</td><td>liànxí</td><td>Ejercicio / practicar</td></tr>
-  <tr><td class="hz">汉字</td><td>Hànzì</td><td>Caracteres chinos</td></tr>
-  <tr><td class="hz">写</td><td>xiě</td><td>Escribir</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/生" target="_blank">生</a><a href="https://www.dong-chinese.com/wiki/词" target="_blank">词</a></td><td>shēngcí</td><td>Palabra nueva / vocabulario nuevo</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/话" target="_blank">话</a></td><td>huìhuà</td><td>Conversación / diálogo</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/练" target="_blank">练</a><a href="https://www.dong-chinese.com/wiki/习" target="_blank">习</a></td><td>liànxí</td><td>Ejercicio / practicar</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/汉" target="_blank">汉</a><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a></td><td>Hànzì</td><td>Caracteres chinos</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/写" target="_blank">写</a></td><td>xiě</td><td>Escribir</td></tr>
   <tr><th colspan="3" style="background:#555">❓ Preguntas</th></tr>
-  <tr><td class="hz">怎么</td><td>zěnme</td><td>¿Cómo? (siempre antes del verbo)</td></tr>
-  <tr><td class="hz">对不起</td><td>duìbuqǐ</td><td>Lo siento / disculpa</td></tr>
-  <tr><td class="hz">这个</td><td>zhège</td><td>Este / esto</td></tr>
-  <tr><td class="hz">字</td><td>zì</td><td>Carácter / letra</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/怎" target="_blank">怎</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a></td><td>zěnme</td><td>¿Cómo? (siempre antes del verbo)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/对" target="_blank">对</a><a href="https://www.dong-chinese.com/wiki/不" target="_blank">不</a><a href="https://www.dong-chinese.com/wiki/起" target="_blank">起</a></td><td>duìbuqǐ</td><td>Lo siento / disculpa</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></td><td>zhège</td><td>Este / esto</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/字" target="_blank">字</a></td><td>zì</td><td>Carácter / letra</td></tr>
   <tr><th colspan="3" style="background:#555">📚 Familia de 学</th></tr>
-  <tr><td class="hz">学生</td><td>xuéshēng</td><td>Estudiante</td></tr>
-  <tr><td class="hz">同学</td><td>tóngxué</td><td>Compañero de clase</td></tr>
-  <tr><td class="hz">学校</td><td>xuéxiào</td><td>Escuela</td></tr>
-  <tr><td class="hz">大学 / 中学 / 小学</td><td>dàxué / zhōngxué / xiǎoxué</td><td>Universidad / Secundaria / Primaria</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/生" target="_blank">生</a></td><td>xuéshēng</td><td>Estudiante</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/同" target="_blank">同</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a></td><td>tóngxué</td><td>Compañero de clase</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/校" target="_blank">校</a></td><td>xuéxiào</td><td>Escuela</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/大" target="_blank">大</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a> / <a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a> / <a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a></td><td>dàxué / zhōngxué / xiǎoxué</td><td>Universidad / Secundaria / Primaria</td></tr>
   <tr><th colspan="3" style="background:#555">🤏 Expresiones</th></tr>
-  <tr><td class="hz">一点儿</td><td>yìdiǎnr</td><td>Un poquito (suaviza, más tierno/modesto)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/点" target="_blank">点</a><a href="https://www.dong-chinese.com/wiki/儿" target="_blank">儿</a></td><td>yìdiǎnr</td><td>Un poquito (suaviza, más tierno/modesto)</td></tr>
   <tr><th colspan="3" style="background:#555">🏷️ Clasificación</th></tr>
-  <tr><td class="hz">种</td><td>zhǒng</td><td>Tipo / clase / especie</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/种" target="_blank">种</a></td><td>zhǒng</td><td>Tipo / clase / especie</td></tr>
   <tr><th colspan="3" style="background:#555">🔥 Movimiento y actividad</th></tr>
-  <tr><td class="hz">运动</td><td>yùndòng</td><td>Ejercicio / deporte</td></tr>
-  <tr><td class="hz">动物</td><td>dòngwù</td><td>Animal</td></tr>
-  <tr><td class="hz">活动</td><td>huódòng</td><td>Actividad</td></tr>
-  <tr><td class="hz">烧烤</td><td>shāokǎo</td><td>Asado / BBQ</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/运" target="_blank">运</a><a href="https://www.dong-chinese.com/wiki/动" target="_blank">动</a></td><td>yùndòng</td><td>Ejercicio / deporte</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/动" target="_blank">动</a><a href="https://www.dong-chinese.com/wiki/物" target="_blank">物</a></td><td>dòngwù</td><td>Animal</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/活" target="_blank">活</a><a href="https://www.dong-chinese.com/wiki/动" target="_blank">动</a></td><td>huódòng</td><td>Actividad</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/烧" target="_blank">烧</a><a href="https://www.dong-chinese.com/wiki/烤" target="_blank">烤</a></td><td>shāokǎo</td><td>Asado / BBQ</td></tr>
   <tr><th colspan="3" style="background:#555">💅 Estética</th></tr>
-  <tr><td class="hz">睫毛</td><td>jiémáo</td><td>Pestañas</td></tr>
-  <tr><td class="hz">指甲</td><td>zhǐjia</td><td>Uñas</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/睫" target="_blank">睫</a><a href="https://www.dong-chinese.com/wiki/毛" target="_blank">毛</a></td><td>jiémáo</td><td>Pestañas</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/指" target="_blank">指</a><a href="https://www.dong-chinese.com/wiki/甲" target="_blank">甲</a></td><td>zhǐjia</td><td>Uñas</td></tr>
   <tr><th colspan="3" style="background:#555">🔤 好 vs 难</th></tr>
-  <tr><td class="hz">好吃 / 难吃</td><td>hǎochī / nánchī</td><td>Delicioso / asqueroso</td></tr>
-  <tr><td class="hz">好看 / 难看</td><td>hǎokàn / nánkàn</td><td>Bonito / feo</td></tr>
-  <tr><td class="hz">好喝 / 难喝</td><td>hǎohē / nánhē</td><td>Sabroso / asqueroso (bebida)</td></tr>
-  <tr><td class="hz">好听 / 难听</td><td>hǎotīng / nántīng</td><td>Suena bien / suena mal</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a> / <a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a></td><td>hǎochī / nánchī</td><td>Delicioso / asqueroso</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a> / <a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a></td><td>hǎokàn / nánkàn</td><td>Bonito / feo</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a> / <a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a></td><td>hǎohē / nánhē</td><td>Sabroso / asqueroso (bebida)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/好" target="_blank">好</a><a href="https://www.dong-chinese.com/wiki/听" target="_blank">听</a> / <a href="https://www.dong-chinese.com/wiki/难" target="_blank">难</a><a href="https://www.dong-chinese.com/wiki/听" target="_blank">听</a></td><td>hǎotīng / nántīng</td><td>Suena bien / suena mal</td></tr>
 </table>
 
+<!-- Botón toggle pinyin -->
+<button class="pinyin-toggle no-print" onclick="document.body.classList.toggle('hide-pinyin'); this.textContent = document.body.classList.contains('hide-pinyin') ? '👁️ Mostrar pinyin' : '🔤 Ocultar pinyin'">🔤 Ocultar pinyin</button>
+
+<script>
+// === Audio: Web Speech API ===
+function speak(text) {
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+// Agregar botones de audio a todas las celdas .hz en tablas
+document.querySelectorAll('td.hz').forEach(td => {
+  const text = td.textContent.replace(/[。？，！、：🔊]/g, '').trim();
+  if (text.length > 0) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    td.appendChild(btn);
+  }
+});
+// Agregar audio a diálogos
+document.querySelectorAll('.da .hz, .db .hz').forEach(span => {
+  const text = span.textContent.replace(/[。？，！、：🔊]/g, '').trim();
+  if (text.length > 0) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    span.after(btn);
+  }
+});
+// === Marcar columnas de pinyin para el toggle ===
+document.querySelectorAll('table').forEach(table => {
+  const ths = table.querySelectorAll('th');
+  let pinyinCol = -1;
+  ths.forEach((th, i) => { if (/pinyin/i.test(th.textContent)) pinyinCol = i; });
+  if (pinyinCol >= 0) {
+    table.querySelectorAll('tr').forEach(tr => {
+      const cells = tr.querySelectorAll('td, th');
+      if (cells[pinyinCol]) cells[pinyinCol].classList.add('pinyin-col');
+    });
+  }
+});
+</script>
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:36px; padding:16px 0; border-top:1px solid #eee;" class="no-print">
+  <a href="clase01.html" style="color:#c0392b; text-decoration:none; font-size:0.85em; font-weight:600;">← Clase 01</a>
+  <a href="/chino/basico2/" style="color:#c0392b; text-decoration:none; font-size:0.85em;">📚 Índice Básico 2</a>
+  <a href="clase03.html" style="color:#c0392b; text-decoration:none; font-size:0.85em; font-weight:600;">Clase 03 →</a>
+</div>
 <footer>Básico 2 Clase 02 · 14 mar 2026</footer>
 </body>
 </html>
