@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 1 — Capítulo 04 · Apuntes Chino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  :root {
+    --red: #c0392b; --dark: #1a1a2e; --gold: #d4820a;
+    --green: #27ae60; --blue: #2980b9; --purple: #8e44ad;
+    --bg: #fafafa; --text: #222; --muted: #888; --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; color: var(--text); font-size: 15px; background: var(--bg); }
+  header { background: var(--dark); color: #fff; padding: 28px 28px 22px; border-radius: 12px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6em; margin: 0 0 4px; color: var(--red); }
+  header p { margin: 0; color: #aaa; font-size: 0.88em; }
+  header a { color: var(--red); text-decoration: none; }
+  nav.toc { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  nav.toc h3 { margin: 0 0 10px; font-size: 0.82em; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  nav.toc ol { margin: 0; padding-left: 20px; }
+  nav.toc li { margin: 3px 0; font-size: 0.9em; }
+  nav.toc a { color: var(--red); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  h2 { font-size: 1.05em; color: #fff; padding: 10px 18px; border-radius: 8px; margin: 40px 0 16px; background: var(--red); }
+  h2.blue { background: var(--blue); }
+  h2.green { background: var(--green); }
+  h2.gold { background: var(--gold); }
+  h2.gray { background: #555; }
+  h2.purple { background: var(--purple); }
+  h3 { color: #444; font-size: 0.95em; margin: 18px 0 8px; border-left: 3px solid var(--red); padding-left: 10px; }
+  h4 { color: #555; font-size: 0.88em; margin: 12px 0 6px; }
+  p { margin: 8px 0; line-height: 1.6; }
+  .hz { font-size: 1.15em; font-weight: bold; color: var(--red); }
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.note { background: #e8f5e9; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.structure { background: #fdecea; border: 1.5px solid var(--red); }
+  .box.purple { background: #f3e5f5; border-left: 4px solid var(--purple); border-radius: 0 8px 8px 0; }
+  .box center { text-align: center; margin: 8px 0; }
+  .box code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.9em; }
+  .structure-formula { text-align: center; font-size: 1.2em; font-weight: bold; color: var(--red); margin: 8px 0; }
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; }
+  th { background: var(--red); color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .table-blue th { background: var(--blue); }
+  .table-green th { background: var(--green); }
+  .table-gold th { background: var(--gold); }
+  .table-purple th { background: var(--purple); }
+  .table-gray th { background: #555; }
+  .good { color: var(--green); }
+  .bad { color: var(--red); }
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid var(--border); padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .da strong, .db strong { font-size: 0.85em; color: #666; }
+  .voc { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin: 6px 0; }
+  .voc .hz { font-size: 1.3em; min-width: 80px; }
+  .voc .py { color: var(--blue); font-size: 0.9em; min-width: 120px; }
+  .voc .es { color: #555; font-size: 0.88em; flex: 1; }
+  .tones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .tone-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .tone-card .name { font-weight: bold; margin-bottom: 4px; }
+  .tone-card .example { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+  .tone-line { margin: 8px auto; width: 80px; height: 30px; position: relative; }
+  .super-good { color: var(--green); font-weight: bold; }
+  .super-bad { color: var(--red); font-weight: bold; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .day-label { background: #f0f0f0; color: #666; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 4px; display: inline-block; margin: 20px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .num-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 10px 0; }
+  .num-cell { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; text-align: center; }
+  .num-cell .hz { font-size: 1.3em; }
+  .num-cell .py { font-size: 0.75em; color: var(--muted); }
+  .audio-btn { background: none; border: none; cursor: pointer; font-size: 1em; padding: 2px 4px; opacity: 0.5; transition: opacity .2s; vertical-align: middle; }
+  .audio-btn:hover { opacity: 1; }
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
+  @media (max-width: 768px) {
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .tones { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .no-print, .audio-btn { display: none !important; }
+    body { background: #fff !important; padding: 10px 20px; font-size: 12px; }
+    header { background: var(--dark) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Básico 1 — Capítulo 04</h1>
+  <p>Nombres y Nacionalidades · Centro Cultural Chino · <a href="/chino/basico1/">← Volver al índice</a></p>
+</header>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#jiao">El Grito del Nombre: Jiào (叫)</a></li>
+    <li><a href="#paises">Vocabulario: Países (Guójiā 国家)</a></li>
+    <li><a href="#profesiones">Vocabulario: Profesiones (Zhíyè 职业)</a></li>
+  </ol>
+</nav>
+
+<h2 id="cap4" class="gold">4. Nombres y Nacionalidades</h2>
+
+<h3 id="jiao">El Grito del Nombre: Jiào (叫)</h3>
+<div class="box grammar">
+  <span class="hz">叫</span> = Boca (口) + Hilos (丩). <strong>Significado original:</strong> Gritar / Llamar en voz alta.<br>
+  ¿Por qué para el nombre? Antiguamente se tenía que "gritar" el nombre para identificarse a distancia.
+</div>
+
+<div class="box structure">
+  <div class="structure-formula"><span class="hz">你叫什么名字？</span></div>
+  <div style="text-align:center;color:#666"><em>Nǐ jiào shénme míngzi? — ¿Cómo te llamas?</em></div>
+  <br>
+  • <strong>你</strong> (Nǐ) = Tú · <strong>叫</strong> (Jiào) = Llamarse · <strong>什么</strong> (Shénme) = Qué · <strong>名字</strong> (Míngzi) = Nombre<br>
+  Traducción literal: <em>"¿Tú gritas qué nombre?"</em>
+</div>
+
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">你叫什么名字？</span> — Nǐ jiào shénme míngzi? — ¿Cómo te llamas?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">我叫 Bastián。</span> — Wǒ jiào Bastián. — Me llamo Bastián.</div>
+</div>
+
+<div class="box note">
+  💡 <strong>Forma alternativa más formal:</strong><br>
+  <span class="hz">我的名字是 Bastián</span> — Wǒ de míngzi shì Bastián — "Mi nombre es Bastián."
+</div>
+
+<h4>Diálogo de Identidad: ¿Eres Profesor?</h4>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">你是老师吗？</span> — Nǐ shì lǎoshī ma? — ¿Eres profesor?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">我不是老师，我是学生。</span> — Wǒ bú shì lǎoshī, wǒ shì xuésheng. — No soy profesor, soy estudiante.</div>
+</div>
+<div class="box tip">
+  💡 <span class="hz">是</span> (Shì) = Soy/Eres/Es (no cambia) · <span class="hz">不是</span> (Bú shì) = No ser · <span class="hz">吗</span> = Partícula de pregunta
+</div>
+
+<h4>Desglose de Míngzi (名字)</h4>
+<div class="box grammar">
+  <span class="hz">名</span> (Míng) = <span class="hz">口</span> (Boca) + <span class="hz">夕</span> (Tarde/Noche) → En la oscuridad tenías que <em>decir tu nombre con la boca</em>. "Boca en la oscuridad" = Nombre.<br><br>
+  <span class="hz">字</span> (Zi) = <span class="hz">宀</span> (Techo) + <span class="hz">子</span> (Niño) → "Parir bajo un techo". Los caracteres son como hijos que nacen y se multiplican.
+</div>
+
+<h3 id="paises">Vocabulario: Países (Guójiā 国家)</h3>
+<table>
+  <tr><th>País</th><th>Hanzi</th><th>Pinyin</th><th>Significado Literal</th></tr>
+  <tr><td>China</td><td><span class="hz">中国</span></td><td>Zhōngguó</td><td>Zhōng (中) = Centro. "País del Centro".</td></tr>
+  <tr><td>Japón</td><td><span class="hz">日本</span></td><td>Rìběn</td><td>Rì = Sol, Běn = Raíz. "Origen del Sol".</td></tr>
+  <tr><td>Corea</td><td><span class="hz">韩国</span></td><td>Hánguó</td><td>Hán (Fonético antiguo).</td></tr>
+  <tr><td>Alemania</td><td><span class="hz">德国</span></td><td>Déguó</td><td>Dé (德) = Virtud. "País de la Virtud".</td></tr>
+  <tr><td>Francia</td><td><span class="hz">法国</span></td><td>Fǎguó</td><td>Fǎ = Ley. "País de la Ley".</td></tr>
+  <tr><td>Inglaterra</td><td><span class="hz">英国</span></td><td>Yīngguó</td><td>Yīng = Valiente. "País Valiente".</td></tr>
+  <tr><td>España</td><td><span class="hz">西班牙</span></td><td>Xībānyá</td><td>Xī = Oeste. (Transliteración).</td></tr>
+  <tr><td>EE.UU.</td><td><span class="hz">美国</span></td><td>Měiguó</td><td>Měi = Hermoso. "País Hermoso".</td></tr>
+  <tr><td>México</td><td><span class="hz">墨西哥</span></td><td>Mòxīgē</td><td>Mò = Tinta. (Transliteración).</td></tr>
+  <tr><td><strong>Chile</strong></td><td><span class="hz">智利</span></td><td>Zhìlì</td><td><strong>Zhì = Sabiduría · Lì = Beneficio. "País de Sabiduría y Beneficio".</strong></td></tr>
+  <tr><td>Perú</td><td><span class="hz">秘鲁</span></td><td>Bìlǔ</td><td>Bì = Secreto.</td></tr>
+  <tr><td>Argentina</td><td><span class="hz">阿根廷</span></td><td>Āgēntíng</td><td>Transliteración.</td></tr>
+  <tr><td>Portugal</td><td><span class="hz">葡萄牙</span></td><td>Pútáoyá</td><td>Pútáo = Uva. "Diente de Uva".</td></tr>
+</table>
+
+<div class="box note">
+  🇨🇱 <strong>Yo soy chileno:</strong> <span class="hz" style="font-size:1.4em">我是智利人</span> — Wǒ shì Zhìlì rén
+</div>
+
+<h3 id="profesiones">Vocabulario: Profesiones (Zhíyè 职业)</h3>
+<table>
+  <tr><th>Profesión</th><th>Hanzi</th><th>Pinyin</th><th>Significado</th></tr>
+  <tr><td>Profesor</td><td><span class="hz">老师</span></td><td>Lǎoshī</td><td>Lǎo = Viejo (Sabio) + Shī = Maestro.</td></tr>
+  <tr><td>Enfermero/a</td><td><span class="hz">护士</span></td><td>Hùshi</td><td>"Erudito que protege".</td></tr>
+  <tr><td>Chef</td><td><span class="hz">厨师</span></td><td>Chúshī</td><td>"Maestro de la Cocina".</td></tr>
+  <tr><td>Arquitecto</td><td><span class="hz">建筑师</span></td><td>Jiànzhùshī</td><td>"Maestro de la Construcción".</td></tr>
+  <tr><td>Empleado</td><td><span class="hz">职员</span></td><td>Zhíyuán</td><td>"Oficinista/Funcionario".</td></tr>
+  <tr><td>Chofer</td><td><span class="hz">司机</span></td><td>Sījī</td><td>Sī = Controlar + Jī = Máquina.</td></tr>
+  <tr><td>Secretaria</td><td><span class="hz">秘书</span></td><td>Mìshū</td><td>Mì = Secreto + Shū = Libro.</td></tr>
+  <tr><td>Guardia</td><td><span class="hz">保安</span></td><td>Bǎo'ān</td><td>Bǎo = Proteger + Ān = Paz.</td></tr>
+  <tr><td>Jefe</td><td><span class="hz">老板</span></td><td>Lǎobǎn</td><td>"Viejo Dueño".</td></tr>
+</table>
+
+<h4>Estructura SVO y ¿Qué haces?</h4>
+<div class="box structure">
+  <div class="structure-formula">Sujeto + Verbo + Objeto</div>
+  Orden idéntico al español. Sin conjugación verbal.
+</div>
+<div class="box grammar">
+  <strong>Zuò (做) — Hacer / Dedicarse a</strong><br>
+  • <span class="hz">你做什么？</span> (Nǐ zuò shénme?) — ¿Qué haces? / ¿En qué trabajas?<br>
+  • <span class="hz">你做什么职业？</span> (Nǐ zuò shénme zhíyè?) — ¿Qué profesión tienes?
+</div>
+
+<h4>Los Dos Grandes Interrogativos</h4>
+<table>
+  <tr><th>Interrogativo</th><th>Uso</th><th>Ejemplo</th></tr>
+  <tr><td><span class="hz">什么</span> Shénme — ¿Qué?</td><td>Identidad o tipo de cosa</td><td><span class="hz">这是什么？</span> ¿Qué es esto?</td></tr>
+  <tr><td><span class="hz">怎么</span> Zěnme — ¿Cómo?</td><td>Método, manera, proceso</td><td><span class="hz">怎么说？</span> ¿Cómo se dice?</td></tr>
+</table>
+
+<h4>Habilidades Lingüísticas: Shuō (说)</h4>
+<div class="voc"><span class="hz">汉语</span><span class="py">Hànyǔ</span><span class="es">Chino (Lengua Han)</span></div>
+<div class="voc"><span class="hz">英语</span><span class="py">Yīngyǔ</span><span class="es">Inglés (Yīng = Valiente, de Inglaterra)</span></div>
+<div class="voc"><span class="hz">西班牙语</span><span class="py">Xībānyáyǔ</span><span class="es">Español (Abrev: Xīyǔ)</span></div>
+
+<!-- ==================== CAPÍTULO 5 ==================== -->
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:36px; padding:16px 0; border-top:1px solid #eee;" class="no-print">
+  <a href="cap03.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">← Cap 03</a>
+  <a href="/chino/basico1/" style="color:var(--red); text-decoration:none; font-size:0.85em;">📚 Índice Básico 1</a>
+  <a href="cap05.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">Cap 05 →</a>
+</div>
+<footer>Básico 1 Capítulo 04 · Centro Cultural Chino</footer>
+
+<script>
+const AUDIO_BASE = '/chino/audio/';
+const audioMap = {
+  "不是": "zh_046f5a050a.mp3",
+  "中国": "zh_c13dceabcb.mp3",
+  "什么": "zh_736ccbe560.mp3",
+  "你做什么职业？": "zh_292321e53f.mp3",
+  "你做什么？": "zh_efe14fe153.mp3",
+  "你叫什么名字？": "zh_dcdedf4368.mp3",
+  "你是老师吗？": "zh_ef51d8d7fe.mp3",
+  "保安": "zh_974d8c7e28.mp3",
+  "厨师": "zh_19daf821e0.mp3",
+  "口": "zh_c941757431.mp3",
+  "叫": "zh_27ead3ff93.mp3",
+  "司机": "zh_7094b0e116.mp3",
+  "名": "zh_4f8ca95e7b.mp3",
+  "吗": "zh_2988084a74.mp3",
+  "墨西哥": "zh_f850343d33.mp3",
+  "夕": "zh_47e0d0f6fe.mp3",
+  "子": "zh_ff6ae520d1.mp3",
+  "字": "zh_a95dbb0ea4.mp3",
+  "宀": "zh_5173c2fd88.mp3",
+  "建筑师": "zh_b1203becf0.mp3",
+  "德国": "zh_ce40978395.mp3",
+  "怎么": "zh_786df56259.mp3",
+  "怎么说？": "zh_c8760d7c2b.mp3",
+  "我不是老师，我是学生。": "zh_7ebaedd335.mp3",
+  "我叫 Bastián。": "zh_8f98ca9cbc.mp3",
+  "我的名字是 Bastián": "zh_88ada24606.mp3",
+  "护士": "zh_f12b8cc82e.mp3",
+  "日本": "zh_4dbed2e657.mp3",
+  "是": "是_0a60ac8f02.mp3",
+  "智利": "zh_45f765d510.mp3",
+  "汉语": "zh_25cf96268e.mp3",
+  "法国": "zh_f5818fdf08.mp3",
+  "秘书": "zh_cafefe9c15.mp3",
+  "秘鲁": "zh_1a20174689.mp3",
+  "美国": "zh_1efc978309.mp3",
+  "老师": "zh_295af37e05.mp3",
+  "老板": "zh_db3ac57de8.mp3",
+  "职员": "zh_760ba4ddfc.mp3",
+  "英国": "zh_a6bb21be9f.mp3",
+  "英语": "zh_4145d4c179.mp3",
+  "葡萄牙": "zh_127a3e2b68.mp3",
+  "西班牙": "zh_ad7318c3ee.mp3",
+  "西班牙语": "zh_d43fa13960.mp3",
+  "这是什么？": "zh_7035a8518c.mp3",
+  "阿根廷": "zh_eaa5fa27a1.mp3",
+  "韩国": "zh_09540e050d.mp3"
+};
+
+function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+// Audio buttons for .hz spans
+document.querySelectorAll('.hz').forEach(el => {
+  const text = el.textContent.trim();
+  if (text.length > 0 && text.length <= 30) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    el.after(btn);
+  }
+});
+</script>
+</body>
+</html>

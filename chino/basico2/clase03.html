@@ -953,16 +953,178 @@
 <!-- HanziWriter CDN -->
 <script src="https://cdn.jsdelivr.net/npm/hanzi-writer@3.5/dist/hanzi-writer.min.js"></script>
 <script>
-// === Audio: Web Speech API ===
+// === Audio: ElevenLabs MP3 con fallback a Web Speech API ===
+const AUDIO_BASE = '/chino/audio/';
+const audioMap = {
+  "一月": "一月_43bc301e73.mp3",
+  "七月": "七月_328dcec7ed.mp3",
+  "三月": "三月_eade91dc00.mp3",
+  "不": "zh_9eba1ab697.mp3",
+  "中国菜": "zh_fec5eacd0a.mp3",
+  "中国菜不好吃。": "zh_847f80a0b2.mp3",
+  "中国菜很好吃。": "zh_59247252d8.mp3",
+  "中国菜很难吃。": "zh_f8b5d72287.mp3",
+  "九月": "九月_cd9559ebaf.mp3",
+  "书": "zh_2f3703e427.mp3",
+  "二月": "二月_b61c626886.mp3",
+  "五月": "五月_cd474e4125.mp3",
+  "人": "zh_465afe3c11.mp3",
+  "今天": "今天_800dfdd902.mp3",
+  "今天jīntiān · hoy": "zh_78ed0c9012.mp3",
+  "今天三月二十一号。": "zh_180ab7fe9e.mp3",
+  "今天二十一号。": "zh_bef02511e2.mp3",
+  "今天几号？": "zh_0aeb8a0ed9.mp3",
+  "今天星期五。": "zh_87cde2bb77.mp3",
+  "今天星期几？": "今天星期几_8edc304656.mp3",
+  "今年jīnnián · este año": "zh_d979c6668f.mp3",
+  "他": "zh_5fe86c60de.mp3",
+  "们": "zh_888632a45d.mp3",
+  "会": "zh_647477bbc5.mp3",
+  "会，我会写。": "zh_155d423546.mp3",
+  "你": "zh_df1fd91011.mp3",
+  "你 (nǐ) — tú": "zh_90f9fca976.mp3",
+  "你们 (nǐmen) — ustedes": "zh_a0c4baf84e.mp3",
+  "你会写你的汉语名字吗？": "zh_c6ae1ebb22.mp3",
+  "你去学校做什么？": "zh_8b5694bac8.mp3",
+  "你好": "zh_7eca689f0d.mp3",
+  "你有汉语名字吗？": "zh_6a55e6c5b1.mp3",
+  "你的汉语名字是什么？": "zh_da6cbe946a.mp3",
+  "做": "zh_7105106a36.mp3",
+  "八月": "八月_b7263939ac.mp3",
+  "公司gōngsī · empresa": "zh_0bc7831b1a.mp3",
+  "公园": "zh_249bdde955.mp3",
+  "六月": "六月_dc71b73f68.mp3",
+  "关于guānyú · acerca de": "zh_c029a6a21c.mp3",
+  "关心guānxīn · preocuparse": "zh_c00384a942.mp3",
+  "几": "几_28fef849a6.mp3",
+  "刚才gāngcái · recién": "zh_f35d32e148.mp3",
+  "刮风guā fēng · ventoso": "zh_17a2aedfa9.mp3",
+  "十一月": "十一月_4e04f1a9c3.mp3",
+  "十二月": "十二月_5c28133800.mp3",
+  "十月": "十月_ade2e82d67.mp3",
+  "去": "zh_dfb9366c91.mp3",
+  "号": "号_f7b3204e43.mp3",
+  "合体结构": "zh_736e252de7.mp3",
+  "呢": "呢_65ac5a7b15.mp3",
+  "咖啡": "zh_a761914f97.mp3",
+  "四月": "四月_5178fda8e7.mp3",
+  "国家guójiā · país": "zh_8181abcb37.mp3",
+  "她": "zh_92f3ca76d5.mp3",
+  "好吃": "zh_a78e4f228b.mp3",
+  "好听": "zh_cb6545b820.mp3",
+  "好喝": "zh_d88ae0ebbb.mp3",
+  "好看": "zh_8c32c77d90.mp3",
+  "学校": "zh_413b738061.mp3",
+  "年轻niánqīng · joven": "zh_5b66b67cc6.mp3",
+  "年龄niánlíng · edad": "zh_88fcd280f9.mp3",
+  "开始kāishǐ · empezar": "zh_37f8b30841.mp3",
+  "您": "zh_6e2d1fbf23.mp3",
+  "您 (nín) — usted": "zh_dfaff562dc.mp3",
+  "您们": "zh_5182039a5a.mp3",
+  "您们 (nínmen) — ustedes (formal)": "zh_e95d8f8b87.mp3",
+  "我不有": "zh_e4b6d937b6.mp3",
+  "我们": "zh_ab4a85fc2e.mp3",
+  "我们 (wǒmen) — nosotros": "zh_c9cbe60904.mp3",
+  "我们不会": "zh_e2a7e4697d.mp3",
+  "我们不会说汉语。": "zh_3e2cbcff98.mp3",
+  "我们去吃中国菜。": "zh_ecddd64aeb.mp3",
+  "我们都会写汉字。": "zh_03038f5a4a.mp3",
+  "我们都会说汉语。": "zh_689545cf6e.mp3",
+  "我们都有汉语名字。": "zh_6eac50f535.mp3",
+  "我去学习汉语。": "zh_3fa021c338.mp3",
+  "我去学校。": "zh_360c06ccff.mp3",
+  "我去学校看书。": "zh_ba6999e167.mp3",
+  "我有汉语名字。": "zh_9ef9a9ca86.mp3",
+  "我没有": "zh_51e1213aaf.mp3",
+  "我没有汉语名字。": "zh_d8a6164c55.mp3",
+  "我的汉语名字是巴斯帝。": "zh_4242231dff.mp3",
+  "操场cāochǎng · cancha": "zh_01e7028481.mp3",
+  "明天": "明天_8bcbd77d1f.mp3",
+  "明天míngtiān · mañana": "zh_7949ce2b0a.mp3",
+  "明天呢？": "明天呢_66b8434ed2.mp3",
+  "明天星期六，你去学校吗？": "zh_a7bd5b8f99.mp3",
+  "星期": "星期_9e71cf606e.mp3",
+  "星期一": "星期一_5ce438210f.mp3",
+  "星期三": "星期三_711d996d87.mp3",
+  "星期二": "星期二_34e5216bc3.mp3",
+  "星期五": "星期五_450ea3af46.mp3",
+  "星期五。": "zh_88ae6a472e.mp3",
+  "星期六": "星期六_1ae72f6826.mp3",
+  "星期四": "星期四_3df6af796b.mp3",
+  "星期天": "星期天_2ff46ae697.mp3",
+  "星期日": "星期日_67b19578d0.mp3",
+  "星期日 / 天": "zh_8482a3ce59.mp3",
+  "昨天": "昨天_2f8d6f1584.mp3",
+  "昨天zuótiān · ayer": "zh_0ff024583a.mp3",
+  "昨天是几月几号？": "昨天是几月几_8d6a286f0e.mp3",
+  "月": "月_e42b99d599.mp3",
+  "有": "zh_cc4ad2fd27.mp3",
+  "有。/ 没有。": "zh_acc0ef2b49.mp3",
+  "有，我的汉语名字是巴斯帝。": "zh_43d06ec1bf.mp3",
+  "朋友": "zh_9d53230a95.mp3",
+  "机会jīhuì · oportunidad": "zh_34836cc10c.mp3",
+  "机场": "zh_9fb66e93bc.mp3",
+  "楼房lóufáng · edificio": "zh_8c1c612c08.mp3",
+  "欢迎huānyíng · bienvenido": "zh_e0765c52dd.mp3",
+  "汉": "zh_cadf00a8be.mp3",
+  "汉语名字": "zh_e1618991ad.mp3",
+  "没": "zh_3672c6af97.mp3",
+  "河": "zh_5ea03ddf50.mp3",
+  "海": "zh_9aa7f82989.mp3",
+  "游戏yóuxì · videojuego": "zh_de30fed707.mp3",
+  "游泳yóuyǒng · nadar": "zh_5e629c017b.mp3",
+  "牛奶niúnǎi · leche": "zh_d466117623.mp3",
+  "牛肉niú ròu · carne": "zh_a610e5181c.mp3",
+  "独体结构": "zh_14629bba89.mp3",
+  "环境huánjìng · ambiente": "zh_9bc7761107.mp3",
+  "看": "zh_9302446f9b.mp3",
+  "看书": "zh_e3ccf0942c.mp3",
+  "篮球lánqiú · basquet": "zh_44fb02a302.mp3",
+  "精彩jīngcǎi · genial": "zh_1f89fd5aec.mp3",
+  "经理jīnglǐ · gerente": "zh_a6b44bdaab.mp3",
+  "苹果píngguǒ · manzana": "zh_14e23e253c.mp3",
+  "认": "zh_33c2f1378a.mp3",
+  "让": "zh_167bb5dcc6.mp3",
+  "语": "zh_94441e69c7.mp3",
+  "说": "zh_ddc9d3d10d.mp3",
+  "请": "zh_d1a34a5779.mp3",
+  "请问": "请问_3bba2fed97.mp3",
+  "请问，今天几号？": "请问今天几号_e816580ef3.mp3",
+  "谁": "zh_cfbafdf1d6.mp3",
+  "车票chēpiào · boleto": "zh_5b664bfce0.mp3",
+  "车站": "zh_9726ca980a.mp3",
+  "这个汉字": "zh_7c36c8035c.mp3",
+  "这个汉字我会写，也会读。": "zh_6bb436f844.mp3",
+  "这个汉字我会读，不会写。": "zh_7c1443c12f.mp3",
+  "都": "zh_de44f194cf.mp3",
+  "酒": "zh_811ba9ddbf.mp3",
+  "长城Chángchéng · Gran Muralla": "zh_e947232e7a.mp3",
+  "问": "zh_57fe12bfc3.mp3",
+  "难吃": "zh_55a4a87609.mp3",
+  "难听": "zh_08e0d03d3f.mp3",
+  "难喝": "zh_45435e7b2a.mp3",
+  "难看": "zh_6ba6ea4b5b.mp3",
+  "韩剧hánjià · vacaciones": "zh_0749d24c48.mp3",
+  "高兴gāoxìng · contento": "zh_fbe7b9eb3b.mp3",
+  "鸡蛋jīdàn · huevo": "zh_b86d60509f.mp3"
+};
+
 function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
   const u = new SpeechSynthesisUtterance(text);
   u.lang = 'zh-CN';
   u.rate = 0.8;
   speechSynthesis.speak(u);
 }
+
 // Agregar botones de audio a todas las celdas .hz en tablas
 document.querySelectorAll('td.hz').forEach(td => {
-  const text = td.textContent.replace(/[。？，！、：]/g, '').trim();
+  const text = td.textContent.trim();
   if (text.length > 0) {
     const btn = document.createElement('button');
     btn.className = 'audio-btn';
@@ -972,9 +1134,9 @@ document.querySelectorAll('td.hz').forEach(td => {
     td.appendChild(btn);
   }
 });
-// Agregar audio a diálogos
+// Agregar audio a dialogos
 document.querySelectorAll('.da .hz, .db .hz').forEach(span => {
-  const text = span.textContent.replace(/[。？，！、：]/g, '').trim();
+  const text = span.textContent.trim();
   if (text.length > 0) {
     const btn = document.createElement('button');
     btn.className = 'audio-btn';
@@ -996,32 +1158,6 @@ document.querySelectorAll('table').forEach(table => {
       if (cells[pinyinCol]) cells[pinyinCol].classList.add('pinyin-col');
     });
   }
-});
-
-// === HanziWriter en character cards ===
-document.querySelectorAll('.char-card').forEach(card => {
-  const charEl = card.querySelector('.big-char a');
-  if (!charEl) return;
-  const char = charEl.textContent.trim();
-  if (char.length !== 1) return;
-  const container = document.createElement('div');
-  container.className = 'hw-container';
-  const target = document.createElement('div');
-  container.appendChild(target);
-  card.appendChild(container);
-  try {
-    const writer = HanziWriter.create(target, char, {
-      width: 60, height: 60,
-      padding: 3,
-      strokeAnimationSpeed: 1,
-      delayBetweenStrokes: 300,
-      strokeColor: '#c0392b',
-      radicalColor: '#2980b9',
-      showOutline: true
-    });
-    card.addEventListener('click', () => writer.animateCharacter());
-    writer.animateCharacter();
-  } catch(e) {}
 });
 </script>
 

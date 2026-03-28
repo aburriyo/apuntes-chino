@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 1 — Capítulo 02 · Apuntes Chino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  :root {
+    --red: #c0392b; --dark: #1a1a2e; --gold: #d4820a;
+    --green: #27ae60; --blue: #2980b9; --purple: #8e44ad;
+    --bg: #fafafa; --text: #222; --muted: #888; --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; color: var(--text); font-size: 15px; background: var(--bg); }
+  header { background: var(--dark); color: #fff; padding: 28px 28px 22px; border-radius: 12px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6em; margin: 0 0 4px; color: var(--red); }
+  header p { margin: 0; color: #aaa; font-size: 0.88em; }
+  header a { color: var(--red); text-decoration: none; }
+  nav.toc { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  nav.toc h3 { margin: 0 0 10px; font-size: 0.82em; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  nav.toc ol { margin: 0; padding-left: 20px; }
+  nav.toc li { margin: 3px 0; font-size: 0.9em; }
+  nav.toc a { color: var(--red); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  h2 { font-size: 1.05em; color: #fff; padding: 10px 18px; border-radius: 8px; margin: 40px 0 16px; background: var(--red); }
+  h2.blue { background: var(--blue); }
+  h2.green { background: var(--green); }
+  h2.gold { background: var(--gold); }
+  h2.gray { background: #555; }
+  h2.purple { background: var(--purple); }
+  h3 { color: #444; font-size: 0.95em; margin: 18px 0 8px; border-left: 3px solid var(--red); padding-left: 10px; }
+  h4 { color: #555; font-size: 0.88em; margin: 12px 0 6px; }
+  p { margin: 8px 0; line-height: 1.6; }
+  .hz { font-size: 1.15em; font-weight: bold; color: var(--red); }
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.note { background: #e8f5e9; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.structure { background: #fdecea; border: 1.5px solid var(--red); }
+  .box.purple { background: #f3e5f5; border-left: 4px solid var(--purple); border-radius: 0 8px 8px 0; }
+  .box center { text-align: center; margin: 8px 0; }
+  .box code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.9em; }
+  .structure-formula { text-align: center; font-size: 1.2em; font-weight: bold; color: var(--red); margin: 8px 0; }
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; }
+  th { background: var(--red); color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .table-blue th { background: var(--blue); }
+  .table-green th { background: var(--green); }
+  .table-gold th { background: var(--gold); }
+  .table-purple th { background: var(--purple); }
+  .table-gray th { background: #555; }
+  .good { color: var(--green); }
+  .bad { color: var(--red); }
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid var(--border); padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .da strong, .db strong { font-size: 0.85em; color: #666; }
+  .voc { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin: 6px 0; }
+  .voc .hz { font-size: 1.3em; min-width: 80px; }
+  .voc .py { color: var(--blue); font-size: 0.9em; min-width: 120px; }
+  .voc .es { color: #555; font-size: 0.88em; flex: 1; }
+  .tones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .tone-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .tone-card .name { font-weight: bold; margin-bottom: 4px; }
+  .tone-card .example { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+  .tone-line { margin: 8px auto; width: 80px; height: 30px; position: relative; }
+  .super-good { color: var(--green); font-weight: bold; }
+  .super-bad { color: var(--red); font-weight: bold; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .day-label { background: #f0f0f0; color: #666; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 4px; display: inline-block; margin: 20px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .num-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 10px 0; }
+  .num-cell { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; text-align: center; }
+  .num-cell .hz { font-size: 1.3em; }
+  .num-cell .py { font-size: 0.75em; color: var(--muted); }
+  .audio-btn { background: none; border: none; cursor: pointer; font-size: 1em; padding: 2px 4px; opacity: 0.5; transition: opacity .2s; vertical-align: middle; }
+  .audio-btn:hover { opacity: 1; }
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
+  @media (max-width: 768px) {
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .tones { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .no-print, .audio-btn { display: none !important; }
+    body { background: #fff !important; padding: 10px 20px; font-size: 12px; }
+    header { background: var(--dark) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Básico 1 — Capítulo 02</h1>
+  <p>Iniciales y Cortesía · Centro Cultural Chino · <a href="/chino/basico1/">← Volver al índice</a></p>
+</header>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#iniciales2">La Regla de la G y K</a></li>
+    <li><a href="#trazos">Trazos Fundamentales (Bǐhuà)</a></li>
+    <li><a href="#respeto">Cultura y Protocolo: El Respeto</a></li>
+    <li><a href="#no">Las Tres Caras del NO</a></li>
+  </ol>
+</nav>
+
+<h2 id="cap2" class="blue">2. Iniciales y Cortesía</h2>
+
+<h3 id="iniciales2">La Regla de la G y K</h3>
+<div class="box warn">
+  ⚠️ <strong>G = K Suave</strong><br>
+  • <strong>g</strong>: Suena como K suave (sin aire). Como la <em>c</em> de "Casa".<br>
+  • <strong>k</strong>: Suena como K fuerte (explosiva). Como la <em>k</em> de "Kilo" (¡con aire!).<br><br>
+  Ejemplo: <strong>Gēge</strong> (Hermano mayor) → suena "Keke" (suave).
+</div>
+
+<h3>Filosofía de la Escritura</h3>
+<div class="box grammar">
+  <strong>El Poder del Trazo</strong><br>
+  La escritura china sigue un flujo de energía vital de <strong>izquierda a derecha</strong> (y de arriba a abajo). Este movimiento está asociado con la concesión de poder y la proyección de energía.
+</div>
+
+<h3 id="trazos">Trazos Fundamentales (Bǐhuà)</h3>
+<table>
+  <tr><th>Nombre</th><th>Dirección</th><th>Caracteres de Ejemplo</th></tr>
+  <tr><td><strong>Héng</strong> (Horizontal) <span class="hz">一</span></td><td>→ Izq. a Der.</td><td><span class="hz">一</span> yī, <span class="hz">二</span> èr</td></tr>
+  <tr><td><strong>Shù</strong> (Vertical) <span class="hz">丨</span></td><td>↓ Arriba a Abajo</td><td><span class="hz">十</span> shí, <span class="hz">工</span> gōng</td></tr>
+  <tr><td><strong>Piě</strong> (Caída Izq.) <span class="hz">丿</span></td><td>↙ Derecha a Izquierda-abajo</td><td><span class="hz">人</span> rén, <span class="hz">八</span> bā</td></tr>
+  <tr><td><strong>Diǎn</strong> (Punto) <span class="hz">丶</span></td><td>Punto diagonal</td><td><span class="hz">不</span> bù, <span class="hz">六</span> liù</td></tr>
+  <tr><td><strong>Nà</strong> (Caída Der.) <span class="hz">㇏</span></td><td>↘ Izquierda-arriba a Der.-abajo</td><td><span class="hz">大</span> dà, <span class="hz">天</span> tiān</td></tr>
+</table>
+
+<div class="box note">
+  🔑 <strong>Shēng (生) — El Origen de la Vida</strong><br>
+  Representa un brote de planta creciendo desde la tierra. La línea vertical es la "Línea de la Vida" que conecta tierra con cielo.<br>
+  <div style="text-align:center;margin:8px 0"><span class="hz" style="font-size:2.5em">生</span> <em>(shēng)</em></div>
+</div>
+
+<h3 id="respeto">Cultura y Protocolo: El Respeto</h3>
+<div class="box warn">
+  👑 <strong>Nín (您) — El Respeto está en el Corazón</strong><br>
+  • <strong>Nǐ (你):</strong> Tú (Informal).<br>
+  • <strong>Nín (您):</strong> Usted (Respetuoso).<br><br>
+  El carácter de <span class="hz">您</span> es igual al de <span class="hz">你</span> pero con el radical de <strong>Corazón (心)</strong> debajo. "El respeto viene desde el corazón".
+</div>
+
+<table>
+  <tr><th>Concepto</th><th>Pinyin / Caracteres</th><th>Significado</th></tr>
+  <tr><td>Saludo</td><td><span class="hz">你好</span> Nǐ hǎo</td><td>Hola (A ti bueno)</td></tr>
+  <tr><td>Saludo Plural</td><td><span class="hz">你们好</span> Nǐmen hǎo</td><td>Hola a todos</td></tr>
+  <tr><td>Respeto</td><td><span class="hz">您好</span> Nín hǎo</td><td>Hola (Usted)</td></tr>
+  <tr><td>Disculpa</td><td><span class="hz">对不起</span> Duìbuqǐ</td><td>Lo siento / Perdón</td></tr>
+  <tr><td>Respuesta</td><td><span class="hz">没关系</span> Méi guānxi</td><td>No importa / No pasa nada</td></tr>
+</table>
+
+<h4>El Misterio de "Tā" — Él, Ella, Eso</h4>
+<div class="box grammar">
+  En chino hablado, Él, Ella y Eso suenan <strong>exactamente igual</strong>: <span class="hz">tā</span> (1er tono). Se diferencian por el <strong>Radical</strong>.
+</div>
+<table>
+  <tr><th>Carácter</th><th>Radical</th><th>Significa</th></tr>
+  <tr><td><span class="hz">他</span> Tā</td><td>亻(Persona)</td><td><strong>Él</strong> (Masculino o Genérico)</td></tr>
+  <tr><td><span class="hz">她</span> Tā</td><td>女 (Mujer)</td><td><strong>Ella</strong> (Femenino)</td></tr>
+  <tr><td><span class="hz">它</span> Tā</td><td>宀 (Techo)</td><td><strong>Eso/Ello</strong> (Animales/Cosas)</td></tr>
+</table>
+
+<h4>Plurales: El Sufijo Men (们)</h4>
+<table>
+  <tr><th>Singular</th><th>Plural (+们)</th><th>Significado</th></tr>
+  <tr><td><span class="hz">他</span> (Él)</td><td><span class="hz">他们</span> Tāmen</td><td>Ellos (Hombres o Mixto)</td></tr>
+  <tr><td><span class="hz">她</span> (Ella)</td><td><span class="hz">她们</span> Tāmen</td><td>Ellas (Solo mujeres)</td></tr>
+  <tr><td><span class="hz">它</span> (Eso)</td><td><span class="hz">它们</span> Tāmen</td><td>Esos/Aquellos (Cosas)</td></tr>
+  <tr><td><span class="hz">人</span> (Persona)</td><td><span class="hz">人们</span> Rénmen</td><td>La Gente</td></tr>
+</table>
+
+<h3 id="no">Las Tres Caras del NO</h3>
+<div class="box grammar">
+  <strong>Bù (不) — El "No" de la Voluntad</strong><br>
+  Presente y Futuro. No quiero, no voy a hacer, no es habitual.<br>
+  <em>Wǒ <strong>bù</strong> chī.</em> — No como / No quiero comer.
+</div>
+<div class="box note">
+  <strong>Méi (没) — Negación de la Acción / Pasado Reciente</strong><br>
+  No ha ocurrido algo. No lo he hecho, no pasó.<br>
+  <em>Wǒ <strong>méi</strong> chī.</em> — No he comido (aún).
+</div>
+<div class="box warn">
+  <strong>Bié (别) — El "No" de la Prohibición</strong><br>
+  Imperativo. ¡No lo hagas! (Stop).<br>
+  <em><strong>Bié</strong> chī!</em> — ¡No comas! (tiene veneno).
+</div>
+
+<h4>Vocabulario del Día 2</h4>
+<div class="voc"><span class="hz">您</span><span class="py">Nín</span><span class="es">Usted (Respetuoso)</span></div>
+<div class="voc"><span class="hz">你们</span><span class="py">Nǐmen</span><span class="es">Ustedes / Vosotros</span></div>
+<div class="voc"><span class="hz">对不起</span><span class="py">Duìbuqǐ</span><span class="es">Lo siento / Perdón</span></div>
+<div class="voc"><span class="hz">没关系</span><span class="py">Méi guānxi</span><span class="es">No importa / No pasa nada</span></div>
+
+<!-- ==================== CAPÍTULO 3 ==================== -->
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:36px; padding:16px 0; border-top:1px solid #eee;" class="no-print">
+  <a href="cap01.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">← Cap 01</a>
+  <a href="/chino/basico1/" style="color:var(--red); text-decoration:none; font-size:0.85em;">📚 Índice Básico 1</a>
+  <a href="cap03.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">Cap 03 →</a>
+</div>
+<footer>Básico 1 Capítulo 02 · Centro Cultural Chino</footer>
+
+<script>
+const AUDIO_BASE = '/chino/audio/';
+const audioMap = {
+  "tā": "zh_a9d2b00eac.mp3",
+  "㇏": "zh_16325944d9.mp3",
+  "一": "zh_7941da94db.mp3",
+  "不": "zh_9eba1ab697.mp3",
+  "丨": "zh_b27389286b.mp3",
+  "丶": "zh_ea2fdf31ce.mp3",
+  "丿": "zh_5ee9722c3b.mp3",
+  "二": "zh_2d8be272c9.mp3",
+  "人": "zh_465afe3c11.mp3",
+  "人们": "zh_1b0fd153e0.mp3",
+  "他": "zh_5fe86c60de.mp3",
+  "他们": "zh_d0a33aaeb3.mp3",
+  "你": "zh_df1fd91011.mp3",
+  "你们": "zh_247edb94d4.mp3",
+  "你们好": "zh_67f8b0fd8e.mp3",
+  "你好": "zh_7eca689f0d.mp3",
+  "八": "zh_edf1acd5c6.mp3",
+  "六": "zh_61b453523d.mp3",
+  "十": "zh_181245720b.mp3",
+  "大": "zh_ab18e30c0d.mp3",
+  "天": "zh_249aba7632.mp3",
+  "她": "zh_92f3ca76d5.mp3",
+  "她们": "zh_fef71ccb55.mp3",
+  "它": "zh_3c1400fbc2.mp3",
+  "它们": "zh_b65d4db6c2.mp3",
+  "对不起": "zh_cd51c8c91e.mp3",
+  "工": "zh_a626497bc3.mp3",
+  "您": "zh_6e2d1fbf23.mp3",
+  "您好": "zh_f070aa69f8.mp3",
+  "没关系": "zh_ac85b3780c.mp3"
+};
+
+function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+// Audio buttons for .hz spans
+document.querySelectorAll('.hz').forEach(el => {
+  const text = el.textContent.trim();
+  if (text.length > 0 && text.length <= 30) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    el.after(btn);
+  }
+});
+</script>
+</body>
+</html>

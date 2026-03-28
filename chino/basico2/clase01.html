@@ -359,16 +359,135 @@
 <button class="pinyin-toggle no-print" onclick="document.body.classList.toggle('hide-pinyin'); this.textContent = document.body.classList.contains('hide-pinyin') ? '👁️ Mostrar pinyin' : '🔤 Ocultar pinyin'">🔤 Ocultar pinyin</button>
 
 <script>
-// === Audio: Web Speech API ===
+// === Audio: ElevenLabs MP3 con fallback a Web Speech API ===
+const AUDIO_BASE = '/chino/audio/';
+const audioMap = {
+  "不": "zh_9eba1ab697.mp3",
+  "不 / 没 / 没有": "zh_e58e5e63b7.mp3",
+  "不会": "zh_40dea0cab1.mp3",
+  "不会，但是我妈妈会做。": "zh_9920375c21.mp3",
+  "不会，我不会写。": "zh_ba691ea266.mp3",
+  "中国菜": "zh_fec5eacd0a.mp3",
+  "中国菜 / 中文": "zh_f70ef65ffb.mp3",
+  "中国菜好吃吗？": "zh_e49be7682e.mp3",
+  "中国菜很好吃！": "zh_d168fe0650.mp3",
+  "他不会开车": "zh_168f1a8a3f.mp3",
+  "他不胖。": "zh_36a054276c.mp3",
+  "他会说汉语": "zh_52a5a904ad.mp3",
+  "他妹妹": "zh_764cad9047.mp3",
+  "他很高。": "zh_30130315c9.mp3",
+  "他的妈妈": "zh_4f078403e5.mp3",
+  "他的妈妈会做中国菜。": "zh_25ee3a9be3.mp3",
+  "他的妹妹": "zh_c60ccfeda8.mp3",
+  "他的妹妹会唱歌。": "zh_95d3935d56.mp3",
+  "他的猫 / 她的狗": "zh_65a397715c.mp3",
+  "他的猫、我的车": "zh_fb03637673.mp3",
+  "会": "zh_647477bbc5.mp3",
+  "会 / 有": "zh_d6d25ca52e.mp3",
+  "会，我会说一点儿汉语。": "zh_60ffdcc015.mp3",
+  "你": "zh_df1fd91011.mp3",
+  "你会不会做饭？": "zh_c18cd291cc.mp3",
+  "你会不会开车？": "zh_d21f82a129.mp3",
+  "你会不会游泳？": "zh_d6f3c415fa.mp3",
+  "你会做中国菜吗？": "zh_885a5693a5.mp3",
+  "你会写汉字吗？": "zh_89310af294.mp3",
+  "你会说汉语吗？": "zh_ca41074eaf.mp3",
+  "你哥哥会说汉语吗？": "zh_e40f977a94.mp3",
+  "你好！你会说汉语吗？": "zh_ce2676c93a.mp3",
+  "你妈妈会写汉字吗？": "zh_293e75b89a.mp3",
+  "你妈妈会说汉语吗？": "zh_c76f92f02b.mp3",
+  "你妹妹会唱歌吗？": "zh_9207c4062c.mp3",
+  "你妹妹会唱歌吗？→ 妹妹会唱歌。": "zh_e4cc60b47c.mp3",
+  "你姐姐会说汉语吗？": "zh_a89d13e0ae.mp3",
+  "你弟弟会写汉字吗？": "zh_641bece4e1.mp3",
+  "你有哥哥吗？": "zh_234a7219c8.mp3",
+  "你有妹妹吗？": "zh_fc8d278619.mp3",
+  "你有姐姐吗？": "zh_e5a491e706.mp3",
+  "你有弟弟吗？": "zh_ad5d677588.mp3",
+  "你有没有哥哥？": "zh_c58092c828.mp3",
+  "你爸爸会做中国菜吗？": "zh_791a017e1a.mp3",
+  "你爸爸会做饭吗？": "zh_9b9aef4bd7.mp3",
+  "你爸爸会写汉字吗？": "zh_d4a025aceb.mp3",
+  "你爸爸会说汉语吗？": "zh_5d47f70588.mp3",
+  "做饭 / 游泳 / 开车": "zh_6e206e8815.mp3",
+  "可以": "zh_eaa9c5c2f1.mp3",
+  "吉他 / 车 / 饭": "zh_e618930d21.mp3",
+  "吗 / 的 / 也 / 很": "zh_def2ccfd0a.mp3",
+  "哥哥 / 姐姐": "zh_2dd263ed56.mp3",
+  "她会做中国菜": "zh_35b0d69cf5.mp3",
+  "她会游泳吗？": "zh_8e2b7988b2.mp3",
+  "她很瘦。": "zh_de87dbcc9d.mp3",
+  "她很矮。": "zh_3619365193.mp3",
+  "她的哥哥": "zh_2f9efae11c.mp3",
+  "她的哥哥会说汉语。": "zh_a8c4bac40e.mp3",
+  "她的爸爸": "zh_8c7afa0b9f.mp3",
+  "她的猫不会游泳。": "zh_09f0f9ce35.mp3",
+  "好。": "zh_6ae7d86982.mp3",
+  "好吃 / 一点儿 / 但是": "zh_827bacd358.mp3",
+  "好吃。": "zh_6b17e85f15.mp3",
+  "妈妈 / 爸爸": "zh_3540cb9cd7.mp3",
+  "妈妈会做饭": "zh_8212730ff0.mp3",
+  "弟弟 / 妹妹": "zh_8c1484fbc5.mp3",
+  "弹 / 唱歌": "zh_a6ef6fd3bf.mp3",
+  "很": "zh_5e360de1b1.mp3",
+  "我": "zh_1681525453.mp3",
+  "我不会做。": "zh_3022969bb2.mp3",
+  "我不会做中国菜": "zh_260e1d0866.mp3",
+  "我不会写汉字": "zh_22460a60de.mp3",
+  "我不会游泳": "zh_d98f628d94.mp3",
+  "我不会说汉语": "zh_eb4ddf0e23.mp3",
+  "我不有哥哥。": "zh_2b179a55c5.mp3",
+  "我也会游泳": "zh_059dc6e730.mp3",
+  "我也会说汉语。": "zh_4ea4f5559b.mp3",
+  "我们会写汉字": "zh_22069004f7.mp3",
+  "我会做中国菜": "zh_84ebf18218.mp3",
+  "我会写汉字": "zh_9cb43649c2.mp3",
+  "我会开车": "zh_fc62653659.mp3",
+  "我会弹吉他": "zh_21d447d595.mp3",
+  "我会游泳": "zh_7e16ab15cf.mp3",
+  "我会说汉语": "zh_624aa515a6.mp3",
+  "我妈妈不会说汉语。": "zh_83fcb65169.mp3",
+  "我妈妈会说汉语。": "zh_5992510bc1.mp3",
+  "我妈妈的汉语": "zh_9e44a8d360.mp3",
+  "我妹妹会唱歌。": "zh_228f0478ee.mp3",
+  "我有哥哥。": "zh_a4ecbf004e.mp3",
+  "我有妹妹。": "zh_2e0a3b9dff.mp3",
+  "我有姐姐。": "zh_028a38dfa8.mp3",
+  "我有弟弟。": "zh_8566d02484.mp3",
+  "我没有哥哥。": "zh_cd2433cc78.mp3",
+  "我没有妹妹。": "zh_39b7c58e7c.mp3",
+  "我爸爸不会写汉字。": "zh_4a9ed76e3c.mp3",
+  "我爸爸也会做饭。": "zh_1eab222062.mp3",
+  "我的妈妈 = 我妈妈": "zh_8ed0742508.mp3",
+  "我的猫 / 你的狗": "zh_3cd0ecc70d.mp3",
+  "有": "zh_cc4ad2fd27.mp3",
+  "汉字 / 汉语": "zh_2812b92cd8.mp3",
+  "没有": "zh_b4ebe3f519.mp3",
+  "猫 / 狗": "zh_374e3aa5c3.mp3",
+  "瘦": "zh_1d1b5cb221.mp3",
+  "矮": "zh_839cef9717.mp3",
+  "胖": "zh_2200ae7c80.mp3",
+  "能": "zh_9c0479617b.mp3",
+  "说 / 写 / 做": "zh_d628f7357c.mp3",
+  "高": "zh_4296d7d293.mp3"
+};
+
 function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
   const u = new SpeechSynthesisUtterance(text);
   u.lang = 'zh-CN';
   u.rate = 0.8;
   speechSynthesis.speak(u);
 }
+
 // Agregar botones de audio a todas las celdas .hz en tablas
 document.querySelectorAll('td.hz').forEach(td => {
-  const text = td.textContent.replace(/[。？，！、：🔊]/g, '').trim();
+  const text = td.textContent.trim();
   if (text.length > 0) {
     const btn = document.createElement('button');
     btn.className = 'audio-btn';
@@ -378,9 +497,9 @@ document.querySelectorAll('td.hz').forEach(td => {
     td.appendChild(btn);
   }
 });
-// Agregar audio a diálogos
+// Agregar audio a dialogos
 document.querySelectorAll('.da .hz, .db .hz').forEach(span => {
-  const text = span.textContent.replace(/[。？，！、：🔊]/g, '').trim();
+  const text = span.textContent.trim();
   if (text.length > 0) {
     const btn = document.createElement('button');
     btn.className = 'audio-btn';
@@ -390,6 +509,7 @@ document.querySelectorAll('.da .hz, .db .hz').forEach(span => {
     span.after(btn);
   }
 });
+
 // === Marcar columnas de pinyin para el toggle ===
 document.querySelectorAll('table').forEach(table => {
   const ths = table.querySelectorAll('th');

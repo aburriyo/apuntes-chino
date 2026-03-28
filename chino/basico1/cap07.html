@@ -1,0 +1,275 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 1 — Capítulo 07 · Apuntes Chino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  :root {
+    --red: #c0392b; --dark: #1a1a2e; --gold: #d4820a;
+    --green: #27ae60; --blue: #2980b9; --purple: #8e44ad;
+    --bg: #fafafa; --text: #222; --muted: #888; --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; color: var(--text); font-size: 15px; background: var(--bg); }
+  header { background: var(--dark); color: #fff; padding: 28px 28px 22px; border-radius: 12px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6em; margin: 0 0 4px; color: var(--red); }
+  header p { margin: 0; color: #aaa; font-size: 0.88em; }
+  header a { color: var(--red); text-decoration: none; }
+  nav.toc { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  nav.toc h3 { margin: 0 0 10px; font-size: 0.82em; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  nav.toc ol { margin: 0; padding-left: 20px; }
+  nav.toc li { margin: 3px 0; font-size: 0.9em; }
+  nav.toc a { color: var(--red); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  h2 { font-size: 1.05em; color: #fff; padding: 10px 18px; border-radius: 8px; margin: 40px 0 16px; background: var(--red); }
+  h2.blue { background: var(--blue); }
+  h2.green { background: var(--green); }
+  h2.gold { background: var(--gold); }
+  h2.gray { background: #555; }
+  h2.purple { background: var(--purple); }
+  h3 { color: #444; font-size: 0.95em; margin: 18px 0 8px; border-left: 3px solid var(--red); padding-left: 10px; }
+  h4 { color: #555; font-size: 0.88em; margin: 12px 0 6px; }
+  p { margin: 8px 0; line-height: 1.6; }
+  .hz { font-size: 1.15em; font-weight: bold; color: var(--red); }
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.note { background: #e8f5e9; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.structure { background: #fdecea; border: 1.5px solid var(--red); }
+  .box.purple { background: #f3e5f5; border-left: 4px solid var(--purple); border-radius: 0 8px 8px 0; }
+  .box center { text-align: center; margin: 8px 0; }
+  .box code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.9em; }
+  .structure-formula { text-align: center; font-size: 1.2em; font-weight: bold; color: var(--red); margin: 8px 0; }
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; }
+  th { background: var(--red); color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .table-blue th { background: var(--blue); }
+  .table-green th { background: var(--green); }
+  .table-gold th { background: var(--gold); }
+  .table-purple th { background: var(--purple); }
+  .table-gray th { background: #555; }
+  .good { color: var(--green); }
+  .bad { color: var(--red); }
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid var(--border); padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .da strong, .db strong { font-size: 0.85em; color: #666; }
+  .voc { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin: 6px 0; }
+  .voc .hz { font-size: 1.3em; min-width: 80px; }
+  .voc .py { color: var(--blue); font-size: 0.9em; min-width: 120px; }
+  .voc .es { color: #555; font-size: 0.88em; flex: 1; }
+  .tones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .tone-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .tone-card .name { font-weight: bold; margin-bottom: 4px; }
+  .tone-card .example { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+  .tone-line { margin: 8px auto; width: 80px; height: 30px; position: relative; }
+  .super-good { color: var(--green); font-weight: bold; }
+  .super-bad { color: var(--red); font-weight: bold; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .day-label { background: #f0f0f0; color: #666; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 4px; display: inline-block; margin: 20px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .num-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 10px 0; }
+  .num-cell { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; text-align: center; }
+  .num-cell .hz { font-size: 1.3em; }
+  .num-cell .py { font-size: 0.75em; color: var(--muted); }
+  .audio-btn { background: none; border: none; cursor: pointer; font-size: 1em; padding: 2px 4px; opacity: 0.5; transition: opacity .2s; vertical-align: middle; }
+  .audio-btn:hover { opacity: 1; }
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
+  @media (max-width: 768px) {
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .tones { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .no-print, .audio-btn { display: none !important; }
+    body { background: #fff !important; padding: 10px 20px; font-size: 12px; }
+    header { background: var(--dark) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Básico 1 — Capítulo 07</h1>
+  <p>Posesión y Verbos de Estado · Centro Cultural Chino · <a href="/chino/basico1/">← Volver al índice</a></p>
+</header>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#de">La Posesión: De (的)</a></li>
+    <li><a href="#hen">Descripciones: Hěn (很)</a></li>
+    <li><a href="#zai">El Verbo Estar: Zài (在)</a></li>
+  </ol>
+</nav>
+
+<h2 id="cap7" class="blue">7. Posesión y Verbos de Estado</h2>
+
+<h3 id="de">La Posesión: De (的)</h3>
+<div class="box structure">
+  <div class="structure-formula">Poseedor + 的 (De) + Objeto Poseído</div>
+  <div style="text-align:center;color:#666;margin-top:4px">"El dueño siempre va primero"</div>
+  <br>
+  Español: El libro <strong>de</strong> Juan. → Chino: Juan <strong>的</strong> libro.
+</div>
+
+<h4>Caso 1: Uso Formal (Objetos / No relación personal)</h4>
+<table>
+  <tr><th>Frase</th><th>Pinyin</th><th>Significado</th></tr>
+  <tr><td><span class="hz">老师的书</span></td><td>Lǎoshī de shū</td><td>El libro del profesor</td></tr>
+  <tr><td><span class="hz">公司的电话</span></td><td>Gōngsī de diànhuà</td><td>El teléfono de la empresa</td></tr>
+  <tr><td><span class="hz">这是谁的书？</span></td><td>Zhè shì shéi de shū?</td><td>¿De quién es este libro?</td></tr>
+</table>
+
+<h4>Caso 2: Relaciones Cercanas (Se omite 的)</h4>
+<div class="box note">
+  💡 Cuando la relación es íntima (familia, pareja, partes del cuerpo) → <strong>No se necesita 的</strong>
+</div>
+<table>
+  <tr><th>Con 的 (Distante/Objeto)</th><th>Sin 的 (Íntimo/Cercano)</th></tr>
+  <tr><td><span class="hz">我的书</span> — Mi libro</td><td><span class="hz">我妈妈</span> — Mi mamá</td></tr>
+  <tr><td><span class="hz">你的车</span> — Tu auto</td><td><span class="hz">你男朋友</span> — Tu novio</td></tr>
+  <tr><td><span class="hz">他的笔</span> — Su lápiz</td><td><span class="hz">他家</span> — Su casa</td></tr>
+</table>
+
+<h3 id="hen">Descripciones: Hěn (很)</h3>
+<div class="box warn">
+  ⚠️ <strong>¡Alerta Roja!</strong><br>
+  En chino NO se usa <span class="hz">是</span> con adjetivos. Se usa <span class="hz">很</span> como conector.<br>
+  ❌ Tā <strong>shì</strong> piàoliang · ✅ Tā <strong>hěn</strong> piàoliang
+</div>
+<div class="box structure">
+  <div class="structure-formula">Sujeto + 很 (Hěn) + Adjetivo</div>
+</div>
+
+<div class="dialog">
+  <div class="da"><span class="hz">他妈妈很漂亮。</span> — Tā māma hěn piàoliang. — Su mamá es muy bonita.</div>
+  <div class="db"><span class="hz">我们学校很大。</span> — Wǒmen xuéxiào hěn dà. — Nuestra escuela es muy grande.</div>
+  <div class="da"><span class="hz">我家很大。</span> — Wǒ jiā hěn dà. — Mi casa es muy grande.</div>
+</div>
+
+<h4>También: Yě (也)</h4>
+<div class="box tip">
+  💡 <span class="hz">也</span> (Yě = También) <strong>SIEMPRE va antes del verbo o adjetivo</strong>.<br>
+  ✅ <span class="hz">我也是</span> (Wǒ yě shì) · ❌ Wǒ shì yě
+</div>
+
+<h3 id="zai">El Verbo Estar: Zài (在)</h3>
+<div class="box structure">
+  <div class="structure-formula">Sujeto + 在 + Lugar</div>
+  Para indicar ubicación o presencia.
+</div>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">你在哪儿？</span> — Nǐ zài nǎr? — ¿Dónde estás?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">我在学校。</span> — Wǒ zài xuéxiào. — Estoy en la escuela.</div>
+</div>
+
+<h4>La Partícula de Cambio: Le (了)</h4>
+<div class="two-col">
+  <div class="box grammar">
+    <strong>Posición 1: Verbo + 了</strong><br>
+    Enfatiza que la <em>acción</em> se completó.<br>
+    <span class="hz">我吃了饭</span> — Wǒ chī le fàn<br>
+    <em>Comí (la comida).</em>
+  </div>
+  <div class="box note">
+    <strong>Posición 2: Frase + 了</strong><br>
+    Cambio de estado / "Ya lo hice".<br>
+    <span class="hz">我吃饭了</span> — Wǒ chī fàn le<br>
+    <em>Ya comí / He comido.</em>
+  </div>
+</div>
+
+<h4>Nuevos Clasificadores</h4>
+<table>
+  <tr><th>Clasificador</th><th>Uso</th><th>Ejemplo</th></tr>
+  <tr><td><span class="hz">张</span> Zhāng</td><td>Objetos planos (mesas, papel, fotos)</td><td><span class="hz">一张纸</span> — Una hoja de papel</td></tr>
+  <tr><td><span class="hz">条</span> Tiáo</td><td>Objetos largos/flexibles (pantalones, peces)</td><td><span class="hz">一条鱼</span> — Un pez</td></tr>
+  <tr><td><span class="hz">种</span> Zhǒng</td><td>Tipos o clases</td><td><span class="hz">一种菜</span> — Un tipo de plato</td></tr>
+</table>
+
+<h4>Vocabulario del Capítulo 7</h4>
+<div class="voc"><span class="hz">公司 / 学校 / 家</span><span class="py">Gōngsī / Xuéxiào / Jiā</span><span class="es">Empresa / Escuela / Casa-Familia</span></div>
+<div class="voc"><span class="hz">男朋友 / 女朋友</span><span class="py">Nánpéngyǒu / Nǚpéngyǒu</span><span class="es">Novio / Novia</span></div>
+<div class="voc"><span class="hz">漂亮 / 大</span><span class="py">Piàoliang / Dà</span><span class="es">Bonita / Grande</span></div>
+<div class="voc"><span class="hz">上海 / 北京</span><span class="py">Shànghǎi / Běijīng</span><span class="es">Shanghái / Pekín</span></div>
+<div class="voc"><span class="hz">下雨</span><span class="py">Xià yǔ</span><span class="es">Llover</span></div>
+
+<!-- ==================== CAPÍTULO 8 ==================== -->
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:36px; padding:16px 0; border-top:1px solid #eee;" class="no-print">
+  <a href="cap06.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">← Cap 06</a>
+  <a href="/chino/basico1/" style="color:var(--red); text-decoration:none; font-size:0.85em;">📚 Índice Básico 1</a>
+  <a href="cap08.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">Cap 08 →</a>
+</div>
+<footer>Básico 1 Capítulo 07 · Centro Cultural Chino</footer>
+
+<script>
+const AUDIO_BASE = '/chino/audio/';
+const audioMap = {
+  "一张纸": "zh_c4a1ef1e74.mp3",
+  "一条鱼": "zh_01803c77a0.mp3",
+  "一种菜": "zh_5e5e7c03e3.mp3",
+  "上海 / 北京": "zh_4bbb5b9060.mp3",
+  "下雨": "zh_060e263e4b.mp3",
+  "也": "zh_61faca1cae.mp3",
+  "他妈妈很漂亮。": "zh_61a7834e7b.mp3",
+  "他家": "zh_86a4574a6a.mp3",
+  "他的笔": "zh_1a3507a274.mp3",
+  "你在哪儿？": "zh_84b82aa0e9.mp3",
+  "你男朋友": "zh_0ab8c37272.mp3",
+  "你的车": "zh_c804b55fe6.mp3",
+  "公司 / 学校 / 家": "zh_7cec1155c5.mp3",
+  "公司的电话": "zh_f8bbd29cd3.mp3",
+  "张": "zh_6499fc7409.mp3",
+  "很": "zh_5e360de1b1.mp3",
+  "我也是": "zh_a1a4f32c7b.mp3",
+  "我们学校很大。": "zh_61eaaeb597.mp3",
+  "我吃了饭": "zh_a9f93735f2.mp3",
+  "我吃饭了": "zh_0d8206e208.mp3",
+  "我在学校。": "zh_1ee63a1443.mp3",
+  "我妈妈": "zh_c40ea4334f.mp3",
+  "我家很大。": "zh_82dbf1a3a8.mp3",
+  "我的书": "zh_a3ef3dcc15.mp3",
+  "是": "是_0a60ac8f02.mp3",
+  "条": "zh_cc1bacb511.mp3",
+  "漂亮 / 大": "zh_c9502e6e50.mp3",
+  "男朋友 / 女朋友": "zh_9909fe45ab.mp3",
+  "种": "zh_b13903cec9.mp3",
+  "老师的书": "zh_9d22db6516.mp3",
+  "这是谁的书？": "zh_1ed6e11853.mp3"
+};
+
+function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+// Audio buttons for .hz spans
+document.querySelectorAll('.hz').forEach(el => {
+  const text = el.textContent.trim();
+  if (text.length > 0 && text.length <= 30) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    el.after(btn);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 1 — Capítulo 08 · Apuntes Chino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  :root {
+    --red: #c0392b; --dark: #1a1a2e; --gold: #d4820a;
+    --green: #27ae60; --blue: #2980b9; --purple: #8e44ad;
+    --bg: #fafafa; --text: #222; --muted: #888; --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; color: var(--text); font-size: 15px; background: var(--bg); }
+  header { background: var(--dark); color: #fff; padding: 28px 28px 22px; border-radius: 12px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6em; margin: 0 0 4px; color: var(--red); }
+  header p { margin: 0; color: #aaa; font-size: 0.88em; }
+  header a { color: var(--red); text-decoration: none; }
+  nav.toc { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  nav.toc h3 { margin: 0 0 10px; font-size: 0.82em; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  nav.toc ol { margin: 0; padding-left: 20px; }
+  nav.toc li { margin: 3px 0; font-size: 0.9em; }
+  nav.toc a { color: var(--red); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  h2 { font-size: 1.05em; color: #fff; padding: 10px 18px; border-radius: 8px; margin: 40px 0 16px; background: var(--red); }
+  h2.blue { background: var(--blue); }
+  h2.green { background: var(--green); }
+  h2.gold { background: var(--gold); }
+  h2.gray { background: #555; }
+  h2.purple { background: var(--purple); }
+  h3 { color: #444; font-size: 0.95em; margin: 18px 0 8px; border-left: 3px solid var(--red); padding-left: 10px; }
+  h4 { color: #555; font-size: 0.88em; margin: 12px 0 6px; }
+  p { margin: 8px 0; line-height: 1.6; }
+  .hz { font-size: 1.15em; font-weight: bold; color: var(--red); }
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.note { background: #e8f5e9; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.structure { background: #fdecea; border: 1.5px solid var(--red); }
+  .box.purple { background: #f3e5f5; border-left: 4px solid var(--purple); border-radius: 0 8px 8px 0; }
+  .box center { text-align: center; margin: 8px 0; }
+  .box code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.9em; }
+  .structure-formula { text-align: center; font-size: 1.2em; font-weight: bold; color: var(--red); margin: 8px 0; }
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; }
+  th { background: var(--red); color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .table-blue th { background: var(--blue); }
+  .table-green th { background: var(--green); }
+  .table-gold th { background: var(--gold); }
+  .table-purple th { background: var(--purple); }
+  .table-gray th { background: #555; }
+  .good { color: var(--green); }
+  .bad { color: var(--red); }
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid var(--border); padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .da strong, .db strong { font-size: 0.85em; color: #666; }
+  .voc { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin: 6px 0; }
+  .voc .hz { font-size: 1.3em; min-width: 80px; }
+  .voc .py { color: var(--blue); font-size: 0.9em; min-width: 120px; }
+  .voc .es { color: #555; font-size: 0.88em; flex: 1; }
+  .tones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .tone-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .tone-card .name { font-weight: bold; margin-bottom: 4px; }
+  .tone-card .example { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+  .tone-line { margin: 8px auto; width: 80px; height: 30px; position: relative; }
+  .super-good { color: var(--green); font-weight: bold; }
+  .super-bad { color: var(--red); font-weight: bold; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .day-label { background: #f0f0f0; color: #666; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 4px; display: inline-block; margin: 20px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .num-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 10px 0; }
+  .num-cell { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; text-align: center; }
+  .num-cell .hz { font-size: 1.3em; }
+  .num-cell .py { font-size: 0.75em; color: var(--muted); }
+  .audio-btn { background: none; border: none; cursor: pointer; font-size: 1em; padding: 2px 4px; opacity: 0.5; transition: opacity .2s; vertical-align: middle; }
+  .audio-btn:hover { opacity: 1; }
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
+  @media (max-width: 768px) {
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .tones { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .no-print, .audio-btn { display: none !important; }
+    body { background: #fff !important; padding: 10px 20px; font-size: 12px; }
+    header { background: var(--dark) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Básico 1 — Capítulo 08</h1>
+  <p>Frases, Números y Cultura · Centro Cultural Chino · <a href="/chino/basico1/">← Volver al índice</a></p>
+</header>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#sujetos-verbos">Taller de Frases: Clasificación Gramatical</a></li>
+    <li><a href="#numeros">Tabla de Números 0–99</a></li>
+    <li><a href="#wan">Grandes Cifras: El Cambio de Paradigma</a></li>
+    <li><a href="#supersticion">Superstición y Cultura</a></li>
+  </ol>
+</nav>
+
+<h2 id="cap8" class="red">8. Frases, Números y Cultura</h2>
+
+<h3 id="sujetos-verbos">Taller de Frases: Clasificación Gramatical</h3>
+
+<div class="box note">
+  <strong>👤 Sujetos</strong><br>
+  <span class="hz">我 你 他 她 我们 谁</span> — Pronombres<br>
+  <span class="hz">老师 学生 医生 老板 朋友 同学</span> — Roles<br>
+  <span class="hz">爸爸 妈妈 男朋友 女朋友 大家</span> — Familia
+</div>
+
+<div class="box grammar">
+  <strong>🏃 Verbos de Estado y Acción</strong><br>
+  <strong>Estado/Ser:</strong> <span class="hz">是</span> (Shì) · <span class="hz">在</span> (Zài) · <span class="hz">叫</span> (Jiào)<br>
+  <strong>Psicológicos:</strong> <span class="hz">喜欢</span> (Xǐhuān) · <span class="hz">想</span> (Xiǎng) · <span class="hz">要</span> (Yào)<br>
+  <strong>Acción:</strong> <span class="hz">吃</span> (Chī) · <span class="hz">去</span> (Qù) · <span class="hz">说</span> (Shuō) · <span class="hz">做</span> (Zuò) · <span class="hz">看</span> (Kàn) · <span class="hz">有</span> (Yǒu)
+</div>
+
+<div class="box tip">
+  <strong>🧩 Herramientas de Pregunta</strong><br>
+  <strong>Partículas (Final):</strong> <span class="hz">吗</span> (¿Sí/No?) · <span class="hz">呢</span> (¿Y...?)<br>
+  <strong>Pronombres:</strong> <span class="hz">谁</span> (¿Quién?) · <span class="hz">什么</span> (¿Qué?) · <span class="hz">哪</span> (¿Cuál?) · <span class="hz">哪儿</span> (¿Dónde?)<br>
+  <strong>Grado:</strong> <span class="hz">几</span> (¿Cuántos? &lt;10) · <span class="hz">多少</span> (¿Cuántos?) · <span class="hz">怎么</span> (¿Cómo?) · <span class="hz">多大</span> (¿Qué edad?)<br>
+  <strong>Regla de Oro:</strong> El interrogativo va en el mismo lugar que la respuesta.
+</div>
+
+<h3 id="numeros">Tabla de Números 0–99</h3>
+<table class="table-gold">
+  <tr><th>+</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
+  <tr><td><strong>0</strong></td><td><span class="hz">零</span></td><td><span class="hz">一</span></td><td><span class="hz">二</span></td><td><span class="hz">三</span></td><td><span class="hz">四</span></td><td><span class="hz">五</span></td><td><span class="hz">六</span></td><td><span class="hz">七</span></td><td><span class="hz">八</span></td><td><span class="hz">九</span></td></tr>
+  <tr><td><strong>10</strong></td><td><span class="hz">十</span></td><td><span class="hz">十一</span></td><td><span class="hz">十二</span></td><td><span class="hz">十三</span></td><td><span class="hz">十四</span></td><td><span class="hz">十五</span></td><td><span class="hz">十六</span></td><td><span class="hz">十七</span></td><td><span class="hz">十八</span></td><td><span class="hz">十九</span></td></tr>
+  <tr><td><strong>20</strong></td><td><span class="hz">二十</span></td><td><span class="hz">二十一</span></td><td><span class="hz">二十二</span></td><td><span class="hz">二十三</span></td><td><span class="hz">二十四</span></td><td><span class="hz">二十五</span></td><td><span class="hz">二十六</span></td><td><span class="hz">二十七</span></td><td><span class="hz">二十八</span></td><td><span class="hz">二十九</span></td></tr>
+  <tr><td><strong>30</strong></td><td><span class="hz">三十</span></td><td><span class="hz">三十一</span></td><td><span class="hz">三十二</span></td><td><span class="hz">三十三</span></td><td><span class="hz">三十四</span></td><td><span class="hz">三十五</span></td><td><span class="hz">三十六</span></td><td><span class="hz">三十七</span></td><td><span class="hz">三十八</span></td><td><span class="hz">三十九</span></td></tr>
+  <tr><td><strong>50</strong></td><td><span class="hz">五十</span></td><td><span class="hz">五十一</span></td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td><span class="hz">五十九</span></td></tr>
+  <tr><td><strong>90</strong></td><td><span class="hz">九十</span></td><td><span class="hz">九十一</span></td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td><span class="hz">九十九</span></td></tr>
+</table>
+<p><small>Fórmula: Decena + Unidad. Ej: 99 = 九(9) + 十(10) + 九(9) = <span class="hz">九十九</span></small></p>
+
+<h3 id="wan">Grandes Cifras: El Cambio de Paradigma</h3>
+<div class="box warn">
+  ⚠️ <strong>Nosotros agrupamos de a 3 ceros (mil, millón). En China agrupan de a 4 ceros.</strong>
+</div>
+<table>
+  <tr><th>Número</th><th>Español (cada 3)</th><th>Chino (cada 4)</th></tr>
+  <tr><td>1,000</td><td>Mil</td><td><span class="hz">一千</span> Yī qiān</td></tr>
+  <tr><td><strong>10,000</strong></td><td>Diez Mil</td><td><span class="hz">一万</span> <strong>Yī wàn (1 Wan)</strong></td></tr>
+  <tr><td>100,000</td><td>Cien Mil</td><td><span class="hz">十万</span> Shí wàn (10 Wan)</td></tr>
+  <tr><td>1,000,000</td><td>Un Millón</td><td><span class="hz">一百万</span> Yībǎi wàn (100 Wan)</td></tr>
+  <tr><td><strong>100,000,000</strong></td><td>Cien Millones</td><td><span class="hz">一亿</span> <strong>Yī yì (1 Yi)</strong></td></tr>
+</table>
+<div class="box note">💡 ¡Para los chinos, el "Diez Mil" (<span class="hz">万</span>) es una unidad básica! 20,000 = "Dos Wan" (<span class="hz">二万</span>).</div>
+
+<h4>Trabalenguas: 4 vs 10</h4>
+<div class="box grammar">
+  <span class="hz">四是四，十是十</span> — Sì shì sì, shí shì shí<br>
+  <em>"Cuatro es cuatro, diez es diez"</em><br><br>
+  <table style="margin:8px 0">
+    <tr><th>4</th><th>10</th><th>14</th><th>40</th><th>44</th></tr>
+    <tr><td><span class="hz">四</span> Sì</td><td><span class="hz">十</span> Shí</td><td><span class="hz">十四</span> Shí sì</td><td><span class="hz">四十</span> Sì shí</td><td><span class="hz">四十四</span> Sì shí sì</td></tr>
+  </table>
+</div>
+
+<h3 id="supersticion">Superstición y Cultura</h3>
+<table>
+  <tr><th>Nº / Objeto</th><th>Significado</th><th>Por qué</th></tr>
+  <tr><td><span class="hz">8 — 八</span> Bā</td><td class="super-good">✅ Buena Suerte</td><td>Suena a <span class="hz">发</span> (Fā = Riqueza). 8 Mandarinas = Prosperidad.</td></tr>
+  <tr><td><span class="hz">4 — 四</span> Sì</td><td class="super-bad">❌ Mala Suerte</td><td>Suena a <span class="hz">死</span> (Sǐ = Muerte). Evitado en pisos/teléfonos.</td></tr>
+  <tr><td><span class="hz">9 — 九</span> Jiǔ</td><td class="super-good">✅ Eternidad</td><td>Suena a <span class="hz">久</span> (Jiǔ = Largo tiempo). Bueno para bodas.</td></tr>
+  <tr><td><span class="hz">6 — 六</span> Liù</td><td class="super-good">✅ Fluir</td><td>Todo vaya "como la seda" sin obstáculos.</td></tr>
+  <tr><td><span class="hz">520</span> Wǔ'èrlíng</td><td class="super-good">❤️ Te amo</td><td>Suena a <span class="hz">我爱你</span> (Wǒ ài nǐ). 5201314 = "Te amo toda la vida".</td></tr>
+  <tr><td><span class="hz">250 — 二百五</span></td><td class="super-bad">💀 Estúpido</td><td>"Tonto" en argot. ¡Cuidado!</td></tr>
+  <tr><td>Reloj (<span class="hz">钟</span>)</td><td class="super-bad">❌ Tabú</td><td>Regalar reloj (<span class="hz">送钟</span>) suena a "Funeral" (<span class="hz">送终</span>).</td></tr>
+  <tr><td>Paraguas (<span class="hz">伞</span>)</td><td class="super-bad">❌ Separación</td><td>Suena a <span class="hz">散</span> (Sàn = Separarse).</td></tr>
+  <tr><td>Pera (<span class="hz">梨</span>)</td><td class="super-bad">❌ Separación</td><td>Suena a <span class="hz">离</span> (Lí = Separarse). Nunca cortar para compartir.</td></tr>
+  <tr><td>Color Rojo (<span class="hz">红</span>)</td><td class="super-good">✅ Vida / Boda</td><td>Color de la suerte, vida y celebración.</td></tr>
+  <tr><td>Color Blanco (<span class="hz">白</span>)</td><td class="super-bad">❌ Muerte</td><td>Color del luto y funerales.</td></tr>
+  <tr><td>Sombrero Verde (<span class="hz">绿帽子</span>)</td><td class="super-bad">❌ Infidelidad</td><td>"Llevar sombrero verde" = Tu pareja te engaña.</td></tr>
+</table>
+
+<h4>Etiqueta en la Mesa (Palillos)</h4>
+<div class="box warn">
+  ⚠️ <strong>Tabúes con Palillos</strong><br>
+  • <strong>Clavar los palillos en el arroz:</strong> ¡Tabú Absoluto! Parece incienso en un funeral.<br>
+  • <strong>Golpear el bol:</strong> Lo hacían los mendigos para pedir comida.<br>
+  • <strong>Jugar con los palillos:</strong> Muy mala educación.
+</div>
+
+<h4>El Sobre Rojo (红包 Hóngbāo)</h4>
+<div class="box note">
+  🧧 <strong>Reglas del Sobre Rojo:</strong><br>
+  • El dinero siempre debe ser número <strong>par</strong> (200, 600, 800).<br>
+  • Nunca cantidades con 4 (40, 400 — suena a muerte).<br>
+  • Siempre billetes nuevos y crujientes.<br>
+  • <strong>Sobre blanco</strong> = dinero de condolencias (funerario). ¡No confundir!
+</div>
+
+<!-- ==================== CAPÍTULO 9 ==================== -->
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:36px; padding:16px 0; border-top:1px solid #eee;" class="no-print">
+  <a href="cap07.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">← Cap 07</a>
+  <a href="/chino/basico1/" style="color:var(--red); text-decoration:none; font-size:0.85em;">📚 Índice Básico 1</a>
+  <a href="cap09.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">Cap 09 →</a>
+</div>
+<footer>Básico 1 Capítulo 08 · Centro Cultural Chino</footer>
+
+<script>
+const AUDIO_BASE = '/chino/audio/';
+const audioMap = {
+  "250 — 二百五": "zh_67f57326c4.mp3",
+  "4 — 四": "zh_203867bea4.mp3",
+  "520": "zh_cf67355a33.mp3",
+  "6 — 六": "zh_740b260523.mp3",
+  "8 — 八": "zh_268a9dc0ff.mp3",
+  "9 — 九": "zh_dd704bb78a.mp3",
+  "一": "zh_7941da94db.mp3",
+  "一万": "zh_5554f76854.mp3",
+  "一亿": "zh_29caafabd1.mp3",
+  "一千": "zh_edad80baf8.mp3",
+  "一百万": "zh_6eacd6496b.mp3",
+  "七": "zh_aad6914f8f.mp3",
+  "万": "zh_9d03206671.mp3",
+  "三": "zh_e662ff59a0.mp3",
+  "三十": "zh_74968da48b.mp3",
+  "三十一": "zh_eae96fd75a.mp3",
+  "三十七": "zh_44b3050eb4.mp3",
+  "三十三": "zh_4437ba0b94.mp3",
+  "三十九": "zh_9beb377b46.mp3",
+  "三十二": "zh_ecd547fd44.mp3",
+  "三十五": "zh_a64c64f699.mp3",
+  "三十八": "zh_143ed15d2e.mp3",
+  "三十六": "zh_9bef5906c3.mp3",
+  "三十四": "zh_48e0d3d333.mp3",
+  "久": "zh_1a2c726632.mp3",
+  "九": "zh_9b4851f85d.mp3",
+  "九十": "zh_e17953c9c5.mp3",
+  "九十一": "zh_05fee97340.mp3",
+  "九十九": "zh_e5c9bd0f16.mp3",
+  "二": "zh_2d8be272c9.mp3",
+  "二万": "zh_a1db32ea3f.mp3",
+  "二十": "zh_39f55a21eb.mp3",
+  "二十一": "zh_7261652b2f.mp3",
+  "二十七": "zh_07ac55a248.mp3",
+  "二十三": "zh_33863be4c7.mp3",
+  "二十九": "zh_31f160b709.mp3",
+  "二十二": "zh_ae91b371b9.mp3",
+  "二十五": "zh_ea8677ebe8.mp3",
+  "二十八": "zh_cb181327e5.mp3",
+  "二十六": "zh_5b4ec12135.mp3",
+  "二十四": "zh_30bca2bd57.mp3",
+  "五": "zh_1fcc29d077.mp3",
+  "五十": "zh_8adffdaa4c.mp3",
+  "五十一": "zh_20ea367437.mp3",
+  "五十九": "zh_8586a70bf3.mp3",
+  "什么": "zh_736ccbe560.mp3",
+  "伞": "zh_e3c7a14b3f.mp3",
+  "做": "zh_7105106a36.mp3",
+  "八": "zh_edf1acd5c6.mp3",
+  "六": "zh_61b453523d.mp3",
+  "几": "几_28fef849a6.mp3",
+  "十": "zh_181245720b.mp3",
+  "十一": "zh_6863d827d8.mp3",
+  "十七": "zh_f44be04f47.mp3",
+  "十万": "zh_3018b09eb0.mp3",
+  "十三": "zh_4a1cecc838.mp3",
+  "十九": "zh_be192d36eb.mp3",
+  "十二": "zh_c04fc25ea7.mp3",
+  "十五": "zh_5260c1f701.mp3",
+  "十八": "zh_83b67cd817.mp3",
+  "十六": "zh_f15bd14b07.mp3",
+  "十四": "zh_a9019bd013.mp3",
+  "去": "zh_dfb9366c91.mp3",
+  "发": "zh_922e08aef5.mp3",
+  "叫": "zh_27ead3ff93.mp3",
+  "吃": "zh_a52b77dfc6.mp3",
+  "吗": "zh_2988084a74.mp3",
+  "呢": "呢_65ac5a7b15.mp3",
+  "哪": "zh_e0bcc1fa08.mp3",
+  "哪儿": "zh_92c5455654.mp3",
+  "喜欢": "zh_3d6c396cf4.mp3",
+  "四": "zh_21716cf311.mp3",
+  "四十": "zh_988adf6969.mp3",
+  "四十四": "zh_12956cc5cc.mp3",
+  "四是四，十是十": "zh_76d7132a81.mp3",
+  "在": "zh_241d47a3ee.mp3",
+  "多大": "zh_64adfe5634.mp3",
+  "多少": "zh_22266fe1dd.mp3",
+  "怎么": "zh_786df56259.mp3",
+  "想": "zh_291837bd5b.mp3",
+  "我 你 他 她 我们 谁": "zh_56374813e9.mp3",
+  "我爱你": "zh_4f2016c6b9.mp3",
+  "散": "zh_8de53fd645.mp3",
+  "是": "是_0a60ac8f02.mp3",
+  "有": "zh_cc4ad2fd27.mp3",
+  "梨": "zh_9213c6fc89.mp3",
+  "死": "zh_093a1a4516.mp3",
+  "爸爸 妈妈 男朋友 女朋友 大家": "zh_482000dad0.mp3",
+  "白": "zh_9b9a35c22a.mp3",
+  "看": "zh_9302446f9b.mp3",
+  "离": "zh_2afad8c04a.mp3",
+  "红": "zh_d088e65280.mp3",
+  "绿帽子": "zh_c90ae6818f.mp3",
+  "老师 学生 医生 老板 朋友 同学": "zh_7a170c292a.mp3",
+  "要": "zh_5438c873f9.mp3",
+  "说": "zh_ddc9d3d10d.mp3",
+  "谁": "zh_cfbafdf1d6.mp3",
+  "送终": "zh_09a20e47ef.mp3",
+  "送钟": "zh_0c1d968d84.mp3",
+  "钟": "zh_4d44cc9756.mp3",
+  "零": "zh_777fda6c51.mp3"
+};
+
+function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+// Audio buttons for .hz spans
+document.querySelectorAll('.hz').forEach(el => {
+  const text = el.textContent.trim();
+  if (text.length > 0 && text.length <= 30) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    el.after(btn);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 1 — Capítulo 05 · Apuntes Chino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  :root {
+    --red: #c0392b; --dark: #1a1a2e; --gold: #d4820a;
+    --green: #27ae60; --blue: #2980b9; --purple: #8e44ad;
+    --bg: #fafafa; --text: #222; --muted: #888; --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; color: var(--text); font-size: 15px; background: var(--bg); }
+  header { background: var(--dark); color: #fff; padding: 28px 28px 22px; border-radius: 12px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6em; margin: 0 0 4px; color: var(--red); }
+  header p { margin: 0; color: #aaa; font-size: 0.88em; }
+  header a { color: var(--red); text-decoration: none; }
+  nav.toc { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  nav.toc h3 { margin: 0 0 10px; font-size: 0.82em; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  nav.toc ol { margin: 0; padding-left: 20px; }
+  nav.toc li { margin: 3px 0; font-size: 0.9em; }
+  nav.toc a { color: var(--red); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  h2 { font-size: 1.05em; color: #fff; padding: 10px 18px; border-radius: 8px; margin: 40px 0 16px; background: var(--red); }
+  h2.blue { background: var(--blue); }
+  h2.green { background: var(--green); }
+  h2.gold { background: var(--gold); }
+  h2.gray { background: #555; }
+  h2.purple { background: var(--purple); }
+  h3 { color: #444; font-size: 0.95em; margin: 18px 0 8px; border-left: 3px solid var(--red); padding-left: 10px; }
+  h4 { color: #555; font-size: 0.88em; margin: 12px 0 6px; }
+  p { margin: 8px 0; line-height: 1.6; }
+  .hz { font-size: 1.15em; font-weight: bold; color: var(--red); }
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.note { background: #e8f5e9; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.structure { background: #fdecea; border: 1.5px solid var(--red); }
+  .box.purple { background: #f3e5f5; border-left: 4px solid var(--purple); border-radius: 0 8px 8px 0; }
+  .box center { text-align: center; margin: 8px 0; }
+  .box code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.9em; }
+  .structure-formula { text-align: center; font-size: 1.2em; font-weight: bold; color: var(--red); margin: 8px 0; }
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; }
+  th { background: var(--red); color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .table-blue th { background: var(--blue); }
+  .table-green th { background: var(--green); }
+  .table-gold th { background: var(--gold); }
+  .table-purple th { background: var(--purple); }
+  .table-gray th { background: #555; }
+  .good { color: var(--green); }
+  .bad { color: var(--red); }
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid var(--border); padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .da strong, .db strong { font-size: 0.85em; color: #666; }
+  .voc { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin: 6px 0; }
+  .voc .hz { font-size: 1.3em; min-width: 80px; }
+  .voc .py { color: var(--blue); font-size: 0.9em; min-width: 120px; }
+  .voc .es { color: #555; font-size: 0.88em; flex: 1; }
+  .tones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .tone-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .tone-card .name { font-weight: bold; margin-bottom: 4px; }
+  .tone-card .example { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+  .tone-line { margin: 8px auto; width: 80px; height: 30px; position: relative; }
+  .super-good { color: var(--green); font-weight: bold; }
+  .super-bad { color: var(--red); font-weight: bold; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .day-label { background: #f0f0f0; color: #666; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 4px; display: inline-block; margin: 20px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .num-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 10px 0; }
+  .num-cell { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; text-align: center; }
+  .num-cell .hz { font-size: 1.3em; }
+  .num-cell .py { font-size: 0.75em; color: var(--muted); }
+  .audio-btn { background: none; border: none; cursor: pointer; font-size: 1em; padding: 2px 4px; opacity: 0.5; transition: opacity .2s; vertical-align: middle; }
+  .audio-btn:hover { opacity: 1; }
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
+  @media (max-width: 768px) {
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .tones { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .no-print, .audio-btn { display: none !important; }
+    body { background: #fff !important; padding: 10px 20px; font-size: 12px; }
+    header { background: var(--dark) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Básico 1 — Capítulo 05</h1>
+  <p>Demostrativos y Cantidad · Centro Cultural Chino · <a href="/chino/basico1/">← Volver al índice</a></p>
+</header>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#demo">La Trinidad de los Demostrativos</a></li>
+    <li><a href="#clasificadores">Clasificadores (Medidores)</a></li>
+    <li><a href="#familia1">Familia Básica (Jiātíng 家庭)</a></li>
+  </ol>
+</nav>
+
+<h2 id="cap5" class="gray">5. Demostrativos y Cantidad</h2>
+
+<h3 id="demo">La Trinidad de los Demostrativos</h3>
+<div class="box grammar">
+  • <span class="hz">这</span> (Zhè) = <strong>Este / Esto</strong> — Cerca de mí.<br>
+  • <span class="hz">那</span> (Nà) = <strong>Ese / Eso</strong> — Lejos de mí.<br>
+  • <span class="hz">哪</span> (Nǎ) = <strong>¿Cuál? / ¿Qué?</strong> — Pregunta de elección.<br><br>
+  💡 <span class="hz">哪</span> tiene una <strong>Boca (口)</strong> a la izquierda — ¡La boca indica que estás preguntando!
+</div>
+
+<table>
+  <tr><th>Base</th><th>Con "R" (Lugar)</th><th>Español</th></tr>
+  <tr><td><span class="hz">这</span> Zhè</td><td><span class="hz">这儿</span> Zhèr</td><td>Aquí (En este lugar)</td></tr>
+  <tr><td><span class="hz">那</span> Nà</td><td><span class="hz">那儿</span> Nàr</td><td>Allí (En ese lugar)</td></tr>
+  <tr><td><span class="hz">哪</span> Nǎ</td><td><span class="hz">哪儿</span> Nǎr</td><td>¿Dónde?</td></tr>
+</table>
+
+<div class="box note">
+  🔑 <strong>Norte vs Sur:</strong> El uso de la "R" (Érhuà) es típico de Beijing y el norte.<br>
+  Sur: Zhè lǐ / Nà lǐ / Nǎ lǐ (Lǐ = Interior/Lugar). Ambas formas son correctas.
+</div>
+
+<h3 id="clasificadores">Clasificadores (Medidores)</h3>
+<div class="box structure">
+  <div class="structure-formula">Número + Clasificador + Sustantivo</div>
+  En chino es obligatorio usar un <strong>Clasificador</strong> al contar cosas. No se pueden contar directamente.
+</div>
+
+<div class="box grammar">
+  <strong>Clasificador Universal: Gè (个)</strong><br>
+  Si no sabes qué clasificador usar, usa <span class="hz">个</span>. Sirve para personas y objetos generales.<br>
+  • <em>Yī <strong>gè</strong> rén</em> — Una persona · <em>Zhè <strong>gè</strong>...</em> — Este [cosa]...
+</div>
+
+<h4>Los Dos "Doses": Èr vs Liǎng</h4>
+<div class="two-col">
+  <div class="box note">
+    <strong><span class="hz">二</span> Èr — El Matemático</strong><br>
+    • Contar (1, 2, 3...)<br>
+    • Números ordinales (el segundo)<br>
+    • Al final de números grandes (12, 22)
+  </div>
+  <div class="box warn">
+    <strong><span class="hz">两</span> Liǎng — La Cantidad</strong><br>
+    Siempre que cuentes cosas (con clasificador).<br>
+    ✅ Liǎng gè rén (Dos personas)<br>
+    ❌ Èr gè rén (Incorrecto)
+  </div>
+</div>
+
+<h3 id="familia1">Familia Básica (Jiātíng 家庭)</h3>
+<table>
+  <tr><th>Rol</th><th>Pinyin</th><th>Nota</th></tr>
+  <tr><td><span class="hz">爸爸</span> Papá</td><td>Bàba</td><td>Padre (父) + fonética (巴).</td></tr>
+  <tr><td><span class="hz">妈妈</span> Mamá</td><td>Māma</td><td>Mujer (女) + Caballo (ma).</td></tr>
+  <tr><td><span class="hz">哥哥</span> Hno. Mayor</td><td>Gēge</td><td>Dos "bocas". El que da órdenes.</td></tr>
+  <tr><td><span class="hz">弟弟</span> Hno. Menor</td><td>Dìdi</td><td>Rango menor.</td></tr>
+  <tr><td><span class="hz">姐姐</span> Hna. Mayor</td><td>Jiějie</td><td>Mujer (女) + Fonética.</td></tr>
+  <tr><td><span class="hz">妹妹</span> Hna. Menor</td><td>Mèimei</td><td>Mujer + 未 (Wèi = "No todavía").</td></tr>
+</table>
+
+<h4>Fonética: El Cambio de Tono de Bù (不)</h4>
+<div class="box warn">
+  ⚠️ <strong>Regla del Camaleón Bù</strong><br>
+  • Original: 4to Tono (Bù - Bajando)<br>
+  • Cambio: Si la siguiente palabra es también 4to tono → <strong>Bù sube a 2do (Bú)</strong><br><br>
+  • Bù hǎo (No bien) — 4+3 → se queda en 4<br>
+  • <strong>Bú shì</strong> (No ser) — shì es 4to, sube<br>
+  • <strong>Bú yào</strong> (No querer) — yào es 4to, sube
+</div>
+
+<h4>Supervivencia: Tīng bu dǒng (听不懂)</h4>
+<div class="box tip">
+  💡 <strong>Tīng bu dǒng (听不懂)</strong> = "Escucho pero no entiendo"<br>
+  • Tīng (听) = Escuchar · Bu (不) = No (Potencial) · Dǒng (懂) = Entender<br>
+  Versión positiva: <span class="hz">听得懂</span> (Tīng de dǒng) = Logro entender
+</div>
+
+<h4>Vocabulario del Día 5</h4>
+<div class="voc"><span class="hz">这 / 那 / 哪</span><span class="py">Zhè / Nà / Nǎ</span><span class="es">Este / Ese / ¿Cuál?</span></div>
+<div class="voc"><span class="hz">这儿 / 那儿 / 哪儿</span><span class="py">Zhèr / Nàr / Nǎr</span><span class="es">Aquí / Allí / ¿Dónde?</span></div>
+<div class="voc"><span class="hz">个 / 两 / 二</span><span class="py">Gè / Liǎng / Èr</span><span class="es">Clasificador universal / Dos (cantidad) / Dos (matemático)</span></div>
+<div class="voc"><span class="hz">谁</span><span class="py">Shéi</span><span class="es">¿Quién?</span></div>
+<div class="voc"><span class="hz">听 / 懂</span><span class="py">Tīng / Dǒng</span><span class="es">Escuchar / Entender</span></div>
+
+<!-- ==================== CAPÍTULO 6 ==================== -->
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:36px; padding:16px 0; border-top:1px solid #eee;" class="no-print">
+  <a href="cap04.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">← Cap 04</a>
+  <a href="/chino/basico1/" style="color:var(--red); text-decoration:none; font-size:0.85em;">📚 Índice Básico 1</a>
+  <a href="cap06.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">Cap 06 →</a>
+</div>
+<footer>Básico 1 Capítulo 05 · Centro Cultural Chino</footer>
+
+<script>
+const AUDIO_BASE = '/chino/audio/';
+const audioMap = {
+  "两": "zh_0bff8e5ca6.mp3",
+  "个": "zh_930882bb0a.mp3",
+  "个 / 两 / 二": "zh_03a5f8fe6f.mp3",
+  "二": "zh_2d8be272c9.mp3",
+  "听 / 懂": "zh_0da7cf00ad.mp3",
+  "听得懂": "zh_41d3934149.mp3",
+  "哥哥": "zh_39af35e7b7.mp3",
+  "哪": "zh_e0bcc1fa08.mp3",
+  "哪儿": "zh_92c5455654.mp3",
+  "妈妈": "zh_e6c7ee6003.mp3",
+  "妹妹": "zh_1c097b12de.mp3",
+  "姐姐": "zh_033e1fb01c.mp3",
+  "弟弟": "zh_427034659a.mp3",
+  "爸爸": "zh_0d00c80f61.mp3",
+  "谁": "zh_cfbafdf1d6.mp3",
+  "这": "zh_8e9b7a3a19.mp3",
+  "这 / 那 / 哪": "zh_e8d5833a3e.mp3",
+  "这儿": "zh_4146aab4b3.mp3",
+  "这儿 / 那儿 / 哪儿": "zh_7c108dc852.mp3",
+  "那": "zh_995c3ec9d7.mp3",
+  "那儿": "zh_751af044c6.mp3"
+};
+
+function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+// Audio buttons for .hz spans
+document.querySelectorAll('.hz').forEach(el => {
+  const text = el.textContent.trim();
+  if (text.length > 0 && text.length <= 30) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    el.after(btn);
+  }
+});
+</script>
+</body>
+</html>

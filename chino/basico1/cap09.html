@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 1 — Capítulo 09 · Apuntes Chino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  :root {
+    --red: #c0392b; --dark: #1a1a2e; --gold: #d4820a;
+    --green: #27ae60; --blue: #2980b9; --purple: #8e44ad;
+    --bg: #fafafa; --text: #222; --muted: #888; --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; color: var(--text); font-size: 15px; background: var(--bg); }
+  header { background: var(--dark); color: #fff; padding: 28px 28px 22px; border-radius: 12px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6em; margin: 0 0 4px; color: var(--red); }
+  header p { margin: 0; color: #aaa; font-size: 0.88em; }
+  header a { color: var(--red); text-decoration: none; }
+  nav.toc { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  nav.toc h3 { margin: 0 0 10px; font-size: 0.82em; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  nav.toc ol { margin: 0; padding-left: 20px; }
+  nav.toc li { margin: 3px 0; font-size: 0.9em; }
+  nav.toc a { color: var(--red); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  h2 { font-size: 1.05em; color: #fff; padding: 10px 18px; border-radius: 8px; margin: 40px 0 16px; background: var(--red); }
+  h2.blue { background: var(--blue); }
+  h2.green { background: var(--green); }
+  h2.gold { background: var(--gold); }
+  h2.gray { background: #555; }
+  h2.purple { background: var(--purple); }
+  h3 { color: #444; font-size: 0.95em; margin: 18px 0 8px; border-left: 3px solid var(--red); padding-left: 10px; }
+  h4 { color: #555; font-size: 0.88em; margin: 12px 0 6px; }
+  p { margin: 8px 0; line-height: 1.6; }
+  .hz { font-size: 1.15em; font-weight: bold; color: var(--red); }
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.note { background: #e8f5e9; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.structure { background: #fdecea; border: 1.5px solid var(--red); }
+  .box.purple { background: #f3e5f5; border-left: 4px solid var(--purple); border-radius: 0 8px 8px 0; }
+  .box center { text-align: center; margin: 8px 0; }
+  .box code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.9em; }
+  .structure-formula { text-align: center; font-size: 1.2em; font-weight: bold; color: var(--red); margin: 8px 0; }
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; }
+  th { background: var(--red); color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .table-blue th { background: var(--blue); }
+  .table-green th { background: var(--green); }
+  .table-gold th { background: var(--gold); }
+  .table-purple th { background: var(--purple); }
+  .table-gray th { background: #555; }
+  .good { color: var(--green); }
+  .bad { color: var(--red); }
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid var(--border); padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .da strong, .db strong { font-size: 0.85em; color: #666; }
+  .voc { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin: 6px 0; }
+  .voc .hz { font-size: 1.3em; min-width: 80px; }
+  .voc .py { color: var(--blue); font-size: 0.9em; min-width: 120px; }
+  .voc .es { color: #555; font-size: 0.88em; flex: 1; }
+  .tones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .tone-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .tone-card .name { font-weight: bold; margin-bottom: 4px; }
+  .tone-card .example { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+  .tone-line { margin: 8px auto; width: 80px; height: 30px; position: relative; }
+  .super-good { color: var(--green); font-weight: bold; }
+  .super-bad { color: var(--red); font-weight: bold; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .day-label { background: #f0f0f0; color: #666; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 4px; display: inline-block; margin: 20px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .num-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 10px 0; }
+  .num-cell { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; text-align: center; }
+  .num-cell .hz { font-size: 1.3em; }
+  .num-cell .py { font-size: 0.75em; color: var(--muted); }
+  .audio-btn { background: none; border: none; cursor: pointer; font-size: 1em; padding: 2px 4px; opacity: 0.5; transition: opacity .2s; vertical-align: middle; }
+  .audio-btn:hover { opacity: 1; }
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
+  @media (max-width: 768px) {
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .tones { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .no-print, .audio-btn { display: none !important; }
+    body { background: #fff !important; padding: 10px 20px; font-size: 12px; }
+    header { background: var(--dark) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Básico 1 — Capítulo 09</h1>
+  <p>La Gran Familia (大家族) · Centro Cultural Chino · <a href="/chino/basico1/">← Volver al índice</a></p>
+</header>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#arbol">Árbol Genealógico (大家族)</a></li>
+    <li><a href="#formalidad">Formalidad y Respeto (礼貌)</a></li>
+    <li><a href="#edad">Preguntar la Edad</a></li>
+  </ol>
+</nav>
+
+<h2 id="cap9" class="green">9. La Gran Familia (大家族)</h2>
+
+<p>La familia china distingue minuciosamente entre <strong>Linaje Paterno</strong> (Interior) y <strong>Linaje Materno</strong> (Exterior), y entre Mayor y Menor.</p>
+
+<h3 id="arbol">Árbol Genealógico (大家族)</h3>
+
+<div class="box grammar">
+  <strong>🏛️ Antepasados</strong>
+  <table style="margin-top:8px">
+    <tr><th>Rol</th><th>Chino</th><th>Nota</th></tr>
+    <tr><td>Bisabuelo Paterno</td><td><span class="hz">曾祖父</span> Zēngzǔfù</td><td>"Zēng" indica una generación más arriba.</td></tr>
+    <tr><td>Bisabuela Paterna</td><td><span class="hz">曾祖母</span> Zēngzǔmǔ</td><td></td></tr>
+  </table>
+</div>
+
+<table>
+  <tr><th>Rol</th><th>Coloquial</th><th>Pinyin</th><th>Nota</th></tr>
+  <tr><td>Abuelo Paterno</td><td><span class="hz">爷爷</span></td><td>Yéye</td><td>Linaje paterno.</td></tr>
+  <tr><td>Abuela Paterna</td><td><span class="hz">奶奶</span></td><td>Nǎinai</td><td>Linaje paterno.</td></tr>
+  <tr><td>Abuelo Materno</td><td><span class="hz">外公</span></td><td>Wàigōng</td><td>Wài = Exterior (materno).</td></tr>
+  <tr><td>Abuela Materna</td><td><span class="hz">外婆</span></td><td>Wàipó</td><td>Linaje materno.</td></tr>
+  <tr><td>Papá</td><td><span class="hz">爸爸</span></td><td>Bàba</td><td>Formal: <span class="hz">父亲</span> Fùqīn</td></tr>
+  <tr><td>Mamá</td><td><span class="hz">妈妈</span></td><td>Māma</td><td>Formal: <span class="hz">母亲</span> Mǔqīn</td></tr>
+  <tr><td>Tío (paterno)</td><td><span class="hz">叔叔</span></td><td>Shūshu</td><td>Hermano menor del papá.</td></tr>
+  <tr><td>Tía (paterna)</td><td><span class="hz">姑姑</span></td><td>Gūgu</td><td>Hermana del papá.</td></tr>
+  <tr><td>Tío (materno)</td><td><span class="hz">舅舅</span></td><td>Jiùjiu</td><td>Hermano de la mamá.</td></tr>
+  <tr><td>Tía (materna)</td><td><span class="hz">阿姨</span></td><td>Āyí</td><td>Hermana de la mamá.</td></tr>
+  <tr><td>Hermano Mayor</td><td><span class="hz">哥哥</span></td><td>Gēge</td><td></td></tr>
+  <tr><td>Hermano Menor</td><td><span class="hz">弟弟</span></td><td>Dìdi</td><td></td></tr>
+  <tr><td>Hermana Mayor</td><td><span class="hz">姐姐</span></td><td>Jiějie</td><td></td></tr>
+  <tr><td>Hermana Menor</td><td><span class="hz">妹妹</span></td><td>Mèimei</td><td></td></tr>
+  <tr><td>Padrastro</td><td><span class="hz">继父</span></td><td>Jìfù</td><td>Jì = Continuar/Suceder.</td></tr>
+  <tr><td>Madrastra</td><td><span class="hz">继母</span></td><td>Jìmǔ</td><td></td></tr>
+</table>
+
+<h3 id="formalidad">Formalidad y Respeto (礼貌)</h3>
+<table>
+  <tr><th>Rol</th><th>Coloquial (Oral)</th><th>Formal (Escrito)</th></tr>
+  <tr><td>Padre</td><td><span class="hz">爸爸</span> Bàba</td><td><span class="hz">父亲</span> Fùqīn</td></tr>
+  <tr><td>Madre</td><td><span class="hz">妈妈</span> Māma</td><td><span class="hz">母亲</span> Mǔqīn</td></tr>
+  <tr><td>Hijo</td><td><span class="hz">儿子</span> Érzi</td><td><span class="hz">犬子</span> Quǎnzǐ* — "Mi hijo cachorro" (Humilde)</td></tr>
+  <tr><td>Hija</td><td><span class="hz">女儿</span> Nǚ'ér</td><td><span class="hz">爱女</span> Àinǚ — "Hija amada"</td></tr>
+  <tr><td>Hijos (general)</td><td><span class="hz">孩子</span> Háizi</td><td><span class="hz">子女</span> Zǐnǚ — Descendencia (legal)</td></tr>
+</table>
+
+<h4>Pareja y Títulos de Cortesía</h4>
+<table>
+  <tr><th>Concepto</th><th>Chino</th><th>Uso</th></tr>
+  <tr><td>Esposo (Formal)</td><td><span class="hz">丈夫</span> Zhàngfu</td><td>Documentos, formal.</td></tr>
+  <tr><td>Esposa (Formal)</td><td><span class="hz">妻子</span> Qīzi</td><td>Formal.</td></tr>
+  <tr><td>Marido (Col.)</td><td><span class="hz">老公</span> Lǎogōng</td><td>Muy común entre parejas jóvenes.</td></tr>
+  <tr><td>Mujer (Col.)</td><td><span class="hz">老婆</span> Lǎopó</td><td>"Wifey", cariñoso.</td></tr>
+  <tr><td>Sr. / Señor</td><td><span class="hz">先生</span> Xiānsheng</td><td>También puede significar "Mi Esposo".</td></tr>
+  <tr><td>Sra. / Señora</td><td><span class="hz">太太</span> Tàitài</td><td>También "Mi Esposa".</td></tr>
+  <tr><td>Señorita</td><td><span class="hz">小姐</span> Xiǎojiě</td><td>Mujeres jóvenes solteras.</td></tr>
+  <tr><td>Dama / Ms.</td><td><span class="hz">女士</span> Nǚshì</td><td>Título profesional/formal.</td></tr>
+</table>
+
+<h3 id="edad">Preguntar la Edad</h3>
+<table>
+  <tr><th>Contexto</th><th>Pregunta</th><th>Notas</th></tr>
+  <tr><td>Adultos/Jóvenes</td><td><span class="hz">你多大了？</span> Nǐ duō dà le?</td><td>Duō dà = ¿Cuán grande?</td></tr>
+  <tr><td>Niños (&lt;10)</td><td><span class="hz">你几岁了？</span> Nǐ jǐ suì le?</td><td>Jǐ = Cuántos (&lt;10) · Suì = Años</td></tr>
+  <tr><td>Mayores (Respeto)</td><td><span class="hz">您多大年纪了？</span> Nín duō dà niánjì le?</td><td>Nín = Usted · Niánjì = Edad honorable</td></tr>
+</table>
+<div class="box note">
+  💬 <strong>Respuesta:</strong> <span class="hz">我</span> + [Número] + <span class="hz">岁</span> + <span class="hz">了</span><br>
+  Ej: <span class="hz">我二十五岁了</span> (Tengo 25 años)
+</div>
+
+<h4>Conocer vs Saber</h4>
+<table>
+  <tr><th>Verbo</th><th>Significado</th><th>Ejemplo</th></tr>
+  <tr><td><span class="hz">认识</span> Rènshi</td><td><strong>Conocer personalmente</strong> — implica relación</td><td><span class="hz">我认识老板</span> — Conozco al jefe (tengo trato)</td></tr>
+  <tr><td><span class="hz">知道</span> Zhīdào</td><td><strong>Saber información</strong> — solo datos</td><td><span class="hz">知道老板</span> — Sé quién es el jefe (pero no lo conozco)</td></tr>
+</table>
+
+<h4>Gramática: Le (了) — Cambio y Deseo</h4>
+<table>
+  <tr><th>Concepto</th><th>Ejemplo</th><th>Explicación</th></tr>
+  <tr><td>Cambio de Estado</td><td><span class="hz">我不吃了</span> (Wǒ bù chī le)</td><td>"Ya no como" — antes iba a comer, ahora no.</td></tr>
+  <tr><td>vs Sin Le</td><td><span class="hz">我不吃</span></td><td>"No como" — hábito general o rechazo.</td></tr>
+  <tr><td>Deseo (Suave)</td><td><span class="hz">我想去…</span> (Wǒ xiǎng qù…)</td><td>"Me gustaría ir..." — pensamiento/plan.</td></tr>
+  <tr><td>Futuro/Querer</td><td><span class="hz">我要去…</span> (Wǒ yào qù…)</td><td>"Voy a ir..." — determinación.</td></tr>
+</table>
+
+<div class="box tip">
+  🍚 <strong>Saludo de Cariño Cultural:</strong> <span class="hz">你吃了吗？</span> (Nǐ chī le ma?) = "¿Ya comiste?"<br>
+  En China, significa realmente "¡Hola!, ¿Cómo estás?". Preguntar si comiste = cuidar al otro.<br>
+  Respuesta: <span class="hz">吃了</span> (Chī le = Ya comí) / <span class="hz">还没吃</span> (Hái méi chī = Todavía no)
+</div>
+
+<!-- ==================== CAPÍTULO 10 ==================== -->
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:36px; padding:16px 0; border-top:1px solid #eee;" class="no-print">
+  <a href="cap08.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">← Cap 08</a>
+  <a href="/chino/basico1/" style="color:var(--red); text-decoration:none; font-size:0.85em;">📚 Índice Básico 1</a>
+  <a href="cap10.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">Cap 10 →</a>
+</div>
+<footer>Básico 1 Capítulo 09 · Centro Cultural Chino</footer>
+
+<script>
+const AUDIO_BASE = '/chino/audio/';
+const audioMap = {
+  "丈夫": "zh_a583eae023.mp3",
+  "了": "zh_163773fb21.mp3",
+  "你几岁了？": "zh_513ee4e39f.mp3",
+  "你吃了吗？": "zh_91c1666bc0.mp3",
+  "你多大了？": "zh_ff1749b232.mp3",
+  "儿子": "zh_4f11098f34.mp3",
+  "先生": "zh_1f9820d215.mp3",
+  "叔叔": "zh_b25d786533.mp3",
+  "吃了": "zh_6fc525bdfc.mp3",
+  "哥哥": "zh_39af35e7b7.mp3",
+  "外公": "zh_ba120127ce.mp3",
+  "外婆": "zh_32c308aa37.mp3",
+  "太太": "zh_49e30567d7.mp3",
+  "女儿": "zh_b62d330b5a.mp3",
+  "女士": "zh_7eff9da194.mp3",
+  "奶奶": "zh_2144381ade.mp3",
+  "妈妈": "zh_e6c7ee6003.mp3",
+  "妹妹": "zh_1c097b12de.mp3",
+  "妻子": "zh_97795c8167.mp3",
+  "姐姐": "zh_033e1fb01c.mp3",
+  "姑姑": "zh_d21483207d.mp3",
+  "子女": "zh_84e10d4273.mp3",
+  "孩子": "zh_03e25ab08d.mp3",
+  "小姐": "zh_832c2de240.mp3",
+  "岁": "zh_2854fa1c12.mp3",
+  "弟弟": "zh_427034659a.mp3",
+  "您多大年纪了？": "zh_bf6f080d33.mp3",
+  "我": "zh_1681525453.mp3",
+  "我不吃": "zh_6971d00317.mp3",
+  "我不吃了": "zh_4b410feb27.mp3",
+  "我二十五岁了": "zh_5be759b0d8.mp3",
+  "我想去…": "zh_ed671b20c0.mp3",
+  "我要去…": "zh_080923a6bc.mp3",
+  "我认识老板": "zh_778ae2ad1e.mp3",
+  "曾祖母": "zh_9e66fdb251.mp3",
+  "曾祖父": "zh_7c3bc71bb7.mp3",
+  "母亲": "zh_b27f597c46.mp3",
+  "爱女": "zh_0f1353fa08.mp3",
+  "父亲": "zh_a93e956a93.mp3",
+  "爷爷": "zh_e571dca2d0.mp3",
+  "爸爸": "zh_0d00c80f61.mp3",
+  "犬子": "zh_44116f2f1c.mp3",
+  "知道": "zh_5dd93697ae.mp3",
+  "知道老板": "zh_473bc001cb.mp3",
+  "继母": "zh_a2fa470964.mp3",
+  "继父": "zh_1db63633c5.mp3",
+  "老公": "zh_222651b743.mp3",
+  "老婆": "zh_d7b8eeacd9.mp3",
+  "舅舅": "zh_e5c2ecf6cc.mp3",
+  "认识": "zh_dad2ab0807.mp3",
+  "还没吃": "zh_cf51ad51a2.mp3",
+  "阿姨": "zh_d0160f65bb.mp3"
+};
+
+function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+// Audio buttons for .hz spans
+document.querySelectorAll('.hz').forEach(el => {
+  const text = el.textContent.trim();
+  if (text.length > 0 && text.length <= 30) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    el.after(btn);
+  }
+});
+</script>
+</body>
+</html>

@@ -408,16 +408,165 @@
 <button class="pinyin-toggle no-print" onclick="document.body.classList.toggle('hide-pinyin'); this.textContent = document.body.classList.contains('hide-pinyin') ? '👁️ Mostrar pinyin' : '🔤 Ocultar pinyin'">🔤 Ocultar pinyin</button>
 
 <script>
-// === Audio: Web Speech API ===
+// === Audio: ElevenLabs MP3 con fallback a Web Speech API ===
+const AUDIO_BASE = '/chino/audio/';
+const audioMap = {
+  "\"hola\"用汉语怎么说？": "zh_4649c8fb51.mp3",
+  "一点儿": "zh_796019f7b0.mp3",
+  "不会": "zh_40dea0cab1.mp3",
+  "两种。": "zh_c19c417315.mp3",
+  "中国有很多种菜。": "zh_43e0b24ad9.mp3",
+  "中国菜不好吃。": "zh_847f80a0b2.mp3",
+  "中国菜很好吃。": "zh_59247252d8.mp3",
+  "中学": "zh_041da43136.mp3",
+  "他不高。": "zh_966103252e.mp3",
+  "他很帅。": "zh_67948f4785.mp3",
+  "他很聪明。": "zh_985d81973d.mp3",
+  "他很胖。": "zh_c8b0b55641.mp3",
+  "他很高。": "zh_30130315c9.mp3",
+  "会": "zh_647477bbc5.mp3",
+  "会话": "zh_9a834e9a3e.mp3",
+  "你会做饭吗？": "zh_8caf9727c9.mp3",
+  "你会写汉字吗？": "zh_89310af294.mp3",
+  "你会唱歌吗？": "zh_9d6ee2661e.mp3",
+  "你会开车吗？": "zh_05ac5d12f5.mp3",
+  "你会弹吉他吗？": "zh_4dc312db35.mp3",
+  "你会游泳吗？": "zh_b62589b6d1.mp3",
+  "你会画画吗？": "zh_1c923e7769.mp3",
+  "你会说汉语吗？": "zh_ca41074eaf.mp3",
+  "你会跳舞吗？": "zh_d144ff4713.mp3",
+  "你叫什么名字？": "zh_dcdedf4368.mp3",
+  "你的名字怎么说？": "zh_a235bfb2aa.mp3",
+  "你的衣服很好看。": "zh_cfa920f079.mp3",
+  "做": "zh_7105106a36.mp3",
+  "做中国菜": "zh_736960d9eb.mp3",
+  "做指甲": "zh_2f5034497c.mp3",
+  "做睫毛": "zh_cb7509b5dc.mp3",
+  "做菜": "zh_7c33cfe38a.mp3",
+  "做饭": "zh_e69a3d7106.mp3",
+  "写": "zh_4d7dc6c5f8.mp3",
+  "动物": "zh_83d7b8a4ba.mp3",
+  "包子好吃吗？": "zh_99559af418.mp3",
+  "吃": "zh_a52b77dfc6.mp3",
+  "同学": "zh_1f888438ce.mp3",
+  "哪种？": "zh_728e5c1cb4.mp3",
+  "唱歌": "zh_d49c9b66f6.mp3",
+  "大学": "zh_572a6791c3.mp3",
+  "大学 / 中学 / 小学": "zh_4388531618.mp3",
+  "她不丑。": "zh_e3b8b5dfcf.mp3",
+  "她很会画画。": "zh_7fd65b35f3.mp3",
+  "她很会跳舞。": "zh_4b5c6e0721.mp3",
+  "她很漂亮。": "zh_e7b2f705be.mp3",
+  "她很瘦。": "zh_de87dbcc9d.mp3",
+  "她很矮。": "zh_3619365193.mp3",
+  "好": "zh_ac2c8f13c6.mp3",
+  "好吃": "zh_a78e4f228b.mp3",
+  "好吃 (hǎochī) — delicioso": "zh_6a2aab9371.mp3",
+  "好吃 / 难吃": "zh_4353a58006.mp3",
+  "好听 (hǎotīng) — suena bien": "zh_249db9b0c1.mp3",
+  "好听 / 难听": "zh_c67aa7aa7b.mp3",
+  "好喝 (hǎohē) — sabroso (bebida)": "zh_2256cfd399.mp3",
+  "好喝 / 难喝": "zh_16614a08f9.mp3",
+  "好看": "zh_8c32c77d90.mp3",
+  "好看 (hǎokàn) — bonito": "zh_321ad0da0e.mp3",
+  "好看 / 难看": "zh_696bddc952.mp3",
+  "字": "zh_a95dbb0ea4.mp3",
+  "学 / 学习": "zh_53c668c770.mp3",
+  "学习": "zh_4ef520d6cd.mp3",
+  "学校": "zh_413b738061.mp3",
+  "学生": "zh_35d9969dfa.mp3",
+  "对不起": "zh_cd51c8c91e.mp3",
+  "对不起，这个字我会读，不会写。": "zh_dec19419c7.mp3",
+  "小学": "zh_79898d25cb.mp3",
+  "很多种。": "zh_319857a14c.mp3",
+  "怎么": "zh_786df56259.mp3",
+  "怎么做": "zh_d665feb256.mp3",
+  "怎么写": "zh_5885237328.mp3",
+  "怎么去": "zh_7700818094.mp3",
+  "怎么吃": "zh_8cdaf80cda.mp3",
+  "怎么学": "zh_34116d289f.mp3",
+  "怎么用": "zh_6e5fae5e89.mp3",
+  "怎么说": "zh_0084a1d713.mp3",
+  "怎么读": "zh_dbb1249a8e.mp3",
+  "我不会做中国菜。": "zh_4e0c088994.mp3",
+  "我不会画画。": "zh_419c518af2.mp3",
+  "我不会跳舞。": "zh_33c1f4a8a7.mp3",
+  "我会一点儿。": "zh_259b63de7f.mp3",
+  "我会做一点儿中国菜。": "zh_6fc4aaba5f.mp3",
+  "我会做饭。": "zh_af66688e30.mp3",
+  "我会写。": "zh_d45b7d4d70.mp3",
+  "我会写一点儿汉字。": "zh_19d84d71a4.mp3",
+  "我会写汉字。": "zh_627fe09f9b.mp3",
+  "我会唱歌。": "zh_f450b8f1a1.mp3",
+  "我会开车。": "zh_869a8c0952.mp3",
+  "我会游泳。": "zh_037b47d191.mp3",
+  "我会画。": "zh_8a5c794d05.mp3",
+  "我会画一点儿画。": "zh_c0b0000335.mp3",
+  "我会画画。": "zh_a9a028efe9.mp3",
+  "我会说一点儿汉语。": "zh_bc65b1ad5d.mp3",
+  "我会说汉语。": "zh_edd7f7f636.mp3",
+  "我会跳舞。": "zh_ba73cf2b8e.mp3",
+  "指甲": "zh_079db25d91.mp3",
+  "智利菜很好吃！": "zh_c74f458219.mp3",
+  "汉字": "zh_8a97ee1fcd.mp3",
+  "汉语怎么学？": "zh_673576a7e8.mp3",
+  "活动": "zh_36c6f572a0.mp3",
+  "火锅很好吃。": "zh_368c925476.mp3",
+  "炒饭很好吃。": "zh_91041b6e99.mp3",
+  "烧": "zh_aeffbc8538.mp3",
+  "烧烤": "zh_404f8174dd.mp3",
+  "燃烧卡路里": "zh_496eb54b7c.mp3",
+  "生词": "zh_e688881498.mp3",
+  "画": "zh_2287851dee.mp3",
+  "画画": "zh_806075baa8.mp3",
+  "看": "zh_9302446f9b.mp3",
+  "看书": "zh_e3ccf0942c.mp3",
+  "睫毛": "zh_772007e649.mp3",
+  "种": "zh_b13903cec9.mp3",
+  "练习": "zh_1ce039c953.mp3",
+  "舞": "zh_ddb163d5e9.mp3",
+  "读": "zh_75769d1ac8.mp3",
+  "跳": "zh_f4965ce10c.mp3",
+  "跳舞": "zh_fad50bfdcb.mp3",
+  "运动": "zh_37b6debeb4.mp3",
+  "这个": "zh_76d3280175.mp3",
+  "这个不好看。": "zh_b975caa307.mp3",
+  "这个字写怎么？": "zh_59ad6613de.mp3",
+  "这个字怎么写？": "zh_f1e51ef9ae.mp3",
+  "这个怎么说？": "zh_158a186373.mp3",
+  "这个歌很难听。": "zh_037fb082db.mp3",
+  "这个汉字怎么读？": "zh_7bd77b97d5.mp3",
+  "这个用汉语怎么说？": "zh_1be4c5fcc5.mp3",
+  "这个电影很好看。": "zh_41085751f2.mp3",
+  "这个电影很难看。": "zh_75334223f8.mp3",
+  "这个菜很难吃。": "zh_e8ede8141b.mp3",
+  "这个菜怎么做？": "zh_f76905bc2b.mp3",
+  "这幅画很美。": "zh_505f56ce77.mp3",
+  "这本书很好看。": "zh_4b408f6cd9.mp3",
+  "这种菜很好吃。": "zh_8afdc0a562.mp3",
+  "难": "zh_9455dd200b.mp3",
+  "难吃 (nánchī) — asqueroso": "zh_42884e1409.mp3",
+  "难听 (nántīng) — suena mal": "zh_3583402954.mp3",
+  "难喝 (nánhē) — asqueroso (bebida)": "zh_1514cd6b46.mp3",
+  "难看 (nánkàn) — feo": "zh_25069e7e53.mp3"
+};
+
 function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
   const u = new SpeechSynthesisUtterance(text);
   u.lang = 'zh-CN';
   u.rate = 0.8;
   speechSynthesis.speak(u);
 }
+
 // Agregar botones de audio a todas las celdas .hz en tablas
 document.querySelectorAll('td.hz').forEach(td => {
-  const text = td.textContent.replace(/[。？，！、：🔊]/g, '').trim();
+  const text = td.textContent.trim();
   if (text.length > 0) {
     const btn = document.createElement('button');
     btn.className = 'audio-btn';
@@ -427,9 +576,9 @@ document.querySelectorAll('td.hz').forEach(td => {
     td.appendChild(btn);
   }
 });
-// Agregar audio a diálogos
+// Agregar audio a dialogos
 document.querySelectorAll('.da .hz, .db .hz').forEach(span => {
-  const text = span.textContent.replace(/[。？，！、：🔊]/g, '').trim();
+  const text = span.textContent.trim();
   if (text.length > 0) {
     const btn = document.createElement('button');
     btn.className = 'audio-btn';
@@ -439,6 +588,7 @@ document.querySelectorAll('.da .hz, .db .hz').forEach(span => {
     span.after(btn);
   }
 });
+
 // === Marcar columnas de pinyin para el toggle ===
 document.querySelectorAll('table').forEach(table => {
   const ths = table.querySelectorAll('th');

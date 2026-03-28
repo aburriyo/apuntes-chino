@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 1 — Capítulo 10 · Apuntes Chino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  :root {
+    --red: #c0392b; --dark: #1a1a2e; --gold: #d4820a;
+    --green: #27ae60; --blue: #2980b9; --purple: #8e44ad;
+    --bg: #fafafa; --text: #222; --muted: #888; --border: #e5e5e5;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; color: var(--text); font-size: 15px; background: var(--bg); }
+  header { background: var(--dark); color: #fff; padding: 28px 28px 22px; border-radius: 12px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6em; margin: 0 0 4px; color: var(--red); }
+  header p { margin: 0; color: #aaa; font-size: 0.88em; }
+  header a { color: var(--red); text-decoration: none; }
+  nav.toc { background: #fff; border: 1px solid var(--border); border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  nav.toc h3 { margin: 0 0 10px; font-size: 0.82em; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  nav.toc ol { margin: 0; padding-left: 20px; }
+  nav.toc li { margin: 3px 0; font-size: 0.9em; }
+  nav.toc a { color: var(--red); text-decoration: none; }
+  nav.toc a:hover { text-decoration: underline; }
+  h2 { font-size: 1.05em; color: #fff; padding: 10px 18px; border-radius: 8px; margin: 40px 0 16px; background: var(--red); }
+  h2.blue { background: var(--blue); }
+  h2.green { background: var(--green); }
+  h2.gold { background: var(--gold); }
+  h2.gray { background: #555; }
+  h2.purple { background: var(--purple); }
+  h3 { color: #444; font-size: 0.95em; margin: 18px 0 8px; border-left: 3px solid var(--red); padding-left: 10px; }
+  h4 { color: #555; font-size: 0.88em; margin: 12px 0 6px; }
+  p { margin: 8px 0; line-height: 1.6; }
+  .hz { font-size: 1.15em; font-weight: bold; color: var(--red); }
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.note { background: #e8f5e9; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.structure { background: #fdecea; border: 1.5px solid var(--red); }
+  .box.purple { background: #f3e5f5; border-left: 4px solid var(--purple); border-radius: 0 8px 8px 0; }
+  .box center { text-align: center; margin: 8px 0; }
+  .box code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.9em; }
+  .structure-formula { text-align: center; font-size: 1.2em; font-weight: bold; color: var(--red); margin: 8px 0; }
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; }
+  th { background: var(--red); color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .table-blue th { background: var(--blue); }
+  .table-green th { background: var(--green); }
+  .table-gold th { background: var(--gold); }
+  .table-purple th { background: var(--purple); }
+  .table-gray th { background: #555; }
+  .good { color: var(--green); }
+  .bad { color: var(--red); }
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid var(--border); padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .da strong, .db strong { font-size: 0.85em; color: #666; }
+  .voc { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin: 6px 0; }
+  .voc .hz { font-size: 1.3em; min-width: 80px; }
+  .voc .py { color: var(--blue); font-size: 0.9em; min-width: 120px; }
+  .voc .es { color: #555; font-size: 0.88em; flex: 1; }
+  .tones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .tone-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .tone-card .name { font-weight: bold; margin-bottom: 4px; }
+  .tone-card .example { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+  .tone-line { margin: 8px auto; width: 80px; height: 30px; position: relative; }
+  .super-good { color: var(--green); font-weight: bold; }
+  .super-bad { color: var(--red); font-weight: bold; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 10px 0; }
+  .day-label { background: #f0f0f0; color: #666; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 4px; display: inline-block; margin: 20px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+  .num-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 10px 0; }
+  .num-cell { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; text-align: center; }
+  .num-cell .hz { font-size: 1.3em; }
+  .num-cell .py { font-size: 0.75em; color: var(--muted); }
+  .audio-btn { background: none; border: none; cursor: pointer; font-size: 1em; padding: 2px 4px; opacity: 0.5; transition: opacity .2s; vertical-align: middle; }
+  .audio-btn:hover { opacity: 1; }
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
+  @media (max-width: 768px) {
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .tones { grid-template-columns: 1fr; }
+  }
+  @media print {
+    .no-print, .audio-btn { display: none !important; }
+    body { background: #fff !important; padding: 10px 20px; font-size: 12px; }
+    header { background: var(--dark) !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Básico 1 — Capítulo 10</h1>
+  <p>Repaso de Iniciales y Vocabulario · Centro Cultural Chino · <a href="/chino/basico1/">← Volver al índice</a></p>
+</header>
+
+<nav class="toc">
+  <h3>Indice</h3>
+  <ol>
+    <li><a href="#repaso-iniciales">Repaso de Iniciales: Grupos Clave</a></li>
+    <li><a href="#vocab-practica">Práctica Intensiva de Vocabulario</a></li>
+  </ol>
+</nav>
+
+<h2 id="cap10" class="gold">10. Repaso de Iniciales y Vocabulario</h2>
+
+<h3 id="repaso-iniciales">Repaso de Iniciales: Grupos Clave</h3>
+
+<div class="box grammar">
+  <strong>Grupo 1 — Palatales (j, q, x)</strong><br>
+  <em>Truco:</em> Sonrisa amplia. La lengua toca los dientes inferiores. Solo se combinan con <strong>i</strong> y <strong>ü</strong>.
+  <table style="margin-top:8px">
+    <tr><th>Ini.</th><th>Hanzi</th><th>Pinyin</th><th>Significado</th></tr>
+    <tr><td><strong>j</strong></td><td><span class="hz">叫 / 九</span></td><td>Jiào / Jiǔ</td><td>Llamarse / Nueve</td></tr>
+    <tr><td><strong>q</strong></td><td><span class="hz">七 / 去</span></td><td>Qī / Qù</td><td>Siete / Ir</td></tr>
+    <tr><td><strong>x</strong></td><td><span class="hz">谢谢 / 喜欢</span></td><td>Xièxie / Xǐhuan</td><td>Gracias / Gustar</td></tr>
+  </table>
+</div>
+
+<div class="box note">
+  <strong>Grupo 2 — Retroflejas (zh, ch, sh, r)</strong><br>
+  <em>Truco:</em> Enrollar la punta de la lengua hacia atrás. Sonido "oscuro".
+  <table style="margin-top:8px">
+    <tr><th>Ini.</th><th>Hanzi</th><th>Pinyin</th><th>Significado</th></tr>
+    <tr><td><strong>zh</strong></td><td><span class="hz">中国 / 这</span></td><td>Zhōngguó / Zhè</td><td>China / Esto</td></tr>
+    <tr><td><strong>ch</strong></td><td><span class="hz">吃 / 茶</span></td><td>Chī / Chá</td><td>Comer / Té</td></tr>
+    <tr><td><strong>sh</strong></td><td><span class="hz">书 / 是</span></td><td>Shū / Shì</td><td>Libro / Ser</td></tr>
+    <tr><td><strong>r</strong></td><td><span class="hz">人</span></td><td>Rén</td><td>Persona</td></tr>
+  </table>
+</div>
+
+<div class="box tip">
+  <strong>Grupo 3 — Dentales (z, c, s)</strong><br>
+  <em>Truco:</em> Lengua plana detrás de los dientes. Sonido de "zumbido".
+  <table style="margin-top:8px">
+    <tr><th>Ini.</th><th>Hanzi</th><th>Pinyin</th><th>Significado</th></tr>
+    <tr><td><strong>z</strong></td><td><span class="hz">再见 / 字</span></td><td>Zàijiàn / Zì</td><td>Adiós / Carácter</td></tr>
+    <tr><td><strong>c</strong></td><td><span class="hz">菜 / 从</span></td><td>Cài / Cóng</td><td>Plato / Desde</td></tr>
+    <tr><td><strong>s</strong></td><td><span class="hz">三 / 四</span></td><td>Sān / Sì</td><td>Tres / Cuatro</td></tr>
+  </table>
+</div>
+
+<h3 id="vocab-practica">Práctica Intensiva de Vocabulario</h3>
+
+<h4>Grupo Palatal J — Q — X</h4>
+<div class="two-col">
+  <div>
+    <h4 style="color:var(--red)">Inicial J:</h4>
+    <div class="voc"><span class="hz">家</span><span class="py">Jiā</span><span class="es">Familia / Casa</span></div>
+    <div class="voc"><span class="hz">姐姐</span><span class="py">Jiějie</span><span class="es">Hermana mayor</span></div>
+    <div class="voc"><span class="hz">今天</span><span class="py">Jīntiān</span><span class="es">Hoy</span></div>
+    <div class="voc"><span class="hz">见</span><span class="py">Jiàn</span><span class="es">Ver / Encontrarse</span></div>
+    <div class="voc"><span class="hz">几</span><span class="py">Jǐ</span><span class="es">¿Cuántos? (menos de 10)</span></div>
+    <div class="voc"><span class="hz">鸡蛋</span><span class="py">Jīdàn</span><span class="es">Huevo</span></div>
+  </div>
+  <div>
+    <h4 style="color:var(--red)">Inicial Q:</h4>
+    <div class="voc"><span class="hz">请</span><span class="py">Qǐng</span><span class="es">Por favor</span></div>
+    <div class="voc"><span class="hz">钱</span><span class="py">Qián</span><span class="es">Dinero</span></div>
+    <div class="voc"><span class="hz">前面</span><span class="py">Qiánmiàn</span><span class="es">Delante / Enfrente</span></div>
+    <div class="voc"><span class="hz">起床</span><span class="py">Qǐchuáng</span><span class="es">Levantarse</span></div>
+    <div class="voc"><span class="hz">去</span><span class="py">Qù</span><span class="es">Ir</span></div>
+    <div class="voc"><span class="hz">七</span><span class="py">Qī</span><span class="es">Siete</span></div>
+  </div>
+</div>
+
+<h4 style="color:var(--red);margin-top:12px">Inicial X:</h4>
+<div class="two-col">
+  <div>
+    <div class="voc"><span class="hz">小姐</span><span class="py">Xiǎojie</span><span class="es">Señorita</span></div>
+    <div class="voc"><span class="hz">先生</span><span class="py">Xiānsheng</span><span class="es">Señor</span></div>
+    <div class="voc"><span class="hz">想</span><span class="py">Xiǎng</span><span class="es">Querer / Extrañar</span></div>
+    <div class="voc"><span class="hz">学习</span><span class="py">Xuéxí</span><span class="es">Estudiar</span></div>
+  </div>
+  <div>
+    <div class="voc"><span class="hz">香蕉</span><span class="py">Xiāngjiāo</span><span class="es">Plátano</span></div>
+    <div class="voc"><span class="hz">休息</span><span class="py">Xiūxi</span><span class="es">Descansar</span></div>
+    <div class="voc"><span class="hz">西瓜</span><span class="py">Xīguā</span><span class="es">Sandía</span></div>
+  </div>
+</div>
+
+<h4>Grupo Retroflejo ZH — CH — SH</h4>
+<div class="two-col">
+  <div>
+    <h4 style="color:var(--blue)">Inicial ZH:</h4>
+    <div class="voc"><span class="hz">知道</span><span class="py">Zhīdào</span><span class="es">Saber</span></div>
+    <div class="voc"><span class="hz">这里</span><span class="py">Zhèlǐ</span><span class="es">Aquí</span></div>
+    <div class="voc"><span class="hz">桌子</span><span class="py">Zhuōzi</span><span class="es">Mesa</span></div>
+    <div class="voc"><span class="hz">中文</span><span class="py">Zhōngwén</span><span class="es">Idioma chino</span></div>
+    <div class="voc"><span class="hz">中午</span><span class="py">Zhōngwǔ</span><span class="es">Mediodía</span></div>
+    <div class="voc"><span class="hz">住</span><span class="py">Zhù</span><span class="es">Vivir</span></div>
+    <div class="voc"><span class="hz">丈夫</span><span class="py">Zhàngfu</span><span class="es">Esposo</span></div>
+  </div>
+  <div>
+    <h4 style="color:var(--blue)">Inicial CH / SH:</h4>
+    <div class="voc"><span class="hz">吃饭</span><span class="py">Chīfàn</span><span class="es">Comer comida</span></div>
+    <div class="voc"><span class="hz">出租车</span><span class="py">Chūzūchē</span><span class="es">Taxi</span></div>
+    <div class="voc"><span class="hz">唱歌</span><span class="py">Chànggē</span><span class="es">Cantar</span></div>
+    <div class="voc"><span class="hz">茶</span><span class="py">Chá</span><span class="es">Té</span></div>
+    <div class="voc"><span class="hz">什么</span><span class="py">Shénme</span><span class="es">Qué</span></div>
+    <div class="voc"><span class="hz">睡觉</span><span class="py">Shuìjiào</span><span class="es">Dormir</span></div>
+    <div class="voc"><span class="hz">商店</span><span class="py">Shāngdiàn</span><span class="es">Tienda</span></div>
+  </div>
+</div>
+
+<h4>Grupo Dental Z — C — S</h4>
+<div class="two-col">
+  <div>
+    <h4 style="color:var(--green)">Inicial Z / C:</h4>
+    <div class="voc"><span class="hz">早上</span><span class="py">Zǎoshang</span><span class="es">Mañana (6–9 AM)</span></div>
+    <div class="voc"><span class="hz">做</span><span class="py">Zuò</span><span class="es">Hacer</span></div>
+    <div class="voc"><span class="hz">坐</span><span class="py">Zuò</span><span class="es">Sentarse</span></div>
+    <div class="voc"><span class="hz">昨天</span><span class="py">Zuótiān</span><span class="es">Ayer</span></div>
+    <div class="voc"><span class="hz">厕所</span><span class="py">Cèsuǒ</span><span class="es">Baño</span></div>
+    <div class="voc"><span class="hz">错</span><span class="py">Cuò</span><span class="es">Incorrecto / Error</span></div>
+    <div class="voc"><span class    class="hz">聪明</span><span class="py">Cōngming</span><span class="es">Inteligente</span></div>
+  </div>
+  <div>
+    <h4 style="color:var(--green)">Inicial S:</h4>
+    <div class="voc"><span class="hz">岁</span><span class="py">Suì</span><span class="es">Años de edad</span></div>
+    <div class="voc"><span class="hz">送</span><span class="py">Sòng</span><span class="es">Regalar / Enviar</span></div>
+    <div class="voc"><span class="hz">死</span><span class="py">Sǐ</span><span class="es">Morir</span></div>
+    <div class="voc"><span class="hz">三 / 四</span><span class="py">Sān / Sì</span><span class="es">Tres / Cuatro</span></div>
+    <div class="voc"><span class="hz">孙子</span><span class="py">Sūnzi</span><span class="es">Nieto</span></div>
+  </div>
+</div>
+
+<!-- ==================== APÉNDICE ==================== -->
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:36px; padding:16px 0; border-top:1px solid #eee;" class="no-print">
+  <a href="cap09.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">← Cap 09</a>
+  <a href="/chino/basico1/" style="color:var(--red); text-decoration:none; font-size:0.85em;">📚 Índice Básico 1</a>
+  <a href="capapendice.html" style="color:var(--red); text-decoration:none; font-size:0.85em; font-weight:600;">Cap apendice →</a>
+</div>
+<footer>Básico 1 Capítulo 10 · Centro Cultural Chino</footer>
+
+<script>
+const AUDIO_BASE = '/chino/audio/';
+const audioMap = {
+  "七": "zh_aad6914f8f.mp3",
+  "七 / 去": "zh_d492182a91.mp3",
+  "丈夫": "zh_a583eae023.mp3",
+  "三 / 四": "zh_437aaf5b0d.mp3",
+  "中午": "zh_259f542c09.mp3",
+  "中国 / 这": "zh_11cbad6dad.mp3",
+  "中文": "zh_a7bac2239f.mp3",
+  "书 / 是": "zh_fb9d0d307e.mp3",
+  "人": "zh_465afe3c11.mp3",
+  "什么": "zh_736ccbe560.mp3",
+  "今天": "今天_800dfdd902.mp3",
+  "休息": "zh_3a991a4ca5.mp3",
+  "住": "zh_84f3602f49.mp3",
+  "做": "zh_7105106a36.mp3",
+  "先生": "zh_1f9820d215.mp3",
+  "再见 / 字": "zh_24467efbc0.mp3",
+  "几": "几_28fef849a6.mp3",
+  "出租车": "zh_4f5289fad3.mp3",
+  "前面": "zh_0c3ea1e092.mp3",
+  "厕所": "zh_d87186a259.mp3",
+  "去": "zh_dfb9366c91.mp3",
+  "叫 / 九": "zh_6da1a0618f.mp3",
+  "吃 / 茶": "zh_baeea54236.mp3",
+  "吃饭": "zh_0068330a10.mp3",
+  "唱歌": "zh_d49c9b66f6.mp3",
+  "商店": "zh_f303c10a9f.mp3",
+  "坐": "zh_0169bebf68.mp3",
+  "姐姐": "zh_033e1fb01c.mp3",
+  "孙子": "zh_28e6627124.mp3",
+  "学习": "zh_4ef520d6cd.mp3",
+  "家": "zh_a6cdd2a00b.mp3",
+  "小姐": "zh_832c2de240.mp3",
+  "岁": "zh_2854fa1c12.mp3",
+  "想": "zh_291837bd5b.mp3",
+  "早上": "zh_c8c0ba481d.mp3",
+  "昨天": "昨天_2f8d6f1584.mp3",
+  "桌子": "zh_9e2fde20b6.mp3",
+  "死": "zh_093a1a4516.mp3",
+  "睡觉": "zh_60cffce1f6.mp3",
+  "知道": "zh_5dd93697ae.mp3",
+  "聪明": "zh_dbf3687538.mp3",
+  "茶": "zh_a001ed1cf1.mp3",
+  "菜 / 从": "zh_18c5806bbc.mp3",
+  "西瓜": "zh_b9af3fd5d3.mp3",
+  "见": "zh_b0deb10456.mp3",
+  "请": "zh_d1a34a5779.mp3",
+  "谢谢 / 喜欢": "zh_d4a89ce8ee.mp3",
+  "起床": "zh_59b19552d6.mp3",
+  "这里": "zh_535ca5a5d8.mp3",
+  "送": "zh_040f3943c3.mp3",
+  "钱": "zh_d23513f09b.mp3",
+  "错": "zh_6160eb68dd.mp3",
+  "香蕉": "zh_b7c03bbf2b.mp3",
+  "鸡蛋": "zh_bd29625b48.mp3"
+};
+
+function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+// Audio buttons for .hz spans
+document.querySelectorAll('.hz').forEach(el => {
+  const text = el.textContent.trim();
+  if (text.length > 0 && text.length <= 30) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    el.after(btn);
+  }
+});
+</script>
+</body>
+</html>

@@ -1,0 +1,2424 @@
+[
+  {
+    "hanzi": "我会说汉语",
+    "pinyin": "Wǒ huì shuō Hànyǔ",
+    "espanol": "Yo sé hablar chino",
+    "audio": "zh_624aa515a6.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我会写汉字",
+    "pinyin": "Wǒ huì xiě Hànzì",
+    "espanol": "Yo sé escribir caracteres",
+    "audio": "zh_9cb43649c2.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我会做中国菜",
+    "pinyin": "Wǒ huì zuò Zhōngguó cài",
+    "espanol": "Yo sé cocinar comida china",
+    "audio": "zh_84ebf18218.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我会游泳",
+    "pinyin": "Wǒ huì yóuyǒng",
+    "espanol": "Yo sé nadar",
+    "audio": "zh_7e16ab15cf.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我会开车",
+    "pinyin": "Wǒ huì kāichē",
+    "espanol": "Yo sé manejar",
+    "audio": "zh_fc62653659.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我会弹吉他",
+    "pinyin": "Wǒ huì tán jítā",
+    "espanol": "Yo sé tocar guitarra",
+    "audio": "zh_21d447d595.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我不会说汉语",
+    "pinyin": "Wǒ bú huì shuō Hànyǔ",
+    "espanol": "No sé hablar chino",
+    "audio": "zh_eb4ddf0e23.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我不会写汉字",
+    "pinyin": "Wǒ bú huì xiě Hànzì",
+    "espanol": "No sé escribir caracteres",
+    "audio": "zh_22460a60de.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我不会做中国菜",
+    "pinyin": "Wǒ bú huì zuò Zhōngguó cài",
+    "espanol": "No sé cocinar comida china",
+    "audio": "zh_260e1d0866.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我不会游泳",
+    "pinyin": "Wǒ bú huì yóuyǒng",
+    "espanol": "No sé nadar",
+    "audio": "zh_d98f628d94.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "他不会开车",
+    "pinyin": "Tā bú huì kāichē",
+    "espanol": "Él no sabe manejar",
+    "audio": "zh_168f1a8a3f.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你会说汉语吗？",
+    "pinyin": "Nǐ huì shuō Hànyǔ ma?",
+    "espanol": "¿Sabes hablar chino?",
+    "audio": "zh_ca41074eaf.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你会不会做饭？",
+    "pinyin": "Nǐ huì bú huì zuòfàn?",
+    "espanol": "¿Sabes cocinar?",
+    "audio": "zh_c18cd291cc.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "她会游泳吗？",
+    "pinyin": "Tā huì yóuyǒng ma?",
+    "espanol": "¿Ella sabe nadar?",
+    "audio": "zh_8e2b7988b2.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你会不会开车？",
+    "pinyin": "Nǐ huì bú huì kāichē?",
+    "espanol": "¿Sabes manejar?",
+    "audio": "zh_d21f82a129.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "他会说汉语",
+    "pinyin": "Tā huì shuō Hànyǔ",
+    "espanol": "Él sabe hablar chino",
+    "audio": "zh_52a5a904ad.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "她会做中国菜",
+    "pinyin": "Tā huì zuò Zhōngguó cài",
+    "espanol": "Ella sabe cocinar comida china",
+    "audio": "zh_35b0d69cf5.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我们会写汉字",
+    "pinyin": "Wǒmen huì xiě Hànzì",
+    "espanol": "Nosotros sabemos escribir",
+    "audio": "zh_22069004f7.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "妈妈会做饭",
+    "pinyin": "Māma huì zuòfàn",
+    "espanol": "Mamá sabe cocinar",
+    "audio": "zh_8212730ff0.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我也会游泳",
+    "pinyin": "Wǒ yě huì yóuyǒng",
+    "espanol": "Yo también sé nadar",
+    "audio": "zh_059dc6e730.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我有哥哥。",
+    "pinyin": "Wǒ yǒu gēge.",
+    "espanol": "Tengo hermano mayor.",
+    "audio": "zh_a4ecbf004e.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我有姐姐。",
+    "pinyin": "Wǒ yǒu jiějie.",
+    "espanol": "Tengo hermana mayor.",
+    "audio": "zh_028a38dfa8.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我有弟弟。",
+    "pinyin": "Wǒ yǒu dìdi.",
+    "espanol": "Tengo hermano menor.",
+    "audio": "zh_8566d02484.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我有妹妹。",
+    "pinyin": "Wǒ yǒu mèimei.",
+    "espanol": "Tengo hermana menor.",
+    "audio": "zh_2e0a3b9dff.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我没有哥哥。",
+    "pinyin": "Wǒ méiyǒu gēge.",
+    "espanol": "No tengo hermano mayor.",
+    "audio": "zh_cd2433cc78.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我没有妹妹。",
+    "pinyin": "Wǒ méiyǒu mèimei.",
+    "espanol": "No tengo hermana menor.",
+    "audio": "zh_39b7c58e7c.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你有哥哥吗？",
+    "pinyin": "Nǐ yǒu gēge ma?",
+    "espanol": "¿Tienes hermano mayor?",
+    "audio": "zh_234a7219c8.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你有姐姐吗？",
+    "pinyin": "Nǐ yǒu jiějie ma?",
+    "espanol": "¿Tienes hermana mayor?",
+    "audio": "zh_e5a491e706.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你有弟弟吗？",
+    "pinyin": "Nǐ yǒu dìdi ma?",
+    "espanol": "¿Tienes hermano menor?",
+    "audio": "zh_ad5d677588.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你有妹妹吗？",
+    "pinyin": "Nǐ yǒu mèimei ma?",
+    "espanol": "¿Tienes hermana menor?",
+    "audio": "zh_fc8d278619.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你有没有哥哥？",
+    "pinyin": "Nǐ yǒu méiyǒu gēge?",
+    "espanol": "¿Tienes hermano mayor?",
+    "audio": "zh_c58092c828.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "他的妹妹",
+    "pinyin": "Tā de mèimei",
+    "espanol": "La hermana menor de él",
+    "audio": "zh_c60ccfeda8.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "她的哥哥",
+    "pinyin": "Tā de gēge",
+    "espanol": "El hermano mayor de ella",
+    "audio": "zh_2f9efae11c.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "他的妈妈",
+    "pinyin": "Tā de māma",
+    "espanol": "La mamá de él",
+    "audio": "zh_4f078403e5.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "她的爸爸",
+    "pinyin": "Tā de bàba",
+    "espanol": "El papá de ella",
+    "audio": "zh_8c7afa0b9f.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "他的猫 / 她的狗",
+    "pinyin": "Tā de māo / gǒu",
+    "espanol": "Su gato / Su perro",
+    "audio": "zh_65a397715c.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我的猫 / 你的狗",
+    "pinyin": "Wǒ de māo / Nǐ de gǒu",
+    "espanol": "Mi gato / Tu perro",
+    "audio": "zh_3cd0ecc70d.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "他的妹妹会唱歌。",
+    "pinyin": "Tā de mèimei huì chànggē.",
+    "espanol": "Su hermana menor sabe cantar.",
+    "audio": "zh_95d3935d56.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "她的哥哥会说汉语。",
+    "pinyin": "Tā de gēge huì shuō Hànyǔ.",
+    "espanol": "Su hermano mayor sabe hablar chino.",
+    "audio": "zh_a8c4bac40e.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "他的妈妈会做中国菜。",
+    "pinyin": "Tā de māma huì zuò Zhōngguó cài.",
+    "espanol": "Su mamá sabe cocinar comida china.",
+    "audio": "zh_25ee3a9be3.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "她的猫不会游泳。",
+    "pinyin": "Tā de māo bú huì yóuyǒng.",
+    "espanol": "Su gato no sabe nadar.",
+    "audio": "zh_09f0f9ce35.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你妈妈会说汉语吗？",
+    "pinyin": "Nǐ māma huì shuō Hànyǔ ma?",
+    "espanol": "¿Tu mamá sabe hablar chino?",
+    "audio": "zh_c76f92f02b.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你爸爸会说汉语吗？",
+    "pinyin": "Nǐ bàba huì shuō Hànyǔ ma?",
+    "espanol": "¿Tu papá sabe hablar chino?",
+    "audio": "zh_5d47f70588.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你妈妈会写汉字吗？",
+    "pinyin": "Nǐ māma huì xiě Hànzì ma?",
+    "espanol": "¿Tu mamá sabe escribir?",
+    "audio": "zh_293e75b89a.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你爸爸会做饭吗？",
+    "pinyin": "Nǐ bàba huì zuòfàn ma?",
+    "espanol": "¿Tu papá sabe cocinar?",
+    "audio": "zh_9b9aef4bd7.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你哥哥会说汉语吗？",
+    "pinyin": "Nǐ gēge huì shuō Hànyǔ ma?",
+    "espanol": "¿Tu hermano mayor sabe hablar chino?",
+    "audio": "zh_e40f977a94.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你姐姐会说汉语吗？",
+    "pinyin": "Nǐ jiějie huì shuō Hànyǔ ma?",
+    "espanol": "¿Tu hermana mayor sabe hablar chino?",
+    "audio": "zh_a89d13e0ae.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你弟弟会写汉字吗？",
+    "pinyin": "Nǐ dìdi huì xiě Hànzì ma?",
+    "espanol": "¿Tu hermano menor sabe escribir?",
+    "audio": "zh_641bece4e1.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "你妹妹会唱歌吗？",
+    "pinyin": "Nǐ mèimei huì chànggē ma?",
+    "espanol": "¿Tu hermana menor sabe cantar?",
+    "audio": "zh_9207c4062c.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我妈妈会说汉语。",
+    "pinyin": "Wǒ māma huì shuō Hànyǔ.",
+    "espanol": "Mi mamá sabe hablar chino.",
+    "audio": "zh_5992510bc1.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我爸爸不会写汉字。",
+    "pinyin": "Wǒ bàba bú huì xiě Hànzì.",
+    "espanol": "Mi papá no sabe escribir.",
+    "audio": "zh_4a9ed76e3c.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我爸爸也会做饭。",
+    "pinyin": "Wǒ bàba yě huì zuòfàn.",
+    "espanol": "Mi papá también sabe cocinar.",
+    "audio": "zh_1eab222062.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我妹妹会唱歌。",
+    "pinyin": "Wǒ mèimei huì chànggē.",
+    "espanol": "Mi hermana menor sabe cantar.",
+    "audio": "zh_228f0478ee.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "会",
+    "pinyin": "huì",
+    "espanol": "Habilidad aprendida (idioma, nadar, cocinar)",
+    "audio": "zh_647477bbc5.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "能",
+    "pinyin": "néng",
+    "espanol": "Capacidad física o circunstancial",
+    "audio": "zh_9c0479617b.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "可以",
+    "pinyin": "kěyǐ",
+    "espanol": "Permiso o posibilidad",
+    "audio": "zh_eaa9c5c2f1.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "妈妈 / 爸爸",
+    "pinyin": "māma / bàba",
+    "espanol": "Mamá / Papá",
+    "audio": "zh_3540cb9cd7.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "哥哥 / 姐姐",
+    "pinyin": "gēge / jiějie",
+    "espanol": "Hermano mayor / Hermana mayor",
+    "audio": "zh_2dd263ed56.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "弟弟 / 妹妹",
+    "pinyin": "dìdi / mèimei",
+    "espanol": "Hermano menor / Hermana menor",
+    "audio": "zh_8c1484fbc5.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "汉字 / 汉语",
+    "pinyin": "Hànzì / Hànyǔ",
+    "espanol": "Caracteres chinos / Chino (mandarín)",
+    "audio": "zh_2812b92cd8.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "中国菜 / 中文",
+    "pinyin": "Zhōngguó cài / Zhōngwén",
+    "espanol": "Comida china / Chino (escrito)",
+    "audio": "zh_f70ef65ffb.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "吉他 / 车 / 饭",
+    "pinyin": "jítā / chē / fàn",
+    "espanol": "Guitarra / Carro / Comida-arroz",
+    "audio": "zh_e618930d21.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "猫 / 狗",
+    "pinyin": "māo / gǒu",
+    "espanol": "Gato / Perro",
+    "audio": "zh_374e3aa5c3.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "会 / 有",
+    "pinyin": "huì / yǒu",
+    "espanol": "Saber-poder / Tener-haber",
+    "audio": "zh_d6d25ca52e.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "说 / 写 / 做",
+    "pinyin": "shuō / xiě / zuò",
+    "espanol": "Hablar / Escribir / Hacer",
+    "audio": "zh_d628f7357c.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "做饭 / 游泳 / 开车",
+    "pinyin": "zuòfàn / yóuyǒng / kāichē",
+    "espanol": "Cocinar / Nadar / Manejar",
+    "audio": "zh_6e206e8815.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "弹 / 唱歌",
+    "pinyin": "tán / chànggē",
+    "espanol": "Tocar (cuerda) / Cantar",
+    "audio": "zh_a6ef6fd3bf.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "不 / 没 / 没有",
+    "pinyin": "bù / méi / méiyǒu",
+    "espanol": "No (general) / No (de 有) / No tener",
+    "audio": "zh_e58e5e63b7.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "吗 / 的 / 也 / 很",
+    "pinyin": "ma / de / yě / hěn",
+    "espanol": "Interrogativa / Posesiva / También / Muy",
+    "audio": "zh_def2ccfd0a.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "好吃 / 一点儿 / 但是",
+    "pinyin": "hǎochī / yìdiǎnr / dànshì",
+    "espanol": "Delicioso / Un poco / Pero",
+    "audio": "zh_827bacd358.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我",
+    "pinyin": "很好。\n  我妈妈的汉语不好。\n  中国菜很好吃。\n\n\n👤 Características físicas\n\n  HanziPinyinEspañolEjemplo\n  高",
+    "espanol": "gāoalto他很高。",
+    "audio": "zh_1681525453.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "矮",
+    "pinyin": "ǎi",
+    "espanol": "bajo她很矮。",
+    "audio": "zh_839cef9717.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "胖",
+    "pinyin": "pàng",
+    "espanol": "gordo / robusto他不胖。",
+    "audio": "zh_2200ae7c80.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "瘦",
+    "pinyin": "shòu",
+    "espanol": "delgado / flaco她很瘦。",
+    "audio": "zh_1d1b5cb221.mp3",
+    "clase": "clase01"
+  },
+  {
+    "hanzi": "我会一点儿。",
+    "pinyin": "Wǒ huì yìdiǎnr.",
+    "espanol": "Sé un poquito.",
+    "audio": "zh_259b63de7f.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会说一点儿汉语。",
+    "pinyin": "Wǒ huì shuō yìdiǎnr Hànyǔ.",
+    "espanol": "Sé hablar un poquito de chino.",
+    "audio": "zh_bc65b1ad5d.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会写一点儿汉字。",
+    "pinyin": "Wǒ huì xiě yìdiǎnr Hànzì.",
+    "espanol": "Sé escribir un poquito de caracteres.",
+    "audio": "zh_19d84d71a4.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会做一点儿中国菜。",
+    "pinyin": "Wǒ huì zuò yìdiǎnr Zhōngguó cài.",
+    "espanol": "Sé cocinar un poquito de comida china.",
+    "audio": "zh_6fc4aaba5f.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会画一点儿画。",
+    "pinyin": "Wǒ huì huà yìdiǎnr huà.",
+    "espanol": "Sé pintar/dibujar un poquito.",
+    "audio": "zh_c0b0000335.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会说汉语。",
+    "pinyin": "Wǒ huì shuō Hànyǔ.",
+    "espanol": "Yo sé hablar chino.",
+    "audio": "zh_edd7f7f636.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会写汉字。",
+    "pinyin": "Wǒ huì xiě Hànzì.",
+    "espanol": "Yo sé escribir caracteres.",
+    "audio": "zh_627fe09f9b.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会做饭。",
+    "pinyin": "Wǒ huì zuòfàn.",
+    "espanol": "Yo sé cocinar.",
+    "audio": "zh_af66688e30.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会游泳。",
+    "pinyin": "Wǒ huì yóuyǒng.",
+    "espanol": "Yo sé nadar.",
+    "audio": "zh_037b47d191.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会开车。",
+    "pinyin": "Wǒ huì kāichē.",
+    "espanol": "Yo sé manejar.",
+    "audio": "zh_869a8c0952.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会唱歌。",
+    "pinyin": "Wǒ huì chànggē.",
+    "espanol": "Yo sé cantar.",
+    "audio": "zh_f450b8f1a1.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我不会做中国菜。",
+    "pinyin": "Wǒ bú huì zuò Zhōngguó cài.",
+    "espanol": "No sé cocinar comida china.",
+    "audio": "zh_4e0c088994.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "你会写汉字吗？",
+    "pinyin": "Nǐ huì xiě Hànzì ma?",
+    "espanol": "¿Sabes escribir caracteres?",
+    "audio": "zh_89310af294.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "你会做饭吗？",
+    "pinyin": "Nǐ huì zuòfàn ma?",
+    "espanol": "¿Sabes cocinar?",
+    "audio": "zh_8caf9727c9.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "你会游泳吗？",
+    "pinyin": "Nǐ huì yóuyǒng ma?",
+    "espanol": "¿Sabes nadar?",
+    "audio": "zh_b62589b6d1.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "你会开车吗？",
+    "pinyin": "Nǐ huì kāichē ma?",
+    "espanol": "¿Sabes manejar?",
+    "audio": "zh_05ac5d12f5.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "你会唱歌吗？",
+    "pinyin": "Nǐ huì chànggē ma?",
+    "espanol": "¿Sabes cantar?",
+    "audio": "zh_9d6ee2661e.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "你会弹吉他吗？",
+    "pinyin": "Nǐ huì tán jítā ma?",
+    "espanol": "¿Sabes tocar guitarra?",
+    "audio": "zh_4dc312db35.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "你会跳舞吗？",
+    "pinyin": "Nǐ huì tiàowǔ ma?",
+    "espanol": "¿Sabes bailar?",
+    "audio": "zh_d144ff4713.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "你会画画吗？",
+    "pinyin": "Nǐ huì huàhuà ma?",
+    "espanol": "¿Sabes dibujar/pintar?",
+    "audio": "zh_1c923e7769.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会画画。",
+    "pinyin": "Wǒ huì huàhuà.",
+    "espanol": "Yo sé pintar/dibujar.",
+    "audio": "zh_a9a028efe9.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我不会画画。",
+    "pinyin": "Wǒ bú huì huàhuà.",
+    "espanol": "No sé pintar/dibujar.",
+    "audio": "zh_419c518af2.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "她很会画画。",
+    "pinyin": "Tā hěn huì huàhuà.",
+    "espanol": "Ella pinta/dibuja muy bien.",
+    "audio": "zh_7fd65b35f3.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我会跳舞。",
+    "pinyin": "Wǒ huì tiàowǔ.",
+    "espanol": "Yo sé bailar.",
+    "audio": "zh_ba73cf2b8e.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我不会跳舞。",
+    "pinyin": "Wǒ bú huì tiàowǔ.",
+    "espanol": "No sé bailar.",
+    "audio": "zh_33c1f4a8a7.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "她很会跳舞。",
+    "pinyin": "Tā hěn huì tiàowǔ.",
+    "espanol": "Ella baila muy bien.",
+    "audio": "zh_4b5c6e0721.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "她很矮。",
+    "pinyin": "Tā hěn ǎi.",
+    "espanol": "Ella es muy baja.",
+    "audio": "zh_3619365193.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "他很高。",
+    "pinyin": "Tā hěn gāo.",
+    "espanol": "Él es muy alto.",
+    "audio": "zh_30130315c9.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "她很瘦。",
+    "pinyin": "Tā hěn shòu.",
+    "espanol": "Ella es muy delgada.",
+    "audio": "zh_de87dbcc9d.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "他很胖。",
+    "pinyin": "Tā hěn pàng.",
+    "espanol": "Él es muy gordo.",
+    "audio": "zh_c8b0b55641.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "她很漂亮。",
+    "pinyin": "Tā hěn piàoliang.",
+    "espanol": "Ella es muy bonita.",
+    "audio": "zh_e7b2f705be.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "他很帅。",
+    "pinyin": "Tā hěn shuài.",
+    "espanol": "Él es muy guapo.",
+    "audio": "zh_67948f4785.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "他很聪明。",
+    "pinyin": "Tā hěn cōngming.",
+    "espanol": "Él es muy inteligente.",
+    "audio": "zh_985d81973d.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "他不高。",
+    "pinyin": "Tā bù gāo.",
+    "espanol": "Él no es alto.",
+    "audio": "zh_966103252e.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "她不丑。",
+    "pinyin": "Tā bù chǒu.",
+    "espanol": "Ella no es fea.",
+    "audio": "zh_e3b8b5dfcf.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这个电影很好看。",
+    "pinyin": "Zhège diànyǐng hěn hǎokàn.",
+    "espanol": "Esta película es muy buena.",
+    "audio": "zh_41085751f2.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这本书很好看。",
+    "pinyin": "Zhè běn shū hěn hǎokàn.",
+    "espanol": "Este libro es muy bueno.",
+    "audio": "zh_4b408f6cd9.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "你的衣服很好看。",
+    "pinyin": "Nǐ de yīfu hěn hǎokàn.",
+    "espanol": "Tu ropa es muy bonita.",
+    "audio": "zh_cfa920f079.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这个不好看。",
+    "pinyin": "Zhège bù hǎokàn.",
+    "espanol": "Esto no es bonito.",
+    "audio": "zh_b975caa307.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "中国菜很好吃。",
+    "pinyin": "Zhōngguó cài hěn hǎochī.",
+    "espanol": "La comida china es muy deliciosa.",
+    "audio": "zh_59247252d8.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "智利菜很好吃！",
+    "pinyin": "Zhìlì cài hěn hǎochī!",
+    "espanol": "¡La comida chilena es muy deliciosa!",
+    "audio": "zh_c74f458219.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "炒饭很好吃。",
+    "pinyin": "Chǎofàn hěn hǎochī.",
+    "espanol": "El arroz frito es muy delicioso.",
+    "audio": "zh_91041b6e99.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "火锅很好吃。",
+    "pinyin": "Huǒguō hěn hǎochī.",
+    "espanol": "El hot pot es muy delicioso.",
+    "audio": "zh_368c925476.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "包子好吃吗？",
+    "pinyin": "Bāozi hǎochī ma?",
+    "espanol": "¿Los baozi son deliciosos?",
+    "audio": "zh_99559af418.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "中国菜不好吃。",
+    "pinyin": "Zhōngguó cài bù hǎochī.",
+    "espanol": "La comida china no es deliciosa.",
+    "audio": "zh_847f80a0b2.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "好吃 (hǎochī) — delicioso",
+    "pinyin": "难吃 (nánchī) — asqueroso\n  好看 (hǎokàn) — bonito难看 (nánkàn) — feo\n  好喝 (hǎohē) — sabroso (bebida)难喝 (nánhē) — asqueroso (bebida)\n  好听 (hǎotīng) — suena bien难听 (nántīng) — suena mal\n\n\n  HanziPinyinEspañol\n  这个菜很难吃。",
+    "espanol": "Zhège cài hěn nánchī.Este plato es muy feo/asqueroso.",
+    "audio": "zh_6a2aab9371.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这个电影很难看。",
+    "pinyin": "Zhège diànyǐng hěn nánkàn.",
+    "espanol": "Esta película es muy mala.",
+    "audio": "zh_75334223f8.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这个歌很难听。",
+    "pinyin": "Zhège gē hěn nántīng.",
+    "espanol": "Esta canción suena muy mal.",
+    "audio": "zh_037fb082db.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "怎么写",
+    "pinyin": "zěnme xiě",
+    "espanol": "¿Cómo se escribe?",
+    "audio": "zh_5885237328.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "怎么读",
+    "pinyin": "zěnme dú",
+    "espanol": "¿Cómo se lee/pronuncia?",
+    "audio": "zh_dbb1249a8e.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "怎么说",
+    "pinyin": "zěnme shuō",
+    "espanol": "¿Cómo se dice?",
+    "audio": "zh_0084a1d713.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "怎么做",
+    "pinyin": "zěnme zuò",
+    "espanol": "¿Cómo se hace?",
+    "audio": "zh_d665feb256.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "怎么去",
+    "pinyin": "zěnme qù",
+    "espanol": "¿Cómo se va? / ¿Cómo llego?",
+    "audio": "zh_7700818094.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "怎么吃",
+    "pinyin": "zěnme chī",
+    "espanol": "¿Cómo se come (esto)?",
+    "audio": "zh_8cdaf80cda.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "怎么用",
+    "pinyin": "zěnme yòng",
+    "espanol": "¿Cómo se usa?",
+    "audio": "zh_6e5fae5e89.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "怎么学",
+    "pinyin": "zěnme xué",
+    "espanol": "¿Cómo se aprende?",
+    "audio": "zh_34116d289f.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这个字怎么写？",
+    "pinyin": "Zhège zì zěnme xiě?",
+    "espanol": "¿Cómo se escribe este carácter?",
+    "audio": "zh_f1e51ef9ae.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这个汉字怎么读？",
+    "pinyin": "Zhège Hànzì zěnme dú?",
+    "espanol": "¿Cómo se lee este carácter?",
+    "audio": "zh_7bd77b97d5.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这个怎么说？",
+    "pinyin": "Zhège zěnme shuō?",
+    "espanol": "¿Cómo se dice esto?",
+    "audio": "zh_158a186373.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "你的名字怎么说？",
+    "pinyin": "Nǐ de míngzi zěnme shuō?",
+    "espanol": "¿Cómo se dice/pronuncia tu nombre?",
+    "audio": "zh_a235bfb2aa.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "\"hola\"用汉语怎么说？",
+    "pinyin": "\"Hola\" yòng Hànyǔ zěnme shuō?",
+    "espanol": "¿Cómo se dice \"hola\" en chino?",
+    "audio": "zh_4649c8fb51.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这个用汉语怎么说？",
+    "pinyin": "Zhège yòng Hànyǔ zěnme shuō?",
+    "espanol": "¿Cómo se dice esto en chino?",
+    "audio": "zh_1be4c5fcc5.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这个菜怎么做？",
+    "pinyin": "Zhège cài zěnme zuò?",
+    "espanol": "¿Cómo se cocina este plato?",
+    "audio": "zh_f76905bc2b.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "汉语怎么学？",
+    "pinyin": "Hànyǔ zěnme xué?",
+    "espanol": "¿Cómo se aprende chino?",
+    "audio": "zh_673576a7e8.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "学生",
+    "pinyin": "xuéshēng",
+    "espanol": "Estudiante学 (estudiar) + 生 (persona)",
+    "audio": "zh_35d9969dfa.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "同学",
+    "pinyin": "tóngxué",
+    "espanol": "Compañero de clase同 (mismo) + 学 (estudio)",
+    "audio": "zh_1f888438ce.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "学校",
+    "pinyin": "xuéxiào",
+    "espanol": "Escuela学 (estudio) + 校 (institución)",
+    "audio": "zh_413b738061.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "学习",
+    "pinyin": "xuéxí",
+    "espanol": "Estudiar / aprender学 (aprender) + 习 (practicar)",
+    "audio": "zh_4ef520d6cd.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "大学",
+    "pinyin": "dàxué",
+    "espanol": "Universidad大 (grande) + 学 (estudio)",
+    "audio": "zh_572a6791c3.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "中学",
+    "pinyin": "zhōngxué",
+    "espanol": "Secundaria中 (medio) + 学 (estudio)",
+    "audio": "zh_041da43136.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "小学",
+    "pinyin": "xiǎoxué",
+    "espanol": "Primaria小 (pequeño) + 学 (estudio)",
+    "audio": "zh_79898d25cb.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这种菜很好吃。",
+    "pinyin": "Zhè zhǒng cài hěn hǎochī.",
+    "espanol": "Este tipo de comida es muy deliciosa.",
+    "audio": "zh_8afdc0a562.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "哪种？",
+    "pinyin": "Nǎ zhǒng?",
+    "espanol": "¿Qué tipo? / ¿Cuál?",
+    "audio": "zh_728e5c1cb4.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "很多种。",
+    "pinyin": "Hěn duō zhǒng.",
+    "espanol": "Muchos tipos.",
+    "audio": "zh_319857a14c.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "两种。",
+    "pinyin": "Liǎng zhǒng.",
+    "espanol": "Dos tipos.",
+    "audio": "zh_c19c417315.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "中国有很多种菜。",
+    "pinyin": "Zhōngguó yǒu hěn duō zhǒng cài.",
+    "espanol": "China tiene muchos tipos de comida.",
+    "audio": "zh_43e0b24ad9.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "运动",
+    "pinyin": "yùndòng",
+    "espanol": "Ejercicio / deporte运 (transportar) + 动 (mover)",
+    "audio": "zh_37b6debeb4.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "动物",
+    "pinyin": "dòngwù",
+    "espanol": "Animal动 (mover) + 物 (cosa/ser)",
+    "audio": "zh_83d7b8a4ba.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "活动",
+    "pinyin": "huódòng",
+    "espanol": "Actividad活 (vivir) + 动 (mover)",
+    "audio": "zh_36c6f572a0.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "做饭",
+    "pinyin": "zuòfàn",
+    "espanol": "Cocinar",
+    "audio": "zh_e69a3d7106.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "做菜",
+    "pinyin": "zuòcài",
+    "espanol": "Cocinar platos",
+    "audio": "zh_7c33cfe38a.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "做中国菜",
+    "pinyin": "zuò Zhōngguó cài",
+    "espanol": "Cocinar comida china",
+    "audio": "zh_736960d9eb.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "做睫毛",
+    "pinyin": "zuò jiémáo",
+    "espanol": "Hacerse las pestañas",
+    "audio": "zh_cb7509b5dc.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "做指甲",
+    "pinyin": "zuò zhǐjia",
+    "espanol": "Hacerse las uñas",
+    "audio": "zh_2f5034497c.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "烧",
+    "pinyin": "shāo",
+    "espanol": "Quemar / asarCocción con fuego directo",
+    "audio": "zh_aeffbc8538.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "烧烤",
+    "pinyin": "shāokǎo",
+    "espanol": "Asado / BBQ烧 (quemar) + 烤 (asar)",
+    "audio": "zh_404f8174dd.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "燃烧卡路里",
+    "pinyin": "ránshāo kǎlùlǐ",
+    "espanol": "Quemar calorías燃烧 (combustión) + 卡路里 (calorías)",
+    "audio": "zh_496eb54b7c.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "画画",
+    "pinyin": "huàhuà",
+    "espanol": "Pintar / dibujar",
+    "audio": "zh_806075baa8.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "跳舞",
+    "pinyin": "tiàowǔ",
+    "espanol": "Bailar",
+    "audio": "zh_fad50bfdcb.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "读",
+    "pinyin": "dú",
+    "espanol": "Leer (en voz alta)",
+    "audio": "zh_75769d1ac8.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "看书",
+    "pinyin": "kànshū",
+    "espanol": "Leer (un libro, en silencio)",
+    "audio": "zh_e3ccf0942c.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "学 / 学习",
+    "pinyin": "xué / xuéxí",
+    "espanol": "Aprender / estudiar",
+    "audio": "zh_53c668c770.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "做",
+    "pinyin": "zuò",
+    "espanol": "Hacer (cocinar, pestañas, uñas...)",
+    "audio": "zh_7105106a36.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "生词",
+    "pinyin": "shēngcí",
+    "espanol": "Palabra nueva / vocabulario nuevo",
+    "audio": "zh_e688881498.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "会话",
+    "pinyin": "huìhuà",
+    "espanol": "Conversación / diálogo",
+    "audio": "zh_9a834e9a3e.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "练习",
+    "pinyin": "liànxí",
+    "espanol": "Ejercicio / practicar",
+    "audio": "zh_1ce039c953.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "汉字",
+    "pinyin": "Hànzì",
+    "espanol": "Caracteres chinos",
+    "audio": "zh_8a97ee1fcd.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "写",
+    "pinyin": "xiě",
+    "espanol": "Escribir",
+    "audio": "zh_4d7dc6c5f8.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "怎么",
+    "pinyin": "zěnme",
+    "espanol": "¿Cómo? (siempre antes del verbo)",
+    "audio": "zh_786df56259.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "对不起",
+    "pinyin": "duìbuqǐ",
+    "espanol": "Lo siento / disculpa",
+    "audio": "zh_cd51c8c91e.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "这个",
+    "pinyin": "zhège",
+    "espanol": "Este / esto",
+    "audio": "zh_76d3280175.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "字",
+    "pinyin": "zì",
+    "espanol": "Carácter / letra",
+    "audio": "zh_a95dbb0ea4.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "大学 / 中学 / 小学",
+    "pinyin": "dàxué / zhōngxué / xiǎoxué",
+    "espanol": "Universidad / Secundaria / Primaria",
+    "audio": "zh_4388531618.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "一点儿",
+    "pinyin": "yìdiǎnr",
+    "espanol": "Un poquito (suaviza, más tierno/modesto)",
+    "audio": "zh_796019f7b0.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "种",
+    "pinyin": "zhǒng",
+    "espanol": "Tipo / clase / especie",
+    "audio": "zh_b13903cec9.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "睫毛",
+    "pinyin": "jiémáo",
+    "espanol": "Pestañas",
+    "audio": "zh_772007e649.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "指甲",
+    "pinyin": "zhǐjia",
+    "espanol": "Uñas",
+    "audio": "zh_079db25d91.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "好吃 / 难吃",
+    "pinyin": "hǎochī / nánchī",
+    "espanol": "Delicioso / asqueroso",
+    "audio": "zh_4353a58006.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "好看 / 难看",
+    "pinyin": "hǎokàn / nánkàn",
+    "espanol": "Bonito / feo",
+    "audio": "zh_696bddc952.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "好喝 / 难喝",
+    "pinyin": "hǎohē / nánhē",
+    "espanol": "Sabroso / asqueroso (bebida)",
+    "audio": "zh_16614a08f9.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "好听 / 难听",
+    "pinyin": "hǎotīng / nántīng",
+    "espanol": "Suena bien / suena mal",
+    "audio": "zh_c67aa7aa7b.mp3",
+    "clase": "clase02"
+  },
+  {
+    "hanzi": "我有汉语名字。",
+    "pinyin": "Wǒ yǒu Hànyǔ míngzì.",
+    "espanol": "Yo tengo nombre chino.",
+    "audio": "zh_9ef9a9ca86.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "我没有汉语名字。",
+    "pinyin": "Wǒ méi yǒu Hànyǔ míngzì.",
+    "espanol": "No tengo nombre chino.",
+    "audio": "zh_d8a6164c55.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "你有汉语名字吗？",
+    "pinyin": "Nǐ yǒu Hànyǔ míngzì ma?",
+    "espanol": "¿Tienes nombre chino?",
+    "audio": "zh_6a55e6c5b1.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "有。/ 没有。",
+    "pinyin": "Yǒu. / Méi yǒu.",
+    "espanol": "Sí (tengo). / No (no tengo).",
+    "audio": "zh_acc0ef2b49.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "你的汉语名字是什么？",
+    "pinyin": "Nǐ de Hànyǔ míngzì shì shénme?",
+    "espanol": "¿Cuál es tu nombre chino?",
+    "audio": "zh_da6cbe946a.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "我的汉语名字是巴斯帝。",
+    "pinyin": "Wǒ de Hànyǔ míngzì shì Bāsīdì.",
+    "espanol": "Mi nombre chino es Bāsīdì.",
+    "audio": "zh_4242231dff.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "你会写你的汉语名字吗？",
+    "pinyin": "Nǐ huì xiě nǐ de Hànyǔ míngzì ma?",
+    "espanol": "¿Sabes escribir tu nombre chino?",
+    "audio": "zh_c6ae1ebb22.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "会，我会写。",
+    "pinyin": "Huì, wǒ huì xiě.",
+    "espanol": "Sí, sé escribirlo.",
+    "audio": "zh_155d423546.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "我们都会说汉语。",
+    "pinyin": "Wǒmen dōu huì shuō Hànyǔ.",
+    "espanol": "Todos (nosotros) sabemos hablar chino.",
+    "audio": "zh_689545cf6e.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "我们都会写汉字。",
+    "pinyin": "Wǒmen dōu huì xiě Hànzì.",
+    "espanol": "Todos sabemos escribir caracteres.",
+    "audio": "zh_03038f5a4a.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "我们都有汉语名字。",
+    "pinyin": "Wǒmen dōu yǒu Hànyǔ míngzì.",
+    "espanol": "Todos tenemos nombre chino.",
+    "audio": "zh_6eac50f535.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "我们不会说汉语。",
+    "pinyin": "Wǒmen bú huì shuō Hànyǔ.",
+    "espanol": "No sabemos hablar chino.",
+    "audio": "zh_3e2cbcff98.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "你 (nǐ) — tú",
+    "pinyin": "您 (nín) — usted\n  你们 (nǐmen) — ustedes您们 (nínmen) — ustedes (formal)\n  我们 (wǒmen) — nosotros",
+    "espanol": "❌ No existe forma respetuosa",
+    "audio": "zh_90f9fca976.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "中国菜很难吃。",
+    "pinyin": "Zhōngguó cài hěn nánchī.",
+    "espanol": "La comida china es muy asquerosa.",
+    "audio": "zh_f8b5d72287.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "这个汉字我会读，不会写。",
+    "pinyin": "Zhège hànzì wǒ huì dú, bú huì xiě.",
+    "espanol": "Este carácter sé leerlo, pero no sé escribirlo.",
+    "audio": "zh_7c1443c12f.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "这个汉字我会写，也会读。",
+    "pinyin": "Zhège hànzì wǒ huì xiě, yě huì dú.",
+    "espanol": "Este carácter sé escribirlo y también sé leerlo.",
+    "audio": "zh_6bb436f844.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "今天jīntiān · hoy",
+    "pinyin": "今年jīnnián · este año精彩jīngcǎi · genial车票chēpiào · boleto\n  公司gōngsī · empresa刚才gāngcái · recién操场cāochǎng · cancha鸡蛋jīdàn · huevo\n  刮风guā fēng · ventoso欢迎huānyíng · bienvenido经理jīnglǐ · gerente机会jīhuì · oportunidad\n  关心guānxīn · preocuparse关于guānyú · acerca de开始kāishǐ · empezar高兴gāoxìng · contento\n\n\n2° tono + otros\n\n\n  \n  \n    \n      2° + 1°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      时间\n      shíjiān · tiempo\n    \n  \n  \n  \n    \n      2° + 2°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      银行\n      yínháng · banco\n    \n  \n  \n  \n    \n      2° + 3°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      词典\n      cídiǎn · diccionario\n    \n  \n  \n  \n    \n      2° + 4°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      蓝色\n      lánsè · azul\n    \n  \n\n\nPráctica: más palabras con 2° tono\n\n  2° + 1°2° + 2°2° + 3°2° + 4°\n  国家guójiā · país楼房lóufáng · edificio苹果píngguǒ · manzana环境huánjìng · ambiente\n  昨天zuótiān · ayer篮球lánqiú · basquet牛奶niúnǎi · leche牛肉niú ròu · carne\n  明天míngtiān · mañana长城Chángchéng · Gran Muralla年龄niánlíng · edad韩剧hánjià · vacaciones\n  年轻niánqīng · joven关于guānyú · acerca de游泳yóuyǒng · nadar游戏yóuxì · videojuego\n\n\n3° tono + otros\n\n\n  El 3er tono como primera sílaba cambia su pronunciación dependiendo del tono que le sigue:\n  Antes de 1°, 2° o 4° tono: se convierte en un medio 3er tono (211) — solo baja, no sube.\n  Antes de otro 3° tono: el primero cambia completamente a 2° tono (regla de sandhi tonal).\n\n\n\n  \n  \n    \n      3° + 1°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      北京\n      Běijīng · Beijing\n    \n  \n  \n  \n    \n      3° + 2°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      旅游\n      lǚyóu · viajar\n    \n  \n  \n  \n    \n      3° + 3°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      你好\n      nǐ hǎo → ní hǎo · hola\n    \n  \n  \n  \n    \n      3° + 4°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      好看\n      hǎokàn · bonito\n    \n  \n\n\n\n  ⚠️ Sandhi tonal: 3° + 3° → 2° + 3°\n  Cuando dos sílabas con 3er tono están juntas, la primera se pronuncia como 2° tono (sube en vez de bajar y subir).\n  Ejemplo: 你好 se escribe nǐ hǎo pero se pronuncia ní hǎo.\n  En el diagrama de arriba, la primera sílaba (roja) muestra una línea ascendente (2° tono) porque así se pronuncia realmente.\n\n\n4° tono + otros\n\n\n  \n  \n    \n      4° + 1°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      大家\n      dàjiā · todos\n    \n  \n  \n  \n    \n      4° + 2°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      上学\n      shàngxué · ir a la escuela\n    \n  \n  \n  \n    \n      4° + 3°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      电影\n      diànyǐng · película\n    \n  \n  \n  \n    \n      4° + 4°\n      \n        \n        \n        \n        \n        \n        \n        \n      \n      再见\n      zàijiàn · adiós\n    \n  \n\n\n\n\n\n\n7. Estructura de caracteres: simple vs compuesto\n\n  Los caracteres chinos se dividen en dos tipos de estructura:\n  独体结构 (dútǐ jiégòu) — Simple / Monocomponente: un solo bloque, no se puede dividir.\n  合体结构 (hétǐ jiégòu) — Compuesto: se compone de dos o más partes.\n\n\nSimple — 独体结构 (un solo componente)\n\n  \n    Simple\n    人\n    rén\n    humano / persona\n  \n  \n    Simple\n    我\n    wǒ\n    yo\n  \n  \n    Simple\n    中\n    zhōng\n    medio / centro\n  \n\n\nCompuesto — 合体结构 (dos o más componentes)\n\n  💡 Los caracteres compuestos están formados por radicales o componentes. Abajo puedes ver cómo se separan — las partes se animan automáticamente.\n\n\n  \n    Compuesto\n    你\n    nǐ\n    tú\n    \n      亻\n      尔\n    \n  \n  \n    Compuesto\n    做\n    zuò\n    hacer\n    \n      亻\n      故\n    \n  \n  \n    Compuesto\n    好\n    hǎo\n    bueno\n    \n      女\n      子\n    \n  \n  \n    Compuesto\n    他\n    tā\n    él\n    \n      亻\n      也\n    \n  \n  \n    Compuesto\n    她\n    tā\n    ella\n    \n      女\n      也\n    \n  \n  \n    Compuesto\n    们\n    men\n    plural\n    \n      亻\n      门\n    \n  \n  \n    Compuesto\n    吗\n    ma\n    ¿? (pregunta)\n    \n      口\n      马\n    \n  \n  \n    Compuesto\n    吃\n    chī\n    comer\n    \n      口\n      乞\n    \n  \n  \n    Compuesto\n    说\n    shuō\n    hablar\n    \n      讠\n      兑\n    \n  \n\n\n\n  🔑 亻 es el radical de \"persona\" (人 rén). Cuando aparece como componente izquierdo de un carácter compuesto, se escribe como 亻. Aparece en muchos caracteres: 你, 他, 她, 做, 们...\n\n\n💧 Radical 氵 — Agua (三点水 sāndiǎnshuǐ)\n\n  🔑 El radical 氵 (tres gotas de agua) aparece en caracteres relacionados con agua o líquidos.\n\n\n  CarácterPinyinSignificadoRelación con agua\n  汉",
+    "espanol": "hànChino (etnia Han)Del río Hàn (汉水)",
+    "audio": "zh_78ed0c9012.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "没",
+    "pinyin": "méi",
+    "espanol": "No (negación de 有)Hundirse en agua → desaparecer → no tener",
+    "audio": "zh_3672c6af97.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "海",
+    "pinyin": "hǎi",
+    "espanol": "MarDirectamente: masa de agua",
+    "audio": "zh_9aa7f82989.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "河",
+    "pinyin": "hé",
+    "espanol": "RíoDirectamente: curso de agua",
+    "audio": "zh_5ea03ddf50.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "酒",
+    "pinyin": "jiǔ",
+    "espanol": "Alcohol / licorLíquido / bebida",
+    "audio": "zh_811ba9ddbf.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "语",
+    "pinyin": "yǔ",
+    "espanol": "IdiomaLenguaje hablado",
+    "audio": "zh_94441e69c7.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "说",
+    "pinyin": "shuō",
+    "espanol": "Hablar / decirActo de hablar",
+    "audio": "zh_ddc9d3d10d.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "谁",
+    "pinyin": "shéi",
+    "espanol": "¿Quién?Preguntar sobre alguien",
+    "audio": "zh_cfbafdf1d6.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "认",
+    "pinyin": "rèn",
+    "espanol": "ReconocerIdentificar mediante comunicación",
+    "audio": "zh_33c2f1378a.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "让",
+    "pinyin": "ràng",
+    "espanol": "Dejar / permitirExpresar permiso verbalmente",
+    "audio": "zh_167bb5dcc6.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "今天几号？",
+    "pinyin": "Jīntiān jǐ hào?",
+    "espanol": "¿Qué fecha es hoy?",
+    "audio": "zh_0aeb8a0ed9.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "今天二十一号。",
+    "pinyin": "Jīntiān èrshíyī hào.",
+    "espanol": "Hoy es 21.",
+    "audio": "zh_bef02511e2.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "今天三月二十一号。",
+    "pinyin": "Jīntiān sān yuè èrshíyī hào.",
+    "espanol": "Hoy es 21 de marzo.",
+    "audio": "zh_180ab7fe9e.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "一月",
+    "pinyin": "yī yuè",
+    "espanol": "Enero七月qī yuèJulio",
+    "audio": "一月_43bc301e73.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "二月",
+    "pinyin": "èr yuè",
+    "espanol": "Febrero八月bā yuèAgosto",
+    "audio": "二月_b61c626886.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "三月",
+    "pinyin": "sān yuè",
+    "espanol": "Marzo九月jiǔ yuèSept.",
+    "audio": "三月_eade91dc00.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "四月",
+    "pinyin": "sì yuè",
+    "espanol": "Abril十月shí yuèOctubre",
+    "audio": "四月_5178fda8e7.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "五月",
+    "pinyin": "wǔ yuè",
+    "espanol": "Mayo十一月shíyī yuèNov.",
+    "audio": "五月_cd474e4125.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "六月",
+    "pinyin": "liù yuè",
+    "espanol": "Junio十二月shí'èr yuèDic.",
+    "audio": "六月_dc71b73f68.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "星期一",
+    "pinyin": "xīngqī yī",
+    "espanol": "Lunes星期五xīngqī wǔViernes",
+    "audio": "星期一_5ce438210f.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "星期二",
+    "pinyin": "xīngqī èr",
+    "espanol": "Martes星期六xīngqī liùSábado",
+    "audio": "星期二_34e5216bc3.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "星期三",
+    "pinyin": "xīngqī sān",
+    "espanol": "Miércoles星期日 / 天xīngqīrì / tiānDomingo",
+    "audio": "星期三_711d996d87.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "星期四",
+    "pinyin": "xīngqī sì",
+    "espanol": "Jueves",
+    "audio": "星期四_3df6af796b.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "今天星期几？",
+    "pinyin": "Jīntiān xīngqī jǐ?",
+    "espanol": "¿Qué día es hoy?",
+    "audio": "今天星期几_8edc304656.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "今天星期五。",
+    "pinyin": "Jīntiān xīngqī wǔ.",
+    "espanol": "Hoy es viernes.",
+    "audio": "zh_87cde2bb77.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "昨天",
+    "pinyin": "zuótiān",
+    "espanol": "Ayer",
+    "audio": "昨天_2f8d6f1584.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "今天",
+    "pinyin": "jīntiān",
+    "espanol": "Hoy",
+    "audio": "今天_800dfdd902.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "明天",
+    "pinyin": "míngtiān",
+    "espanol": "Mañana",
+    "audio": "明天_8bcbd77d1f.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "昨天是几月几号？",
+    "pinyin": "Zuótiān shì jǐ yuè jǐ hào?",
+    "espanol": "¿Cuál fue la fecha de ayer?",
+    "audio": "昨天是几月几_8d6a286f0e.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "明天呢？",
+    "pinyin": "Míngtiān ne?",
+    "espanol": "¿Y mañana?",
+    "audio": "明天呢_66b8434ed2.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "我去学校看书。",
+    "pinyin": "Wǒ qù xuéxiào kàn shū.",
+    "espanol": "Voy a la escuela a leer.",
+    "audio": "zh_ba6999e167.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "我去学习汉语。",
+    "pinyin": "Wǒ qù xuéxí Hànyǔ.",
+    "espanol": "Voy a estudiar chino.",
+    "audio": "zh_3fa021c338.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "我们去吃中国菜。",
+    "pinyin": "Wǒmen qù chī Zhōngguó cài.",
+    "espanol": "Vamos a comer comida china.",
+    "audio": "zh_ecddd64aeb.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "月",
+    "pinyin": "yuè",
+    "espanol": "Mes",
+    "audio": "月_e42b99d599.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "号",
+    "pinyin": "hào",
+    "espanol": "Día del mes",
+    "audio": "号_f7b3204e43.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "星期",
+    "pinyin": "xīngqī",
+    "espanol": "Semana / día de la semana",
+    "audio": "星期_9e71cf606e.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "几",
+    "pinyin": "jǐ",
+    "espanol": "¿Cuántos? / ¿Cuál?",
+    "audio": "几_28fef849a6.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "去",
+    "pinyin": "qù",
+    "espanol": "Ir",
+    "audio": "zh_dfb9366c91.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "看",
+    "pinyin": "kàn",
+    "espanol": "Ver / mirar / leer",
+    "audio": "zh_9302446f9b.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "问",
+    "pinyin": "wèn",
+    "espanol": "Preguntar",
+    "audio": "zh_57fe12bfc3.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "书",
+    "pinyin": "shū",
+    "espanol": "Libro",
+    "audio": "zh_2f3703e427.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "中国菜",
+    "pinyin": "Zhōngguó cài",
+    "espanol": "Comida china",
+    "audio": "zh_fec5eacd0a.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "朋友",
+    "pinyin": "péngyou",
+    "espanol": "Amigo",
+    "audio": "zh_9d53230a95.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "请",
+    "pinyin": "qǐng",
+    "espanol": "Por favor / invitar",
+    "audio": "zh_d1a34a5779.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "请问",
+    "pinyin": "qǐngwèn",
+    "espanol": "Disculpe... (para preguntar)",
+    "audio": "请问_3bba2fed97.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "呢",
+    "pinyin": "ne",
+    "espanol": "¿Y tú? / ¿Y ___?",
+    "audio": "呢_65ac5a7b15.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "都",
+    "pinyin": "dōu",
+    "espanol": "Todos / ambos",
+    "audio": "zh_de44f194cf.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "我们",
+    "pinyin": "wǒmen",
+    "espanol": "Nosotros",
+    "audio": "zh_ab4a85fc2e.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "您",
+    "pinyin": "nín",
+    "espanol": "Usted (formal)",
+    "audio": "zh_6e2d1fbf23.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "您们",
+    "pinyin": "nínmen",
+    "espanol": "Ustedes (formal)",
+    "audio": "zh_5182039a5a.mp3",
+    "clase": "clase03"
+  },
+  {
+    "hanzi": "七月",
+    "pinyin": "qī yuè",
+    "espanol": "Julio",
+    "audio": "七月_328dcec7ed.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "八月",
+    "pinyin": "bā yuè",
+    "espanol": "Agosto",
+    "audio": "八月_b7263939ac.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "九月",
+    "pinyin": "jiǔ yuè",
+    "espanol": "Septiembre",
+    "audio": "九月_cd9559ebaf.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "十月",
+    "pinyin": "shí yuè",
+    "espanol": "Octubre",
+    "audio": "十月_ade2e82d67.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "十一月",
+    "pinyin": "shíyī yuè",
+    "espanol": "Noviembre",
+    "audio": "十一月_4e04f1a9c3.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "十二月",
+    "pinyin": "shí'èr yuè",
+    "espanol": "Diciembre",
+    "audio": "十二月_5c28133800.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "星期五",
+    "pinyin": "xīngqī wǔ",
+    "espanol": "Viernes",
+    "audio": "星期五_450ea3af46.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "星期六",
+    "pinyin": "xīngqī liù",
+    "espanol": "Sábado",
+    "audio": "星期六_1ae72f6826.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "星期天",
+    "pinyin": "xīngqī tiān",
+    "espanol": "Domingo",
+    "audio": "星期天_2ff46ae697.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "请问，今天几号？",
+    "pinyin": "Qǐngwèn, jīntiān jǐ hào?",
+    "espanol": "Disculpe, ¿qué fecha es hoy?",
+    "audio": "请问今天几号_e816580ef3.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "今天九月一号。",
+    "pinyin": "Jīntiān jiǔ yuè yī hào.",
+    "espanol": "Hoy es 1 de septiembre.",
+    "audio": "今天九月一号_694dc77925.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "今天二十四号。",
+    "pinyin": "Jīntiān èrshísì hào.",
+    "espanol": "Hoy es 24.",
+    "audio": "今天二十四号_cf98959800.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "今天星期六。",
+    "pinyin": "Jīntiān xīngqī liù.",
+    "espanol": "Hoy es sábado.",
+    "audio": "今天星期六_112d7422eb.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "前天",
+    "pinyin": "qiántiān",
+    "espanol": "Anteayer",
+    "audio": "前天_94995c3174.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "后天",
+    "pinyin": "hòutiān",
+    "espanol": "Pasado mañana",
+    "audio": "后天_1dead9a89c.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "昨天是八月三十一号，星期二。",
+    "pinyin": "Zuótiān shì bā yuè sānshíyī hào, xīngqī'èr.",
+    "espanol": "Ayer fue 31 de agosto, martes.",
+    "audio": "昨天是八月三_e6d7ed132e.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "明天是几月几号？",
+    "pinyin": "Míngtiān shì jǐ yuè jǐ hào?",
+    "espanol": "¿Qué fecha es mañana?",
+    "audio": "明天是几月几_572271a68c.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "明天是九月二号，星期四。",
+    "pinyin": "Míngtiān shì jiǔ yuè èr hào, xīngqīsì.",
+    "espanol": "Mañana es 2 de septiembre, jueves.",
+    "audio": "明天是九月二_5d2dfbed51.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "你的生日是几月几号？",
+    "pinyin": "Nǐ de shēngrì shì jǐ yuè jǐ hào?",
+    "espanol": "¿Cuándo es tu cumpleaños?",
+    "audio": "你的生日是几_11e1b0f6a0.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "我的生日是四月二十二号。",
+    "pinyin": "Wǒ de shēngrì shì sì yuè èrshí'èr hào.",
+    "espanol": "Mi cumpleaños es el 22 de abril.",
+    "audio": "我的生日是四_2fbb67c346.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "生日",
+    "pinyin": "shēngrì",
+    "espanol": "Cumpleaños",
+    "audio": "生日_8483ed132b.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "几号",
+    "pinyin": "jǐ hào",
+    "espanol": "¿Qué día (del mes)?",
+    "audio": "几号_3238e0b7b6.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "几月",
+    "pinyin": "jǐ yuè",
+    "espanol": "¿Qué mes?",
+    "audio": "几月_9ff675eb91.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "星期几",
+    "pinyin": "xīngqī jǐ",
+    "espanol": "¿Qué día de la semana?",
+    "audio": "星期几_1981794a0b.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "是",
+    "pinyin": "shì",
+    "espanol": "Ser / estar",
+    "audio": "是_0a60ac8f02.mp3",
+    "clase": "clase04"
+  },
+  {
+    "hanzi": "你好",
+    "pinyin": "Nǐ hǎo",
+    "espanol": "Hola (A ti bueno)",
+    "audio": "zh_7eca689f0d.mp3",
+    "clase": "cap01"
+  },
+  {
+    "hanzi": "再见",
+    "pinyin": "Zàijiàn",
+    "espanol": "Adiós (Volveremos a vernos)",
+    "audio": "zh_8e5c0a1e46.mp3",
+    "clase": "cap01"
+  },
+  {
+    "hanzi": "谢谢",
+    "pinyin": "Xièxie",
+    "espanol": "Gracias",
+    "audio": "zh_a34490b593.mp3",
+    "clase": "cap01"
+  },
+  {
+    "hanzi": "不客气",
+    "pinyin": "Bú kèqi",
+    "espanol": "De nada (No seas cortés)",
+    "audio": "zh_be672ad548.mp3",
+    "clase": "cap01"
+  },
+  {
+    "hanzi": "男 / 女",
+    "pinyin": "Nán / Nǚ",
+    "espanol": "Hombre / Mujer",
+    "audio": "zh_5242e51e4a.mp3",
+    "clase": "cap01"
+  },
+  {
+    "hanzi": "老师",
+    "pinyin": "Lǎoshī",
+    "espanol": "Profesor/a",
+    "audio": "zh_295af37e05.mp3",
+    "clase": "cap01"
+  },
+  {
+    "hanzi": "你们",
+    "pinyin": "Nǐmen",
+    "espanol": "Ustedes / Vosotros",
+    "audio": "zh_247edb94d4.mp3",
+    "clase": "cap02"
+  },
+  {
+    "hanzi": "没关系",
+    "pinyin": "Méi guānxi",
+    "espanol": "No importa / No pasa nada",
+    "audio": "zh_ac85b3780c.mp3",
+    "clase": "cap02"
+  },
+  {
+    "hanzi": "大家",
+    "pinyin": "Dàjiā",
+    "espanol": "Todos. \"Gran Familia\" (Dà = Grande, Jiā = Familia).",
+    "audio": "zh_f40c127750.mp3",
+    "clase": "cap03"
+  },
+  {
+    "hanzi": "你",
+    "pinyin": "Nǐ (3er tono)",
+    "espanol": "Tú你们 Nǐmen",
+    "audio": "zh_df1fd91011.mp3",
+    "clase": "cap03"
+  },
+  {
+    "hanzi": "他 / 她",
+    "pinyin": "Tā (1er tono)",
+    "espanol": "Él / Ella他们 / 她们 Tāmen",
+    "audio": "zh_93fd37c911.mp3",
+    "clase": "cap03"
+  },
+  {
+    "hanzi": "汉语",
+    "pinyin": "Hànyǔ",
+    "espanol": "Chino (Lengua Han)",
+    "audio": "zh_25cf96268e.mp3",
+    "clase": "cap04"
+  },
+  {
+    "hanzi": "英语",
+    "pinyin": "Yīngyǔ",
+    "espanol": "Inglés (Yīng = Valiente, de Inglaterra)",
+    "audio": "zh_4145d4c179.mp3",
+    "clase": "cap04"
+  },
+  {
+    "hanzi": "西班牙语",
+    "pinyin": "Xībānyáyǔ",
+    "espanol": "Español (Abrev: Xīyǔ)",
+    "audio": "zh_d43fa13960.mp3",
+    "clase": "cap04"
+  },
+  {
+    "hanzi": "这 / 那 / 哪",
+    "pinyin": "Zhè / Nà / Nǎ",
+    "espanol": "Este / Ese / ¿Cuál?",
+    "audio": "zh_e8d5833a3e.mp3",
+    "clase": "cap05"
+  },
+  {
+    "hanzi": "这儿 / 那儿 / 哪儿",
+    "pinyin": "Zhèr / Nàr / Nǎr",
+    "espanol": "Aquí / Allí / ¿Dónde?",
+    "audio": "zh_7c108dc852.mp3",
+    "clase": "cap05"
+  },
+  {
+    "hanzi": "个 / 两 / 二",
+    "pinyin": "Gè / Liǎng / Èr",
+    "espanol": "Clasificador universal / Dos (cantidad) / Dos (matemático)",
+    "audio": "zh_03a5f8fe6f.mp3",
+    "clase": "cap05"
+  },
+  {
+    "hanzi": "听 / 懂",
+    "pinyin": "Tīng / Dǒng",
+    "espanol": "Escuchar / Entender",
+    "audio": "zh_0da7cf00ad.mp3",
+    "clase": "cap05"
+  },
+  {
+    "hanzi": "公司 / 学校 / 家",
+    "pinyin": "Gōngsī / Xuéxiào / Jiā",
+    "espanol": "Empresa / Escuela / Casa-Familia",
+    "audio": "zh_7cec1155c5.mp3",
+    "clase": "cap07"
+  },
+  {
+    "hanzi": "男朋友 / 女朋友",
+    "pinyin": "Nánpéngyǒu / Nǚpéngyǒu",
+    "espanol": "Novio / Novia",
+    "audio": "zh_9909fe45ab.mp3",
+    "clase": "cap07"
+  },
+  {
+    "hanzi": "漂亮 / 大",
+    "pinyin": "Piàoliang / Dà",
+    "espanol": "Bonita / Grande",
+    "audio": "zh_c9502e6e50.mp3",
+    "clase": "cap07"
+  },
+  {
+    "hanzi": "上海 / 北京",
+    "pinyin": "Shànghǎi / Běijīng",
+    "espanol": "Shanghái / Pekín",
+    "audio": "zh_4bbb5b9060.mp3",
+    "clase": "cap07"
+  },
+  {
+    "hanzi": "下雨",
+    "pinyin": "Xià yǔ",
+    "espanol": "Llover",
+    "audio": "zh_060e263e4b.mp3",
+    "clase": "cap07"
+  },
+  {
+    "hanzi": "老师的书",
+    "pinyin": "Lǎoshī de shū",
+    "espanol": "El libro del profesor",
+    "audio": "zh_9d22db6516.mp3",
+    "clase": "cap07"
+  },
+  {
+    "hanzi": "公司的电话",
+    "pinyin": "Gōngsī de diànhuà",
+    "espanol": "El teléfono de la empresa",
+    "audio": "zh_f8bbd29cd3.mp3",
+    "clase": "cap07"
+  },
+  {
+    "hanzi": "这是谁的书？",
+    "pinyin": "Zhè shì shéi de shū?",
+    "espanol": "¿De quién es este libro?",
+    "audio": "zh_1ed6e11853.mp3",
+    "clase": "cap07"
+  },
+  {
+    "hanzi": "250 — 二百五",
+    "pinyin": "💀 Estúpido",
+    "espanol": "\"Tonto\" en argot. ¡Cuidado!",
+    "audio": "zh_67f57326c4.mp3",
+    "clase": "cap08"
+  },
+  {
+    "hanzi": "家",
+    "pinyin": "Jiā",
+    "espanol": "Familia / Casa",
+    "audio": "zh_a6cdd2a00b.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "姐姐",
+    "pinyin": "Jiějie",
+    "espanol": "Hermana mayor",
+    "audio": "zh_033e1fb01c.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "见",
+    "pinyin": "Jiàn",
+    "espanol": "Ver / Encontrarse",
+    "audio": "zh_b0deb10456.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "鸡蛋",
+    "pinyin": "Jīdàn",
+    "espanol": "Huevo",
+    "audio": "zh_bd29625b48.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "钱",
+    "pinyin": "Qián",
+    "espanol": "Dinero",
+    "audio": "zh_d23513f09b.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "前面",
+    "pinyin": "Qiánmiàn",
+    "espanol": "Delante / Enfrente",
+    "audio": "zh_0c3ea1e092.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "起床",
+    "pinyin": "Qǐchuáng",
+    "espanol": "Levantarse",
+    "audio": "zh_59b19552d6.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "七",
+    "pinyin": "Qī",
+    "espanol": "Siete",
+    "audio": "zh_aad6914f8f.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "小姐",
+    "pinyin": "Xiǎojie",
+    "espanol": "Señorita",
+    "audio": "zh_832c2de240.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "先生",
+    "pinyin": "Xiānsheng",
+    "espanol": "Señor",
+    "audio": "zh_1f9820d215.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "想",
+    "pinyin": "Xiǎng",
+    "espanol": "Querer / Extrañar",
+    "audio": "zh_291837bd5b.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "香蕉",
+    "pinyin": "Xiāngjiāo",
+    "espanol": "Plátano",
+    "audio": "zh_b7c03bbf2b.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "休息",
+    "pinyin": "Xiūxi",
+    "espanol": "Descansar",
+    "audio": "zh_3a991a4ca5.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "西瓜",
+    "pinyin": "Xīguā",
+    "espanol": "Sandía",
+    "audio": "zh_b9af3fd5d3.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "知道",
+    "pinyin": "Zhīdào",
+    "espanol": "Saber",
+    "audio": "zh_5dd93697ae.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "这里",
+    "pinyin": "Zhèlǐ",
+    "espanol": "Aquí",
+    "audio": "zh_535ca5a5d8.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "桌子",
+    "pinyin": "Zhuōzi",
+    "espanol": "Mesa",
+    "audio": "zh_9e2fde20b6.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "中文",
+    "pinyin": "Zhōngwén",
+    "espanol": "Idioma chino",
+    "audio": "zh_a7bac2239f.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "中午",
+    "pinyin": "Zhōngwǔ",
+    "espanol": "Mediodía",
+    "audio": "zh_259f542c09.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "住",
+    "pinyin": "Zhù",
+    "espanol": "Vivir",
+    "audio": "zh_84f3602f49.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "丈夫",
+    "pinyin": "Zhàngfu",
+    "espanol": "Esposo",
+    "audio": "zh_a583eae023.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "吃饭",
+    "pinyin": "Chīfàn",
+    "espanol": "Comer comida",
+    "audio": "zh_0068330a10.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "出租车",
+    "pinyin": "Chūzūchē",
+    "espanol": "Taxi",
+    "audio": "zh_4f5289fad3.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "唱歌",
+    "pinyin": "Chànggē",
+    "espanol": "Cantar",
+    "audio": "zh_d49c9b66f6.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "茶",
+    "pinyin": "Chá",
+    "espanol": "Té",
+    "audio": "zh_a001ed1cf1.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "什么",
+    "pinyin": "Shénme",
+    "espanol": "Qué",
+    "audio": "zh_736ccbe560.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "睡觉",
+    "pinyin": "Shuìjiào",
+    "espanol": "Dormir",
+    "audio": "zh_60cffce1f6.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "商店",
+    "pinyin": "Shāngdiàn",
+    "espanol": "Tienda",
+    "audio": "zh_f303c10a9f.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "早上",
+    "pinyin": "Zǎoshang",
+    "espanol": "Mañana (6–9 AM)",
+    "audio": "zh_c8c0ba481d.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "坐",
+    "pinyin": "Zuò",
+    "espanol": "Sentarse",
+    "audio": "zh_0169bebf68.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "厕所",
+    "pinyin": "Cèsuǒ",
+    "espanol": "Baño",
+    "audio": "zh_d87186a259.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "错",
+    "pinyin": "Cuò",
+    "espanol": "Incorrecto / Error",
+    "audio": "zh_6160eb68dd.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "岁",
+    "pinyin": "Suì",
+    "espanol": "Años de edad",
+    "audio": "zh_2854fa1c12.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "送",
+    "pinyin": "Sòng",
+    "espanol": "Regalar / Enviar",
+    "audio": "zh_040f3943c3.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "死",
+    "pinyin": "Sǐ",
+    "espanol": "Morir",
+    "audio": "zh_093a1a4516.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "三 / 四",
+    "pinyin": "Sān / Sì",
+    "espanol": "Tres / Cuatro",
+    "audio": "zh_437aaf5b0d.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "孙子",
+    "pinyin": "Sūnzi",
+    "espanol": "Nieto",
+    "audio": "zh_28e6627124.mp3",
+    "clase": "cap10"
+  },
+  {
+    "hanzi": "在",
+    "pinyin": "Zài",
+    "espanol": "Estar en (ubicación)",
+    "audio": "zh_241d47a3ee.mp3",
+    "clase": "capapendice"
+  },
+  {
+    "hanzi": "有",
+    "pinyin": "Yǒu",
+    "espanol": "Tener / Haber",
+    "audio": "zh_cc4ad2fd27.mp3",
+    "clase": "capapendice"
+  },
+  {
+    "hanzi": "要",
+    "pinyin": "Yào",
+    "espanol": "Querer / Necesitar (activo, determinado)",
+    "audio": "zh_5438c873f9.mp3",
+    "clase": "capapendice"
+  },
+  {
+    "hanzi": "叫",
+    "pinyin": "Jiào",
+    "espanol": "Llamarse / Gritar",
+    "audio": "zh_27ead3ff93.mp3",
+    "clase": "capapendice"
+  },
+  {
+    "hanzi": "喜欢",
+    "pinyin": "Xǐhuan",
+    "espanol": "Gustar",
+    "audio": "zh_3d6c396cf4.mp3",
+    "clase": "capapendice"
+  },
+  {
+    "hanzi": "吃",
+    "pinyin": "Chī",
+    "espanol": "Comer",
+    "audio": "zh_a52b77dfc6.mp3",
+    "clase": "capapendice"
+  }
+]

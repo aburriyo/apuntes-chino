@@ -1,0 +1,1384 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 1 — Chino Mandarín Completo · Apuntes Basti</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  :root {
+    --red: #c0392b; --dark: #1a1a2e; --gold: #d4820a;
+    --green: #27ae60; --blue: #2980b9; --purple: #8e44ad;
+    --bg: #fafafa; --text: #222; --muted: #888; --border: #e5e5e5;
+    --sidebar-w: 260px;
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; background: var(--bg); color: var(--text); font-size: 15px; display: flex; }
+
+  /* SIDEBAR */
+  #sidebar {
+    width: var(--sidebar-w); min-width: var(--sidebar-w);
+    background: var(--dark); color: #ccc;
+    height: 100vh; position: sticky; top: 0;
+    overflow-y: auto; padding: 20px 0;
+    flex-shrink: 0;
+  }
+  #sidebar h2 { color: var(--red); font-size: 0.8em; text-transform: uppercase; letter-spacing: 1px; padding: 0 16px 12px; border-bottom: 1px solid #333; margin-bottom: 8px; }
+  #sidebar a { display: block; padding: 6px 16px; color: #bbb; text-decoration: none; font-size: 0.82em; border-left: 3px solid transparent; transition: all .15s; }
+  #sidebar a:hover, #sidebar a.active { color: #fff; border-left-color: var(--red); background: rgba(255,255,255,0.05); }
+  #sidebar .sub { padding-left: 28px; font-size: 0.77em; color: #999; }
+
+  /* MAIN */
+  #main { flex: 1; max-width: calc(100% - var(--sidebar-w)); padding: 0 0 80px; }
+  header { background: var(--dark); color: #fff; padding: 32px 40px 28px; }
+  header h1 { font-size: 1.8em; color: var(--red); margin-bottom: 4px; }
+  header p { color: #aaa; font-size: 0.9em; }
+  .content { padding: 0 40px; }
+
+  /* HEADINGS */
+  h2 { font-size: 1.05em; color: #fff; padding: 10px 18px; border-radius: 8px; margin: 40px 0 16px; background: var(--red); }
+  h2.blue { background: var(--blue); }
+  h2.green { background: var(--green); }
+  h2.gold { background: var(--gold); }
+  h2.gray { background: #555; }
+  h2.purple { background: var(--purple); }
+  h3 { color: #444; font-size: 0.95em; margin: 18px 0 8px; border-left: 3px solid var(--red); padding-left: 10px; }
+  h4 { color: #555; font-size: 0.88em; margin: 12px 0 6px; }
+  p { margin: 8px 0; line-height: 1.6; }
+
+  /* CHINESE CHARS */
+  .hz { font-size: 1.15em; font-weight: bold; color: var(--red); }
+
+  /* BOXES */
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.note { background: #e8f5e9; border-left: 4px solid var(--green); border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid var(--blue); border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.structure { background: #fdecea; border: 1.5px solid var(--red); }
+  .box.purple { background: #f3e5f5; border-left: 4px solid var(--purple); border-radius: 0 8px 8px 0; }
+  .box center { text-align: center; margin: 8px 0; }
+  .box code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.9em; }
+  .structure-formula { text-align: center; font-size: 1.2em; font-weight: bold; color: var(--red); margin: 8px 0; }
+
+  /* TABLES */
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; }
+  th { background: var(--red); color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .table-blue th { background: var(--blue); }
+  .table-green th { background: var(--green); }
+  .table-gold th { background: var(--gold); }
+  .table-purple th { background: var(--purple); }
+  .table-gray th { background: #555; }
+  .good { color: var(--green); }
+  .bad { color: var(--red); }
+
+  /* DIALOGS */
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid var(--border); padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .da strong, .db strong { font-size: 0.85em; color: #666; }
+
+  /* VOCAB CARDS */
+  .voc { display: flex; gap: 12px; align-items: flex-start; background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 10px 14px; margin: 6px 0; }
+  .voc .hz { font-size: 1.3em; min-width: 80px; }
+  .voc .py { color: var(--blue); font-size: 0.9em; min-width: 120px; }
+  .voc .es { color: #555; font-size: 0.88em; flex: 1; }
+
+  /* TONE DIAGRAMS */
+  .tones { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin: 12px 0; }
+  .tone-card { background: #fff; border: 1px solid var(--border); border-radius: 8px; padding: 14px; text-align: center; }
+  .tone-card .name { font-weight: bold; margin-bottom: 4px; }
+  .tone-card .example { color: var(--muted); font-size: 0.85em; margin-top: 4px; }
+  .tone-line { margin: 8px auto; width: 80px; height: 30px; position: relative; }
+
+  /* SUPERSTITION TABLE */
+  .super-good { color: var(--green); font-weight: bold; }
+  .super-bad { color: var(--red); font-weight: bold; }
+
+  /* MULTI-COL */
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin: 10px 0; }
+  .three-col { display: grid; grid-template-columns: 1fr 1fr 1fr; gap: 12px; margin: 10px 0; }
+
+  /* SECTION DIVIDER */
+  .day-label { background: #f0f0f0; color: #666; font-size: 0.75em; text-transform: uppercase; letter-spacing: 1px; padding: 3px 10px; border-radius: 4px; display: inline-block; margin: 20px 0 4px; }
+  hr { border: none; border-top: 1px solid var(--border); margin: 20px 0; }
+
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+
+  /* NUMBERS GRID */
+  .num-grid { display: grid; grid-template-columns: repeat(5, 1fr); gap: 6px; margin: 10px 0; }
+  .num-cell { background: #fff; border: 1px solid var(--border); border-radius: 6px; padding: 6px 8px; text-align: center; }
+  .num-cell .hz { font-size: 1.3em; }
+  .num-cell .py { font-size: 0.75em; color: var(--muted); }
+
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; padding: 20px; }
+
+  /* SEARCH */
+  #search-bar { padding: 10px 16px; border-bottom: 1px solid #333; }
+  #search-input { width: 100%; background: #2a2a3e; border: 1px solid #444; border-radius: 6px; padding: 7px 10px; color: #fff; font-size: 0.82em; outline: none; }
+  #search-input::placeholder { color: #666; }
+  #search-input:focus { border-color: var(--red); }
+  #search-results { padding: 4px 0; max-height: calc(100vh - 120px); overflow-y: auto; }
+  #search-results a { display: block; padding: 6px 16px; color: #bbb; text-decoration: none; font-size: 0.78em; border-left: 3px solid transparent; }
+  #search-results a:hover { color: #fff; border-left-color: var(--red); background: rgba(255,255,255,0.05); }
+  #search-results .match-hz { color: var(--red); font-weight: bold; }
+  #search-results .no-results { padding: 8px 16px; color: #555; font-size: 0.78em; }
+  mark { background: #d4820a44; color: inherit; border-radius: 2px; }
+
+  /* RESPONSIVE */
+  @media (max-width: 768px) {
+    #sidebar { display: none; }
+    #main { max-width: 100%; }
+    .content { padding: 0 16px; }
+    .two-col, .three-col { grid-template-columns: 1fr; }
+    .tones { grid-template-columns: 1fr; }
+    header { padding: 20px 16px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- SIDEBAR -->
+<nav id="sidebar">
+  <h2>📖 Básico 1</h2>
+  <div id="search-bar">
+    <input id="search-input" type="text" placeholder="🔍 Buscar... (汉字, pinyin, es)" autocomplete="off">
+  </div>
+  <div id="search-results" style="display:none"></div>
+  <div id="nav-links">
+  <a href="#cap1">Cap. 1 — Fonética</a>
+  <a class="sub" href="#tonos">Los 4 Tonos</a>
+  <a class="sub" href="#iniciales">Iniciales</a>
+  <a class="sub" href="#finales">Finales</a>
+  <a class="sub" href="#vocab1">Vocabulario</a>
+  <a href="#cap2">Cap. 2 — Cortesía</a>
+  <a class="sub" href="#iniciales2">Iniciales Especiales</a>
+  <a class="sub" href="#trazos">Trazos</a>
+  <a class="sub" href="#respeto">Respeto</a>
+  <a class="sub" href="#no">Las 3 Caras del No</a>
+  <a href="#cap3">Cap. 3 — Gramática</a>
+  <a class="sub" href="#pronombres">Pronombres</a>
+  <a class="sub" href="#yao">Yào · Ma · Ne</a>
+  <a class="sub" href="#saludos-hora">Saludos por Hora</a>
+  <a class="sub" href="#zaijian">Adiós · Gracias</a>
+  <a href="#cap4">Cap. 4 — Nombres</a>
+  <a class="sub" href="#jiao">Jiào · Shì</a>
+  <a class="sub" href="#paises">Países</a>
+  <a class="sub" href="#profesiones">Profesiones</a>
+  <a href="#cap5">Cap. 5 — Demostrativos</a>
+  <a class="sub" href="#demo">Zhè · Nà · Nǎ</a>
+  <a class="sub" href="#clasificadores">Clasificadores</a>
+  <a class="sub" href="#familia1">Familia Básica</a>
+  <a href="#cap6">Cap. 6 — Identidad</a>
+  <a class="sub" href="#dialogo-id">Diálogos</a>
+  <a class="sub" href="#xiang">Xiǎng · Běn</a>
+  <a href="#cap7">Cap. 7 — Posesión</a>
+  <a class="sub" href="#de">De 的</a>
+  <a class="sub" href="#hen">Hěn 很</a>
+  <a class="sub" href="#zai">Zài 在 · Le 了</a>
+  <a href="#cap8">Cap. 8 — Números</a>
+  <a class="sub" href="#sujetos-verbos">Sujetos y Verbos</a>
+  <a class="sub" href="#numeros">Números 0–99</a>
+  <a class="sub" href="#wan">Wan · Yi</a>
+  <a class="sub" href="#supersticion">Superstición</a>
+  <a href="#cap9">Cap. 9 — Gran Familia</a>
+  <a class="sub" href="#arbol">Árbol Genealógico</a>
+  <a class="sub" href="#formalidad">Formalidad</a>
+  <a class="sub" href="#edad">Preguntar Edad</a>
+  <a href="#cap10">Cap. 10 — Repaso</a>
+  <a class="sub" href="#repaso-iniciales">Iniciales</a>
+  <a class="sub" href="#vocab-practica">Vocabulario</a>
+  <a href="#apendice">Apéndice — Gramática</a>
+  </div>
+</nav>
+
+<!-- MAIN -->
+<div id="main">
+<header>
+  <h1>中文笔记 — Básico 1 Completo</h1>
+  <p>Chino Mandarín · Centro Cultural Chino · Días 1–10 · Bastián Chávez</p>
+</header>
+
+<div class="content">
+
+<!-- ==================== CAPÍTULO 1 ==================== -->
+<h2 id="cap1">1. Introducción y Fonética</h2>
+
+<h3>Conceptos Clave del Idioma</h3>
+<div class="box grammar">
+  <strong>Términos Fundamentales</strong><br><br>
+  • <strong>Zhōngwén (中文):</strong> El nombre general del idioma y su cultura escrita.<br>
+  • <strong>Hànzì (汉字):</strong> "Caracteres Han". Sistema de escritura logográfico.<br>
+  • <strong>Pǔtōnghuà (普通话):</strong> "Lengua común" o Mandarín Estándar. Lengua oficial basada en el dialecto de Beijing.
+</div>
+
+<h3 id="tonos">Los 4 Tonos (Sì Shēng)</h3>
+<p>El chino es un idioma tonal: <strong>el tono cambia el significado</strong>.</p>
+
+<div class="tones">
+  <div class="tone-card">
+    <div class="name" style="color:#c0392b">1° Tono — Alto Plano ā</div>
+    <div style="font-size:2em;letter-spacing:4px">— — — —</div>
+    <div class="example">mā · 妈 · Mamá</div>
+  </div>
+  <div class="tone-card">
+    <div class="name" style="color:#27ae60">2° Tono — Subiendo á</div>
+    <div style="font-size:2em">↗</div>
+    <div class="example">má · 麻 · Cáñamo</div>
+  </div>
+  <div class="tone-card">
+    <div class="name" style="color:#2980b9">3° Tono — Baja y Sube ǎ</div>
+    <div style="font-size:2em">↘ ↗</div>
+    <div class="example">mǎ · 马 · Caballo</div>
+  </div>
+  <div class="tone-card">
+    <div class="name" style="color:#8e44ad">4° Tono — Cayendo à</div>
+    <div style="font-size:2em">↘</div>
+    <div class="example">mà · 骂 · Regañar</div>
+  </div>
+</div>
+
+<div class="box warn">
+  ⚠️ <strong>¡Cuidado con el Tono!</strong> Un error de tono puede ser fatal. Decir <em>mǎ</em> (Caballo) en lugar de <em>mā</em> (Mamá) es un error clásico.
+</div>
+
+<h3 id="iniciales">Las Iniciales (Consonantes)</h3>
+
+<h4>Tabla de Combinaciones: Iniciales vs Vocales</h4>
+<table>
+  <tr><th>Inicial</th><th>a</th><th>o</th><th>e</th><th>i</th><th>u</th><th>ü</th></tr>
+  <tr><td><strong>b</strong></td><td>ba</td><td>bo</td><td>—</td><td>bi</td><td>bu</td><td>—</td></tr>
+  <tr><td><strong>p</strong></td><td>pa</td><td>po</td><td>—</td><td>pi</td><td>pu</td><td>—</td></tr>
+  <tr><td><strong>m</strong></td><td>ma</td><td>mo</td><td>—</td><td>mi</td><td>mu</td><td>—</td></tr>
+  <tr><td><strong>f</strong></td><td>fa</td><td>fo</td><td>—</td><td>—</td><td>fu</td><td>—</td></tr>
+  <tr><td><strong>d</strong></td><td>da</td><td>—</td><td>de</td><td>di</td><td>du</td><td>—</td></tr>
+  <tr><td><strong>t</strong></td><td>ta</td><td>—</td><td>te</td><td>ti</td><td>tu</td><td>—</td></tr>
+  <tr><td><strong>n</strong></td><td>na</td><td>—</td><td>ne</td><td>ni</td><td>nu</td><td>nǚ</td></tr>
+  <tr><td><strong>l</strong></td><td>la</td><td>—</td><td>le</td><td>li</td><td>lu</td><td>lü</td></tr>
+</table>
+<p><small>Los espacios vacíos indican que esa combinación no existe.</small></p>
+
+<h4>Grupo 1: Labiales (b, p, m, f)</h4>
+<table>
+  <tr><th>b — Suave / Sin Aire</th><th>p — Explosiva / Con Aire</th><th>m, f — Normales</th></tr>
+  <tr><td>ba, bo, bi, bu<br><em>"p" española suave</em></td><td>pa, po, pi, pu<br><em>"p" inglesa (paper)</em></td><td>ma, fa<br><em>Como en español</em></td></tr>
+</table>
+
+<h4>Grupo 2: Alveolares (d, t, n, l)</h4>
+<table>
+  <tr><th>d — Suave / Sin Aire</th><th>t — Explosiva / Con Aire</th><th>n, l</th></tr>
+  <tr><td>da, de, di, du<br><em>"t" española suave</em></td><td>ta, te, ti, tu<br><em>"t" explosiva</em></td><td>na, la<br><em>Como en español</em></td></tr>
+</table>
+
+<h4>Grupo 3: Velares (g, k, h)</h4>
+<table>
+  <tr><th>g — Suave / Sin Aire</th><th>k — Explosiva / Con Aire</th><th>h — Suave</th></tr>
+  <tr><td>ga, ge, gu<br><em>"k" suave (gato)</em></td><td>ka, ke, ku<br><em>"k" fuerte (kilo)</em></td><td>ha, he, hu<br><em>"j" muy suave</em></td></tr>
+</table>
+
+<h3>Iniciales Complejas (¡Atención!)</h3>
+
+<div class="box grammar">
+  <strong>Tabla Maestra de Pronunciación</strong>
+  <table style="margin-top:8px">
+    <tr><th>Posición</th><th>Suave (Sin aire)</th><th>Fuerte (Con aire)</th><th>Fricativa (S)</th></tr>
+    <tr><td><strong>Palatal</strong> (Lengua plana)</td><td><strong>j</strong> (chi)</td><td><strong>q</strong> (chi!!)</td><td><strong>x</strong> (si)</td></tr>
+    <tr><td><strong>Retrofleja</strong> (Enrollada)</td><td><strong>zh</strong> (dji)</td><td><strong>ch</strong> (chi!!)</td><td><strong>sh</strong> (shi)</td></tr>
+    <tr><td><strong>Dental</strong> (Abajo)</td><td><strong>z</strong> (ds)</td><td><strong>c</strong> (ts!!)</td><td><strong>s</strong> (si)</td></tr>
+  </table>
+</div>
+
+<div class="box note">
+  💡 <strong>Palatales (J, Q, X):</strong> Lengua plana, pegada al paladar. Sonrisa exagerada.<br>
+  • <strong>j</strong>: Como "Jeep" en inglés. Suave.<br>
+  • <strong>q</strong>: Como "Cheese" muy fuerte. ¡Escupe aire!<br>
+  • <strong>x</strong>: Como pedir silencio "Shh" sonriendo. "Si" suave.
+</div>
+
+<div class="box tip">
+  🗣️ <strong>Retroflejas (ZH, CH, SH, R):</strong> Punta de la lengua enrollada hacia atrás.<br>
+  • <strong>zh</strong>: Como una "Y" argentina fuerte o "Dj". Sin aire.<br>
+  • <strong>ch</strong>: Como "Ch" de "Choque". Con mucho aire.<br>
+  • <strong>sh</strong>: "Shhh" de silencio, lengua doblada.<br>
+  • <strong>r</strong>: Como la "r" de "Rain" en inglés. No vibra.
+</div>
+
+<div class="box warn">
+  ⚠️ <strong>¡No son vocales normales!</strong> En zh, ch, sh, r, z, c, s — la "i" NO se pronuncia como una "i". Es un zumbido sordo.<br>
+  <span class="hz">shi</span> → "shhh" (no "shí") · <span class="hz">si</span> → "sss" (no "sí")
+</div>
+
+<h3 id="finales">Las Finales (Vocales)</h3>
+
+<table>
+  <tr><th></th><th>a</th><th>o</th><th>e</th><th>ai</th><th>ei</th><th>ao</th><th>ou</th></tr>
+  <tr><td><strong>i</strong></td><td>ia</td><td>—</td><td>ie</td><td>—</td><td>—</td><td>iao</td><td>iou</td></tr>
+  <tr><td><strong>u</strong></td><td>ua</td><td>uo</td><td>—</td><td>uai</td><td>uei</td><td>—</td><td>—</td></tr>
+  <tr><td><strong>ü</strong></td><td>—</td><td>—</td><td>üe</td><td>—</td><td>—</td><td>—</td><td>—</td></tr>
+</table>
+
+<div class="box warn">
+  ⚠️ <strong>Regla de Oro: J, Q, X + Ü</strong><br>
+  j, q, x solo se juntan con 'i' y 'ü'. Cuando van con ü, <strong>le quitan los puntos</strong>.<br>
+  ju, qu, xu → se pronuncian siempre como jü, qü, xü.
+</div>
+
+<div class="box note">
+  🔑 <strong>Vocales Ocultas:</strong><br>
+  • <strong>iu</strong> = i<strong>o</strong>u — <strong>ui</strong> = u<strong>e</strong>i — <strong>un</strong> = u<strong>e</strong>n
+</div>
+
+<div class="box tip">
+  💡 <strong>Transformación de Vocales Solas:</strong><br>
+  • i → yi (yī - Ropa) · u → wu (wǔ - Cinco) · ü → yu (yú - Pez)
+</div>
+
+<h3 id="vocab1">Vocabulario Esencial</h3>
+
+<h4>Números (1–10)</h4>
+<div class="num-grid">
+  <div class="num-cell"><div class="hz">一</div><div class="py">yī · 1</div></div>
+  <div class="num-cell"><div class="hz">二</div><div class="py">èr · 2</div></div>
+  <div class="num-cell"><div class="hz">三</div><div class="py">sān · 3</div></div>
+  <div class="num-cell"><div class="hz">四</div><div class="py">sì · 4</div></div>
+  <div class="num-cell"><div class="hz">五</div><div class="py">wǔ · 5</div></div>
+  <div class="num-cell"><div class="hz">六</div><div class="py">liù · 6</div></div>
+  <div class="num-cell"><div class="hz">七</div><div class="py">qī · 7</div></div>
+  <div class="num-cell"><div class="hz">八</div><div class="py">bā · 8</div></div>
+  <div class="num-cell"><div class="hz">九</div><div class="py">jiǔ · 9</div></div>
+  <div class="num-cell"><div class="hz">十</div><div class="py">shí · 10</div></div>
+</div>
+
+<h4>Saludos y Vocabulario Básico</h4>
+<div class="voc"><span class="hz">你好</span><span class="py">Nǐ hǎo</span><span class="es">Hola (A ti bueno)</span></div>
+<div class="voc"><span class="hz">再见</span><span class="py">Zàijiàn</span><span class="es">Adiós (Volveremos a vernos)</span></div>
+<div class="voc"><span class="hz">谢谢</span><span class="py">Xièxie</span><span class="es">Gracias</span></div>
+<div class="voc"><span class="hz">不客气</span><span class="py">Bú kèqi</span><span class="es">De nada (No seas cortés)</span></div>
+<div class="voc"><span class="hz">男 / 女</span><span class="py">Nán / Nǚ</span><span class="es">Hombre / Mujer</span></div>
+<div class="voc"><span class="hz">老师</span><span class="py">Lǎoshī</span><span class="es">Profesor/a</span></div>
+
+<!-- ==================== CAPÍTULO 2 ==================== -->
+<h2 id="cap2" class="blue">2. Iniciales y Cortesía</h2>
+
+<h3 id="iniciales2">La Regla de la G y K</h3>
+<div class="box warn">
+  ⚠️ <strong>G = K Suave</strong><br>
+  • <strong>g</strong>: Suena como K suave (sin aire). Como la <em>c</em> de "Casa".<br>
+  • <strong>k</strong>: Suena como K fuerte (explosiva). Como la <em>k</em> de "Kilo" (¡con aire!).<br><br>
+  Ejemplo: <strong>Gēge</strong> (Hermano mayor) → suena "Keke" (suave).
+</div>
+
+<h3>Filosofía de la Escritura</h3>
+<div class="box grammar">
+  <strong>El Poder del Trazo</strong><br>
+  La escritura china sigue un flujo de energía vital de <strong>izquierda a derecha</strong> (y de arriba a abajo). Este movimiento está asociado con la concesión de poder y la proyección de energía.
+</div>
+
+<h3 id="trazos">Trazos Fundamentales (Bǐhuà)</h3>
+<table>
+  <tr><th>Nombre</th><th>Dirección</th><th>Caracteres de Ejemplo</th></tr>
+  <tr><td><strong>Héng</strong> (Horizontal) <span class="hz">一</span></td><td>→ Izq. a Der.</td><td><span class="hz">一</span> yī, <span class="hz">二</span> èr</td></tr>
+  <tr><td><strong>Shù</strong> (Vertical) <span class="hz">丨</span></td><td>↓ Arriba a Abajo</td><td><span class="hz">十</span> shí, <span class="hz">工</span> gōng</td></tr>
+  <tr><td><strong>Piě</strong> (Caída Izq.) <span class="hz">丿</span></td><td>↙ Derecha a Izquierda-abajo</td><td><span class="hz">人</span> rén, <span class="hz">八</span> bā</td></tr>
+  <tr><td><strong>Diǎn</strong> (Punto) <span class="hz">丶</span></td><td>Punto diagonal</td><td><span class="hz">不</span> bù, <span class="hz">六</span> liù</td></tr>
+  <tr><td><strong>Nà</strong> (Caída Der.) <span class="hz">㇏</span></td><td>↘ Izquierda-arriba a Der.-abajo</td><td><span class="hz">大</span> dà, <span class="hz">天</span> tiān</td></tr>
+</table>
+
+<div class="box note">
+  🔑 <strong>Shēng (生) — El Origen de la Vida</strong><br>
+  Representa un brote de planta creciendo desde la tierra. La línea vertical es la "Línea de la Vida" que conecta tierra con cielo.<br>
+  <div style="text-align:center;margin:8px 0"><span class="hz" style="font-size:2.5em">生</span> <em>(shēng)</em></div>
+</div>
+
+<h3 id="respeto">Cultura y Protocolo: El Respeto</h3>
+<div class="box warn">
+  👑 <strong>Nín (您) — El Respeto está en el Corazón</strong><br>
+  • <strong>Nǐ (你):</strong> Tú (Informal).<br>
+  • <strong>Nín (您):</strong> Usted (Respetuoso).<br><br>
+  El carácter de <span class="hz">您</span> es igual al de <span class="hz">你</span> pero con el radical de <strong>Corazón (心)</strong> debajo. "El respeto viene desde el corazón".
+</div>
+
+<table>
+  <tr><th>Concepto</th><th>Pinyin / Caracteres</th><th>Significado</th></tr>
+  <tr><td>Saludo</td><td><span class="hz">你好</span> Nǐ hǎo</td><td>Hola (A ti bueno)</td></tr>
+  <tr><td>Saludo Plural</td><td><span class="hz">你们好</span> Nǐmen hǎo</td><td>Hola a todos</td></tr>
+  <tr><td>Respeto</td><td><span class="hz">您好</span> Nín hǎo</td><td>Hola (Usted)</td></tr>
+  <tr><td>Disculpa</td><td><span class="hz">对不起</span> Duìbuqǐ</td><td>Lo siento / Perdón</td></tr>
+  <tr><td>Respuesta</td><td><span class="hz">没关系</span> Méi guānxi</td><td>No importa / No pasa nada</td></tr>
+</table>
+
+<h4>El Misterio de "Tā" — Él, Ella, Eso</h4>
+<div class="box grammar">
+  En chino hablado, Él, Ella y Eso suenan <strong>exactamente igual</strong>: <span class="hz">tā</span> (1er tono). Se diferencian por el <strong>Radical</strong>.
+</div>
+<table>
+  <tr><th>Carácter</th><th>Radical</th><th>Significa</th></tr>
+  <tr><td><span class="hz">他</span> Tā</td><td>亻(Persona)</td><td><strong>Él</strong> (Masculino o Genérico)</td></tr>
+  <tr><td><span class="hz">她</span> Tā</td><td>女 (Mujer)</td><td><strong>Ella</strong> (Femenino)</td></tr>
+  <tr><td><span class="hz">它</span> Tā</td><td>宀 (Techo)</td><td><strong>Eso/Ello</strong> (Animales/Cosas)</td></tr>
+</table>
+
+<h4>Plurales: El Sufijo Men (们)</h4>
+<table>
+  <tr><th>Singular</th><th>Plural (+们)</th><th>Significado</th></tr>
+  <tr><td><span class="hz">他</span> (Él)</td><td><span class="hz">他们</span> Tāmen</td><td>Ellos (Hombres o Mixto)</td></tr>
+  <tr><td><span class="hz">她</span> (Ella)</td><td><span class="hz">她们</span> Tāmen</td><td>Ellas (Solo mujeres)</td></tr>
+  <tr><td><span class="hz">它</span> (Eso)</td><td><span class="hz">它们</span> Tāmen</td><td>Esos/Aquellos (Cosas)</td></tr>
+  <tr><td><span class="hz">人</span> (Persona)</td><td><span class="hz">人们</span> Rénmen</td><td>La Gente</td></tr>
+</table>
+
+<h3 id="no">Las Tres Caras del NO</h3>
+<div class="box grammar">
+  <strong>Bù (不) — El "No" de la Voluntad</strong><br>
+  Presente y Futuro. No quiero, no voy a hacer, no es habitual.<br>
+  <em>Wǒ <strong>bù</strong> chī.</em> — No como / No quiero comer.
+</div>
+<div class="box note">
+  <strong>Méi (没) — Negación de la Acción / Pasado Reciente</strong><br>
+  No ha ocurrido algo. No lo he hecho, no pasó.<br>
+  <em>Wǒ <strong>méi</strong> chī.</em> — No he comido (aún).
+</div>
+<div class="box warn">
+  <strong>Bié (别) — El "No" de la Prohibición</strong><br>
+  Imperativo. ¡No lo hagas! (Stop).<br>
+  <em><strong>Bié</strong> chī!</em> — ¡No comas! (tiene veneno).
+</div>
+
+<h4>Vocabulario del Día 2</h4>
+<div class="voc"><span class="hz">您</span><span class="py">Nín</span><span class="es">Usted (Respetuoso)</span></div>
+<div class="voc"><span class="hz">你们</span><span class="py">Nǐmen</span><span class="es">Ustedes / Vosotros</span></div>
+<div class="voc"><span class="hz">对不起</span><span class="py">Duìbuqǐ</span><span class="es">Lo siento / Perdón</span></div>
+<div class="voc"><span class="hz">没关系</span><span class="py">Méi guānxi</span><span class="es">No importa / No pasa nada</span></div>
+
+<!-- ==================== CAPÍTULO 3 ==================== -->
+<h2 id="cap3" class="green">3. Gramática Básica (Yǔfǎ)</h2>
+
+<h3 id="pronombres">La Trinidad: Pronombres Personales</h3>
+<table>
+  <tr><th>Carácter</th><th>Pinyin</th><th>Español</th><th>Plural</th></tr>
+  <tr><td><span class="hz">我</span></td><td>Wǒ (3er tono)</td><td>Yo</td><td><span class="hz">我们</span> Wǒmen</td></tr>
+  <tr><td><span class="hz">你</span></td><td>Nǐ (3er tono)</td><td>Tú</td><td><span class="hz">你们</span> Nǐmen</td></tr>
+  <tr><td><span class="hz">他 / 她</span></td><td>Tā (1er tono)</td><td>Él / Ella</td><td><span class="hz">他们 / 她们</span> Tāmen</td></tr>
+</table>
+
+<h4>Nuevas Palabras: Roles y Relaciones</h4>
+<div class="voc"><span class="hz">老师</span><span class="py">Lǎoshī</span><span class="es">Profesor/a. "Lǎo" = Viejo/Venerable (implica sabiduría).</span></div>
+<div class="voc"><span class="hz">学生</span><span class="py">Xuésheng</span><span class="es">Estudiante. "Persona que estudia".</span></div>
+<div class="voc"><span class="hz">同学</span><span class="py">Tóngxué</span><span class="es">Compañero de clase. "Mismo Estudio".</span></div>
+<div class="voc"><span class="hz">朋友</span><span class="py">Péngyou</span><span class="es">Amigo.</span></div>
+<div class="voc"><span class="hz">大家</span><span class="py">Dàjiā</span><span class="es">Todos. "Gran Familia" (Dà = Grande, Jiā = Familia).</span></div>
+
+<div class="box tip">
+  💡 <strong>Saludo Colectivo:</strong> <span class="hz">大家好</span> (Dàjiā hǎo) = "Hola a todos".<br><br>
+  El sufijo <span class="hz">家</span> (Jiā) también se usa para profesiones:<br>
+  • <span class="hz">科学家</span> (Kēxué jiā) = Científico · <span class="hz">艺术家</span> (Yìshù jiā) = Artista · <span class="hz">作家</span> (Zuò jiā) = Escritor
+</div>
+
+<h3 id="yao">Expresando Deseo: El Verbo Yào (要)</h3>
+<div class="box structure">
+  <div class="structure-formula">Wǒ yào + [Cosa]</div>
+  Yo quiero... / Deme...<br>
+  <em>Wǒ yào kāfēi.</em> — Yo quiero café.
+</div>
+
+<h4>La Pregunta Mágica: Ma (吗)</h4>
+<div class="box grammar">
+  Agrega <span class="hz">吗</span> al final para convertir cualquier frase en pregunta Sí/No.<br>
+  <span class="hz">我要。</span> (Wǒ yào. — Yo quiero.) → <span class="hz">你要吗？</span> (Nǐ yào ma? — ¿Tú quieres?)<br>
+  Respuesta: <span class="hz">要</span> (Sí) / <span class="hz">不要</span> (No)
+</div>
+
+<div class="dialog">
+  <strong>Práctica: ¿Vas a comer?</strong>
+  <div class="da"><strong>A:</strong> <span class="hz">你要吃吗？</span> — Nǐ yào chī ma? — ¿Vas a comer?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">要。Alicia 呢？</span> — Yào. Alicia ne? — Sí. ¿Y Alicia?</div>
+  <div class="da"><strong>A:</strong> <span class="hz">她不要。</span> — Tā bù yào. — Ella no quiere.</div>
+</div>
+
+<h4>El Rebote: La Partícula Ne (呢)</h4>
+<div class="box note">
+  💬 <span class="hz">呢</span> sirve para "devolver" la pregunta al interlocutor = "¿Y tú?" / "¿Y usted?"
+</div>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">你好吗？</span> — Nǐ hǎo ma? — ¿Cómo estás?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">好。你呢？</span> — Hǎo. Nǐ ne? — Bien. ¿Y tú?</div>
+  <div class="da"><strong>A:</strong> <span class="hz">我也好。</span> — Wǒ yě hǎo. — Yo también bien.</div>
+</div>
+
+<h3 id="saludos-hora">Precisión Temporal: Saludos por Hora</h3>
+<table>
+  <tr><th>Horario</th><th>Saludo</th><th>Pinyin</th><th>Significado</th></tr>
+  <tr><td>6–9 AM</td><td><span class="hz">早上好</span></td><td>Zǎo shang hǎo</td><td>Buenos días (Temprano)</td></tr>
+  <tr><td>9–12 PM</td><td><span class="hz">上午好</span></td><td>Shàng wǔ hǎo</td><td>Buenos días (Media mañana)</td></tr>
+  <tr><td>12–6 PM</td><td><span class="hz">下午好</span></td><td>Xià wǔ hǎo</td><td>Buenas tardes</td></tr>
+  <tr><td>6 PM+</td><td><span class="hz">晚上好</span></td><td>Wǎn shang hǎo</td><td>Buenas noches (Al llegar)</td></tr>
+</table>
+
+<div class="box note">
+  🔑 <strong>Regla de Oro:</strong> En chino, siempre colocas a la <strong>persona primero</strong>.<br>
+  ❌ Nǐhǎo Lǎoshī (incorrecto) · ✅ <strong>Lǎoshī, nǐhǎo</strong> (correcto)
+</div>
+
+<div class="box tip">
+  💡 <strong>El Secreto de Hǎo (好):</strong><br>
+  Izquierda: <span class="hz">女</span> (Nǚ = Mujer) + Derecha: <span class="hz">子</span> (Zǐ = Hijo).<br>
+  Una mujer con su hijo = lo Bueno, el Bienestar.
+</div>
+
+<div class="box warn">
+  ⚠️ <span class="hz">晚安</span> (Wǎn ān) = "Buenas noches" <strong>solo para irse a dormir</strong>. No es saludo.
+</div>
+
+<h3 id="zaijian">La Despedida: Zàijiàn (再见)</h3>
+<div class="box grammar">
+  <span class="hz">再</span> (Zài) = Volver/Otra vez + <span class="hz">见</span> (Jiàn) = Ver/Encontrar<br>
+  <strong>Significado:</strong> "Nos volveremos a ver" (Hasta la vista)
+</div>
+<table>
+  <tr><th>Tipo</th><th>Hanzi</th><th>Pinyin</th></tr>
+  <tr><td>Estándar</td><td><span class="hz">再见</span></td><td>Zàijiàn</td></tr>
+  <tr><td>Colectivo</td><td><span class="hz">大家再见</span></td><td>Dàjiā zàijiàn</td></tr>
+  <tr><td>Informal</td><td><span class="hz">拜拜</span></td><td>Bàibài</td></tr>
+  <tr><td>Hasta mañana</td><td><span class="hz">明天见</span></td><td>Míngtiān jiàn</td></tr>
+</table>
+
+<h4>El Arte de Agradecer</h4>
+<table>
+  <tr><th>Nivel</th><th>Hanzi</th><th>Pinyin</th><th>Contexto</th></tr>
+  <tr><td>Básico</td><td><span class="hz">谢谢你</span></td><td>Xièxie nǐ</td><td>Gracias a ti</td></tr>
+  <tr><td>Intenso</td><td><span class="hz">多谢</span></td><td>Duō xiè</td><td>Muchas gracias</td></tr>
+  <tr><td>Extremo</td><td><span class="hz">非常谢谢你</span></td><td>Fēicháng xièxie nǐ</td><td>Extremadamente gracias</td></tr>
+  <tr><td>Formal</td><td><span class="hz">感谢</span></td><td>Gǎn xiè</td><td>Agradecer / Sentir gracias</td></tr>
+  <tr><td>Profundo</td><td><span class="hz">感恩</span></td><td>Gǎn ēn</td><td>Gratitud profunda / Gracia divina</td></tr>
+  <tr><td>Respuesta</td><td><span class="hz">不客气</span></td><td>Bú kèqì</td><td>De nada / No seas cortés</td></tr>
+</table>
+
+<!-- ==================== CAPÍTULO 4 ==================== -->
+<h2 id="cap4" class="gold">4. Nombres y Nacionalidades</h2>
+
+<h3 id="jiao">El Grito del Nombre: Jiào (叫)</h3>
+<div class="box grammar">
+  <span class="hz">叫</span> = Boca (口) + Hilos (丩). <strong>Significado original:</strong> Gritar / Llamar en voz alta.<br>
+  ¿Por qué para el nombre? Antiguamente se tenía que "gritar" el nombre para identificarse a distancia.
+</div>
+
+<div class="box structure">
+  <div class="structure-formula"><span class="hz">你叫什么名字？</span></div>
+  <div style="text-align:center;color:#666"><em>Nǐ jiào shénme míngzi? — ¿Cómo te llamas?</em></div>
+  <br>
+  • <strong>你</strong> (Nǐ) = Tú · <strong>叫</strong> (Jiào) = Llamarse · <strong>什么</strong> (Shénme) = Qué · <strong>名字</strong> (Míngzi) = Nombre<br>
+  Traducción literal: <em>"¿Tú gritas qué nombre?"</em>
+</div>
+
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">你叫什么名字？</span> — Nǐ jiào shénme míngzi? — ¿Cómo te llamas?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">我叫 Bastián。</span> — Wǒ jiào Bastián. — Me llamo Bastián.</div>
+</div>
+
+<div class="box note">
+  💡 <strong>Forma alternativa más formal:</strong><br>
+  <span class="hz">我的名字是 Bastián</span> — Wǒ de míngzi shì Bastián — "Mi nombre es Bastián."
+</div>
+
+<h4>Diálogo de Identidad: ¿Eres Profesor?</h4>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">你是老师吗？</span> — Nǐ shì lǎoshī ma? — ¿Eres profesor?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">我不是老师，我是学生。</span> — Wǒ bú shì lǎoshī, wǒ shì xuésheng. — No soy profesor, soy estudiante.</div>
+</div>
+<div class="box tip">
+  💡 <span class="hz">是</span> (Shì) = Soy/Eres/Es (no cambia) · <span class="hz">不是</span> (Bú shì) = No ser · <span class="hz">吗</span> = Partícula de pregunta
+</div>
+
+<h4>Desglose de Míngzi (名字)</h4>
+<div class="box grammar">
+  <span class="hz">名</span> (Míng) = <span class="hz">口</span> (Boca) + <span class="hz">夕</span> (Tarde/Noche) → En la oscuridad tenías que <em>decir tu nombre con la boca</em>. "Boca en la oscuridad" = Nombre.<br><br>
+  <span class="hz">字</span> (Zi) = <span class="hz">宀</span> (Techo) + <span class="hz">子</span> (Niño) → "Parir bajo un techo". Los caracteres son como hijos que nacen y se multiplican.
+</div>
+
+<h3 id="paises">Vocabulario: Países (Guójiā 国家)</h3>
+<table>
+  <tr><th>País</th><th>Hanzi</th><th>Pinyin</th><th>Significado Literal</th></tr>
+  <tr><td>China</td><td><span class="hz">中国</span></td><td>Zhōngguó</td><td>Zhōng (中) = Centro. "País del Centro".</td></tr>
+  <tr><td>Japón</td><td><span class="hz">日本</span></td><td>Rìběn</td><td>Rì = Sol, Běn = Raíz. "Origen del Sol".</td></tr>
+  <tr><td>Corea</td><td><span class="hz">韩国</span></td><td>Hánguó</td><td>Hán (Fonético antiguo).</td></tr>
+  <tr><td>Alemania</td><td><span class="hz">德国</span></td><td>Déguó</td><td>Dé (德) = Virtud. "País de la Virtud".</td></tr>
+  <tr><td>Francia</td><td><span class="hz">法国</span></td><td>Fǎguó</td><td>Fǎ = Ley. "País de la Ley".</td></tr>
+  <tr><td>Inglaterra</td><td><span class="hz">英国</span></td><td>Yīngguó</td><td>Yīng = Valiente. "País Valiente".</td></tr>
+  <tr><td>España</td><td><span class="hz">西班牙</span></td><td>Xībānyá</td><td>Xī = Oeste. (Transliteración).</td></tr>
+  <tr><td>EE.UU.</td><td><span class="hz">美国</span></td><td>Měiguó</td><td>Měi = Hermoso. "País Hermoso".</td></tr>
+  <tr><td>México</td><td><span class="hz">墨西哥</span></td><td>Mòxīgē</td><td>Mò = Tinta. (Transliteración).</td></tr>
+  <tr><td><strong>Chile</strong></td><td><span class="hz">智利</span></td><td>Zhìlì</td><td><strong>Zhì = Sabiduría · Lì = Beneficio. "País de Sabiduría y Beneficio".</strong></td></tr>
+  <tr><td>Perú</td><td><span class="hz">秘鲁</span></td><td>Bìlǔ</td><td>Bì = Secreto.</td></tr>
+  <tr><td>Argentina</td><td><span class="hz">阿根廷</span></td><td>Āgēntíng</td><td>Transliteración.</td></tr>
+  <tr><td>Portugal</td><td><span class="hz">葡萄牙</span></td><td>Pútáoyá</td><td>Pútáo = Uva. "Diente de Uva".</td></tr>
+</table>
+
+<div class="box note">
+  🇨🇱 <strong>Yo soy chileno:</strong> <span class="hz" style="font-size:1.4em">我是智利人</span> — Wǒ shì Zhìlì rén
+</div>
+
+<h3 id="profesiones">Vocabulario: Profesiones (Zhíyè 职业)</h3>
+<table>
+  <tr><th>Profesión</th><th>Hanzi</th><th>Pinyin</th><th>Significado</th></tr>
+  <tr><td>Profesor</td><td><span class="hz">老师</span></td><td>Lǎoshī</td><td>Lǎo = Viejo (Sabio) + Shī = Maestro.</td></tr>
+  <tr><td>Enfermero/a</td><td><span class="hz">护士</span></td><td>Hùshi</td><td>"Erudito que protege".</td></tr>
+  <tr><td>Chef</td><td><span class="hz">厨师</span></td><td>Chúshī</td><td>"Maestro de la Cocina".</td></tr>
+  <tr><td>Arquitecto</td><td><span class="hz">建筑师</span></td><td>Jiànzhùshī</td><td>"Maestro de la Construcción".</td></tr>
+  <tr><td>Empleado</td><td><span class="hz">职员</span></td><td>Zhíyuán</td><td>"Oficinista/Funcionario".</td></tr>
+  <tr><td>Chofer</td><td><span class="hz">司机</span></td><td>Sījī</td><td>Sī = Controlar + Jī = Máquina.</td></tr>
+  <tr><td>Secretaria</td><td><span class="hz">秘书</span></td><td>Mìshū</td><td>Mì = Secreto + Shū = Libro.</td></tr>
+  <tr><td>Guardia</td><td><span class="hz">保安</span></td><td>Bǎo'ān</td><td>Bǎo = Proteger + Ān = Paz.</td></tr>
+  <tr><td>Jefe</td><td><span class="hz">老板</span></td><td>Lǎobǎn</td><td>"Viejo Dueño".</td></tr>
+</table>
+
+<h4>Estructura SVO y ¿Qué haces?</h4>
+<div class="box structure">
+  <div class="structure-formula">Sujeto + Verbo + Objeto</div>
+  Orden idéntico al español. Sin conjugación verbal.
+</div>
+<div class="box grammar">
+  <strong>Zuò (做) — Hacer / Dedicarse a</strong><br>
+  • <span class="hz">你做什么？</span> (Nǐ zuò shénme?) — ¿Qué haces? / ¿En qué trabajas?<br>
+  • <span class="hz">你做什么职业？</span> (Nǐ zuò shénme zhíyè?) — ¿Qué profesión tienes?
+</div>
+
+<h4>Los Dos Grandes Interrogativos</h4>
+<table>
+  <tr><th>Interrogativo</th><th>Uso</th><th>Ejemplo</th></tr>
+  <tr><td><span class="hz">什么</span> Shénme — ¿Qué?</td><td>Identidad o tipo de cosa</td><td><span class="hz">这是什么？</span> ¿Qué es esto?</td></tr>
+  <tr><td><span class="hz">怎么</span> Zěnme — ¿Cómo?</td><td>Método, manera, proceso</td><td><span class="hz">怎么说？</span> ¿Cómo se dice?</td></tr>
+</table>
+
+<h4>Habilidades Lingüísticas: Shuō (说)</h4>
+<div class="voc"><span class="hz">汉语</span><span class="py">Hànyǔ</span><span class="es">Chino (Lengua Han)</span></div>
+<div class="voc"><span class="hz">英语</span><span class="py">Yīngyǔ</span><span class="es">Inglés (Yīng = Valiente, de Inglaterra)</span></div>
+<div class="voc"><span class="hz">西班牙语</span><span class="py">Xībānyáyǔ</span><span class="es">Español (Abrev: Xīyǔ)</span></div>
+
+<!-- ==================== CAPÍTULO 5 ==================== -->
+<h2 id="cap5" class="gray">5. Demostrativos y Cantidad</h2>
+
+<h3 id="demo">La Trinidad de los Demostrativos</h3>
+<div class="box grammar">
+  • <span class="hz">这</span> (Zhè) = <strong>Este / Esto</strong> — Cerca de mí.<br>
+  • <span class="hz">那</span> (Nà) = <strong>Ese / Eso</strong> — Lejos de mí.<br>
+  • <span class="hz">哪</span> (Nǎ) = <strong>¿Cuál? / ¿Qué?</strong> — Pregunta de elección.<br><br>
+  💡 <span class="hz">哪</span> tiene una <strong>Boca (口)</strong> a la izquierda — ¡La boca indica que estás preguntando!
+</div>
+
+<table>
+  <tr><th>Base</th><th>Con "R" (Lugar)</th><th>Español</th></tr>
+  <tr><td><span class="hz">这</span> Zhè</td><td><span class="hz">这儿</span> Zhèr</td><td>Aquí (En este lugar)</td></tr>
+  <tr><td><span class="hz">那</span> Nà</td><td><span class="hz">那儿</span> Nàr</td><td>Allí (En ese lugar)</td></tr>
+  <tr><td><span class="hz">哪</span> Nǎ</td><td><span class="hz">哪儿</span> Nǎr</td><td>¿Dónde?</td></tr>
+</table>
+
+<div class="box note">
+  🔑 <strong>Norte vs Sur:</strong> El uso de la "R" (Érhuà) es típico de Beijing y el norte.<br>
+  Sur: Zhè lǐ / Nà lǐ / Nǎ lǐ (Lǐ = Interior/Lugar). Ambas formas son correctas.
+</div>
+
+<h3 id="clasificadores">Clasificadores (Medidores)</h3>
+<div class="box structure">
+  <div class="structure-formula">Número + Clasificador + Sustantivo</div>
+  En chino es obligatorio usar un <strong>Clasificador</strong> al contar cosas. No se pueden contar directamente.
+</div>
+
+<div class="box grammar">
+  <strong>Clasificador Universal: Gè (个)</strong><br>
+  Si no sabes qué clasificador usar, usa <span class="hz">个</span>. Sirve para personas y objetos generales.<br>
+  • <em>Yī <strong>gè</strong> rén</em> — Una persona · <em>Zhè <strong>gè</strong>...</em> — Este [cosa]...
+</div>
+
+<h4>Los Dos "Doses": Èr vs Liǎng</h4>
+<div class="two-col">
+  <div class="box note">
+    <strong><span class="hz">二</span> Èr — El Matemático</strong><br>
+    • Contar (1, 2, 3...)<br>
+    • Números ordinales (el segundo)<br>
+    • Al final de números grandes (12, 22)
+  </div>
+  <div class="box warn">
+    <strong><span class="hz">两</span> Liǎng — La Cantidad</strong><br>
+    Siempre que cuentes cosas (con clasificador).<br>
+    ✅ Liǎng gè rén (Dos personas)<br>
+    ❌ Èr gè rén (Incorrecto)
+  </div>
+</div>
+
+<h3 id="familia1">Familia Básica (Jiātíng 家庭)</h3>
+<table>
+  <tr><th>Rol</th><th>Pinyin</th><th>Nota</th></tr>
+  <tr><td><span class="hz">爸爸</span> Papá</td><td>Bàba</td><td>Padre (父) + fonética (巴).</td></tr>
+  <tr><td><span class="hz">妈妈</span> Mamá</td><td>Māma</td><td>Mujer (女) + Caballo (ma).</td></tr>
+  <tr><td><span class="hz">哥哥</span> Hno. Mayor</td><td>Gēge</td><td>Dos "bocas". El que da órdenes.</td></tr>
+  <tr><td><span class="hz">弟弟</span> Hno. Menor</td><td>Dìdi</td><td>Rango menor.</td></tr>
+  <tr><td><span class="hz">姐姐</span> Hna. Mayor</td><td>Jiějie</td><td>Mujer (女) + Fonética.</td></tr>
+  <tr><td><span class="hz">妹妹</span> Hna. Menor</td><td>Mèimei</td><td>Mujer + 未 (Wèi = "No todavía").</td></tr>
+</table>
+
+<h4>Fonética: El Cambio de Tono de Bù (不)</h4>
+<div class="box warn">
+  ⚠️ <strong>Regla del Camaleón Bù</strong><br>
+  • Original: 4to Tono (Bù - Bajando)<br>
+  • Cambio: Si la siguiente palabra es también 4to tono → <strong>Bù sube a 2do (Bú)</strong><br><br>
+  • Bù hǎo (No bien) — 4+3 → se queda en 4<br>
+  • <strong>Bú shì</strong> (No ser) — shì es 4to, sube<br>
+  • <strong>Bú yào</strong> (No querer) — yào es 4to, sube
+</div>
+
+<h4>Supervivencia: Tīng bu dǒng (听不懂)</h4>
+<div class="box tip">
+  💡 <strong>Tīng bu dǒng (听不懂)</strong> = "Escucho pero no entiendo"<br>
+  • Tīng (听) = Escuchar · Bu (不) = No (Potencial) · Dǒng (懂) = Entender<br>
+  Versión positiva: <span class="hz">听得懂</span> (Tīng de dǒng) = Logro entender
+</div>
+
+<h4>Vocabulario del Día 5</h4>
+<div class="voc"><span class="hz">这 / 那 / 哪</span><span class="py">Zhè / Nà / Nǎ</span><span class="es">Este / Ese / ¿Cuál?</span></div>
+<div class="voc"><span class="hz">这儿 / 那儿 / 哪儿</span><span class="py">Zhèr / Nàr / Nǎr</span><span class="es">Aquí / Allí / ¿Dónde?</span></div>
+<div class="voc"><span class="hz">个 / 两 / 二</span><span class="py">Gè / Liǎng / Èr</span><span class="es">Clasificador universal / Dos (cantidad) / Dos (matemático)</span></div>
+<div class="voc"><span class="hz">谁</span><span class="py">Shéi</span><span class="es">¿Quién?</span></div>
+<div class="voc"><span class="hz">听 / 懂</span><span class="py">Tīng / Dǒng</span><span class="es">Escuchar / Entender</span></div>
+
+<!-- ==================== CAPÍTULO 6 ==================== -->
+<h2 id="cap6" class="purple">6. Identidad y Cultura</h2>
+
+<h3 id="dialogo-id">Diálogo de Identidad: ¿Quién es él?</h3>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">他是谁？</span> — Tā shì shéi? — ¿Quién es él?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">他是成龙。</span> — Tā shì Chéng Lóng. — Él es Jackie Chan.</div>
+  <div class="da"><strong>A:</strong> <span class="hz">他是哪国人？</span> — Tā shì nǎ guó rén? — ¿De qué país es?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">他是中国人。</span> — Tā shì Zhōngguó rén. — Él es chino.</div>
+</div>
+
+<div class="box grammar">
+  <strong>Etimología: La Palabra y el Idioma</strong><br>
+  • <span class="hz">言</span> (Yán) = Palabras / Discurso. Radical de hablar (讠) en: 说 (Shuō), 语 (Yǔ).<br>
+  • <span class="hz">文</span> (Wén) = Escritura / Cultura. En: 中文 (Zhōngwén = Idioma Chino enfocado en cultura escrita).<br>
+  • <span class="hz">表</span> (Biǎo) = Exterior / Mostrar. En: 手表 (Shǒubiǎo = Reloj de pulsera).
+</div>
+
+<h3 id="xiang">El Deseo Mental: Xiǎng (想)</h3>
+<div class="two-col">
+  <div class="box note">
+    <strong><span class="hz">想</span> (Xiǎng) — Pensar / Extrañar</strong><br>
+    Deseo del corazón (más suave que 要).<br>
+    • "Me gustaría..." / "Quisiera..."<br>
+    • <em>Wǒ xiǎng nǐ.</em> = Te extraño.
+  </div>
+  <div class="box grammar">
+    <strong><span class="hz">本</span> (Běn) — Clasificador Libros</strong><br>
+    Para objetos encuadernados (libros, revistas, cuadernos).<br>
+    • <em>Yī běn shū</em> = Un libro<br>
+    • <em>Zhè běn shū</em> = Este libro
+  </div>
+</div>
+
+<h4>Preferencias: Xǐhuan (喜欢)</h4>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">你喜欢吃中国菜吗？</span> — Nǐ xǐhuan chī Zhōngguó cài ma? — ¿Te gusta la comida china?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">我很喜欢。</span> — Wǒ hěn xǐhuan. — Me gusta mucho.</div>
+  <div class="da"><strong>A:</strong> <span class="hz">你喜欢吃什么？</span> — Nǐ xǐhuan chī shénme? — ¿Qué te gusta comer?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">我喜欢吃烤鸭。</span> — Wǒ xǐhuan chī kǎoyā. — Me gusta el Pato Pekín.</div>
+</div>
+
+<div class="box tip">
+  💡 <strong>Cultura: El Zodiaco</strong><br>
+  • <span class="hz">龙</span> (Lóng) = Dragón — Símbolo del Emperador. El único animal mitológico.<br>
+  • <span class="hz">蛇</span> (Shé) = Serpiente — "El Pequeño Dragón". Sabiduría.<br>
+  • <span class="hz">马</span> (Mǎ) = Caballo — Éxito inmediato (<em>Mǎ shàng</em>).
+</div>
+
+<!-- ==================== CAPÍTULO 7 ==================== -->
+<h2 id="cap7" class="blue">7. Posesión y Verbos de Estado</h2>
+
+<h3 id="de">La Posesión: De (的)</h3>
+<div class="box structure">
+  <div class="structure-formula">Poseedor + 的 (De) + Objeto Poseído</div>
+  <div style="text-align:center;color:#666;margin-top:4px">"El dueño siempre va primero"</div>
+  <br>
+  Español: El libro <strong>de</strong> Juan. → Chino: Juan <strong>的</strong> libro.
+</div>
+
+<h4>Caso 1: Uso Formal (Objetos / No relación personal)</h4>
+<table>
+  <tr><th>Frase</th><th>Pinyin</th><th>Significado</th></tr>
+  <tr><td><span class="hz">老师的书</span></td><td>Lǎoshī de shū</td><td>El libro del profesor</td></tr>
+  <tr><td><span class="hz">公司的电话</span></td><td>Gōngsī de diànhuà</td><td>El teléfono de la empresa</td></tr>
+  <tr><td><span class="hz">这是谁的书？</span></td><td>Zhè shì shéi de shū?</td><td>¿De quién es este libro?</td></tr>
+</table>
+
+<h4>Caso 2: Relaciones Cercanas (Se omite 的)</h4>
+<div class="box note">
+  💡 Cuando la relación es íntima (familia, pareja, partes del cuerpo) → <strong>No se necesita 的</strong>
+</div>
+<table>
+  <tr><th>Con 的 (Distante/Objeto)</th><th>Sin 的 (Íntimo/Cercano)</th></tr>
+  <tr><td><span class="hz">我的书</span> — Mi libro</td><td><span class="hz">我妈妈</span> — Mi mamá</td></tr>
+  <tr><td><span class="hz">你的车</span> — Tu auto</td><td><span class="hz">你男朋友</span> — Tu novio</td></tr>
+  <tr><td><span class="hz">他的笔</span> — Su lápiz</td><td><span class="hz">他家</span> — Su casa</td></tr>
+</table>
+
+<h3 id="hen">Descripciones: Hěn (很)</h3>
+<div class="box warn">
+  ⚠️ <strong>¡Alerta Roja!</strong><br>
+  En chino NO se usa <span class="hz">是</span> con adjetivos. Se usa <span class="hz">很</span> como conector.<br>
+  ❌ Tā <strong>shì</strong> piàoliang · ✅ Tā <strong>hěn</strong> piàoliang
+</div>
+<div class="box structure">
+  <div class="structure-formula">Sujeto + 很 (Hěn) + Adjetivo</div>
+</div>
+
+<div class="dialog">
+  <div class="da"><span class="hz">他妈妈很漂亮。</span> — Tā māma hěn piàoliang. — Su mamá es muy bonita.</div>
+  <div class="db"><span class="hz">我们学校很大。</span> — Wǒmen xuéxiào hěn dà. — Nuestra escuela es muy grande.</div>
+  <div class="da"><span class="hz">我家很大。</span> — Wǒ jiā hěn dà. — Mi casa es muy grande.</div>
+</div>
+
+<h4>También: Yě (也)</h4>
+<div class="box tip">
+  💡 <span class="hz">也</span> (Yě = También) <strong>SIEMPRE va antes del verbo o adjetivo</strong>.<br>
+  ✅ <span class="hz">我也是</span> (Wǒ yě shì) · ❌ Wǒ shì yě
+</div>
+
+<h3 id="zai">El Verbo Estar: Zài (在)</h3>
+<div class="box structure">
+  <div class="structure-formula">Sujeto + 在 + Lugar</div>
+  Para indicar ubicación o presencia.
+</div>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz">你在哪儿？</span> — Nǐ zài nǎr? — ¿Dónde estás?</div>
+  <div class="db"><strong>B:</strong> <span class="hz">我在学校。</span> — Wǒ zài xuéxiào. — Estoy en la escuela.</div>
+</div>
+
+<h4>La Partícula de Cambio: Le (了)</h4>
+<div class="two-col">
+  <div class="box grammar">
+    <strong>Posición 1: Verbo + 了</strong><br>
+    Enfatiza que la <em>acción</em> se completó.<br>
+    <span class="hz">我吃了饭</span> — Wǒ chī le fàn<br>
+    <em>Comí (la comida).</em>
+  </div>
+  <div class="box note">
+    <strong>Posición 2: Frase + 了</strong><br>
+    Cambio de estado / "Ya lo hice".<br>
+    <span class="hz">我吃饭了</span> — Wǒ chī fàn le<br>
+    <em>Ya comí / He comido.</em>
+  </div>
+</div>
+
+<h4>Nuevos Clasificadores</h4>
+<table>
+  <tr><th>Clasificador</th><th>Uso</th><th>Ejemplo</th></tr>
+  <tr><td><span class="hz">张</span> Zhāng</td><td>Objetos planos (mesas, papel, fotos)</td><td><span class="hz">一张纸</span> — Una hoja de papel</td></tr>
+  <tr><td><span class="hz">条</span> Tiáo</td><td>Objetos largos/flexibles (pantalones, peces)</td><td><span class="hz">一条鱼</span> — Un pez</td></tr>
+  <tr><td><span class="hz">种</span> Zhǒng</td><td>Tipos o clases</td><td><span class="hz">一种菜</span> — Un tipo de plato</td></tr>
+</table>
+
+<h4>Vocabulario del Capítulo 7</h4>
+<div class="voc"><span class="hz">公司 / 学校 / 家</span><span class="py">Gōngsī / Xuéxiào / Jiā</span><span class="es">Empresa / Escuela / Casa-Familia</span></div>
+<div class="voc"><span class="hz">男朋友 / 女朋友</span><span class="py">Nánpéngyǒu / Nǚpéngyǒu</span><span class="es">Novio / Novia</span></div>
+<div class="voc"><span class="hz">漂亮 / 大</span><span class="py">Piàoliang / Dà</span><span class="es">Bonita / Grande</span></div>
+<div class="voc"><span class="hz">上海 / 北京</span><span class="py">Shànghǎi / Běijīng</span><span class="es">Shanghái / Pekín</span></div>
+<div class="voc"><span class="hz">下雨</span><span class="py">Xià yǔ</span><span class="es">Llover</span></div>
+
+<!-- ==================== CAPÍTULO 8 ==================== -->
+<h2 id="cap8" class="red">8. Frases, Números y Cultura</h2>
+
+<h3 id="sujetos-verbos">Taller de Frases: Clasificación Gramatical</h3>
+
+<div class="box note">
+  <strong>👤 Sujetos</strong><br>
+  <span class="hz">我 你 他 她 我们 谁</span> — Pronombres<br>
+  <span class="hz">老师 学生 医生 老板 朋友 同学</span> — Roles<br>
+  <span class="hz">爸爸 妈妈 男朋友 女朋友 大家</span> — Familia
+</div>
+
+<div class="box grammar">
+  <strong>🏃 Verbos de Estado y Acción</strong><br>
+  <strong>Estado/Ser:</strong> <span class="hz">是</span> (Shì) · <span class="hz">在</span> (Zài) · <span class="hz">叫</span> (Jiào)<br>
+  <strong>Psicológicos:</strong> <span class="hz">喜欢</span> (Xǐhuān) · <span class="hz">想</span> (Xiǎng) · <span class="hz">要</span> (Yào)<br>
+  <strong>Acción:</strong> <span class="hz">吃</span> (Chī) · <span class="hz">去</span> (Qù) · <span class="hz">说</span> (Shuō) · <span class="hz">做</span> (Zuò) · <span class="hz">看</span> (Kàn) · <span class="hz">有</span> (Yǒu)
+</div>
+
+<div class="box tip">
+  <strong>🧩 Herramientas de Pregunta</strong><br>
+  <strong>Partículas (Final):</strong> <span class="hz">吗</span> (¿Sí/No?) · <span class="hz">呢</span> (¿Y...?)<br>
+  <strong>Pronombres:</strong> <span class="hz">谁</span> (¿Quién?) · <span class="hz">什么</span> (¿Qué?) · <span class="hz">哪</span> (¿Cuál?) · <span class="hz">哪儿</span> (¿Dónde?)<br>
+  <strong>Grado:</strong> <span class="hz">几</span> (¿Cuántos? &lt;10) · <span class="hz">多少</span> (¿Cuántos?) · <span class="hz">怎么</span> (¿Cómo?) · <span class="hz">多大</span> (¿Qué edad?)<br>
+  <strong>Regla de Oro:</strong> El interrogativo va en el mismo lugar que la respuesta.
+</div>
+
+<h3 id="numeros">Tabla de Números 0–99</h3>
+<table class="table-gold">
+  <tr><th>+</th><th>0</th><th>1</th><th>2</th><th>3</th><th>4</th><th>5</th><th>6</th><th>7</th><th>8</th><th>9</th></tr>
+  <tr><td><strong>0</strong></td><td><span class="hz">零</span></td><td><span class="hz">一</span></td><td><span class="hz">二</span></td><td><span class="hz">三</span></td><td><span class="hz">四</span></td><td><span class="hz">五</span></td><td><span class="hz">六</span></td><td><span class="hz">七</span></td><td><span class="hz">八</span></td><td><span class="hz">九</span></td></tr>
+  <tr><td><strong>10</strong></td><td><span class="hz">十</span></td><td><span class="hz">十一</span></td><td><span class="hz">十二</span></td><td><span class="hz">十三</span></td><td><span class="hz">十四</span></td><td><span class="hz">十五</span></td><td><span class="hz">十六</span></td><td><span class="hz">十七</span></td><td><span class="hz">十八</span></td><td><span class="hz">十九</span></td></tr>
+  <tr><td><strong>20</strong></td><td><span class="hz">二十</span></td><td><span class="hz">二十一</span></td><td><span class="hz">二十二</span></td><td><span class="hz">二十三</span></td><td><span class="hz">二十四</span></td><td><span class="hz">二十五</span></td><td><span class="hz">二十六</span></td><td><span class="hz">二十七</span></td><td><span class="hz">二十八</span></td><td><span class="hz">二十九</span></td></tr>
+  <tr><td><strong>30</strong></td><td><span class="hz">三十</span></td><td><span class="hz">三十一</span></td><td><span class="hz">三十二</span></td><td><span class="hz">三十三</span></td><td><span class="hz">三十四</span></td><td><span class="hz">三十五</span></td><td><span class="hz">三十六</span></td><td><span class="hz">三十七</span></td><td><span class="hz">三十八</span></td><td><span class="hz">三十九</span></td></tr>
+  <tr><td><strong>50</strong></td><td><span class="hz">五十</span></td><td><span class="hz">五十一</span></td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td><span class="hz">五十九</span></td></tr>
+  <tr><td><strong>90</strong></td><td><span class="hz">九十</span></td><td><span class="hz">九十一</span></td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td>...</td><td><span class="hz">九十九</span></td></tr>
+</table>
+<p><small>Fórmula: Decena + Unidad. Ej: 99 = 九(9) + 十(10) + 九(9) = <span class="hz">九十九</span></small></p>
+
+<h3 id="wan">Grandes Cifras: El Cambio de Paradigma</h3>
+<div class="box warn">
+  ⚠️ <strong>Nosotros agrupamos de a 3 ceros (mil, millón). En China agrupan de a 4 ceros.</strong>
+</div>
+<table>
+  <tr><th>Número</th><th>Español (cada 3)</th><th>Chino (cada 4)</th></tr>
+  <tr><td>1,000</td><td>Mil</td><td><span class="hz">一千</span> Yī qiān</td></tr>
+  <tr><td><strong>10,000</strong></td><td>Diez Mil</td><td><span class="hz">一万</span> <strong>Yī wàn (1 Wan)</strong></td></tr>
+  <tr><td>100,000</td><td>Cien Mil</td><td><span class="hz">十万</span> Shí wàn (10 Wan)</td></tr>
+  <tr><td>1,000,000</td><td>Un Millón</td><td><span class="hz">一百万</span> Yībǎi wàn (100 Wan)</td></tr>
+  <tr><td><strong>100,000,000</strong></td><td>Cien Millones</td><td><span class="hz">一亿</span> <strong>Yī yì (1 Yi)</strong></td></tr>
+</table>
+<div class="box note">💡 ¡Para los chinos, el "Diez Mil" (<span class="hz">万</span>) es una unidad básica! 20,000 = "Dos Wan" (<span class="hz">二万</span>).</div>
+
+<h4>Trabalenguas: 4 vs 10</h4>
+<div class="box grammar">
+  <span class="hz">四是四，十是十</span> — Sì shì sì, shí shì shí<br>
+  <em>"Cuatro es cuatro, diez es diez"</em><br><br>
+  <table style="margin:8px 0">
+    <tr><th>4</th><th>10</th><th>14</th><th>40</th><th>44</th></tr>
+    <tr><td><span class="hz">四</span> Sì</td><td><span class="hz">十</span> Shí</td><td><span class="hz">十四</span> Shí sì</td><td><span class="hz">四十</span> Sì shí</td><td><span class="hz">四十四</span> Sì shí sì</td></tr>
+  </table>
+</div>
+
+<h3 id="supersticion">Superstición y Cultura</h3>
+<table>
+  <tr><th>Nº / Objeto</th><th>Significado</th><th>Por qué</th></tr>
+  <tr><td><span class="hz">8 — 八</span> Bā</td><td class="super-good">✅ Buena Suerte</td><td>Suena a <span class="hz">发</span> (Fā = Riqueza). 8 Mandarinas = Prosperidad.</td></tr>
+  <tr><td><span class="hz">4 — 四</span> Sì</td><td class="super-bad">❌ Mala Suerte</td><td>Suena a <span class="hz">死</span> (Sǐ = Muerte). Evitado en pisos/teléfonos.</td></tr>
+  <tr><td><span class="hz">9 — 九</span> Jiǔ</td><td class="super-good">✅ Eternidad</td><td>Suena a <span class="hz">久</span> (Jiǔ = Largo tiempo). Bueno para bodas.</td></tr>
+  <tr><td><span class="hz">6 — 六</span> Liù</td><td class="super-good">✅ Fluir</td><td>Todo vaya "como la seda" sin obstáculos.</td></tr>
+  <tr><td><span class="hz">520</span> Wǔ'èrlíng</td><td class="super-good">❤️ Te amo</td><td>Suena a <span class="hz">我爱你</span> (Wǒ ài nǐ). 5201314 = "Te amo toda la vida".</td></tr>
+  <tr><td><span class="hz">250 — 二百五</span></td><td class="super-bad">💀 Estúpido</td><td>"Tonto" en argot. ¡Cuidado!</td></tr>
+  <tr><td>Reloj (<span class="hz">钟</span>)</td><td class="super-bad">❌ Tabú</td><td>Regalar reloj (<span class="hz">送钟</span>) suena a "Funeral" (<span class="hz">送终</span>).</td></tr>
+  <tr><td>Paraguas (<span class="hz">伞</span>)</td><td class="super-bad">❌ Separación</td><td>Suena a <span class="hz">散</span> (Sàn = Separarse).</td></tr>
+  <tr><td>Pera (<span class="hz">梨</span>)</td><td class="super-bad">❌ Separación</td><td>Suena a <span class="hz">离</span> (Lí = Separarse). Nunca cortar para compartir.</td></tr>
+  <tr><td>Color Rojo (<span class="hz">红</span>)</td><td class="super-good">✅ Vida / Boda</td><td>Color de la suerte, vida y celebración.</td></tr>
+  <tr><td>Color Blanco (<span class="hz">白</span>)</td><td class="super-bad">❌ Muerte</td><td>Color del luto y funerales.</td></tr>
+  <tr><td>Sombrero Verde (<span class="hz">绿帽子</span>)</td><td class="super-bad">❌ Infidelidad</td><td>"Llevar sombrero verde" = Tu pareja te engaña.</td></tr>
+</table>
+
+<h4>Etiqueta en la Mesa (Palillos)</h4>
+<div class="box warn">
+  ⚠️ <strong>Tabúes con Palillos</strong><br>
+  • <strong>Clavar los palillos en el arroz:</strong> ¡Tabú Absoluto! Parece incienso en un funeral.<br>
+  • <strong>Golpear el bol:</strong> Lo hacían los mendigos para pedir comida.<br>
+  • <strong>Jugar con los palillos:</strong> Muy mala educación.
+</div>
+
+<h4>El Sobre Rojo (红包 Hóngbāo)</h4>
+<div class="box note">
+  🧧 <strong>Reglas del Sobre Rojo:</strong><br>
+  • El dinero siempre debe ser número <strong>par</strong> (200, 600, 800).<br>
+  • Nunca cantidades con 4 (40, 400 — suena a muerte).<br>
+  • Siempre billetes nuevos y crujientes.<br>
+  • <strong>Sobre blanco</strong> = dinero de condolencias (funerario). ¡No confundir!
+</div>
+
+<!-- ==================== CAPÍTULO 9 ==================== -->
+<h2 id="cap9" class="green">9. La Gran Familia (大家族)</h2>
+
+<p>La familia china distingue minuciosamente entre <strong>Linaje Paterno</strong> (Interior) y <strong>Linaje Materno</strong> (Exterior), y entre Mayor y Menor.</p>
+
+<h3 id="arbol">Árbol Genealógico (大家族)</h3>
+
+<div class="box grammar">
+  <strong>🏛️ Antepasados</strong>
+  <table style="margin-top:8px">
+    <tr><th>Rol</th><th>Chino</th><th>Nota</th></tr>
+    <tr><td>Bisabuelo Paterno</td><td><span class="hz">曾祖父</span> Zēngzǔfù</td><td>"Zēng" indica una generación más arriba.</td></tr>
+    <tr><td>Bisabuela Paterna</td><td><span class="hz">曾祖母</span> Zēngzǔmǔ</td><td></td></tr>
+  </table>
+</div>
+
+<table>
+  <tr><th>Rol</th><th>Coloquial</th><th>Pinyin</th><th>Nota</th></tr>
+  <tr><td>Abuelo Paterno</td><td><span class="hz">爷爷</span></td><td>Yéye</td><td>Linaje paterno.</td></tr>
+  <tr><td>Abuela Paterna</td><td><span class="hz">奶奶</span></td><td>Nǎinai</td><td>Linaje paterno.</td></tr>
+  <tr><td>Abuelo Materno</td><td><span class="hz">外公</span></td><td>Wàigōng</td><td>Wài = Exterior (materno).</td></tr>
+  <tr><td>Abuela Materna</td><td><span class="hz">外婆</span></td><td>Wàipó</td><td>Linaje materno.</td></tr>
+  <tr><td>Papá</td><td><span class="hz">爸爸</span></td><td>Bàba</td><td>Formal: <span class="hz">父亲</span> Fùqīn</td></tr>
+  <tr><td>Mamá</td><td><span class="hz">妈妈</span></td><td>Māma</td><td>Formal: <span class="hz">母亲</span> Mǔqīn</td></tr>
+  <tr><td>Tío (paterno)</td><td><span class="hz">叔叔</span></td><td>Shūshu</td><td>Hermano menor del papá.</td></tr>
+  <tr><td>Tía (paterna)</td><td><span class="hz">姑姑</span></td><td>Gūgu</td><td>Hermana del papá.</td></tr>
+  <tr><td>Tío (materno)</td><td><span class="hz">舅舅</span></td><td>Jiùjiu</td><td>Hermano de la mamá.</td></tr>
+  <tr><td>Tía (materna)</td><td><span class="hz">阿姨</span></td><td>Āyí</td><td>Hermana de la mamá.</td></tr>
+  <tr><td>Hermano Mayor</td><td><span class="hz">哥哥</span></td><td>Gēge</td><td></td></tr>
+  <tr><td>Hermano Menor</td><td><span class="hz">弟弟</span></td><td>Dìdi</td><td></td></tr>
+  <tr><td>Hermana Mayor</td><td><span class="hz">姐姐</span></td><td>Jiějie</td><td></td></tr>
+  <tr><td>Hermana Menor</td><td><span class="hz">妹妹</span></td><td>Mèimei</td><td></td></tr>
+  <tr><td>Padrastro</td><td><span class="hz">继父</span></td><td>Jìfù</td><td>Jì = Continuar/Suceder.</td></tr>
+  <tr><td>Madrastra</td><td><span class="hz">继母</span></td><td>Jìmǔ</td><td></td></tr>
+</table>
+
+<h3 id="formalidad">Formalidad y Respeto (礼貌)</h3>
+<table>
+  <tr><th>Rol</th><th>Coloquial (Oral)</th><th>Formal (Escrito)</th></tr>
+  <tr><td>Padre</td><td><span class="hz">爸爸</span> Bàba</td><td><span class="hz">父亲</span> Fùqīn</td></tr>
+  <tr><td>Madre</td><td><span class="hz">妈妈</span> Māma</td><td><span class="hz">母亲</span> Mǔqīn</td></tr>
+  <tr><td>Hijo</td><td><span class="hz">儿子</span> Érzi</td><td><span class="hz">犬子</span> Quǎnzǐ* — "Mi hijo cachorro" (Humilde)</td></tr>
+  <tr><td>Hija</td><td><span class="hz">女儿</span> Nǚ'ér</td><td><span class="hz">爱女</span> Àinǚ — "Hija amada"</td></tr>
+  <tr><td>Hijos (general)</td><td><span class="hz">孩子</span> Háizi</td><td><span class="hz">子女</span> Zǐnǚ — Descendencia (legal)</td></tr>
+</table>
+
+<h4>Pareja y Títulos de Cortesía</h4>
+<table>
+  <tr><th>Concepto</th><th>Chino</th><th>Uso</th></tr>
+  <tr><td>Esposo (Formal)</td><td><span class="hz">丈夫</span> Zhàngfu</td><td>Documentos, formal.</td></tr>
+  <tr><td>Esposa (Formal)</td><td><span class="hz">妻子</span> Qīzi</td><td>Formal.</td></tr>
+  <tr><td>Marido (Col.)</td><td><span class="hz">老公</span> Lǎogōng</td><td>Muy común entre parejas jóvenes.</td></tr>
+  <tr><td>Mujer (Col.)</td><td><span class="hz">老婆</span> Lǎopó</td><td>"Wifey", cariñoso.</td></tr>
+  <tr><td>Sr. / Señor</td><td><span class="hz">先生</span> Xiānsheng</td><td>También puede significar "Mi Esposo".</td></tr>
+  <tr><td>Sra. / Señora</td><td><span class="hz">太太</span> Tàitài</td><td>También "Mi Esposa".</td></tr>
+  <tr><td>Señorita</td><td><span class="hz">小姐</span> Xiǎojiě</td><td>Mujeres jóvenes solteras.</td></tr>
+  <tr><td>Dama / Ms.</td><td><span class="hz">女士</span> Nǚshì</td><td>Título profesional/formal.</td></tr>
+</table>
+
+<h3 id="edad">Preguntar la Edad</h3>
+<table>
+  <tr><th>Contexto</th><th>Pregunta</th><th>Notas</th></tr>
+  <tr><td>Adultos/Jóvenes</td><td><span class="hz">你多大了？</span> Nǐ duō dà le?</td><td>Duō dà = ¿Cuán grande?</td></tr>
+  <tr><td>Niños (&lt;10)</td><td><span class="hz">你几岁了？</span> Nǐ jǐ suì le?</td><td>Jǐ = Cuántos (&lt;10) · Suì = Años</td></tr>
+  <tr><td>Mayores (Respeto)</td><td><span class="hz">您多大年纪了？</span> Nín duō dà niánjì le?</td><td>Nín = Usted · Niánjì = Edad honorable</td></tr>
+</table>
+<div class="box note">
+  💬 <strong>Respuesta:</strong> <span class="hz">我</span> + [Número] + <span class="hz">岁</span> + <span class="hz">了</span><br>
+  Ej: <span class="hz">我二十五岁了</span> (Tengo 25 años)
+</div>
+
+<h4>Conocer vs Saber</h4>
+<table>
+  <tr><th>Verbo</th><th>Significado</th><th>Ejemplo</th></tr>
+  <tr><td><span class="hz">认识</span> Rènshi</td><td><strong>Conocer personalmente</strong> — implica relación</td><td><span class="hz">我认识老板</span> — Conozco al jefe (tengo trato)</td></tr>
+  <tr><td><span class="hz">知道</span> Zhīdào</td><td><strong>Saber información</strong> — solo datos</td><td><span class="hz">知道老板</span> — Sé quién es el jefe (pero no lo conozco)</td></tr>
+</table>
+
+<h4>Gramática: Le (了) — Cambio y Deseo</h4>
+<table>
+  <tr><th>Concepto</th><th>Ejemplo</th><th>Explicación</th></tr>
+  <tr><td>Cambio de Estado</td><td><span class="hz">我不吃了</span> (Wǒ bù chī le)</td><td>"Ya no como" — antes iba a comer, ahora no.</td></tr>
+  <tr><td>vs Sin Le</td><td><span class="hz">我不吃</span></td><td>"No como" — hábito general o rechazo.</td></tr>
+  <tr><td>Deseo (Suave)</td><td><span class="hz">我想去…</span> (Wǒ xiǎng qù…)</td><td>"Me gustaría ir..." — pensamiento/plan.</td></tr>
+  <tr><td>Futuro/Querer</td><td><span class="hz">我要去…</span> (Wǒ yào qù…)</td><td>"Voy a ir..." — determinación.</td></tr>
+</table>
+
+<div class="box tip">
+  🍚 <strong>Saludo de Cariño Cultural:</strong> <span class="hz">你吃了吗？</span> (Nǐ chī le ma?) = "¿Ya comiste?"<br>
+  En China, significa realmente "¡Hola!, ¿Cómo estás?". Preguntar si comiste = cuidar al otro.<br>
+  Respuesta: <span class="hz">吃了</span> (Chī le = Ya comí) / <span class="hz">还没吃</span> (Hái méi chī = Todavía no)
+</div>
+
+<!-- ==================== CAPÍTULO 10 ==================== -->
+<h2 id="cap10" class="gold">10. Repaso de Iniciales y Vocabulario</h2>
+
+<h3 id="repaso-iniciales">Repaso de Iniciales: Grupos Clave</h3>
+
+<div class="box grammar">
+  <strong>Grupo 1 — Palatales (j, q, x)</strong><br>
+  <em>Truco:</em> Sonrisa amplia. La lengua toca los dientes inferiores. Solo se combinan con <strong>i</strong> y <strong>ü</strong>.
+  <table style="margin-top:8px">
+    <tr><th>Ini.</th><th>Hanzi</th><th>Pinyin</th><th>Significado</th></tr>
+    <tr><td><strong>j</strong></td><td><span class="hz">叫 / 九</span></td><td>Jiào / Jiǔ</td><td>Llamarse / Nueve</td></tr>
+    <tr><td><strong>q</strong></td><td><span class="hz">七 / 去</span></td><td>Qī / Qù</td><td>Siete / Ir</td></tr>
+    <tr><td><strong>x</strong></td><td><span class="hz">谢谢 / 喜欢</span></td><td>Xièxie / Xǐhuan</td><td>Gracias / Gustar</td></tr>
+  </table>
+</div>
+
+<div class="box note">
+  <strong>Grupo 2 — Retroflejas (zh, ch, sh, r)</strong><br>
+  <em>Truco:</em> Enrollar la punta de la lengua hacia atrás. Sonido "oscuro".
+  <table style="margin-top:8px">
+    <tr><th>Ini.</th><th>Hanzi</th><th>Pinyin</th><th>Significado</th></tr>
+    <tr><td><strong>zh</strong></td><td><span class="hz">中国 / 这</span></td><td>Zhōngguó / Zhè</td><td>China / Esto</td></tr>
+    <tr><td><strong>ch</strong></td><td><span class="hz">吃 / 茶</span></td><td>Chī / Chá</td><td>Comer / Té</td></tr>
+    <tr><td><strong>sh</strong></td><td><span class="hz">书 / 是</span></td><td>Shū / Shì</td><td>Libro / Ser</td></tr>
+    <tr><td><strong>r</strong></td><td><span class="hz">人</span></td><td>Rén</td><td>Persona</td></tr>
+  </table>
+</div>
+
+<div class="box tip">
+  <strong>Grupo 3 — Dentales (z, c, s)</strong><br>
+  <em>Truco:</em> Lengua plana detrás de los dientes. Sonido de "zumbido".
+  <table style="margin-top:8px">
+    <tr><th>Ini.</th><th>Hanzi</th><th>Pinyin</th><th>Significado</th></tr>
+    <tr><td><strong>z</strong></td><td><span class="hz">再见 / 字</span></td><td>Zàijiàn / Zì</td><td>Adiós / Carácter</td></tr>
+    <tr><td><strong>c</strong></td><td><span class="hz">菜 / 从</span></td><td>Cài / Cóng</td><td>Plato / Desde</td></tr>
+    <tr><td><strong>s</strong></td><td><span class="hz">三 / 四</span></td><td>Sān / Sì</td><td>Tres / Cuatro</td></tr>
+  </table>
+</div>
+
+<h3 id="vocab-practica">Práctica Intensiva de Vocabulario</h3>
+
+<h4>Grupo Palatal J — Q — X</h4>
+<div class="two-col">
+  <div>
+    <h4 style="color:var(--red)">Inicial J:</h4>
+    <div class="voc"><span class="hz">家</span><span class="py">Jiā</span><span class="es">Familia / Casa</span></div>
+    <div class="voc"><span class="hz">姐姐</span><span class="py">Jiějie</span><span class="es">Hermana mayor</span></div>
+    <div class="voc"><span class="hz">今天</span><span class="py">Jīntiān</span><span class="es">Hoy</span></div>
+    <div class="voc"><span class="hz">见</span><span class="py">Jiàn</span><span class="es">Ver / Encontrarse</span></div>
+    <div class="voc"><span class="hz">几</span><span class="py">Jǐ</span><span class="es">¿Cuántos? (menos de 10)</span></div>
+    <div class="voc"><span class="hz">鸡蛋</span><span class="py">Jīdàn</span><span class="es">Huevo</span></div>
+  </div>
+  <div>
+    <h4 style="color:var(--red)">Inicial Q:</h4>
+    <div class="voc"><span class="hz">请</span><span class="py">Qǐng</span><span class="es">Por favor</span></div>
+    <div class="voc"><span class="hz">钱</span><span class="py">Qián</span><span class="es">Dinero</span></div>
+    <div class="voc"><span class="hz">前面</span><span class="py">Qiánmiàn</span><span class="es">Delante / Enfrente</span></div>
+    <div class="voc"><span class="hz">起床</span><span class="py">Qǐchuáng</span><span class="es">Levantarse</span></div>
+    <div class="voc"><span class="hz">去</span><span class="py">Qù</span><span class="es">Ir</span></div>
+    <div class="voc"><span class="hz">七</span><span class="py">Qī</span><span class="es">Siete</span></div>
+  </div>
+</div>
+
+<h4 style="color:var(--red);margin-top:12px">Inicial X:</h4>
+<div class="two-col">
+  <div>
+    <div class="voc"><span class="hz">小姐</span><span class="py">Xiǎojie</span><span class="es">Señorita</span></div>
+    <div class="voc"><span class="hz">先生</span><span class="py">Xiānsheng</span><span class="es">Señor</span></div>
+    <div class="voc"><span class="hz">想</span><span class="py">Xiǎng</span><span class="es">Querer / Extrañar</span></div>
+    <div class="voc"><span class="hz">学习</span><span class="py">Xuéxí</span><span class="es">Estudiar</span></div>
+  </div>
+  <div>
+    <div class="voc"><span class="hz">香蕉</span><span class="py">Xiāngjiāo</span><span class="es">Plátano</span></div>
+    <div class="voc"><span class="hz">休息</span><span class="py">Xiūxi</span><span class="es">Descansar</span></div>
+    <div class="voc"><span class="hz">西瓜</span><span class="py">Xīguā</span><span class="es">Sandía</span></div>
+  </div>
+</div>
+
+<h4>Grupo Retroflejo ZH — CH — SH</h4>
+<div class="two-col">
+  <div>
+    <h4 style="color:var(--blue)">Inicial ZH:</h4>
+    <div class="voc"><span class="hz">知道</span><span class="py">Zhīdào</span><span class="es">Saber</span></div>
+    <div class="voc"><span class="hz">这里</span><span class="py">Zhèlǐ</span><span class="es">Aquí</span></div>
+    <div class="voc"><span class="hz">桌子</span><span class="py">Zhuōzi</span><span class="es">Mesa</span></div>
+    <div class="voc"><span class="hz">中文</span><span class="py">Zhōngwén</span><span class="es">Idioma chino</span></div>
+    <div class="voc"><span class="hz">中午</span><span class="py">Zhōngwǔ</span><span class="es">Mediodía</span></div>
+    <div class="voc"><span class="hz">住</span><span class="py">Zhù</span><span class="es">Vivir</span></div>
+    <div class="voc"><span class="hz">丈夫</span><span class="py">Zhàngfu</span><span class="es">Esposo</span></div>
+  </div>
+  <div>
+    <h4 style="color:var(--blue)">Inicial CH / SH:</h4>
+    <div class="voc"><span class="hz">吃饭</span><span class="py">Chīfàn</span><span class="es">Comer comida</span></div>
+    <div class="voc"><span class="hz">出租车</span><span class="py">Chūzūchē</span><span class="es">Taxi</span></div>
+    <div class="voc"><span class="hz">唱歌</span><span class="py">Chànggē</span><span class="es">Cantar</span></div>
+    <div class="voc"><span class="hz">茶</span><span class="py">Chá</span><span class="es">Té</span></div>
+    <div class="voc"><span class="hz">什么</span><span class="py">Shénme</span><span class="es">Qué</span></div>
+    <div class="voc"><span class="hz">睡觉</span><span class="py">Shuìjiào</span><span class="es">Dormir</span></div>
+    <div class="voc"><span class="hz">商店</span><span class="py">Shāngdiàn</span><span class="es">Tienda</span></div>
+  </div>
+</div>
+
+<h4>Grupo Dental Z — C — S</h4>
+<div class="two-col">
+  <div>
+    <h4 style="color:var(--green)">Inicial Z / C:</h4>
+    <div class="voc"><span class="hz">早上</span><span class="py">Zǎoshang</span><span class="es">Mañana (6–9 AM)</span></div>
+    <div class="voc"><span class="hz">做</span><span class="py">Zuò</span><span class="es">Hacer</span></div>
+    <div class="voc"><span class="hz">坐</span><span class="py">Zuò</span><span class="es">Sentarse</span></div>
+    <div class="voc"><span class="hz">昨天</span><span class="py">Zuótiān</span><span class="es">Ayer</span></div>
+    <div class="voc"><span class="hz">厕所</span><span class="py">Cèsuǒ</span><span class="es">Baño</span></div>
+    <div class="voc"><span class="hz">错</span><span class="py">Cuò</span><span class="es">Incorrecto / Error</span></div>
+    <div class="voc"><span class    class="hz">聪明</span><span class="py">Cōngming</span><span class="es">Inteligente</span></div>
+  </div>
+  <div>
+    <h4 style="color:var(--green)">Inicial S:</h4>
+    <div class="voc"><span class="hz">岁</span><span class="py">Suì</span><span class="es">Años de edad</span></div>
+    <div class="voc"><span class="hz">送</span><span class="py">Sòng</span><span class="es">Regalar / Enviar</span></div>
+    <div class="voc"><span class="hz">死</span><span class="py">Sǐ</span><span class="es">Morir</span></div>
+    <div class="voc"><span class="hz">三 / 四</span><span class="py">Sān / Sì</span><span class="es">Tres / Cuatro</span></div>
+    <div class="voc"><span class="hz">孙子</span><span class="py">Sūnzi</span><span class="es">Nieto</span></div>
+  </div>
+</div>
+
+<!-- ==================== APÉNDICE ==================== -->
+<h2 id="apendice" class="gray">Apéndice — Hoja de Trucos: Gramática Esencial</h2>
+
+<h3>Estructuras Básicas</h3>
+<div class="box structure">
+  <strong>Oración Simple</strong>
+  <div class="structure-formula">Sujeto + Verbo + Objeto</div>
+  <span class="hz">我爱中国菜</span> — Wǒ ài Zhōngguó cài — Amo la comida china.
+</div>
+
+<div class="box grammar">
+  <strong>Preguntas con 吗 (Ma)</strong>
+  <div class="structure-formula">Oración Completa + 吗 ?</div>
+  <span class="hz">你是中国人吗？</span> — Nǐ shì Zhōngguó rén ma?
+</div>
+
+<div class="box note">
+  <strong>Preguntas de Contenido (Interrogativos)</strong><br>
+  • <strong>¿Qué?:</strong> <span class="hz">什么</span> → <span class="hz">你叫什么名字？</span><br>
+  • <strong>¿Quién?:</strong> <span class="hz">谁</span> → <span class="hz">他是谁？</span><br>
+  • <strong>¿Dónde?:</strong> <span class="hz">哪儿</span> → <span class="hz">你去哪儿？</span><br>
+  • <strong>¿Cuál?:</strong> <span class="hz">哪个</span> → <span class="hz">哪个国家？</span><br>
+  • <strong>¿Cuántos? (&lt;10):</strong> <span class="hz">几</span> → <span class="hz">几口人？</span><br>
+  • <strong>¿Cuánto (Grado)?:</strong> <span class="hz">多</span> → <span class="hz">多大？</span>
+</div>
+
+<h3>Partículas Clave</h3>
+<div class="two-col">
+  <div class="box grammar">
+    <strong><span class="hz">的</span> (De) — Posesión / Descripción</strong><br>
+    <span class="hz">我的书</span> — Mi libro<br>
+    <span class="hz">很好的朋友</span> — Muy buen amigo
+  </div>
+  <div class="box note">
+    <strong><span class="hz">了</span> (Le) — Cambio de Estado / Pasado</strong><br>
+    <span class="hz">我不吃了</span> — Ya no como<br>
+    <span class="hz">我二十岁了</span> — Ya tengo 20
+  </div>
+  <div class="box tip">
+    <strong><span class="hz">们</span> (Men) — Plural (Personas)</strong><br>
+    <span class="hz">我们</span> — Nosotros<br>
+    <span class="hz">孩子们</span> — Niños
+  </div>
+  <div class="box warn">
+    <strong><span class="hz">也</span> (Yě) — También (antes del verbo)</strong><br>
+    <span class="hz">我也是</span> — Yo también soy<br>
+    ⚠️ Siempre ANTES del verbo.
+  </div>
+</div>
+
+<h3>Clasificadores Esenciales</h3>
+<table>
+  <tr><th>Clasificador</th><th>Uso Principal</th><th>Ejemplo</th></tr>
+  <tr><td><span class="hz">个</span> Gè</td><td>Universal / Personas / Objetos</td><td><span class="hz">一个人</span> — Una persona</td></tr>
+  <tr><td><span class="hz">口</span> Kǒu</td><td>Miembros familiares</td><td><span class="hz">三口人</span> — 3 miembros de familia</td></tr>
+  <tr><td><span class="hz">只</span> Zhī</td><td>Animales pequeños / Pares</td><td><span class="hz">一只猫</span> — Un gato</td></tr>
+  <tr><td><span class="hz">本</span> Běn</td><td>Objetos encuadernados</td><td><span class="hz">一本书</span> — Un libro</td></tr>
+  <tr><td><span class="hz">条</span> Tiáo</td><td>Objetos largos/flexibles</td><td><span class="hz">一条狗</span> — Un perro</td></tr>
+  <tr><td><span class="hz">张</span> Zhāng</td><td>Objetos planos (papel, foto)</td><td><span class="hz">一张纸</span> — Una hoja</td></tr>
+  <tr><td><span class="hz">种</span> Zhǒng</td><td>Tipos / Clases</td><td><span class="hz">一种菜</span> — Un tipo de comida</td></tr>
+</table>
+
+<h3>Resumen de Verbos Clave</h3>
+<table>
+  <tr><th>Verbo</th><th>Pinyin</th><th>Uso Principal</th></tr>
+  <tr><td><span class="hz">是</span></td><td>Shì</td><td>Ser / Es (para identidad, profesión, nacionalidad)</td></tr>
+  <tr><td><span class="hz">在</span></td><td>Zài</td><td>Estar en (ubicación)</td></tr>
+  <tr><td><span class="hz">有</span></td><td>Yǒu</td><td>Tener / Haber</td></tr>
+  <tr><td><span class="hz">要</span></td><td>Yào</td><td>Querer / Necesitar (activo, determinado)</td></tr>
+  <tr><td><span class="hz">想</span></td><td>Xiǎng</td><td>Querer / Pensar / Extrañar (del corazón)</td></tr>
+  <tr><td><span class="hz">叫</span></td><td>Jiào</td><td>Llamarse / Gritar</td></tr>
+  <tr><td><span class="hz">喜欢</span></td><td>Xǐhuan</td><td>Gustar</td></tr>
+  <tr><td><span class="hz">说</span></td><td>Shuō</td><td>Hablar / Decir</td></tr>
+  <tr><td><span class="hz">做</span></td><td>Zuò</td><td>Hacer / Dedicarse a</td></tr>
+  <tr><td><span class="hz">吃</span></td><td>Chī</td><td>Comer</td></tr>
+  <tr><td><span class="hz">去</span></td><td>Qù</td><td>Ir</td></tr>
+  <tr><td><span class="hz">看</span></td><td>Kàn</td><td>Mirar / Ver</td></tr>
+</table>
+
+</div><!-- .content -->
+
+<footer>Básico 1 · Centro Cultural Chino · dic 2025 · ⚛️ Atom</footer>
+</div><!-- #main -->
+
+<script>
+// SEARCH
+const searchInput = document.getElementById('search-input');
+const searchResults = document.getElementById('search-results');
+const navLinks = document.getElementById('nav-links');
+
+searchInput.addEventListener('input', () => {
+  const q = searchInput.value.trim().toLowerCase();
+  if (!q) {
+    searchResults.style.display = 'none';
+    navLinks.style.display = 'block';
+    return;
+  }
+  navLinks.style.display = 'none';
+  searchResults.style.display = 'block';
+
+  // Collect all searchable elements: .voc, table rows, .box, h3
+  const results = [];
+
+  // Search in .voc cards
+  document.querySelectorAll('.voc').forEach(voc => {
+    const text = voc.textContent.toLowerCase();
+    if (text.includes(q)) {
+      const hz = voc.querySelector('.hz')?.textContent || '';
+      const py = voc.querySelector('.py')?.textContent || '';
+      const es = voc.querySelector('.es')?.textContent || '';
+      // Find nearest section heading
+      const section = getNearestHeading(voc);
+      results.push({ label: `<span class="match-hz">${hz}</span> ${py} — ${es}`, section, el: voc });
+    }
+  });
+
+  // Search in table rows
+  document.querySelectorAll('tr').forEach(row => {
+    if (row.closest('thead')) return;
+    const text = row.textContent.toLowerCase();
+    if (text.includes(q)) {
+      const cells = row.querySelectorAll('td');
+      if (cells.length >= 2) {
+        const section = getNearestHeading(row);
+        results.push({ label: Array.from(cells).slice(0,3).map(c => c.textContent.trim()).join(' · '), section, el: row });
+      }
+    }
+  });
+
+  // Search in headings
+  document.querySelectorAll('h2[id], h3').forEach(h => {
+    if (h.textContent.toLowerCase().includes(q)) {
+      results.push({ label: '📌 ' + h.textContent.trim(), section: h, el: h });
+    }
+  });
+
+  if (results.length === 0) {
+    searchResults.innerHTML = '<div class="no-results">Sin resultados para "' + q + '"</div>';
+    return;
+  }
+
+  // Deduplicate by element
+  const seen = new Set();
+  const unique = results.filter(r => { const k = r.el; if (seen.has(k)) return false; seen.add(k); return true; });
+
+  searchResults.innerHTML = unique.slice(0, 30).map(r => {
+    const sectionId = r.section?.id || r.section?.closest('h2, h3')?.id || '';
+    const href = sectionId ? '#' + sectionId : '#';
+    return `<a href="${href}" onclick="closeSearch()">${r.label}</a>`;
+  }).join('');
+});
+
+function getNearestHeading(el) {
+  let prev = el.previousElementSibling || el.parentElement;
+  while (prev) {
+    if (prev.tagName === 'H2' || prev.tagName === 'H3') return prev;
+    prev = prev.previousElementSibling || prev.parentElement;
+    if (prev?.id === 'main') break;
+  }
+  return el.closest('h2, h3') || document.querySelector('h2');
+}
+
+function closeSearch() {
+  setTimeout(() => {
+    searchInput.value = '';
+    searchResults.style.display = 'none';
+    navLinks.style.display = 'block';
+  }, 100);
+}
+
+// Close search on Escape
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeSearch(); });
+
+// Highlight active sidebar link on scroll
+const links = document.querySelectorAll('#sidebar a');
+const sections = document.querySelectorAll('h2[id], h3[id]');
+window.addEventListener('scroll', () => {
+  let current = '';
+  sections.forEach(s => { if (window.scrollY >= s.offsetTop - 80) current = s.id; });
+  links.forEach(l => { l.classList.toggle('active', l.getAttribute('href') === '#' + current); });
+});
+</script>
+</body>
+</html>
