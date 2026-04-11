@@ -102,7 +102,7 @@
 
 <div class="header">
   <h1>🎧 Listening Practice</h1>
-  <p>Escucha y escribe lo que oyes · <a href="/chino/">← Volver al indice</a></p>
+  <p>Escucha y escribe lo que oyes · <a href="/">← Volver al indice</a></p>
 </div>
 
 <div class="filters">
@@ -179,7 +179,7 @@
 <footer>Listening Practice · Apuntes Chino · <a href="https://basti.cl" style="color:inherit">basti.cl</a></footer>
 
 <script>
-const AUDIO_BASE = '/chino/audio/';
+const AUDIO_BASE = '/audio/';
 let vocab = [];
 let filtered = [];
 let current = null;
@@ -191,7 +191,7 @@ let currentFilter = 'all';
 let currentMode = 'all';
 
 // Load vocab data
-fetch('/chino/audio/vocab_listening.json')
+fetch('/audio/vocab_listening.json')
   .then(r => r.json())
   .then(data => {
     vocab = data;
