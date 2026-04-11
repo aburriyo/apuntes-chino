@@ -18,4 +18,4 @@ jobs:
           script: |
             cd ${{ secrets.VPS_PATH }}
             git pull origin main
-            rsync -a --delete /opt/apuntes-chino/chino/ /opt/apuntes-basti/build/chino/
+            rsync -a --delete /opt/apuntes-chino/chino/ /opt/TransportesMarDelSur/static/chino/
