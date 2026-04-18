@@ -1,9 +1,9 @@
 # Apuntes Chino — Contexto para Claude
 
 ## Estado actual
-Estamos tomando apuntes de la **Clase 05 — Básico 2** (11 de abril, 2026).
+Estamos tomando apuntes de la **Clase 06 — Básico 2** (18 de abril, 2026).
 
-El archivo se está armando en: `chino/basico2/clase05.html`
+El archivo se está armando en: `chino/basico2/clase06.html`
 
 ## Lo que ya está en el HTML (clase05.html)
 1. **和 (hé)** — "y/con" para conectar personas

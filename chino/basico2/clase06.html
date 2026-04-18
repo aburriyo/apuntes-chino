@@ -1,0 +1,961 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 2 — Clase 06 · Apuntes Chino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; color: #222; font-size: 15px; background: #fafafa; }
+  header { background: #1a1a2e; color: #fff; padding: 28px 28px 22px; border-radius: 12px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6em; margin: 0 0 4px; color: #e74c3c; }
+  header p { margin: 0; color: #aaa; font-size: 0.88em; }
+  nav { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  nav h3 { margin: 0 0 10px; font-size: 0.82em; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  nav li { margin: 3px 0; font-size: 0.9em; }
+  nav a { color: #c0392b; text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  h2 { font-size: 1.1em; color: #fff; background: #c0392b; padding: 9px 16px; border-radius: 8px; margin-top: 36px; margin-bottom: 14px; }
+  h2.green { background: #27ae60; }
+  h2.blue { background: #2980b9; }
+  h2.gold { background: #d4820a; }
+  h2.gray { background: #555; }
+  h3 { color: #444; font-size: 0.95em; margin: 16px 0 8px; border-left: 3px solid #e74c3c; padding-left: 10px; }
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.structure { background: #fdecea; border: 1.5px solid #c0392b; }
+  .box.note { background: #e8f5e9; border-left: 4px solid #27ae60; border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid #1976d2; border-radius: 0 8px 8px 0; }
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; }
+  th { background: #c0392b; color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .hz { font-size: 1.15em; font-weight: bold; color: #c0392b; }
+  .hz a { color: #c0392b; text-decoration: none; border-bottom: 1px dotted #c0392b; }
+  .hz a:hover { color: #e74c3c; border-bottom: 1px solid #e74c3c; }
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid #e5e5e5; padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .audio-btn { background: none; border: none; cursor: pointer; font-size: 1em; padding: 2px 4px; opacity: 0.5; transition: opacity .2s; vertical-align: middle; }
+  .audio-btn:hover { opacity: 1; }
+  .pinyin-toggle { position: fixed; bottom: 20px; right: 20px; background: #1a1a2e; color: #fff; border: none; padding: 10px 16px; border-radius: 30px; cursor: pointer; font-size: 0.85em; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,.25); transition: background .2s; }
+  .pinyin-toggle:hover { background: #c0392b; }
+  .hide-pinyin .pinyin-col { visibility: hidden; }
+  @media print {
+    .no-print, .pinyin-toggle, .audio-btn { display: none !important; }
+    body { background: #fff !important; padding: 10px 20px; font-size: 12px; max-width: 100%; }
+    header { background: #1a1a2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+  }
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Básico 2 — Clase 06</h1>
+  <p>18 de abril, 2026 · Centro Cultural Chino · <a href="/" style="color:#e74c3c">← Volver al índice</a></p>
+</header>
+
+<nav>
+  <h3>Índice</h3>
+  <ol>
+    <li><a href="#s1">Repaso: 你想吃什么？/ 你想喝什么？</a></li>
+    <li><a href="#s2">Presentación: 下午你想做什么？</a></li>
+    <li><a href="#s3">⚠️ Trampa del español: "mañana" ≠ 明天</a></li>
+    <li><a href="#s4">Recipientes: 杯子, 水杯, 瓶子</a></li>
+    <li><a href="#s5">个 — El clasificador más común</a></li>
+    <li><a href="#s6">Clasificadores específicos: 条, 只, 件</a></li>
+    <li><a href="#s7">这 / 那 — Demostrativos "este" / "ese"</a></li>
+    <li><a href="#s8">要 vs 想 — Comprar / pedir cosas</a></li>
+    <li><a href="#s9">多少 — "cuántos/cuánto"</a></li>
+    <li><a href="#s10">你多大？— Preguntar la edad</a></li>
+    <li><a href="#s11">🎯 Sección de práctica: preguntas y respuestas</a></li>
+    <li><a href="#s12">🔢 Repaso rápido de números</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 1: REPASO                       -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s1">1. Repaso: ¿Qué quieres comer/tomar?</h2>
+<div class="box structure">
+  Preguntar: <code>你想 + 吃/喝 + 什么？</code><br>
+  Responder: <code>我想 + 吃/喝 + objeto</code>
+</div>
+
+<h3>🍽️ ¿Qué quieres comer?</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a><a href="https://www.dong-chinese.com/wiki/什" target="_blank">什</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a>？</td><td class="pinyin-col">Nǐ xiǎng chī shénme?</td><td>¿Qué quieres comer?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a><a href="https://www.dong-chinese.com/wiki/米" target="_blank">米</a><a href="https://www.dong-chinese.com/wiki/饭" target="_blank">饭</a>。</td><td class="pinyin-col">Wǒ xiǎng chī mǐfàn.</td><td>🍚 Quiero comer arroz.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/国" target="_blank">国</a><a href="https://www.dong-chinese.com/wiki/菜" target="_blank">菜</a>。</td><td class="pinyin-col">Wǒ xiǎng chī Zhōngguó cài.</td><td>🥢 Quiero comer comida china.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a><a href="https://www.dong-chinese.com/wiki/饺" target="_blank">饺</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a>。</td><td class="pinyin-col">Wǒ xiǎng chī jiǎozi.</td><td>🥟 Quiero comer dumplings.</td></tr>
+</table>
+
+<h3>🥤 ¿Qué quieres tomar?</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a><a href="https://www.dong-chinese.com/wiki/什" target="_blank">什</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a>？</td><td class="pinyin-col">Nǐ xiǎng hē shénme?</td><td>¿Qué quieres tomar?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a><a href="https://www.dong-chinese.com/wiki/茶" target="_blank">茶</a>。</td><td class="pinyin-col">Wǒ xiǎng hē chá.</td><td>🍵 Quiero tomar té.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a><a href="https://www.dong-chinese.com/wiki/水" target="_blank">水</a>。</td><td class="pinyin-col">Wǒ xiǎng hē shuǐ.</td><td>💧 Quiero tomar agua.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a><a href="https://www.dong-chinese.com/wiki/咖" target="_blank">咖</a><a href="https://www.dong-chinese.com/wiki/啡" target="_blank">啡</a>。</td><td class="pinyin-col">Wǒ xiǎng hē kāfēi.</td><td>☕ Quiero tomar café.</td></tr>
+</table>
+
+<div class="box tip">
+  <strong><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a></strong> (chī) = comer (sólidos) · <strong><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a></strong> (hē) = beber/tomar (líquidos)
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 2: PRESENTACIÓN                 -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s2" class="gold">2. Presentación: ¿Qué quieres hacer en la tarde?</h2>
+<div class="box note">
+  Diálogo de presentación entre compañeros, practicando el verbo modal <span class="hz"><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a></span> (xiǎng) con preguntas sobre actividades y compras.
+</div>
+
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/下" target="_blank">下</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/什" target="_blank">什</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a>？</span><br><em>Xiàwǔ nǐ xiǎng zuò shénme? — ¿Qué quieres hacer en la tarde?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/下" target="_blank">下</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/去" target="_blank">去</a><a href="https://www.dong-chinese.com/wiki/商" target="_blank">商</a><a href="https://www.dong-chinese.com/wiki/店" target="_blank">店</a>。</span><br><em>Xiàwǔ wǒ xiǎng qù shāngdiàn. — En la tarde quiero ir a la tienda.</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/买" target="_blank">买</a><a href="https://www.dong-chinese.com/wiki/什" target="_blank">什</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a>？</span><br><em>Nǐ xiǎng mǎi shénme? — ¿Qué quieres comprar?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/买" target="_blank">买</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a>。</span><br><em>Wǒ xiǎng mǎi yí ge bēizi. — Quiero comprar un vaso.</em></div>
+</div>
+
+<div class="box tip">
+  <strong>Vocabulario clave:</strong><br>
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/下" target="_blank">下</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a></span> (xiàwǔ) = tarde · <span class="hz"><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a></span> (zuò) = hacer · <span class="hz"><a href="https://www.dong-chinese.com/wiki/商" target="_blank">商</a><a href="https://www.dong-chinese.com/wiki/店" target="_blank">店</a></span> (shāngdiàn) = tienda · <span class="hz"><a href="https://www.dong-chinese.com/wiki/买" target="_blank">买</a></span> (mǎi) = comprar · <span class="hz"><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> (ge) = clasificador de objetos
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 3: TRAMPA DEL ESPAÑOL           -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s3" class="blue">3. ⚠️ Trampa del español: "mañana" ≠ 明天</h2>
+<div class="box warn">
+  En español la palabra <strong>"mañana"</strong> tiene dos significados:<br>
+  1. <strong>El día siguiente</strong> (tomorrow en inglés) → en chino es <span class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a></span> (míngtiān)<br>
+  2. <strong>La parte del día antes del mediodía</strong> (morning en inglés) → en chino es <span class="hz"><a href="https://www.dong-chinese.com/wiki/早" target="_blank">早</a><a href="https://www.dong-chinese.com/wiki/上" target="_blank">上</a></span> (zǎoshang)<br><br>
+  ¡El chino separa claramente los dos conceptos, como el inglés!
+</div>
+
+<h3>Las partes del día</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th><th>Inglés</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/早" target="_blank">早</a><a href="https://www.dong-chinese.com/wiki/上" target="_blank">上</a></td><td class="pinyin-col">zǎoshang</td><td>🌅 Mañana (antes del mediodía)</td><td>morning</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/上" target="_blank">上</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a></td><td class="pinyin-col">shàngwǔ</td><td>☀️ Media mañana / antes mediodía</td><td>late morning</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a></td><td class="pinyin-col">zhōngwǔ</td><td>🕛 Mediodía</td><td>noon</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/下" target="_blank">下</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a></td><td class="pinyin-col">xiàwǔ</td><td>🌤️ Tarde</td><td>afternoon</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/晚" target="_blank">晚</a><a href="https://www.dong-chinese.com/wiki/上" target="_blank">上</a></td><td class="pinyin-col">wǎnshang</td><td>🌙 Noche</td><td>evening / night</td></tr>
+</table>
+
+<h3>Días relativos</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th><th>Inglés</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/昨" target="_blank">昨</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a></td><td class="pinyin-col">zuótiān</td><td>Ayer</td><td>yesterday</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/今" target="_blank">今</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a></td><td class="pinyin-col">jīntiān</td><td>Hoy</td><td>today</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a></td><td class="pinyin-col">míngtiān</td><td><strong>Mañana (el día siguiente)</strong></td><td><strong>tomorrow</strong></td></tr>
+</table>
+
+<h3>Ejemplos combinados</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a><a href="https://www.dong-chinese.com/wiki/早" target="_blank">早</a><a href="https://www.dong-chinese.com/wiki/上" target="_blank">上</a></td><td class="pinyin-col">míngtiān zǎoshang</td><td>Mañana en la mañana (el día siguiente, temprano)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a><a href="https://www.dong-chinese.com/wiki/下" target="_blank">下</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a></td><td class="pinyin-col">míngtiān xiàwǔ</td><td>Mañana en la tarde</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/今" target="_blank">今</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a><a href="https://www.dong-chinese.com/wiki/晚" target="_blank">晚</a><a href="https://www.dong-chinese.com/wiki/上" target="_blank">上</a></td><td class="pinyin-col">jīntiān wǎnshang</td><td>Esta noche (hoy en la noche)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/去" target="_blank">去</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/校" target="_blank">校</a>。</td><td class="pinyin-col">Míngtiān wǒ qù xuéxiào.</td><td>Mañana (el día siguiente) voy al colegio.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/习" target="_blank">习</a>。</td><td class="pinyin-col">Míngtiān wǒ xiǎng xuéxí.</td><td>📚 Mañana yo quiero estudiar.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a><a href="https://www.dong-chinese.com/wiki/下" target="_blank">下</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/习" target="_blank">习</a>。</td><td class="pinyin-col">Míngtiān xiàwǔ wǒ xiǎng xuéxí.</td><td>📚 Mañana en la tarde yo quiero estudiar.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a><a href="https://www.dong-chinese.com/wiki/早" target="_blank">早</a><a href="https://www.dong-chinese.com/wiki/上" target="_blank">上</a><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/习" target="_blank">习</a>。</td><td class="pinyin-col">Míngtiān zǎoshang wǒ xiǎng xuéxí.</td><td>🌅 Mañana por la mañana yo quiero estudiar.</td></tr>
+</table>
+
+<div class="box structure">
+  Orden temporal: <code>Tiempo (día) + Parte del día + Sujeto + 想 + Verbo</code><br>
+  Ejemplo: <span class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a><a href="https://www.dong-chinese.com/wiki/下" target="_blank">下</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/习" target="_blank">习</a></span> = 明天 (mañana) + 下午 (tarde) + 我 (yo) + 想 (quiero) + 学习 (estudiar)
+</div>
+
+<div class="box note">
+  💡 <strong>Truco para recordar:</strong> si en español puedes reemplazar "mañana" por <em>"el día siguiente"</em> → usa <span class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a></span>. Si puedes reemplazarlo por <em>"temprano"</em> o <em>"en la mañana"</em> → usa <span class="hz"><a href="https://www.dong-chinese.com/wiki/早" target="_blank">早</a><a href="https://www.dong-chinese.com/wiki/上" target="_blank">上</a></span>.
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 4: RECIPIENTES                  -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s4" class="green">4. Recipientes: 杯子, 水杯, 瓶子</h2>
+<div class="box grammar">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a></span> (bēizi) = vaso/taza (genérico, para cualquier bebida)<br>
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/水" target="_blank">水</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a></span> (shuǐbēi) = vaso de agua (más específico, diseñado para agua)<br>
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/瓶" target="_blank">瓶</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a></span> (píngzi) = botella (de cualquier material: plástico, vidrio, etc.)
+</div>
+
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a></td><td class="pinyin-col">bēizi</td><td>🥤 Vaso / taza (genérico)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/水" target="_blank">水</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a></td><td class="pinyin-col">shuǐbēi</td><td>💧 Vaso de agua (específico)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/玻" target="_blank">玻</a><a href="https://www.dong-chinese.com/wiki/璃" target="_blank">璃</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a></td><td class="pinyin-col">bōlibēi</td><td>🍶 Vaso de vidrio</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/瓶" target="_blank">瓶</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a></td><td class="pinyin-col">píngzi</td><td>🍾 Botella (genérica)</td></tr>
+</table>
+
+<h3>Ejemplos con recipientes</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/买" target="_blank">买</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/水" target="_blank">水</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a>。</td><td class="pinyin-col">Wǒ xiǎng mǎi yí ge shuǐbēi.</td><td>Quiero comprar un vaso de agua.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/买" target="_blank">买</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/瓶" target="_blank">瓶</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a>。</td><td class="pinyin-col">Wǒ xiǎng mǎi yí ge píngzi.</td><td>Quiero comprar una botella.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/瓶" target="_blank">瓶</a><a href="https://www.dong-chinese.com/wiki/红" target="_blank">红</a><a href="https://www.dong-chinese.com/wiki/酒" target="_blank">酒</a></td><td class="pinyin-col">yì píng hóngjiǔ</td><td>🍷 Una botella de vino tinto</td></tr>
+</table>
+
+<div class="box tip">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/瓶" target="_blank">瓶</a></span> (píng) también funciona como <strong>clasificador para bebidas embotelladas</strong>: 一瓶红酒 (una botella de vino tinto), 一瓶水 (una botella de agua), 一瓶啤酒 (una botella de cerveza).
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 5: 个 CLASIFICADOR              -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s5" class="gold">5. 个 — El clasificador más común</h2>
+<div class="box grammar">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> (gè) es el clasificador más común y versátil del chino. Se usa antes de un sustantivo cuando este <strong>no tiene un clasificador específico propio</strong>.
+</div>
+
+<div class="box structure">
+  Estructura: <code>número + 个 + sustantivo</code>
+</div>
+
+<h3>Ejemplos con personas</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/三" target="_blank">三</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/老" target="_blank">老</a><a href="https://www.dong-chinese.com/wiki/师" target="_blank">师</a></td><td class="pinyin-col">sān ge lǎoshī</td><td>👨‍🏫 3 profesores</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/生" target="_blank">生</a></td><td class="pinyin-col">wǔ ge xuésheng</td><td>🧑‍🎓 5 alumnos</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/朋" target="_blank">朋</a><a href="https://www.dong-chinese.com/wiki/友" target="_blank">友</a></td><td class="pinyin-col">yí ge péngyou</td><td>🙋 1 amigo</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/两" target="_blank">两</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/人" target="_blank">人</a></td><td class="pinyin-col">liǎng ge rén</td><td>👥 2 personas</td></tr>
+</table>
+
+<h3>Ejemplos con objetos</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a></td><td class="pinyin-col">yí ge bēizi</td><td>🥤 1 vaso</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/两" target="_blank">两</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/苹" target="_blank">苹</a><a href="https://www.dong-chinese.com/wiki/果" target="_blank">果</a></td><td class="pinyin-col">liǎng ge píngguǒ</td><td>🍎 2 manzanas</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/三" target="_blank">三</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/鸡" target="_blank">鸡</a><a href="https://www.dong-chinese.com/wiki/蛋" target="_blank">蛋</a></td><td class="pinyin-col">sān ge jīdàn</td><td>🥚 3 huevos</td></tr>
+</table>
+
+<div class="box warn">
+  ⚠️ <strong>Ojo:</strong> cuando son <strong>2</strong>, se usa <span class="hz"><a href="https://www.dong-chinese.com/wiki/两" target="_blank">两</a></span> (liǎng), no <span class="hz"><a href="https://www.dong-chinese.com/wiki/二" target="_blank">二</a></span> (èr). <span class="hz"><a href="https://www.dong-chinese.com/wiki/二" target="_blank">二</a></span> solo se usa para contar números (uno, dos, tres...).<br>
+  ✅ <span class="hz">两个人</span> (liǎng ge rén) = 2 personas<br>
+  ❌ <span class="hz">二个人</span> (incorrecto)
+</div>
+
+<div class="box note">
+  💡 <span class="hz"><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> es el "comodín" de los clasificadores. Si no sabes qué clasificador usar, <span class="hz"><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> es la apuesta segura. Con el tiempo aprenderás los específicos (本 para libros, 只 para animales, 辆 para vehículos, etc.).
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 6: CLASIFICADORES ESPECÍFICOS   -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s6" class="blue">6. Clasificadores específicos: 条, 只, 件</h2>
+<div class="box grammar">
+  Cada tipo de sustantivo tiene su clasificador específico. Los más comunes para objetos contables son:
+</div>
+
+<h3>🐕 条 (tiáo) — Animales largos y delgados</h3>
+<div class="box note">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/条" target="_blank">条</a></span> (tiáo) se usa para objetos/animales <strong>largos y delgados</strong>: perros, peces, serpientes, ríos, caminos, pantalones.
+</div>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/条" target="_blank">条</a><a href="https://www.dong-chinese.com/wiki/狗" target="_blank">狗</a></td><td class="pinyin-col">yì tiáo gǒu</td><td>🐕 1 perro</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/两" target="_blank">两</a><a href="https://www.dong-chinese.com/wiki/条" target="_blank">条</a><a href="https://www.dong-chinese.com/wiki/鱼" target="_blank">鱼</a></td><td class="pinyin-col">liǎng tiáo yú</td><td>🐟 2 peces</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/条" target="_blank">条</a><a href="https://www.dong-chinese.com/wiki/裤" target="_blank">裤</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a></td><td class="pinyin-col">yì tiáo kùzi</td><td>👖 1 pantalón</td></tr>
+</table>
+
+<h3>🐱 只 (zhī) — Animales pequeños y objetos pares</h3>
+<div class="box note">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/只" target="_blank">只</a></span> (zhī) se usa para la mayoría de los <strong>animales</strong> (gatos, pájaros, conejos) y para objetos que normalmente van en pares (un zapato, un ojo, una mano).
+</div>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/只" target="_blank">只</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a></td><td class="pinyin-col">yì zhī māo</td><td>🐱 1 gato</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/三" target="_blank">三</a><a href="https://www.dong-chinese.com/wiki/只" target="_blank">只</a><a href="https://www.dong-chinese.com/wiki/鸟" target="_blank">鸟</a></td><td class="pinyin-col">sān zhī niǎo</td><td>🐦 3 pájaros</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/两" target="_blank">两</a><a href="https://www.dong-chinese.com/wiki/只" target="_blank">只</a><a href="https://www.dong-chinese.com/wiki/手" target="_blank">手</a></td><td class="pinyin-col">liǎng zhī shǒu</td><td>✋ 2 manos</td></tr>
+</table>
+
+<h3>👨‍👩‍👧 口 (kǒu) — Miembros de la familia</h3>
+<div class="box note">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/口" target="_blank">口</a></span> (kǒu) se usa exclusivamente para contar <strong>miembros de una familia</strong>. Literalmente 口 significa "boca" (las "bocas" que hay que alimentar en la familia).
+</div>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/四" target="_blank">四</a><a href="https://www.dong-chinese.com/wiki/口" target="_blank">口</a><a href="https://www.dong-chinese.com/wiki/人" target="_blank">人</a>。</td><td class="pinyin-col">Wǒ jiā yǒu sì kǒu rén.</td><td>👨‍👩‍👦‍👦 En mi familia hay 4 personas.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/几" target="_blank">几</a><a href="https://www.dong-chinese.com/wiki/口" target="_blank">口</a><a href="https://www.dong-chinese.com/wiki/人" target="_blank">人</a>？</td><td class="pinyin-col">Nǐ jiā yǒu jǐ kǒu rén?</td><td>❓ ¿Cuántas personas hay en tu familia?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a><a href="https://www.dong-chinese.com/wiki/口" target="_blank">口</a><a href="https://www.dong-chinese.com/wiki/人" target="_blank">人</a></td><td class="pinyin-col">wǔ kǒu rén</td><td>5 miembros de la familia</td></tr>
+</table>
+
+<div class="box warn">
+  ⚠️ <span class="hz"><a href="https://www.dong-chinese.com/wiki/口" target="_blank">口</a></span> <strong>solo</strong> se usa para contar personas dentro de una familia. Para contar personas en general se usa <span class="hz"><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span>:<br>
+  ✅ <span class="hz">我家有四口人</span> (En mi familia hay 4 personas)<br>
+  ✅ <span class="hz">三个人</span> (3 personas, genérico)<br>
+  ❌ <span class="hz">三口人</span> (si no es sobre la familia)
+</div>
+
+<h3>👕 件 (jiàn) — Ropa y artículos</h3>
+<div class="box note">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/件" target="_blank">件</a></span> (jiàn) se usa para <strong>ropa (de la parte superior)</strong> y artículos/cosas abstractas (asuntos, equipaje).
+</div>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/件" target="_blank">件</a><a href="https://www.dong-chinese.com/wiki/衣" target="_blank">衣</a><a href="https://www.dong-chinese.com/wiki/服" target="_blank">服</a></td><td class="pinyin-col">yí jiàn yīfu</td><td>👕 1 prenda de ropa</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/两" target="_blank">两</a><a href="https://www.dong-chinese.com/wiki/件" target="_blank">件</a><a href="https://www.dong-chinese.com/wiki/事" target="_blank">事</a></td><td class="pinyin-col">liǎng jiàn shì</td><td>📋 2 asuntos / cosas</td></tr>
+</table>
+
+<div class="box warn">
+  ⚠️ <strong>Ojo con 看见:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/看" target="_blank">看</a><a href="https://www.dong-chinese.com/wiki/见" target="_blank">见</a></span> (kànjiàn) = ver (percibir con la vista). Aunque contiene el mismo carácter <span class="hz">见</span> que algunos clasificadores, <strong>NO es un clasificador</strong>, es un verbo compuesto: 看 (mirar) + 见 (percibir).
+</div>
+
+<h3>Resumen rápido de clasificadores</h3>
+<table>
+  <tr><th>Clasificador</th><th class="pinyin-col">Pinyin</th><th>Se usa para</th><th>Ejemplo</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></td><td class="pinyin-col">ge</td><td>Genérico (personas, cosas sin clasificador propio)</td><td>三个人 (3 personas)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/条" target="_blank">条</a></td><td class="pinyin-col">tiáo</td><td>Objetos/animales largos y delgados</td><td>一条狗 (1 perro)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/只" target="_blank">只</a></td><td class="pinyin-col">zhī</td><td>Animales pequeños, objetos pares</td><td>一只猫 (1 gato)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/件" target="_blank">件</a></td><td class="pinyin-col">jiàn</td><td>Ropa, asuntos</td><td>一件衣服 (1 prenda)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/口" target="_blank">口</a></td><td class="pinyin-col">kǒu</td><td>Miembros de la familia</td><td>四口人 (4 personas en la familia)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a></td><td class="pinyin-col">bēi</td><td>Bebidas en vaso/taza</td><td>一杯茶 (1 taza de té)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/瓶" target="_blank">瓶</a></td><td class="pinyin-col">píng</td><td>Bebidas en botella</td><td>一瓶水 (1 botella de agua)</td></tr>
+</table>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 7: 这 DEMOSTRATIVO              -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s7" class="green">7. 这 / 那 — Demostrativos "este" / "ese"</h2>
+<div class="box grammar">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a></span> (zhè) se usa para señalar algo <strong>cerca</strong> del hablante: "este", "esta", "esto".<br>
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a></span> (nà) se usa para señalar algo <strong>lejos</strong> del hablante: "ese", "esa", "eso", "aquel".
+</div>
+
+<div class="box structure">
+  Estructura con clasificador: <code>这/那 + 个/条/只/件 + sustantivo</code><br>
+  Significa: "este/ese ___"
+</div>
+
+<h3>Ejemplos básicos</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a></td><td class="pinyin-col">zhè</td><td>👉 Esto / este</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></td><td class="pinyin-col">zhège</td><td>👉 Este / esta (genérico)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/人" target="_blank">人</a></td><td class="pinyin-col">zhège rén</td><td>👤 Esta persona</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a></td><td class="pinyin-col">zhège bēizi</td><td>🥤 Este vaso</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/条" target="_blank">条</a><a href="https://www.dong-chinese.com/wiki/狗" target="_blank">狗</a></td><td class="pinyin-col">zhè tiáo gǒu</td><td>🐕 Este perro</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/只" target="_blank">只</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a></td><td class="pinyin-col">zhè zhī māo</td><td>🐱 Este gato</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/件" target="_blank">件</a><a href="https://www.dong-chinese.com/wiki/衣" target="_blank">衣</a><a href="https://www.dong-chinese.com/wiki/服" target="_blank">服</a></td><td class="pinyin-col">zhè jiàn yīfu</td><td>👕 Esta prenda de ropa</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/咖" target="_blank">咖</a><a href="https://www.dong-chinese.com/wiki/啡" target="_blank">啡</a></td><td class="pinyin-col">zhè bēi kāfēi</td><td>☕ Esta taza de café</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/瓶" target="_blank">瓶</a><a href="https://www.dong-chinese.com/wiki/水" target="_blank">水</a></td><td class="pinyin-col">zhè píng shuǐ</td><td>💧 Esta botella de agua</td></tr>
+</table>
+
+<h3>👈 那 (nà) — "ese / aquel" (cosa lejana)</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a></td><td class="pinyin-col">nà</td><td>👈 Eso / ese</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></td><td class="pinyin-col">nàge / nèige</td><td>👈 Ese / esa (genérico)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/人" target="_blank">人</a></td><td class="pinyin-col">nàge rén</td><td>👤 Esa persona</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a></td><td class="pinyin-col">nàge bēizi</td><td>🥤 Ese vaso</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/条" target="_blank">条</a><a href="https://www.dong-chinese.com/wiki/狗" target="_blank">狗</a></td><td class="pinyin-col">nà tiáo gǒu</td><td>🐕 Ese perro</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/咖" target="_blank">咖</a><a href="https://www.dong-chinese.com/wiki/啡" target="_blank">啡</a></td><td class="pinyin-col">nà bēi kāfēi</td><td>☕ Esa taza de café</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a>。</td><td class="pinyin-col">Wǒ yào nàge.</td><td>👈 Quiero ese (señalando lejos).</td></tr>
+</table>
+
+<h3>Resumen: 这 vs 那</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Distancia</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></td><td class="pinyin-col">zhège</td><td>👉 Cerca</td><td>Este / esta</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></td><td class="pinyin-col">nàge</td><td>👈 Lejos</td><td>Ese / esa / aquel</td></tr>
+</table>
+
+<div class="box tip">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a></span> y <span class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a></span> siempre van seguidos de un clasificador cuando se refieren a un objeto concreto. Las combinaciones <span class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> (zhège) y <span class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> (nàge) son las más comunes.
+</div>
+
+<div class="box warn">
+  ⚠️ <strong>Curiosidad cultural:</strong> en la conversación diaria, los chinos usan mucho <span class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> (pronunciado "nèige" o "nàge") como muletilla, tipo "eeeh..." o "pues...". Para oídos occidentales puede sonar raro 😅
+</div>
+
+<div class="box note">
+  😎 <strong>¡El chino es más simple que el inglés en esto!</strong> En inglés hay que aprender <em>this / that / these / those</em> (singular/plural + cerca/lejos). En chino solo necesitas memorizar <span class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a></span> (cerca) y <span class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a></span> (lejos), y el clasificador se encarga de especificar el objeto. ¡Mucho más fácil! 🎉
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 8: 要 vs 想                     -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s8" class="gold">8. 要 vs 想 — Comprar / pedir cosas</h2>
+<div class="box grammar">
+  Para <strong>comprar o pedir</strong> cosas también se puede usar <span class="hz"><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a></span> (yào) = "quiero" / "voy a". Es más directo que <span class="hz"><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a></span> (xiǎng).
+</div>
+
+<table>
+  <tr><th>Verbo</th><th class="pinyin-col">Pinyin</th><th>Matiz</th><th>Uso típico</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a></td><td class="pinyin-col">xiǎng</td><td>Suave, "me gustaría"</td><td>Expresar deseo o intención</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a></td><td class="pinyin-col">yào</td><td>Directo, "quiero" / "voy a"</td><td>Pedir, comprar, decisión firme</td></tr>
+</table>
+
+<h3>Ejemplos de compra / pedido</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a>。</td><td class="pinyin-col">Wǒ yào yí ge bēizi.</td><td>🥤 Quiero un vaso (lo estoy pidiendo/comprando).</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/咖" target="_blank">咖</a><a href="https://www.dong-chinese.com/wiki/啡" target="_blank">啡</a>。</td><td class="pinyin-col">Wǒ yào yì bēi kāfēi.</td><td>☕ Quiero una taza de café (pidiendo en cafetería).</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a>。</td><td class="pinyin-col">Wǒ yào zhège.</td><td>👉 Quiero esto / este (muy general, señalando).</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a><a href="https://www.dong-chinese.com/wiki/两" target="_blank">两</a><a href="https://www.dong-chinese.com/wiki/瓶" target="_blank">瓶</a><a href="https://www.dong-chinese.com/wiki/水" target="_blank">水</a>。</td><td class="pinyin-col">Wǒ yào liǎng píng shuǐ.</td><td>💧 Quiero dos botellas de agua.</td></tr>
+</table>
+
+<h3>Comparación: 我想买 vs 我要</h3>
+<table>
+  <tr><th>Con 想买 (xiǎng mǎi)</th><th>Con 要 (yào)</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/买" target="_blank">买</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a>。</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a>。</td></tr>
+  <tr><td>"Me gustaría comprar un vaso" (expresas el deseo)</td><td>"Quiero un vaso" (lo estás pidiendo directamente)</td></tr>
+</table>
+
+<div class="box tip">
+  💡 En una tienda o restaurante es más común usar <span class="hz"><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a></span> porque ya estás decidiendo qué comprar. <span class="hz"><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a></span> es mejor cuando todavía estás hablando de tus intenciones.
+</div>
+
+<div class="box note">
+  🌟 <strong>Frase de supervivencia en China:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> (wǒ yào zhège) = "Quiero esto". Es tan general que sirve para TODO: no sabes el nombre del objeto, solo apuntas y dices esto 👉 y listo. Funciona en tiendas, restaurantes, cafeterías, mercados... ideal para turistear en China sin saber mucho chino 😂
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 9: 多少                          -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s9" class="blue">9. 多少 — "cuántos / cuánto"</h2>
+<div class="box grammar">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a></span> (duōshao) = ¿cuánto? / ¿cuántos? Literalmente: <span class="hz"><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a></span> (mucho) + <span class="hz"><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a></span> (poco) = "¿mucho o poco?"
+</div>
+
+<div class="box structure">
+  Estructura: <code>多少 + (clasificador) + sustantivo？</code><br>
+  La pregunta típica de precio: <code>多少钱？</code> = ¿Cuánto cuesta?
+</div>
+
+<h3>Preguntando el precio: 多少钱？</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/钱" target="_blank">钱</a></td><td class="pinyin-col">qián</td><td>💰 Dinero</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a><a href="https://www.dong-chinese.com/wiki/钱" target="_blank">钱</a>？</td><td class="pinyin-col">Duōshao qián?</td><td>💰 ¿Cuánto cuesta? / ¿Cuánto dinero?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a><a href="https://www.dong-chinese.com/wiki/钱" target="_blank">钱</a>？</td><td class="pinyin-col">Zhège duōshao qián?</td><td>👉 ¿Cuánto cuesta esto?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a><a href="https://www.dong-chinese.com/wiki/钱" target="_blank">钱</a>？</td><td class="pinyin-col">Nàge duōshao qián?</td><td>👈 ¿Cuánto cuesta ese?</td></tr>
+</table>
+
+<h3>Preguntando cantidades</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/要" target="_blank">要</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a>？</td><td class="pinyin-col">Nǐ yào duōshao?</td><td>¿Cuánto/cuántos quieres?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a><a href="https://www.dong-chinese.com/wiki/钱" target="_blank">钱</a>？</td><td class="pinyin-col">Nǐ yǒu duōshao qián?</td><td>¿Cuánto dinero tienes?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/们" target="_blank">们</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/校" target="_blank">校</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a><a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/生" target="_blank">生</a>？</td><td class="pinyin-col">Nǐmen xuéxiào yǒu duōshao xuéshēng?</td><td>🎓 ¿Cuántos estudiantes tiene tu colegio/universidad?</td></tr>
+</table>
+
+<h3>Pregunta con 多少 + respuesta con 个</h3>
+<div class="box structure">
+  Pregunta: <code>你有多少 + sustantivo？</code><br>
+  Respuesta: <code>我有 + número + 个 + sustantivo</code>
+</div>
+
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a><a href="https://www.dong-chinese.com/wiki/老" target="_blank">老</a><a href="https://www.dong-chinese.com/wiki/师" target="_blank">师</a>？</td><td class="pinyin-col">Nǐ yǒu duōshao lǎoshī?</td><td>👨‍🏫 ¿Cuántos profesores tienes?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/三" target="_blank">三</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/老" target="_blank">老</a><a href="https://www.dong-chinese.com/wiki/师" target="_blank">师</a>。</td><td class="pinyin-col">Wǒ yǒu sān ge lǎoshī.</td><td>Tengo 3 profesores.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/文" target="_blank">文</a><a href="https://www.dong-chinese.com/wiki/老" target="_blank">老</a><a href="https://www.dong-chinese.com/wiki/师" target="_blank">师</a>？</td><td class="pinyin-col">Nǐ yǒu duōshao Zhōngwén lǎoshī?</td><td>🇨🇳 ¿Cuántos profesores de chino tienes?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/中" target="_blank">中</a><a href="https://www.dong-chinese.com/wiki/文" target="_blank">文</a><a href="https://www.dong-chinese.com/wiki/老" target="_blank">老</a><a href="https://www.dong-chinese.com/wiki/师" target="_blank">师</a>。</td><td class="pinyin-col">Wǒ yǒu yí ge Zhōngwén lǎoshī.</td><td>Tengo 1 profesor de chino.</td></tr>
+</table>
+
+<div class="box note">
+  💡 <strong>Patrón clave:</strong> aunque preguntes con <span class="hz"><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a></span> (sin clasificador en la pregunta), al responder <strong>siempre debes usar el clasificador</strong> (<span class="hz"><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> en la mayoría de los casos). La estructura es <code>número + 个 + sustantivo</code>.
+</div>
+
+<div class="box tip">
+  💡 <strong>多少 vs 几:</strong><br>
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/几" target="_blank">几</a></span> (jǐ) = se usa para números pequeños (normalmente menos de 10). Requiere clasificador.<br>
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a></span> (duōshao) = se usa para números grandes o cantidades indefinidas. El clasificador es opcional.<br>
+  Ejemplo: <span class="hz">几口人？</span> (familia, pocas personas) vs <span class="hz">多少钱？</span> (dinero, cantidad grande)
+</div>
+
+<h3>💴 块 — Unidad de dinero coloquial</h3>
+<div class="box grammar">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></span> (kuài) = unidad coloquial para el dinero chino. Es como decir "peso" en español. La forma formal es <span class="hz"><a href="https://www.dong-chinese.com/wiki/元" target="_blank">元</a></span> (yuán), pero en el día a día todos usan 块.
+</div>
+
+<div class="box note">
+  💴 <strong>人民币 (rénmínbì) — La moneda china:</strong><br>
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/人" target="_blank">人</a><a href="https://www.dong-chinese.com/wiki/民" target="_blank">民</a><a href="https://www.dong-chinese.com/wiki/币" target="_blank">币</a></span> (rénmínbì) literalmente significa "moneda del pueblo" (人民 pueblo + 币 moneda). Es el <strong>nombre oficial de la moneda china</strong>, se abrevia como <strong>RMB</strong> y su código internacional es <strong>CNY</strong>.<br><br>
+  📊 <strong>Para entender la diferencia:</strong><br>
+  • <span class="hz"><a href="https://www.dong-chinese.com/wiki/人" target="_blank">人</a><a href="https://www.dong-chinese.com/wiki/民" target="_blank">民</a><a href="https://www.dong-chinese.com/wiki/币" target="_blank">币</a></span> (rénmínbì) = nombre del sistema monetario (como "peso chileno")<br>
+  • <span class="hz"><a href="https://www.dong-chinese.com/wiki/元" target="_blank">元</a></span> (yuán) = unidad básica formal (1 yuan, 10 yuan...)<br>
+  • <span class="hz"><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></span> (kuài) = la misma unidad, pero en lenguaje coloquial (como decir "lucas" en Chile)
+</div>
+
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></td><td class="pinyin-col">kuài</td><td>💴 Unidad monetaria (coloquial)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/元" target="_blank">元</a></td><td class="pinyin-col">yuán</td><td>💴 Yuan (formal, oficial)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a><a href="https://www.dong-chinese.com/wiki/钱" target="_blank">钱</a></td><td class="pinyin-col">yí kuài qián</td><td>1 yuan</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a><a href="https://www.dong-chinese.com/wiki/钱" target="_blank">钱</a></td><td class="pinyin-col">shí kuài qián</td><td>10 yuan</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/百" target="_blank">百</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></td><td class="pinyin-col">yì bǎi kuài</td><td>100 yuan</td></tr>
+</table>
+
+<div class="box note">
+  💡 <strong>Ejemplo de diálogo en tienda:</strong><br>
+  A: <span class="hz"><a href="https://www.dong-chinese.com/wiki/这" target="_blank">这</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a><a href="https://www.dong-chinese.com/wiki/钱" target="_blank">钱</a>？</span> (zhège duōshao qián?) — ¿Cuánto cuesta esto?<br>
+  B: <span class="hz"><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></span> (shí kuài) — 10 yuan.
+</div>
+
+<h3>🇨🇱 En pesos chilenos</h3>
+<div class="box tip">
+  Tipo de cambio aproximado: <strong>1 yuan (块) ≈ 135 pesos chilenos</strong> 💸
+</div>
+
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Aprox. en CLP</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></td><td class="pinyin-col">yí kuài</td><td>~ $135 CLP</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></td><td class="pinyin-col">shí kuài</td><td>~ $1.350 CLP</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/百" target="_blank">百</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></td><td class="pinyin-col">yì bǎi kuài</td><td>~ $13.500 CLP</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/千" target="_blank">千</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></td><td class="pinyin-col">yì qiān kuài</td><td>~ $135.000 CLP</td></tr>
+</table>
+
+<div class="box note">
+  🛒 <strong>Ejemplos prácticos (en China):</strong><br>
+  • Un café en Starbucks ≈ 30 块 (~$4.000 CLP)<br>
+  • Una hamburguesa de McDonald's ≈ 25-30 块 (~$3.500 CLP)<br>
+  • Una botella de agua ≈ 3 块 (~$400 CLP)<br>
+  • Un viaje en metro en Beijing ≈ 3-10 块 (~$400-$1.350 CLP)<br><br>
+  💵 <strong>Billete de 100:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/百" target="_blank">百</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></span> (yì bǎi kuài) — el billete más común y más grande de uso diario (~$13.500 CLP)
+</div>
+
+<h3>🌏 Otras divisas en la región</h3>
+<div class="box grammar">
+  Aunque en muchas regiones se hable chino, cada una tiene su <strong>propia moneda</strong>. No todas las zonas sinohablantes usan 人民币.
+</div>
+
+<table>
+  <tr><th>Región</th><th>Moneda</th><th>Código</th><th>Símbolo</th></tr>
+  <tr><td>🇨🇳 China continental</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/人" target="_blank">人</a><a href="https://www.dong-chinese.com/wiki/民" target="_blank">民</a><a href="https://www.dong-chinese.com/wiki/币" target="_blank">币</a> (rénmínbì)</td><td>CNY / RMB</td><td>¥</td></tr>
+  <tr><td>🇹🇼 Taiwán</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/新" target="_blank">新</a><a href="https://www.dong-chinese.com/wiki/台" target="_blank">台</a><a href="https://www.dong-chinese.com/wiki/币" target="_blank">币</a> (xīn táibì)</td><td>TWD</td><td>NT$</td></tr>
+  <tr><td>🇭🇰 Hong Kong</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/港" target="_blank">港</a><a href="https://www.dong-chinese.com/wiki/币" target="_blank">币</a> (gǎngbì)</td><td>HKD</td><td>HK$</td></tr>
+  <tr><td>🇲🇴 Macao</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/澳" target="_blank">澳</a><a href="https://www.dong-chinese.com/wiki/门" target="_blank">门</a><a href="https://www.dong-chinese.com/wiki/元" target="_blank">元</a> (àomén yuán)</td><td>MOP</td><td>MOP$</td></tr>
+  <tr><td>🇸🇬 Singapur</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/新" target="_blank">新</a><a href="https://www.dong-chinese.com/wiki/加" target="_blank">加</a><a href="https://www.dong-chinese.com/wiki/坡" target="_blank">坡</a><a href="https://www.dong-chinese.com/wiki/元" target="_blank">元</a> (xīnjiāpō yuán)</td><td>SGD</td><td>S$</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>Curiosidad:</strong> en todas estas regiones se usa la palabra <span class="hz"><a href="https://www.dong-chinese.com/wiki/元" target="_blank">元</a></span> (yuán) o <span class="hz"><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></span> (kuài) para referirse a su propia unidad monetaria, pero <strong>no son intercambiables</strong>: 100 HKD no es lo mismo que 100 CNY. Cada una tiene su propio tipo de cambio.
+</div>
+
+<h3>🏞️ Paisajes chinos en los billetes</h3>
+<div class="box grammar">
+  Los billetes del 人民币 muestran paisajes emblemáticos de China en el reverso. En el anverso, todos llevan el retrato de <span class="hz"><a href="https://www.dong-chinese.com/wiki/毛" target="_blank">毛</a><a href="https://www.dong-chinese.com/wiki/泽" target="_blank">泽</a><a href="https://www.dong-chinese.com/wiki/东" target="_blank">东</a></span> (Máo Zédōng).
+</div>
+
+<table>
+  <tr><th>Billete</th><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Paisaje</th></tr>
+  <tr><td>1 块</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/西" target="_blank">西</a><a href="https://www.dong-chinese.com/wiki/湖" target="_blank">湖</a></td><td class="pinyin-col">Xī Hú</td><td>🏞️ Lago del Oeste (Hangzhou)</td></tr>
+  <tr><td>5 块</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/泰" target="_blank">泰</a><a href="https://www.dong-chinese.com/wiki/山" target="_blank">山</a></td><td class="pinyin-col">Tài Shān</td><td>⛰️ Monte Tai (montaña sagrada)</td></tr>
+  <tr><td>10 块</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/长" target="_blank">长</a><a href="https://www.dong-chinese.com/wiki/江" target="_blank">江</a><a href="https://www.dong-chinese.com/wiki/三" target="_blank">三</a><a href="https://www.dong-chinese.com/wiki/峡" target="_blank">峡</a></td><td class="pinyin-col">Cháng Jiāng Sān Xiá</td><td>🌊 Tres Gargantas del río Yangtsé</td></tr>
+  <tr><td>20 块</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/桂" target="_blank">桂</a><a href="https://www.dong-chinese.com/wiki/林" target="_blank">林</a><a href="https://www.dong-chinese.com/wiki/山" target="_blank">山</a><a href="https://www.dong-chinese.com/wiki/水" target="_blank">水</a></td><td class="pinyin-col">Guìlín shānshuǐ</td><td>🏔️ Paisajes de Guilin (montañas y ríos)</td></tr>
+  <tr><td>50 块</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/布" target="_blank">布</a><a href="https://www.dong-chinese.com/wiki/达" target="_blank">达</a><a href="https://www.dong-chinese.com/wiki/拉" target="_blank">拉</a><a href="https://www.dong-chinese.com/wiki/宫" target="_blank">宫</a></td><td class="pinyin-col">Bùdálā Gōng</td><td>🏯 Palacio de Potala (Tíbet)</td></tr>
+  <tr><td>100 块</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/人" target="_blank">人</a><a href="https://www.dong-chinese.com/wiki/民" target="_blank">民</a><a href="https://www.dong-chinese.com/wiki/大" target="_blank">大</a><a href="https://www.dong-chinese.com/wiki/会" target="_blank">会</a><a href="https://www.dong-chinese.com/wiki/堂" target="_blank">堂</a></td><td class="pinyin-col">Rénmín Dàhuìtáng</td><td>🏛️ Gran Salón del Pueblo (Beijing)</td></tr>
+</table>
+
+<div class="box note">
+  🎨 <strong>Dato cultural:</strong> cada billete es como una "postal oficial" de China. Tener uno de cada denominación es llevarse pedacitos de los lugares más emblemáticos del país. Por eso muchos turistas los guardan de recuerdo.
+</div>
+
+<h3>🪙 Unidades menores: 角 / 毛 y 分</h3>
+<div class="box grammar">
+  Al igual que pasa con <span class="hz"><a href="https://www.dong-chinese.com/wiki/元" target="_blank">元</a></span> / <span class="hz"><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></span>, para las fracciones del yuan también hay <strong>dos nombres</strong>: uno formal y otro coloquial, pero <strong>valen lo mismo</strong>.
+</div>
+
+<table>
+  <tr><th>Formal</th><th class="pinyin-col">Pinyin</th><th>Coloquial</th><th class="pinyin-col">Pinyin</th><th>Valor</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/元" target="_blank">元</a></td><td class="pinyin-col">yuán</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></td><td class="pinyin-col">kuài</td><td>💴 1 yuan (unidad principal)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/角" target="_blank">角</a></td><td class="pinyin-col">jiǎo</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/毛" target="_blank">毛</a></td><td class="pinyin-col">máo</td><td>🪙 0,1 yuan (10 céntimos)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/分" target="_blank">分</a></td><td class="pinyin-col">fēn</td><td>—</td><td class="pinyin-col">—</td><td>🪙 0,01 yuan (1 céntimo, casi no se usa)</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>Jerarquía monetaria:</strong><br>
+  1 <span class="hz"><a href="https://www.dong-chinese.com/wiki/元" target="_blank">元</a></span> = 10 <span class="hz"><a href="https://www.dong-chinese.com/wiki/角" target="_blank">角</a></span> = 100 <span class="hz"><a href="https://www.dong-chinese.com/wiki/分" target="_blank">分</a></span><br>
+  1 <span class="hz"><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a></span> = 10 <span class="hz"><a href="https://www.dong-chinese.com/wiki/毛" target="_blank">毛</a></span> = 100 <span class="hz"><a href="https://www.dong-chinese.com/wiki/分" target="_blank">分</a></span>
+</div>
+
+<h3>Ejemplos de precios con fracciones</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a><a href="https://www.dong-chinese.com/wiki/角" target="_blank">角</a></td><td class="pinyin-col">wǔ jiǎo</td><td>0,5 yuan (formal)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a><a href="https://www.dong-chinese.com/wiki/毛" target="_blank">毛</a></td><td class="pinyin-col">wǔ máo</td><td>0,5 yuan (coloquial)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/三" target="_blank">三</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a><a href="https://www.dong-chinese.com/wiki/毛" target="_blank">毛</a></td><td class="pinyin-col">sān kuài wǔ máo</td><td>3,50 yuan (~$475 CLP)</td></tr>
+</table>
+
+<div class="box warn">
+  ⚠️ <span class="hz"><a href="https://www.dong-chinese.com/wiki/分" target="_blank">分</a></span> (fēn) prácticamente <strong>ya no se usa</strong> en la vida cotidiana por su valor muy bajo. Con la digitalización de los pagos (WeChat Pay, Alipay), casi todas las transacciones se hacen sin monedas pequeñas.
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 10: 你多大 EDAD                 -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s10" class="gold">10. 你多大？— Preguntar la edad</h2>
+<div class="box grammar">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/大" target="_blank">大</a></span> (nǐ duō dà?) = ¿qué edad tienes? Literalmente: <span class="hz"><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a></span> (qué tan) + <span class="hz"><a href="https://www.dong-chinese.com/wiki/大" target="_blank">大</a></span> (grande) = "¿qué tan grande eres?"
+</div>
+
+<div class="box structure">
+  Preguntar: <code>你多大？</code><br>
+  Responder: <code>我 + número + 岁</code>
+</div>
+
+<h3>Ejemplos</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/大" target="_blank">大</a>？</td><td class="pinyin-col">Nǐ duō dà?</td><td>🎂 ¿Qué edad tienes?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/二" target="_blank">二</a><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a><a href="https://www.dong-chinese.com/wiki/岁" target="_blank">岁</a>。</td><td class="pinyin-col">Wǒ èrshíwǔ suì.</td><td>Tengo 25 años.</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/三" target="_blank">三</a><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/岁" target="_blank">岁</a>。</td><td class="pinyin-col">Wǒ sānshí suì.</td><td>Tengo 30 años.</td></tr>
+</table>
+
+<h3>Variantes según la edad del interlocutor</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Uso</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/几" target="_blank">几</a><a href="https://www.dong-chinese.com/wiki/岁" target="_blank">岁</a>？</td><td class="pinyin-col">Nǐ jǐ suì?</td><td>👶 Para niños pequeños (menos de 10)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/大" target="_blank">大</a>？</td><td class="pinyin-col">Nǐ duō dà?</td><td>👤 Para adolescentes y adultos (uso general)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/您" target="_blank">您</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/大" target="_blank">大</a><a href="https://www.dong-chinese.com/wiki/年" target="_blank">年</a><a href="https://www.dong-chinese.com/wiki/纪" target="_blank">纪</a>？</td><td class="pinyin-col">Nín duō dà niánjì?</td><td>👴 Formal, para adultos mayores</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>岁</strong> (suì) = año de edad. Siempre va al final de la respuesta.<br>
+  Ejemplo: <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/二" target="_blank">二</a><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a><a href="https://www.dong-chinese.com/wiki/岁" target="_blank">岁</a></span> (wǒ èrshíwǔ suì) — Tengo 25 años. Nota: no se usa el verbo 是 (ser) — simplemente se dice "yo + número + años".
+</div>
+
+<div class="box warn">
+  ⚠️ <strong>Tacto cultural:</strong> en culturas occidentales preguntar la edad puede ser incómodo, pero en chino es más común, especialmente entre conocidos. Aun así, con personas mayores es mejor usar la forma formal <span class="hz"><a href="https://www.dong-chinese.com/wiki/您" target="_blank">您</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/大" target="_blank">大</a><a href="https://www.dong-chinese.com/wiki/年" target="_blank">年</a><a href="https://www.dong-chinese.com/wiki/纪" target="_blank">纪</a>？</span>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 11: PRÁCTICA                    -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s11" class="green">11. 🎯 Sección de práctica: preguntas y respuestas</h2>
+<div class="box note">
+  Bloque de práctica con las preguntas que trabajamos en clase. Respóndelas en chino practicando las estructuras vistas.
+</div>
+
+<h3>Pregunta 1: ¿Qué quieres comer?</h3>
+<div class="dialog">
+  <div class="da"><strong>P:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a><a href="https://www.dong-chinese.com/wiki/什" target="_blank">什</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a>？</span><br><em>Nǐ xiǎng chī shénme? — ¿Qué quieres comer?</em></div>
+  <div class="db"><strong>R:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a><a href="https://www.dong-chinese.com/wiki/饺" target="_blank">饺</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a>。</span><br><em>Wǒ xiǎng chī jiǎozi. — Quiero comer dumplings.</em></div>
+</div>
+
+<h3>Pregunta 2: ¿Qué quieres tomar?</h3>
+<div class="dialog">
+  <div class="da"><strong>P:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a><a href="https://www.dong-chinese.com/wiki/什" target="_blank">什</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a>？</span><br><em>Nǐ xiǎng hē shénme? — ¿Qué quieres tomar?</em></div>
+  <div class="db"><strong>R:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/咖" target="_blank">咖</a><a href="https://www.dong-chinese.com/wiki/啡" target="_blank">啡</a>。</span><br><em>Wǒ xiǎng hē yì bēi kāfēi. — Quiero tomar una taza de café.</em></div>
+</div>
+
+<h3>Pregunta 3: ¿Qué quieres hacer mañana en la tarde?</h3>
+<div class="dialog">
+  <div class="da"><strong>P:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a><a href="https://www.dong-chinese.com/wiki/下" target="_blank">下</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/做" target="_blank">做</a><a href="https://www.dong-chinese.com/wiki/什" target="_blank">什</a><a href="https://www.dong-chinese.com/wiki/么" target="_blank">么</a>？</span><br><em>Míngtiān xiàwǔ nǐ xiǎng zuò shénme? — ¿Qué quieres hacer mañana en la tarde?</em></div>
+  <div class="db"><strong>R:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/明" target="_blank">明</a><a href="https://www.dong-chinese.com/wiki/天" target="_blank">天</a><a href="https://www.dong-chinese.com/wiki/下" target="_blank">下</a><a href="https://www.dong-chinese.com/wiki/午" target="_blank">午</a><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/想" target="_blank">想</a><a href="https://www.dong-chinese.com/wiki/去" target="_blank">去</a><a href="https://www.dong-chinese.com/wiki/商" target="_blank">商</a><a href="https://www.dong-chinese.com/wiki/店" target="_blank">店</a>。</span><br><em>Míngtiān xiàwǔ wǒ xiǎng qù shāngdiàn. — Mañana en la tarde quiero ir a la tienda.</em></div>
+</div>
+
+<h3>Pregunta 4: ¿A qué tienda vas a comprar un vaso?</h3>
+<div class="dialog">
+  <div class="da"><strong>P:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/去" target="_blank">去</a><a href="https://www.dong-chinese.com/wiki/哪" target="_blank">哪</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/商" target="_blank">商</a><a href="https://www.dong-chinese.com/wiki/店" target="_blank">店</a><a href="https://www.dong-chinese.com/wiki/买" target="_blank">买</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a>？</span><br><em>Nǐ qù nǎge shāngdiàn mǎi bēizi? — ¿A qué tienda vas a comprar un vaso?</em></div>
+  <div class="db"><strong>R:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/去" target="_blank">去</a><a href="https://www.dong-chinese.com/wiki/商" target="_blank">商</a><a href="https://www.dong-chinese.com/wiki/场" target="_blank">场</a><a href="https://www.dong-chinese.com/wiki/买" target="_blank">买</a>。</span><br><em>Wǒ qù shāngchǎng mǎi. — Voy al mall a comprar.</em></div>
+</div>
+
+<h3>Pregunta 5: ¿Cuánto cuesta un vaso?</h3>
+<div class="dialog">
+  <div class="da"><strong>P:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a><a href="https://www.dong-chinese.com/wiki/多" target="_blank">多</a><a href="https://www.dong-chinese.com/wiki/少" target="_blank">少</a><a href="https://www.dong-chinese.com/wiki/钱" target="_blank">钱</a>？</span><br><em>Yí ge bēizi duōshao qián? — ¿Cuánto cuesta un vaso?</em></div>
+  <div class="db"><strong>R:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a><a href="https://www.dong-chinese.com/wiki/杯" target="_blank">杯</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/块" target="_blank">块</a><a href="https://www.dong-chinese.com/wiki/钱" target="_blank">钱</a>。</span><br><em>Yí ge bēizi shí kuài qián. — Un vaso cuesta 10 yuan.</em></div>
+</div>
+
+<div class="box tip">
+  💡 <strong>Dato útil:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/哪" target="_blank">哪</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> (nǎge) = "¿cuál?" (no confundir con <span class="hz"><a href="https://www.dong-chinese.com/wiki/那" target="_blank">那</a><a href="https://www.dong-chinese.com/wiki/个" target="_blank">个</a></span> nàge = "ese/aquel"). Misma escritura distinta, solo cambia el tono: 哪 (nǎ, 3er tono) para preguntar, 那 (nà, 4° tono) para señalar.
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 12: REPASO NÚMEROS              -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s12" class="blue">12. 🔢 Repaso rápido de números</h2>
+<div class="box note">
+  Chuletita de los números del 0 al 100+ para que tengas siempre a mano.
+</div>
+
+<h3>0 al 10 (la base de todo)</h3>
+<table>
+  <tr><th>#</th><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>#</th><th>Hanzi</th><th class="pinyin-col">Pinyin</th></tr>
+  <tr><td>0</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/零" target="_blank">零</a></td><td class="pinyin-col">líng</td><td>6</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/六" target="_blank">六</a></td><td class="pinyin-col">liù</td></tr>
+  <tr><td>1</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a></td><td class="pinyin-col">yī</td><td>7</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/七" target="_blank">七</a></td><td class="pinyin-col">qī</td></tr>
+  <tr><td>2</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/二" target="_blank">二</a></td><td class="pinyin-col">èr</td><td>8</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/八" target="_blank">八</a></td><td class="pinyin-col">bā</td></tr>
+  <tr><td>3</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/三" target="_blank">三</a></td><td class="pinyin-col">sān</td><td>9</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/九" target="_blank">九</a></td><td class="pinyin-col">jiǔ</td></tr>
+  <tr><td>4</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/四" target="_blank">四</a></td><td class="pinyin-col">sì</td><td>10</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a></td><td class="pinyin-col">shí</td></tr>
+  <tr><td>5</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a></td><td class="pinyin-col">wǔ</td><td>—</td><td>—</td><td class="pinyin-col">—</td></tr>
+</table>
+
+<h3>11-99 — Sólo sumas y multiplicas 🧮</h3>
+<div class="box tip">
+  ✨ <strong>Truco mágico:</strong> los números 11-99 se forman matemáticamente.<br>
+  • <strong>11-19</strong>: 十 + unidad → 11 = 十一 (10+1), 12 = 十二 (10+2), 19 = 十九 (10+9)<br>
+  • <strong>20, 30, 40...</strong>: unidad + 十 → 20 = 二十 (2×10), 30 = 三十 (3×10), 90 = 九十 (9×10)<br>
+  • <strong>Combinados</strong>: decena + 十 + unidad → 25 = 二十五 (2×10+5), 67 = 六十七 (6×10+7)
+</div>
+
+<table>
+  <tr><th>#</th><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Fórmula</th></tr>
+  <tr><td>11</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a></td><td class="pinyin-col">shíyī</td><td>10+1</td></tr>
+  <tr><td>15</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a></td><td class="pinyin-col">shíwǔ</td><td>10+5</td></tr>
+  <tr><td>20</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/二" target="_blank">二</a><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a></td><td class="pinyin-col">èrshí</td><td>2×10</td></tr>
+  <tr><td>25</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/二" target="_blank">二</a><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a></td><td class="pinyin-col">èrshíwǔ</td><td>2×10+5</td></tr>
+  <tr><td>50</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/五" target="_blank">五</a><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a></td><td class="pinyin-col">wǔshí</td><td>5×10</td></tr>
+  <tr><td>67</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/六" target="_blank">六</a><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/七" target="_blank">七</a></td><td class="pinyin-col">liùshíqī</td><td>6×10+7</td></tr>
+  <tr><td>99</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/九" target="_blank">九</a><a href="https://www.dong-chinese.com/wiki/十" target="_blank">十</a><a href="https://www.dong-chinese.com/wiki/九" target="_blank">九</a></td><td class="pinyin-col">jiǔshíjiǔ</td><td>9×10+9</td></tr>
+</table>
+
+<h3>Cifras grandes</h3>
+<table>
+  <tr><th>#</th><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td>100</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/百" target="_blank">百</a></td><td class="pinyin-col">yì bǎi</td><td>Cien</td></tr>
+  <tr><td>200</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/两" target="_blank">两</a><a href="https://www.dong-chinese.com/wiki/百" target="_blank">百</a></td><td class="pinyin-col">liǎng bǎi</td><td>Doscientos (¡con 两, no 二!)</td></tr>
+  <tr><td>1.000</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/千" target="_blank">千</a></td><td class="pinyin-col">yì qiān</td><td>Mil</td></tr>
+  <tr><td>10.000</td><td class="hz"><a href="https://www.dong-chinese.com/wiki/一" target="_blank">一</a><a href="https://www.dong-chinese.com/wiki/万" target="_blank">万</a></td><td class="pinyin-col">yí wàn</td><td>Diez mil (una unidad propia en chino!)</td></tr>
+</table>
+
+<div class="box warn">
+  ⚠️ <strong>Recuerda:</strong> con clasificadores el "2" se dice <span class="hz"><a href="https://www.dong-chinese.com/wiki/两" target="_blank">两</a></span> (liǎng), no <span class="hz"><a href="https://www.dong-chinese.com/wiki/二" target="_blank">二</a></span> (èr). Ej: 两个人 (2 personas), 两杯茶 (2 tazas de té), 两块钱 (2 yuan).
+</div>
+
+<div class="box tip">
+  🎯 <strong>Tip de práctica:</strong> aprende a decir tu edad, tu número de teléfono, tu fecha de nacimiento y los precios más comunes. Cuando los repitas varias veces, los números se te pegan solos.
+</div>
+
+<div style="display:flex; justify-content:space-between; align-items:center; margin-top:36px; padding:16px 0; border-top:1px solid #eee;" class="no-print">
+  <a href="clase05.html" style="color:#c0392b; text-decoration:none; font-size:0.85em; font-weight:600;">← Clase 05</a>
+  <a href="/basico2/" style="color:#c0392b; text-decoration:none; font-size:0.85em;">📚 Índice Básico 2</a>
+  <span style="color:#ccc;">—</span>
+</div>
+
+<button class="pinyin-toggle no-print" onclick="document.body.classList.toggle('hide-pinyin'); this.textContent = document.body.classList.contains('hide-pinyin') ? '👁️ Mostrar pinyin' : '🔤 Ocultar pinyin'">🔤 Ocultar pinyin</button>
+
+<footer>Básico 2 Clase 06 · 18 abr 2026</footer>
+
+<script>
+const AUDIO_BASE = '/audio/';
+const audioMap = {
+  "一": "zh_7941da94db.mp3",
+  "一万": "zh_5554f76854.mp3",
+  "一个朋友": "zh_5f84479afd.mp3",
+  "一个杯子": "zh_56a40ce1f2.mp3",
+  "一个杯子十块钱。": "zh_ef751eaa37.mp3",
+  "一个杯子多少钱？": "zh_36a8474bca.mp3",
+  "一件衣服": "zh_9cf3a0ed47.mp3",
+  "一千": "zh_edad80baf8.mp3",
+  "一千块": "zh_fd919f5636.mp3",
+  "一只猫": "zh_ea97ad3bfc.mp3",
+  "一块钱": "zh_2450d6417a.mp3",
+  "一条狗": "zh_06a116373f.mp3",
+  "一条裤子": "zh_2b4349c261.mp3",
+  "一瓶红酒": "zh_f915d92d93.mp3",
+  "一百": "zh_61b0509932.mp3",
+  "一百块": "zh_fb786bf27e.mp3",
+  "七": "zh_aad6914f8f.mp3",
+  "三": "zh_e662ff59a0.mp3",
+  "三个人": "zh_4dc939a3cd.mp3",
+  "三个老师": "zh_bb93f1127c.mp3",
+  "三个鸡蛋": "zh_c32b5eafd6.mp3",
+  "三口人": "zh_33ce33a37a.mp3",
+  "三只鸟": "zh_b0bcd70ef4.mp3",
+  "三块五毛": "zh_28497ba00e.mp3",
+  "上午": "zh_f8fbeae194.mp3",
+  "下午": "zh_e2eb289cc3.mp3",
+  "下午你想做什么？": "zh_8f09514d81.mp3",
+  "下午我想去商店。": "zh_f7e5f1c7e0.mp3",
+  "两": "zh_0bff8e5ca6.mp3",
+  "两个人": "zh_3d3b6e099f.mp3",
+  "两个苹果": "zh_ed4623d135.mp3",
+  "两件事": "zh_cf154a6a0d.mp3",
+  "两只手": "zh_18bab08ac5.mp3",
+  "两条鱼": "zh_1538b61e63.mp3",
+  "两百": "zh_9d1e6f00dd.mp3",
+  "个": "zh_930882bb0a.mp3",
+  "中午": "zh_259f542c09.mp3",
+  "九": "zh_9b4851f85d.mp3",
+  "九十九": "zh_e5c9bd0f16.mp3",
+  "买": "zh_8be34d50fd.mp3",
+  "二": "zh_2d8be272c9.mp3",
+  "二个人": "zh_8a9ca2b964.mp3",
+  "二十": "zh_39f55a21eb.mp3",
+  "二十五": "zh_ea8677ebe8.mp3",
+  "五": "zh_1fcc29d077.mp3",
+  "五个学生": "zh_d93325c0b2.mp3",
+  "五十": "zh_8adffdaa4c.mp3",
+  "五口人": "zh_cddc5af813.mp3",
+  "五毛": "zh_7ad702971e.mp3",
+  "五角": "zh_8d897f769b.mp3",
+  "人民大会堂": "zh_26beb916bb.mp3",
+  "人民币": "zh_6a4181483c.mp3",
+  "今天": "今天_800dfdd902.mp3",
+  "今天晚上": "zh_95b9ba7c21.mp3",
+  "件": "zh_f7edf5acc7.mp3",
+  "你们学校有多少学生？": "zh_6c54f749f7.mp3",
+  "你几岁？": "zh_9a0fed8a53.mp3",
+  "你去哪个商店买杯子？": "zh_e03061b377.mp3",
+  "你多大": "zh_928151b20a.mp3",
+  "你多大？": "zh_899e470325.mp3",
+  "你家有几口人？": "zh_1aef7c8693.mp3",
+  "你想买什么？": "zh_cb77fba24e.mp3",
+  "你想吃什么？": "zh_3a30b55fcc.mp3",
+  "你想喝什么？": "zh_7b27b514a2.mp3",
+  "你有多少中文老师？": "zh_68de0fa065.mp3",
+  "你有多少老师？": "zh_e8a5ae6c3e.mp3",
+  "你有多少钱？": "zh_2be465b189.mp3",
+  "你要多少？": "zh_e2b1ed5039.mp3",
+  "做": "zh_7105106a36.mp3",
+  "元": "zh_c16655df81.mp3",
+  "八": "zh_edf1acd5c6.mp3",
+  "六": "zh_61b453523d.mp3",
+  "六十七": "zh_e89c4abcdc.mp3",
+  "几": "几_28fef849a6.mp3",
+  "几口人？": "zh_e9ae68c4fd.mp3",
+  "分": "zh_daf783c8cd.mp3",
+  "十": "zh_181245720b.mp3",
+  "十一": "zh_6863d827d8.mp3",
+  "十五": "zh_5260c1f701.mp3",
+  "十块": "zh_443d0bfc4f.mp3",
+  "十块钱": "zh_b01a420b8d.mp3",
+  "口": "zh_c941757431.mp3",
+  "只": "zh_f4a0476b21.mp3",
+  "哪个": "zh_62a2b2ace6.mp3",
+  "商店": "zh_f303c10a9f.mp3",
+  "四": "zh_21716cf311.mp3",
+  "块": "zh_7084eb1b15.mp3",
+  "多": "zh_7b1568e679.mp3",
+  "多少": "zh_22266fe1dd.mp3",
+  "多少钱？": "zh_d51b2587ab.mp3",
+  "大": "zh_ab18e30c0d.mp3",
+  "少": "zh_bd2282db35.mp3",
+  "布达拉宫": "zh_0f48d569c6.mp3",
+  "您多大年纪？": "zh_6db6201478.mp3",
+  "想": "zh_291837bd5b.mp3",
+  "我三十岁。": "zh_c7bb276582.mp3",
+  "我二十五岁": "zh_5d6f627540.mp3",
+  "我二十五岁。": "zh_b318b56d1d.mp3",
+  "我去商场买。": "zh_a81eb09118.mp3",
+  "我家有四口人": "zh_0314407139.mp3",
+  "我家有四口人。": "zh_b262f802ce.mp3",
+  "我想买一个杯子。": "zh_20d2a44e3a.mp3",
+  "我想买一个水杯。": "zh_bf6b7c059e.mp3",
+  "我想买一个瓶子。": "zh_6cedad7def.mp3",
+  "我想吃中国菜。": "zh_221bdc25e6.mp3",
+  "我想吃米饭。": "zh_07cfb97588.mp3",
+  "我想吃饺子。": "zh_ede3048783.mp3",
+  "我想喝一杯咖啡。": "zh_6c0d43366b.mp3",
+  "我想喝咖啡。": "zh_d9043ab89c.mp3",
+  "我想喝水。": "zh_3cdbe36983.mp3",
+  "我想喝茶。": "zh_f9a4a54946.mp3",
+  "我有一个中文老师。": "zh_b667d1b7e9.mp3",
+  "我有三个老师。": "zh_6b07a90e07.mp3",
+  "我要一个杯子。": "zh_651fc2d870.mp3",
+  "我要一杯咖啡。": "zh_6dff1ab610.mp3",
+  "我要两瓶水。": "zh_87a3e263a7.mp3",
+  "我要这个": "zh_3dc011319e.mp3",
+  "我要这个。": "zh_df70d1a1f8.mp3",
+  "我要那个。": "zh_b6eec69788.mp3",
+  "早上": "zh_c8c0ba481d.mp3",
+  "明天": "明天_8bcbd77d1f.mp3",
+  "明天下午": "zh_de2bc17571.mp3",
+  "明天下午你想做什么？": "zh_4f77dacfd9.mp3",
+  "明天下午我想去商店。": "zh_c33f4075fb.mp3",
+  "明天下午我想学习。": "zh_dadb50a215.mp3",
+  "明天我去学校。": "zh_b2eb0d65db.mp3",
+  "明天我想学习。": "zh_4ece812541.mp3",
+  "明天早上": "zh_2042ecc32a.mp3",
+  "明天早上我想学习。": "zh_115a5abd08.mp3",
+  "昨天": "昨天_2f8d6f1584.mp3",
+  "晚上": "zh_a80cc5027a.mp3",
+  "条": "zh_cc1bacb511.mp3",
+  "杯": "zh_86296f5a97.mp3",
+  "杯子": "zh_51baa713ed.mp3",
+  "桂林山水": "zh_842fabadc7.mp3",
+  "毛": "zh_6f74ec994e.mp3",
+  "毛泽东": "zh_60d2395392.mp3",
+  "水杯": "zh_4418ea8dd0.mp3",
+  "泰山": "zh_ba9c1bc0df.mp3",
+  "玻璃杯": "zh_e31ceb39a7.mp3",
+  "瓶": "zh_0c88bfc874.mp3",
+  "瓶子": "zh_4276f530c7.mp3",
+  "看见": "zh_b963ce7e99.mp3",
+  "西湖": "zh_4b9a47ad50.mp3",
+  "要": "zh_5438c873f9.mp3",
+  "见": "zh_b0deb10456.mp3",
+  "角": "zh_2f11f44fe9.mp3",
+  "这": "zh_8e9b7a3a19.mp3",
+  "这个": "zh_76d3280175.mp3",
+  "这个人": "zh_e6518460a5.mp3",
+  "这个多少钱？": "zh_7ffc317d98.mp3",
+  "这个杯子": "zh_389ced5cef.mp3",
+  "这件衣服": "zh_0d2171ffb3.mp3",
+  "这只猫": "zh_0545a4f9e3.mp3",
+  "这条狗": "zh_9d9cc915da.mp3",
+  "这杯咖啡": "zh_97a732c3b0.mp3",
+  "这瓶水": "zh_b406f376a6.mp3",
+  "那": "zh_995c3ec9d7.mp3",
+  "那个": "zh_90e087f1e6.mp3",
+  "那个人": "zh_017f9e61c4.mp3",
+  "那个多少钱？": "zh_86e125fcb2.mp3",
+  "那个杯子": "zh_bdefa2159b.mp3",
+  "那条狗": "zh_47d99b857e.mp3",
+  "那杯咖啡": "zh_d0a1824842.mp3",
+  "钱": "zh_d23513f09b.mp3",
+  "长江三峡": "zh_f7ae004862.mp3",
+  "零": "zh_777fda6c51.mp3"
+};
+
+function speak(text) {
+  const file = audioMap[text];
+  if (file) {
+    const audio = new Audio(AUDIO_BASE + file);
+    audio.play();
+    return;
+  }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN';
+  u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+document.querySelectorAll('td.hz').forEach(td => {
+  const text = td.textContent.trim();
+  if (text.length > 0) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    td.appendChild(btn);
+  }
+});
+
+document.querySelectorAll('.da .hz, .db .hz').forEach(span => {
+  const text = span.textContent.trim();
+  if (text.length > 0) {
+    const btn = document.createElement('button');
+    btn.className = 'audio-btn';
+    btn.textContent = '🔊';
+    btn.title = 'Escuchar';
+    btn.onclick = (e) => { e.stopPropagation(); speak(text); };
+    span.after(btn);
+  }
+});
+
+document.querySelectorAll('table').forEach(table => {
+  const ths = table.querySelectorAll('th');
+  let pinyinCol = -1;
+  ths.forEach((th, i) => { if (/pinyin/i.test(th.textContent)) pinyinCol = i; });
+  if (pinyinCol >= 0) {
+    table.querySelectorAll('tr').forEach(tr => {
+      const cells = tr.querySelectorAll('td, th');
+      if (cells[pinyinCol]) cells[pinyinCol].classList.add('pinyin-col');
+    });
+  }
+});
+</script>
+</body>
+</html>
