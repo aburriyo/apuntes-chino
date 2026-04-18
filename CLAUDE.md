@@ -1,34 +1,23 @@
 # Apuntes Chino — Contexto para Claude
 
+## 📖 PRIMERO: lee CONTEXT.md
+Antes de explorar archivos, lee `CONTEXT.md` en la raíz del proyecto.
+Tiene toda la info clave: estructura, convenciones HTML, sistema de audio (ElevenLabs),
+deploy, preferencias del usuario, etc. **Ahorra muchísimos tokens.**
+
 ## Estado actual
 Estamos tomando apuntes de la **Clase 06 — Básico 2** (18 de abril, 2026).
 
 El archivo se está armando en: `chino/basico2/clase06.html`
 
-## Lo que ya está en el HTML (clase05.html)
-1. **和 (hé)** — "y/con" para conectar personas
-2. **Lugares** — 公园 (parque), 超市 (supermercado), 体育馆 (gimnasio techado), 家 (casa)
-3. **Deportes y actividades** — 散步, 看电视, 打篮球, 踢足球, 比赛
-4. **Estructura** — Sujeto + 和 + persona + 去 + lugar + verbo
-5. **Vocabulario completo**
-
-## Pendiente de agregar al HTML
-- Preguntas con 几 (jǐ) para fechas:
-  - 今天几月几号星期几？
-  - 明天几月几号星期几？
-  - 昨天几月几号星期几？
-- Preguntas con 哪儿 (nǎr) y 做什么 (zuò shénme):
-  - 明天你去哪儿做什么？
-  - 星期日你去哪儿做什么？
-- Vocabulario nuevo: 哪儿 (dónde), 做 (hacer), 什么 (qué)
-- Faltan los deportes y lugares reales que vieron en clase (los actuales son suposiciones)
-
 ## Formato
-- Seguir el mismo estilo HTML de clase04.html
+- Seguir el mismo estilo HTML de clase05.html (ver `CONTEXT.md` para detalles)
 - Cada hanzi con link a dong-chinese.com
 - Tablas con columnas: Hanzi | Pinyin | Español
 - Pinyin toggle funcional
 - Clases de color para h2: rojo default, .green, .blue, .gold, .gray
+- Audio ElevenLabs (voz Lily) → ver script en CONTEXT.md
 
 ## Deploy
 - Push a main despliega automáticamente a chino.basti.cl via GitHub Actions
+- Los links absolutos en HTML usan `/` no `/chino/` (el root del nginx ya apunta a chino/)
