@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Básico 2 — Clase 07 · Apuntes Chino</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;700&display=swap');
+  body { font-family: 'Noto Sans SC', -apple-system, Arial, sans-serif; max-width: 860px; margin: 0 auto; padding: 20px 24px 60px; color: #222; font-size: 15px; background: #fafafa; }
+  header { background: #1a1a2e; color: #fff; padding: 28px 28px 22px; border-radius: 12px; margin-bottom: 28px; }
+  header h1 { font-size: 1.6em; margin: 0 0 4px; color: #e74c3c; }
+  header p { margin: 0; color: #aaa; font-size: 0.88em; }
+  nav { background: #fff; border: 1px solid #e5e5e5; border-radius: 10px; padding: 16px 20px; margin-bottom: 28px; }
+  nav h3 { margin: 0 0 10px; font-size: 0.82em; text-transform: uppercase; letter-spacing: 1px; color: #999; }
+  nav li { margin: 3px 0; font-size: 0.9em; }
+  nav a { color: #c0392b; text-decoration: none; }
+  nav a:hover { text-decoration: underline; }
+  h2 { font-size: 1.1em; color: #fff; background: #c0392b; padding: 9px 16px; border-radius: 8px; margin-top: 36px; margin-bottom: 14px; }
+  h2.green { background: #27ae60; }
+  h2.blue { background: #2980b9; }
+  h2.gold { background: #d4820a; }
+  h2.gray { background: #555; }
+  h2.purple { background: #8e44ad; }
+  h3 { color: #444; font-size: 0.95em; margin: 16px 0 8px; border-left: 3px solid #e74c3c; padding-left: 10px; }
+  .box { border-radius: 8px; padding: 12px 16px; margin: 10px 0; font-size: 0.92em; }
+  .box.grammar { background: #fff3e0; border: 1.5px solid #ff9800; }
+  .box.structure { background: #fdecea; border: 1.5px solid #c0392b; }
+  .box.note { background: #e8f5e9; border-left: 4px solid #27ae60; border-radius: 0 8px 8px 0; }
+  .box.warn { background: #fce4ec; border-left: 4px solid #e91e63; border-radius: 0 8px 8px 0; }
+  .box.tip { background: #e3f2fd; border-left: 4px solid #1976d2; border-radius: 0 8px 8px 0; }
+  code { background: #f0f0f0; padding: 2px 7px; border-radius: 4px; font-size: 0.88em; font-family: monospace; }
+  table { width: 100%; border-collapse: collapse; margin: 10px 0; font-size: 0.9em; background: #fff; border-radius: 8px; overflow: hidden; }
+  th { background: #c0392b; color: #fff; padding: 8px 12px; text-align: left; font-size: 0.85em; }
+  tr:nth-child(even) { background: #fafafa; }
+  td { padding: 7px 12px; border-bottom: 1px solid #f0f0f0; }
+  .hz { font-size: 1.15em; font-weight: bold; color: #c0392b; }
+  .hz a { color: #c0392b; text-decoration: none; border-bottom: 1px dotted #c0392b; }
+  .hz a:hover { color: #e74c3c; border-bottom: 1px solid #e74c3c; }
+  .dialog { background: #fff; border-radius: 10px; border: 1px solid #e5e5e5; padding: 14px 16px; margin: 10px 0; }
+  .da { background: #e3f2fd; padding: 8px 14px; border-radius: 8px; margin: 5px 0; }
+  .db { background: #f3e5f5; padding: 8px 14px; border-radius: 8px; margin: 5px 0; margin-left: 40px; }
+  .ex { background: #fffde7; border: 1px solid #f9a825; border-radius: 8px; padding: 14px 18px; margin: 10px 0; }
+  .ex ol { margin: 8px 0 0; padding-left: 22px; }
+  .ex li { margin: 7px 0; }
+  .pinyin-toggle { position: fixed; bottom: 20px; right: 20px; background: #1a1a2e; color: #fff; border: none; padding: 10px 16px; border-radius: 30px; cursor: pointer; font-size: 0.85em; z-index: 100; box-shadow: 0 4px 12px rgba(0,0,0,.25); transition: background .2s; }
+  .pinyin-toggle:hover { background: #c0392b; }
+  .hide-pinyin .pinyin-col { visibility: hidden; }
+  @media print {
+    .no-print, .pinyin-toggle { display: none !important; }
+    body { background: #fff !important; padding: 10px 20px; font-size: 12px; max-width: 100%; }
+    header { background: #1a1a2e !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; padding: 16px 20px 12px; margin-bottom: 16px; }
+    header h1 { font-size: 1.3em; }
+    nav { padding: 10px 14px; margin-bottom: 16px; page-break-after: avoid; }
+    h2 { -webkit-print-color-adjust: exact; print-color-adjust: exact; font-size: 1em; padding: 6px 12px; margin-top: 20px; margin-bottom: 8px; page-break-after: avoid; }
+    h3 { font-size: 0.85em; margin: 10px 0 6px; page-break-after: avoid; }
+    .box { padding: 8px 12px; margin: 6px 0; font-size: 0.85em; page-break-inside: avoid; }
+    table { font-size: 0.82em; page-break-inside: avoid; margin: 6px 0; }
+    th { padding: 5px 8px; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    td { padding: 4px 8px; }
+    .hz { font-size: 1em; }
+    .hz a { border-bottom: none !important; color: #c0392b !important; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    .dialog { padding: 8px 12px; margin: 6px 0; page-break-inside: avoid; }
+    .da, .db { padding: 5px 10px; }
+    .db { margin-left: 20px; }
+    footer { font-size: 0.7em; margin-top: 16px; }
+  }
+  .key { text-decoration: underline; text-decoration-color: #e74c3c; text-underline-offset: 3px; text-decoration-thickness: 2px; }
+  footer { text-align: center; color: #bbb; font-size: 0.8em; margin-top: 40px; }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Básico 2 — Clase 07</h1>
+  <p>25 de abril, 2026 · Centro Cultural Chino · <a href="/" style="color:#e74c3c">← Volver al índice</a></p>
+</header>
+
+<nav>
+  <h3>Índice</h3>
+  <ol>
+    <li><a href="#s1">在 + lugar — "estar en" / preguntar dónde</a></li>
+    <li><a href="#s2">Vocabulario nuevo — profesiones y objetos</a></li>
+    <li><a href="#s3">El componente 医 (yī) — área de la medicina</a></li>
+    <li><a href="#s4">这儿 / 那儿 / 哪儿 — aquí, allá, dónde</a></li>
+    <li><a href="#s5">正在 — "estar haciendo" (progresivo)</a></li>
+    <li><a href="#s6">¿Dónde trabajas? — Lugares de trabajo 💼</a></li>
+    <li><a href="#s7">🎯 Ejemplos contundentes — todo junto</a></li>
+  </ol>
+</nav>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 1: 在 + 哪儿 + verbo            -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s1">1. 在 + lugar — "estar en" / preguntar dónde se hace algo</h2>
+
+<div class="box grammar">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a></span> (zài) = <strong>"estar"</strong> / <strong>"en"</strong>. Marca un <strong>📍 punto de ubicación</strong>: el sujeto está/hace algo <em>en ese punto</em>. Se pone <strong>antes</strong> del verbo principal.
+</div>
+
+<div class="box structure">
+  <strong>Estructura:</strong><br>
+  <code>Sujeto + 在 + lugar + verbo</code><br>
+  <em>El sujeto realiza el verbo en el lugar.</em>
+</div>
+
+<div class="box structure">
+  <strong>Pregunta con 哪儿:</strong><br>
+  <code>Sujeto + 在 + <span class="hz">哪儿</span> (nǎr) + verbo?</code><br>
+  <em>¿Dónde + verbo + sujeto?</em>
+</div>
+
+<h3>Ejemplo central de la clase</h3>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/儿" target="_blank">儿</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪" target="_blank">哪</a><a href="https://www.dong-chinese.com/wiki/儿" target="_blank">儿</a><a href="https://www.dong-chinese.com/wiki/工" target="_blank">工</a><a href="https://www.dong-chinese.com/wiki/作" target="_blank">作</a>？</span><br><em>Nǐ érzi zài nǎr gōngzuò? — ¿Dónde trabaja tu hijo? 👨‍💼</em></div>
+</div>
+
+<h3>💼 Diálogo en clase — ¿dónde trabajan?</h3>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>？</span><br><em>Nǐ zài nǎr gōngzuò? — ¿Dónde trabajas?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/学校" target="_blank">学校</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span><br><em>Wǒ zài xuéxiào gōngzuò. — Trabajo en la escuela. 🏫</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/儿子" target="_blank">儿子</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>？</span><br><em>Nǐ érzi zài nǎr gōngzuò? — ¿Dónde trabaja tu hijo?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/儿子" target="_blank">儿子</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/医院" target="_blank">医院</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>，<a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/是" target="_blank">是</a><a href="https://www.dong-chinese.com/wiki/医生" target="_blank">医生</a>。</span><br><em>Wǒ érzi zài yīyuàn gōngzuò, tā shì yīshēng. — Mi hijo trabaja en el hospital, es médico. 🏥👨‍⚕️</em></div>
+</div>
+
+<div class="box note">
+  📝 <strong>Lo que junta este diálogo:</strong>
+  <ul style="margin: 6px 0 0 18px;">
+    <li>Pregunta con <span class="hz">在 + 哪儿 + verbo</span></li>
+    <li>Respuesta con <span class="hz">在 + lugar + verbo</span></li>
+    <li>Conector implícito (coma) entre dos oraciones que comparten sujeto: "trabaja en X, es Y"</li>
+    <li>Verbo <span class="hz">是</span> (shì) para profesiones: <em>él/ella es ___</em></li>
+  </ul>
+</div>
+
+<h3>🎓 Mis frases — Basti</h3>
+<div class="ex">
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/学校" target="_blank">学校</a><a href="https://www.dong-chinese.com/wiki/学习" target="_blank">学习</a>。</span><br>
+      <em>Wǒ zài xuéxiào xuéxí. — Estudio en la escuela. 📚</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a> Centro Cultural Chino <a href="https://www.dong-chinese.com/wiki/上课" target="_blank">上课</a>。</span><br>
+      <em>Wǒ zài Centro Cultural Chino shàngkè. — Tomo clases en el Centro Cultural Chino. 🀄</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a> CCC <a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/中文" target="_blank">中文</a>。</span><br>
+      <em>Wǒ zài CCC xué zhōngwén. — Estudio chino en el CCC. 🀄📖</em></li>
+  </ol>
+</div>
+<div class="box tip">
+  💡 La forma "100% chino" para la última frase sería: <span class="hz">我在中国文化中心上课</span> (Wǒ zài <a href="https://www.dong-chinese.com/wiki/中国文化中心" target="_blank">中国文化中心</a> shàngkè) — "Estudio en el Centro Cultural Chino".
+</div>
+
+<h3>Vocabulario de la frase</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/儿子" target="_blank">儿子</a></td><td class="pinyin-col">érzi</td><td>👦 Hijo</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a></td><td class="pinyin-col">zài</td><td>📍 En / estar en</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a></td><td class="pinyin-col">nǎr</td><td>❓ ¿Dónde?</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a></td><td class="pinyin-col">gōngzuò</td><td>💼 Trabajar / trabajo</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>Tip:</strong> 工作 (gōngzuò) sirve como <em>verbo</em> ("trabajar") y como <em>sustantivo</em> ("trabajo"). El contexto lo aclara:
+  <ul style="margin: 6px 0 0 18px;">
+    <li><strong>Verbo:</strong> <span class="hz">我爸爸<a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/医院" target="_blank">医院</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span> — <em>Mi papá trabaja en el hospital.</em></li>
+    <li><strong>Sustantivo:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span> — <em>Wǒ yǒu gōngzuò. — Tengo trabajo. 💼</em></li>
+  </ul>
+</div>
+
+<div class="box note">
+  📝 <strong>Diferencia clave con 去 (qù):</strong>
+  <ul style="margin: 6px 0 0 18px;">
+    <li><strong>去 + lugar</strong> → <em>ir a un lugar</em> (movimiento)</li>
+    <li><strong>在 + lugar + verbo</strong> → <em>hacer algo en un lugar</em> (acción dentro)</li>
+  </ul>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 2: Vocabulario nuevo            -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s2" class="green">2. Vocabulario nuevo</h2>
+
+<div class="box note">
+  📚 Vocabulario organizado en <strong>7 categorías</strong> para que sea más fácil estudiarlo:
+  <span class="hz">①</span> Familia · <span class="hz">②</span> Profesiones · <span class="hz">③</span> Lugares · <span class="hz">④</span> Animales y adjetivos · <span class="hz">⑤</span> Objetos · <span class="hz">⑥</span> Tiempo · <span class="hz">⑦</span> Preposiciones de lugar
+</div>
+
+<h3>① 👨‍👩‍👦 Familia</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/爸爸" target="_blank">爸爸</a></td><td class="pinyin-col">bàba</td><td>👨 Papá</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/儿子" target="_blank">儿子</a></td><td class="pinyin-col">érzi</td><td>👦 Hijo</td></tr>
+</table>
+
+<h3>② 💼 Profesiones</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/医生" target="_blank">医生</a></td><td class="pinyin-col">yīshēng</td><td>👨‍⚕️ Doctor / médico</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/兽医" target="_blank">兽医</a></td><td class="pinyin-col">shòuyī</td><td>🐾 Veterinario (médico de animales)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/会计" target="_blank">会计</a></td><td class="pinyin-col">kuàijì</td><td>🧾 Contador / contadora</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/司机" target="_blank">司机</a></td><td class="pinyin-col">sījī</td><td>🚗 Conductor / chófer</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/职员" target="_blank">职员</a></td><td class="pinyin-col">zhíyuán</td><td>🧑‍💼 Oficinista / empleado</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/秘书" target="_blank">秘书</a></td><td class="pinyin-col">mìshū</td><td>📋 Secretaria / secretario</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/助手" target="_blank">助手</a></td><td class="pinyin-col">zhùshǒu</td><td>🤝 Ayudante / asistente</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/警察" target="_blank">警察</a></td><td class="pinyin-col">jǐngchá</td><td>👮 Policía</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/老板" target="_blank">老板</a></td><td class="pinyin-col">lǎobǎn</td><td>👔 Jefe / dueño (de negocio)</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>Cómo se forman las profesiones — patrón frecuente:</strong>
+  <ul style="margin: 6px 0 0 18px;">
+    <li><span class="hz">员</span> (yuán) = "miembro de un grupo" → <span class="hz">职员</span> oficinista, <span class="hz">店员</span> dependiente, <span class="hz">服务员</span> mesero</li>
+    <li><span class="hz">师</span> (shī) = "maestro/experto" → <span class="hz">老师</span> profesor, <span class="hz">医师</span> doctor formal, <span class="hz">厨师</span> cocinero</li>
+    <li><span class="hz">手</span> (shǒu) = "el que maneja" → <span class="hz">助手</span> ayudante, <span class="hz">歌手</span> cantante, <span class="hz">水手</span> marinero</li>
+  </ul>
+</div>
+
+<h3>③ 🏢 Lugares (de trabajo y otros)</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/医院" target="_blank">医院</a></td><td class="pinyin-col">yīyuàn</td><td>🏥 Hospital</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/公司" target="_blank">公司</a></td><td class="pinyin-col">gōngsī</td><td>🏢 Empresa / compañía</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/办公室" target="_blank">办公室</a></td><td class="pinyin-col">bàngōngshì</td><td>🏢 Oficina</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/银行" target="_blank">银行</a></td><td class="pinyin-col">yínháng</td><td>🏦 Banco</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/咖啡馆" target="_blank">咖啡馆</a></td><td class="pinyin-col">kāfēi guǎn</td><td>☕ Cafetería</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/大学" target="_blank">大学</a></td><td class="pinyin-col">dàxué</td><td>🎓 Universidad</td></tr>
+</table>
+
+<h3>🎓 Sistema educativo chino — niveles</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Nivel</th><th>Equivalente en Chile 🇨🇱</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/小学" target="_blank">小学</a></td><td class="pinyin-col">xiǎoxué</td><td>📒 Escuela básica</td><td>1°-6° básico</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/中学" target="_blank">中学</a></td><td class="pinyin-col">zhōngxué</td><td>📕 Enseñanza media (general)</td><td>7°-12° (1°-4° medio)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/初中" target="_blank">初中</a></td><td class="pinyin-col">chūzhōng</td><td>📕 Media inicial</td><td>7°-9° (1°-2° medio aprox.)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/高中" target="_blank">高中</a></td><td class="pinyin-col">gāozhōng</td><td>📗 Media superior</td><td>10°-12° (3°-4° medio)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/大学" target="_blank">大学</a></td><td class="pinyin-col">dàxué</td><td>🎓 Universidad / pregrado</td><td>Carrera universitaria</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/研究生" target="_blank">研究生</a></td><td class="pinyin-col">yánjiūshēng</td><td>🎓 Estudiante de postgrado</td><td>Postgrado (general)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/硕士" target="_blank">硕士</a></td><td class="pinyin-col">shuòshì</td><td>🎓 Magíster / máster</td><td>Magíster</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/博士" target="_blank">博士</a></td><td class="pinyin-col">bóshì</td><td>🎓 Doctorado / PhD</td><td>Doctorado</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>Lógica del nombre:</strong>
+  <ul style="margin: 6px 0 0 18px;">
+    <li><span class="hz">小学</span> = "escuela <em>pequeña</em>" 📒</li>
+    <li><span class="hz">中学</span> = "escuela <em>media</em>" 📕 (cubre todos los años de secundaria)</li>
+    <li><span class="hz">初中</span> = "media <em>inicial</em>" / <span class="hz">高中</span> = "media <em>alta</em>" 📗</li>
+    <li><span class="hz">大学</span> = "escuela <em>grande</em>" 🎓</li>
+    <li><span class="hz">研究生</span> = "estudiante (生) que <em>investiga</em> (研究)" 🔬</li>
+  </ul>
+</div>
+
+<div class="box tip">
+  💡 <span class="hz">办公室</span> = <span class="hz">办</span> (bàn = manejar) + <span class="hz">公</span> (gōng = asuntos) + <span class="hz">室</span> (shì = sala). El sufijo <span class="hz">室</span> también lo viste en <span class="hz">教室</span> (sala de clases) y <span class="hz">卧室</span> (dormitorio).
+</div>
+
+<div class="box tip">
+  💡 <strong>Recuerda</strong> el sufijo <span class="hz">馆</span> (guǎn) = "lugar cerrado/techado" (visto en la <a href="clase04.html#s9">Clase 04</a>): <span class="hz">咖啡馆</span> ☕, <span class="hz">图书馆</span> 📚, <span class="hz">体育馆</span> 🏋️, <span class="hz">餐馆</span> 🍽️.
+</div>
+
+<h3>④ 🐾 Animales y adjetivos</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a></td><td class="pinyin-col">māo</td><td>🐱 Gato</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/狗" target="_blank">狗</a></td><td class="pinyin-col">gǒu</td><td>🐶 Perro / perrito</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a></td><td class="pinyin-col">xiǎo</td><td>🤏 Pequeño</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>Combinaciones con 小 (xiǎo):</strong> se usa como prefijo cariñoso o para algo pequeño:
+  <ul style="margin: 6px 0 0 18px;">
+    <li><span class="hz">小猫</span> (xiǎo māo) — gatito 🐱</li>
+    <li><span class="hz">小狗</span> (xiǎo gǒu) — perrito / cachorro 🐶</li>
+  </ul>
+</div>
+
+<h3>⑤ 📦 Objetos cotidianos</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/椅子" target="_blank">椅子</a></td><td class="pinyin-col">yǐzi</td><td>🪑 Silla</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/电脑" target="_blank">电脑</a></td><td class="pinyin-col">diànnǎo</td><td>💻 Computador</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/电视" target="_blank">电视</a></td><td class="pinyin-col">diànshì</td><td>📺 Televisión</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/手机" target="_blank">手机</a></td><td class="pinyin-col">shǒujī</td><td>📱 Celular / teléfono móvil</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/钱包" target="_blank">钱包</a></td><td class="pinyin-col">qiánbāo</td><td>👛 Billetera</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/钥匙" target="_blank">钥匙</a></td><td class="pinyin-col">yàoshi</td><td>🔑 Llave / llaves</td></tr>
+</table>
+
+<h3>⑥ ⏰ Tiempo</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/现在" target="_blank">现在</a></td><td class="pinyin-col">xiànzài</td><td>⏰ Ahora / en este momento</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/正在" target="_blank">正在</a></td><td class="pinyin-col">zhèng zài</td><td>⏱️ Estar haciendo (progresivo)</td></tr>
+</table>
+
+<h3>⑦ 📍 Preposiciones de lugar</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th><th>Sufijo</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/上面" target="_blank">上面</a></td><td class="pinyin-col">shàngmiàn</td><td>⬆️ Arriba / encima de</td><td>面</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/下面" target="_blank">下面</a></td><td class="pinyin-col">xiàmiàn</td><td>⬇️ Abajo / debajo de</td><td>面</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/前面" target="_blank">前面</a></td><td class="pinyin-col">qiánmiàn</td><td>➡️ En frente de / delante de</td><td>面</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/后面" target="_blank">后面</a></td><td class="pinyin-col">hòumiàn</td><td>⬅️ Detrás de</td><td>面</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/里面" target="_blank">里面</a></td><td class="pinyin-col">lǐmiàn</td><td>📦 Dentro de / adentro</td><td>面</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/外面" target="_blank">外面</a></td><td class="pinyin-col">wàimiàn</td><td>🌳 Fuera de / afuera</td><td>面</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/中间" target="_blank">中间</a></td><td class="pinyin-col">zhōngjiān</td><td>🎯 En medio de / entre</td><td>间</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/旁边" target="_blank">旁边</a></td><td class="pinyin-col">pángbiān</td><td>↔️ Al lado de / a un costado</td><td>边</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/下" target="_blank">下</a></td><td class="pinyin-col">xià</td><td>⬇️ Abajo (forma corta)</td><td>—</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>3 sufijos distintos para preposiciones de lugar:</strong>
+  <ul style="margin: 6px 0 0 18px;">
+    <li><span class="hz">面</span> (miàn = "cara/lado") → 上下前后里外面</li>
+    <li><span class="hz">间</span> (jiān = "espacio entre") → 中间</li>
+    <li><span class="hz">边</span> (biān = "borde") → 旁边</li>
+  </ul>
+</div>
+
+<h3>📱 Preguntas útiles "¿dónde está mi ___?"</h3>
+<div class="ex">
+  <strong>Estructura:</strong> <code>我的 + [objeto] + 在哪儿？</code> <em>(con <span class="hz">的</span> porque son cosas, no humanos)</em>
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/手机" target="_blank">手机</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span><br>
+      <em>Wǒ de shǒujī zài nǎr? — ¿Dónde está mi celular? 📱</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/钱包" target="_blank">钱包</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span><br>
+      <em>Wǒ de qiánbāo zài nǎr? — ¿Dónde está mi billetera? 👛</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/钥匙" target="_blank">钥匙</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span><br>
+      <em>Wǒ de yàoshi zài nǎr? — ¿Dónde están mis llaves? 🔑</em></li>
+  </ol>
+</div>
+
+<h3>Posibles respuestas usando preposiciones</h3>
+<div class="ex">
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/手机" target="_blank">手机</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/桌子" target="_blank">桌子</a><a href="https://www.dong-chinese.com/wiki/上面" target="_blank">上面</a>。</span><br>
+      <em>Nǐ de shǒujī zài zhuōzi shàngmiàn. — Tu celular está encima de la mesa. 📱⬆️</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/钱包" target="_blank">钱包</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/椅子" target="_blank">椅子</a><a href="https://www.dong-chinese.com/wiki/下面" target="_blank">下面</a>。</span><br>
+      <em>Nǐ de qiánbāo zài yǐzi xiàmiàn. — Tu billetera está debajo de la silla. 👛⬇️</em></li>
+  </ol>
+</div>
+
+<div class="box tip">
+  💡 También útil: <span class="hz">桌子</span> (zhuōzi) = mesa 🪑, <span class="hz">床</span> (chuáng) = cama 🛏️, <span class="hz">门</span> (mén) = puerta 🚪.
+</div>
+
+<div class="box warn">
+  ⚠️ <strong>OJO con el orden — al revés del español:</strong><br>
+  En chino: <code>[objeto/referencia] + [posición]</code> 👈 primero el objeto, luego la posición<br>
+  En español: <em>[posición] + [objeto]</em> 👈 al revés
+</div>
+
+<table>
+  <tr><th>Chino (objeto + posición)</th><th>Español (posición + objeto)</th></tr>
+  <tr><td class="hz">椅子 下面</td><td>debajo <strong>de</strong> la silla</td></tr>
+  <tr><td class="hz">电脑 后面</td><td>detrás <strong>del</strong> computador</td></tr>
+  <tr><td class="hz">盒子 前面</td><td>en frente <strong>de</strong> la caja</td></tr>
+</table>
+
+<div class="ex">
+  <strong>Ejemplo del profe:</strong>
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/电脑" target="_blank">电脑</a><a href="https://www.dong-chinese.com/wiki/后面" target="_blank">后面</a>。</span><br>
+      <em>Xiǎo māo zài diànnǎo hòumiàn. — El gatito está detrás del computador. 🐱💻</em></li>
+  </ol>
+</div>
+
+<div class="box structure">
+  <strong>Estructura especial — "entre A y B":</strong><br>
+  <code>A + 和 + B + 中间</code><br>
+  <em>El 和 (hé) conecta los dos elementos, y 中间 indica que algo está en el medio.</em>
+</div>
+
+<div class="ex">
+  <strong>Ejemplo del profe:</strong>
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/电视" target="_blank">电视</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a><a href="https://www.dong-chinese.com/wiki/和" target="_blank">和</a><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/狗" target="_blank">狗</a><a href="https://www.dong-chinese.com/wiki/中间" target="_blank">中间</a>。</span><br>
+      <em>Diànshì zài xiǎo māo hé xiǎo gǒu zhōngjiān. — La televisión está entre el gatito y el perrito. 🐱📺🐶</em></li>
+  </ol>
+</div>
+
+<div class="box note">
+  📝 <strong>Nota:</strong> <span class="hz">下</span> (xià) tiene varios significados además de "abajo" (próxima clase, bajar, etc.). Se profundizará más adelante.
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 3: Componente 医                -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s3" class="blue">3. El componente 医 (yī) — área de la medicina</h2>
+
+<div class="box grammar">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/医" target="_blank">医</a></span> (yī) por sí solo significa <strong>"medicina / curar"</strong>. Cuando aparece en una palabra, casi siempre indica que tiene relación con el <strong>área de la salud</strong>. 🩺
+</div>
+
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/医生" target="_blank">医生</a></td><td class="pinyin-col">yīshēng</td><td>👨‍⚕️ Doctor (lit. "el que da/cura vida")</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/医院" target="_blank">医院</a></td><td class="pinyin-col">yīyuàn</td><td>🏥 Hospital (lit. "patio de medicina")</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/中医" target="_blank">中医</a></td><td class="pinyin-col">zhōngyī</td><td>🌿 Medicina china tradicional</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/西医" target="_blank">西医</a></td><td class="pinyin-col">xīyī</td><td>💊 Medicina occidental</td></tr>
+</table>
+
+<div class="box note">
+  📝 <strong>Truco mental:</strong> si ves <span class="hz">医</span> en una palabra, piensa en algo relacionado con <strong>hospital, médico, salud o curar</strong>. Te ayuda a deducir el significado aunque no conozcas la palabra completa.
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 4: 这儿 / 那儿 / 哪儿            -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s4" class="gold">4. 这儿 / 那儿 / 哪儿 — aquí, allá, ¿dónde?</h2>
+
+<div class="box grammar">
+  Los tres comparten el carácter <span class="hz">儿</span> (-r) al final, que los convierte en <strong>palabras de lugar</strong>. La distancia depende del primer carácter:
+</div>
+
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Distancia</th><th>Español</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/这儿" target="_blank">这儿</a></td><td class="pinyin-col">zhèr</td><td>👉 cerca</td><td>📍 Aquí</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/那儿" target="_blank">那儿</a></td><td class="pinyin-col">nàr</td><td>👈 lejos</td><td>📌 Allá / ahí</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a></td><td class="pinyin-col">nǎr</td><td>❓ pregunta</td><td>¿Dónde?</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>Truco para distinguir 那儿 vs 哪儿:</strong>
+  <ul style="margin: 6px 0 0 18px;">
+    <li><span class="hz">那</span> (<strong>nà</strong>, 4° tono ↘) = afirmación → "<em>allá</em>"</li>
+    <li><span class="hz">哪</span> (<strong>nǎ</strong>, 3° tono ˅) = pregunta → "<em>¿dónde?</em>" (lleva 口 a la izquierda 👄, como si abriera la boca para preguntar)</li>
+  </ul>
+</div>
+
+<h3>Ejemplos prácticos</h3>
+<div class="ex">
+  <ol>
+    <li><span class="hz">我<a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/这儿" target="_blank">这儿</a>。</span> — Wǒ zài zhèr. — <em>Estoy aquí.</em></li>
+    <li><span class="hz">我爸爸<a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/那儿" target="_blank">那儿</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span> — Wǒ bàba zài nàr gōngzuò. — <em>Mi papá trabaja allá.</em></li>
+    <li><span class="hz">你<a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span> — Nǐ zài nǎr? — <em>¿Dónde estás?</em></li>
+  </ol>
+</div>
+
+<h3>🐱🐶 Diálogo en clase — ¿dónde están los animalitos?</h3>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span><br><em>Xiǎo māo zài nǎr? — ¿Dónde está el gatito? 🐱</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/那儿" target="_blank">那儿</a>。</span><br><em>Xiǎo māo zài nàr. — El gatito está allá.</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/狗" target="_blank">狗</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span><br><em>Xiǎo gǒu zài nǎr? — ¿Dónde está el perrito? 🐶</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/狗" target="_blank">狗</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/椅" target="_blank">椅</a><a href="https://www.dong-chinese.com/wiki/子" target="_blank">子</a><a href="https://www.dong-chinese.com/wiki/下面" target="_blank">下面</a>。</span><br><em>Xiǎo gǒu zài yǐzi xiàmiàn. — El perrito está debajo de la silla. 🪑⬇️</em></div>
+</div>
+
+<div class="box structure">
+  <strong>Estructura nueva — preposición de lugar:</strong><br>
+  <code>en + [objeto] + 下面</code> = <em>debajo de [objeto]</em><br>
+  Ejemplo: <span class="hz">在椅子下面</span> = <em>debajo de la silla</em>
+</div>
+
+<div class="box warn" style="background: #fff8e1; border-left: 4px solid #f57c00;">
+  😡 <strong>Frase clásica de mamá/pareja enojada:</strong><br>
+  <span class="hz" style="font-size: 1.3em;"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/现在" target="_blank">现在</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？？？</span><br>
+  <em>Nǐ <strong>xiànzài zài</strong> nǎr??? — ¿Tú AHORA dónde ESTÁS??? 📞😤</em>
+  <br><br>
+  <strong>El chiste fonético:</strong> <span class="hz">现在</span> (xiàn<u>zài</u>) + <span class="hz">在</span> (<u>zài</u>) = "<em>xianzai zai...</em>" — el "zài" se repite y suena casi tartamudeado, lo que le da ese énfasis enojado/insistente. 😂
+</div>
+
+<div class="box note">
+  📝 <strong>Patrón general de localización:</strong><br>
+  <code>[Sujeto] + 在 + [referencia] + [posición]</code><br>
+  Donde "posición" puede ser:
+  <ul style="margin: 6px 0 0 18px;">
+    <li><span class="hz">下面</span> (xiàmiàn) — abajo / debajo de ⬇️</li>
+    <li><span class="hz">前面</span> (qiánmiàn) — en frente de / delante de ➡️</li>
+    <li><span class="hz">后面</span> (hòumiàn) — detrás de ⬅️</li>
+    <li><span class="hz">上面</span> (shàngmiàn) — arriba / encima de ⬆️</li>
+    <li><span class="hz">里面</span> (lǐmiàn) — dentro de 📦</li>
+    <li><span class="hz">外面</span> (wàimiàn) — fuera de / afuera 🌳</li>
+    <li><span class="hz">中间</span> (zhōngjiān) — en medio de / entre 🎯</li>
+    <li><span class="hz">旁边</span> (pángbiān) — al lado de / a un costado ↔️</li>
+  </ul>
+  <strong>Ejemplo:</strong> <span class="hz">在<a href="https://www.dong-chinese.com/wiki/盒子" target="_blank">盒子</a>前面</span> (zài hézi qiánmiàn) — <em>en frente de la caja</em> 📦
+</div>
+
+<h3>🎧 Ejercicio de listening — el amigo</h3>
+<div class="box tip">
+  En clase pusieron un audio y había que <strong>cachar qué decía</strong>. La pregunta era sobre dónde estaba el amigo:
+</div>
+<div class="dialog">
+  <div class="da"><strong>Pregunta:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/朋友" target="_blank">朋友</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span><br><em>Nǐ péngyou zài nǎr? — ¿Dónde está tu amigo?</em></div>
+  <div class="db"><strong>Respuesta:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/朋友" target="_blank">朋友</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/学校" target="_blank">学校</a>。</span><br><em>Wǒ péngyou zài xuéxiào. — Mi amigo está en la escuela. 🏫</em></div>
+</div>
+<div class="box note">
+  📝 Nota cómo el patrón se mantiene: <strong>sujeto + 在 + lugar</strong> — sin verbo extra, solo "está en X". Si quisieras decir "<em>mi amigo estudia en la escuela</em>" agregarías el verbo: <span class="hz">我朋友在学校学习</span> (Wǒ péngyou zài xuéxiào xuéxí).
+</div>
+
+<h3>🏠 Otro ejemplo — mamá en casa</h3>
+<div class="dialog">
+  <div class="da"><strong>📢</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/妈妈" target="_blank">妈妈</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a>。</span><br><em>Wǒ māma zài jiā. — Mi mamá está en casa. 🏠</em></div>
+</div>
+
+<div class="box warn">
+  ⚠️ <strong>OJO con la partícula <span class="hz">的</span> (de):</strong>
+  <ul style="margin: 6px 0 0 18px;">
+    <li>Con <strong>personas cercanas</strong> (familia, amigos) → <strong>NO se usa 的</strong>:<br>
+      ✅ <span class="hz">我妈妈</span> (mi mamá), <span class="hz">你朋友</span> (tu amigo)</li>
+    <li>Con <strong>cosas o animales</strong> (no humanos) → <strong>SÍ se usa 的</strong>:<br>
+      ✅ <span class="hz">你<u>的</u>小猫</span> (tu gatito), <span class="hz">我<u>的</u>书</span> (mi libro)</li>
+  </ul>
+</div>
+
+<div class="ex">
+  <strong>Ejemplo del profe:</strong>
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span><br>
+      <em>Nǐ de xiǎo māo zài nǎr? — ¿Dónde está tu gatito? 🐱 (con 的 porque no es humano)</em></li>
+  </ol>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 5: 正在 — Progresivo            -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s5" class="purple">5. 正在 — "estar haciendo" (progresivo)</h2>
+
+<div class="box grammar">
+  <span class="hz"><a href="https://www.dong-chinese.com/wiki/正在" target="_blank">正在</a></span> (zhèng zài) marca una acción <strong>en curso, ahora mismo</strong>. Equivale al "estar + gerundio" del español ("estoy comiendo", "estoy estudiando"). ⏱️
+</div>
+
+<div class="box structure">
+  <strong>Estructura:</strong><br>
+  <code>Sujeto + 正在 + (lugar opcional) + verbo + complemento</code><br>
+  <em>El sujeto está [verbo]-ndo [algo] [en algún lugar].</em>
+</div>
+
+<h3>Ejemplo de la clase</h3>
+<div class="dialog">
+  <div class="da"><strong>📢</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/正在" target="_blank">正在</a><a href="https://www.dong-chinese.com/wiki/朋友" target="_blank">朋友</a><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a><a href="https://www.dong-chinese.com/wiki/茶" target="_blank">茶</a>。</span><br><em>Wǒ zhèng zài péngyou jiā hē chá. — Estoy tomando té en casa de un amigo. 🍵</em></div>
+</div>
+
+<h3>Análisis de la frase</h3>
+<table>
+  <tr><th>Hanzi</th><th class="pinyin-col">Pinyin</th><th>Función</th></tr>
+  <tr><td class="hz">我</td><td class="pinyin-col">wǒ</td><td>Sujeto: yo</td></tr>
+  <tr><td class="hz">正在</td><td class="pinyin-col">zhèng zài</td><td>⏱️ Marcador progresivo: "estoy + verbo-ndo"</td></tr>
+  <tr><td class="hz">朋友家</td><td class="pinyin-col">péngyou jiā</td><td>📍 Lugar: en casa de un amigo</td></tr>
+  <tr><td class="hz">喝茶</td><td class="pinyin-col">hē chá</td><td>Verbo + objeto: tomando té 🍵</td></tr>
+</table>
+
+<div class="box tip">
+  💡 <strong>正 vs 在 vs 正在:</strong>
+  <ul style="margin: 6px 0 0 18px;">
+    <li><span class="hz">正</span> (zhèng) — enfatiza "justo ahora"</li>
+    <li><span class="hz">在</span> (zài) — enfatiza la acción en proceso</li>
+    <li><span class="hz">正在</span> (zhèng zài) — combina ambos, es la forma más usada y clara</li>
+  </ul>
+</div>
+
+<div class="box note">
+  📝 <strong>Nota:</strong> en <span class="hz">朋友家</span> (casa de un amigo) <strong>no se usa 的</strong>, porque "amigo" es una persona cercana — y porque <span class="hz">X + 家</span> es una construcción fija ("casa de X"). Funciona igual con <span class="hz">我家</span> (mi casa), <span class="hz">老师家</span> (casa del profe), etc.
+</div>
+
+<h3>Más ejemplos</h3>
+<div class="ex">
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/正在" target="_blank">正在</a><a href="https://www.dong-chinese.com/wiki/学习" target="_blank">学习</a><a href="https://www.dong-chinese.com/wiki/中文" target="_blank">中文</a>。</span><br>
+      <em>Tā zhèng zài xuéxí zhōngwén. — Él está estudiando chino. 📖</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/妈妈" target="_blank">妈妈</a><a href="https://www.dong-chinese.com/wiki/正在" target="_blank">正在</a><a href="https://www.dong-chinese.com/wiki/做饭" target="_blank">做饭</a>。</span><br>
+      <em>Wǒ māma zhèng zài zuòfàn. — Mi mamá está cocinando. 🍳</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/狗" target="_blank">狗</a><a href="https://www.dong-chinese.com/wiki/正在" target="_blank">正在</a><a href="https://www.dong-chinese.com/wiki/椅子" target="_blank">椅子</a><a href="https://www.dong-chinese.com/wiki/下面" target="_blank">下面</a><a href="https://www.dong-chinese.com/wiki/睡觉" target="_blank">睡觉</a>。</span><br>
+      <em>Xiǎo gǒu zhèng zài yǐzi xiàmiàn shuìjiào. — El perrito está durmiendo debajo de la silla. 🐶💤</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/朋友" target="_blank">朋友</a><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a><a href="https://www.dong-chinese.com/wiki/吃" target="_blank">吃</a><a href="https://www.dong-chinese.com/wiki/中国菜" target="_blank">中国菜</a>。</span><br>
+      <em>Wǒ zài péngyou jiā chī zhōngguó cài. — Estoy comiendo comida china en casa de un amigo. 🥡 (sin 正, pero el contexto deja claro que es ahora)</em></li>
+  </ol>
+</div>
+
+<div class="box tip">
+  💡 <strong>正 es opcional:</strong> en chino hablado, muchas veces se omite el 正 y queda solo <span class="hz">在 + verbo</span>. Si el contexto es claro (estás respondiendo "¿qué haces?", o describes algo en este momento), no hace falta el 正. Solo se usa 正在 cuando quieres <strong>enfatizar</strong> que es ahora mismo.
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 6: ¿Dónde trabajas?            -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s6" class="green">6. 你在哪儿工作？— ¿Dónde trabajas? 💼</h2>
+
+<div class="box grammar">
+  Sección dedicada a juntar todo el vocabulario de lugares con la estructura central de la clase: <code>Sujeto + 在 + lugar + 工作</code>.
+</div>
+
+<h3>Pregunta clave</h3>
+<div class="dialog">
+  <div class="da"><strong>❓</strong> <span class="hz" style="font-size: 1.2em;"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>？</span><br><em>Nǐ zài nǎr gōngzuò? — ¿Dónde trabajas?</em></div>
+</div>
+
+<h3>Tabla de lugares de trabajo</h3>
+<table>
+  <tr><th>Lugar</th><th class="pinyin-col">Pinyin</th><th>Quién trabaja típicamente ahí</th></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/医院" target="_blank">医院</a></td><td class="pinyin-col">yīyuàn</td><td>🏥 Hospital — médico (医生), enfermero (护士)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/学校" target="_blank">学校</a></td><td class="pinyin-col">xuéxiào</td><td>🏫 Escuela — profesor (老师)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/大学" target="_blank">大学</a></td><td class="pinyin-col">dàxué</td><td>🎓 Universidad — profesor universitario</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/公司" target="_blank">公司</a></td><td class="pinyin-col">gōngsī</td><td>🏢 Empresa — empleado, gerente (经理)</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/办公室" target="_blank">办公室</a></td><td class="pinyin-col">bàngōngshì</td><td>🏢 Oficina — trabajo de escritorio</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/银行" target="_blank">银行</a></td><td class="pinyin-col">yínháng</td><td>🏦 Banco — bancario</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/咖啡馆" target="_blank">咖啡馆</a></td><td class="pinyin-col">kāfēi guǎn</td><td>☕ Cafetería — barista</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/餐馆" target="_blank">餐馆</a></td><td class="pinyin-col">cānguǎn</td><td>🍽️ Restaurante — cocinero (厨师), mesero</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/超市" target="_blank">超市</a></td><td class="pinyin-col">chāoshì</td><td>🛒 Supermercado — cajero, repositor</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/商场" target="_blank">商场</a></td><td class="pinyin-col">shāngchǎng</td><td>🏬 Mall — vendedor</td></tr>
+  <tr><td class="hz"><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a></td><td class="pinyin-col">jiā</td><td>🏠 Casa — trabajo remoto (en casa)</td></tr>
+</table>
+
+<h3>Ejemplos completos</h3>
+<div class="ex">
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/医院" target="_blank">医院</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>，<a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/是" target="_blank">是</a><a href="https://www.dong-chinese.com/wiki/医生" target="_blank">医生</a>。</span><br>
+      <em>Wǒ zài yīyuàn gōngzuò, wǒ shì yīshēng. — Trabajo en el hospital, soy médico. 🏥👨‍⚕️</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/学校" target="_blank">学校</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>，<a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/是" target="_blank">是</a><a href="https://www.dong-chinese.com/wiki/老师" target="_blank">老师</a>。</span><br>
+      <em>Wǒ zài xuéxiào gōngzuò, wǒ shì lǎoshī. — Trabajo en la escuela, soy profesor. 🏫👨‍🏫</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/公司" target="_blank">公司</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span><br>
+      <em>Wǒ zài gōngsī gōngzuò. — Trabajo en una empresa. 🏢</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/银行" target="_blank">银行</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span><br>
+      <em>Wǒ zài yínháng gōngzuò. — Trabajo en el banco. 🏦</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span><br>
+      <em>Wǒ zài jiā gōngzuò. — Trabajo en casa (remoto). 🏠💻</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/咖啡馆" target="_blank">咖啡馆</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span><br>
+      <em>Wǒ zài kāfēi guǎn gōngzuò. — Trabajo en una cafetería. ☕</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/公司" target="_blank">公司</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>，<a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/是" target="_blank">是</a><a href="https://www.dong-chinese.com/wiki/会计" target="_blank">会计</a>。</span><br>
+      <em>Wǒ zài gōngsī gōngzuò, wǒ shì kuàijì. — Trabajo en una empresa, soy contador. 🏢🧾</em></li>
+  </ol>
+</div>
+
+<h3>Mini-diálogo de práctica</h3>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>？</span><br><em>¿Dónde trabajas?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/办公室" target="_blank">办公室</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span><br><em>Trabajo en una oficina.</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/朋友" target="_blank">朋友</a><a href="https://www.dong-chinese.com/wiki/呢" target="_blank">呢</a>？</span><br><em>¿Y tu amigo?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/朋友" target="_blank">朋友</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/咖啡馆" target="_blank">咖啡馆</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span><br><em>Mi amigo trabaja en una cafetería.</em></div>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- SECCIÓN 7: Ejemplos contundentes        -->
+<!-- ═══════════════════════════════════════ -->
+<h2 id="s7" class="gold">7. 🎯 Ejemplos contundentes — todo junto</h2>
+
+<div class="box note">
+  📝 Esta sección reúne ejemplos que <strong>combinan varias estructuras de la clase</strong>: 在 + lugar, posición + objeto, 正在 progresivo, 是 + profesión, 的 con cosas, 这儿/那儿/哪儿, etc.
+</div>
+
+<h3>🅰️ Ubicación + profesión + 是</h3>
+<div class="ex">
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/爸爸" target="_blank">爸爸</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/医院" target="_blank">医院</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>，<a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/是" target="_blank">是</a><a href="https://www.dong-chinese.com/wiki/医生" target="_blank">医生</a>。</span><br>
+      <em>Wǒ bàba zài yīyuàn gōngzuò, tā shì yīshēng. — Mi papá trabaja en el hospital, es médico. 🏥👨‍⚕️</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/儿子" target="_blank">儿子</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/银行" target="_blank">银行</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>，<a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/是" target="_blank">是</a><a href="https://www.dong-chinese.com/wiki/会计" target="_blank">会计</a>。</span><br>
+      <em>Wǒ érzi zài yínháng gōngzuò, tā shì kuàijì. — Mi hijo trabaja en el banco, es contador. 🏦🧾</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/朋友" target="_blank">朋友</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/咖啡馆" target="_blank">咖啡馆</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>，<a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/是" target="_blank">是</a><a href="https://www.dong-chinese.com/wiki/老板" target="_blank">老板</a>。</span><br>
+      <em>Wǒ péngyou zài kāfēi guǎn gōngzuò, tā shì lǎobǎn. — Mi amigo trabaja en una cafetería, es el dueño. ☕👔</em></li>
+  </ol>
+</div>
+
+<h3>🅱️ Posición de objetos (objeto + posición)</h3>
+<div class="ex">
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/手机" target="_blank">手机</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/桌子" target="_blank">桌子</a><a href="https://www.dong-chinese.com/wiki/上面" target="_blank">上面</a>。</span><br>
+      <em>Wǒ de shǒujī zài zhuōzi shàngmiàn. — Mi celular está encima de la mesa. 📱⬆️</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/钱包" target="_blank">钱包</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/电脑" target="_blank">电脑</a><a href="https://www.dong-chinese.com/wiki/旁边" target="_blank">旁边</a>。</span><br>
+      <em>Qiánbāo zài diànnǎo pángbiān. — La billetera está al lado del computador. 👛↔️💻</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/钥匙" target="_blank">钥匙</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/钱包" target="_blank">钱包</a><a href="https://www.dong-chinese.com/wiki/里面" target="_blank">里面</a>。</span><br>
+      <em>Yàoshi zài qiánbāo lǐmiàn. — Las llaves están dentro de la billetera. 🔑📦</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/电视" target="_blank">电视</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/电脑" target="_blank">电脑</a><a href="https://www.dong-chinese.com/wiki/和" target="_blank">和</a><a href="https://www.dong-chinese.com/wiki/椅子" target="_blank">椅子</a><a href="https://www.dong-chinese.com/wiki/中间" target="_blank">中间</a>。</span><br>
+      <em>Diànshì zài diànnǎo hé yǐzi zhōngjiān. — La televisión está entre el computador y la silla. 💻📺🪑</em></li>
+  </ol>
+</div>
+
+<h3>🅲 Animales en posiciones (combinando 小 + posición)</h3>
+<div class="ex">
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/电脑" target="_blank">电脑</a><a href="https://www.dong-chinese.com/wiki/后面" target="_blank">后面</a>。</span><br>
+      <em>Xiǎo māo zài diànnǎo hòumiàn. — El gatito está detrás del computador. 🐱⬅️💻</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/狗" target="_blank">狗</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/椅子" target="_blank">椅子</a><a href="https://www.dong-chinese.com/wiki/下面" target="_blank">下面</a><a href="https://www.dong-chinese.com/wiki/睡觉" target="_blank">睡觉</a>。</span><br>
+      <em>Xiǎo gǒu zài yǐzi xiàmiàn shuìjiào. — El perrito está durmiendo debajo de la silla. 🐶💤🪑</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a><a href="https://www.dong-chinese.com/wiki/和" target="_blank">和</a><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/狗" target="_blank">狗</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a><a href="https://www.dong-chinese.com/wiki/里面" target="_blank">里面</a>。</span><br>
+      <em>Xiǎo māo hé xiǎo gǒu zài jiā lǐmiàn. — El gatito y el perrito están dentro de la casa. 🐱🐶🏠</em></li>
+  </ol>
+</div>
+
+<h3>🅳 Acciones en curso con 正在 (progresivo)</h3>
+<div class="ex">
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/正在" target="_blank">正在</a><a href="https://www.dong-chinese.com/wiki/朋友" target="_blank">朋友</a><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a><a href="https://www.dong-chinese.com/wiki/茶" target="_blank">茶</a>。</span><br>
+      <em>Wǒ zhèng zài péngyou jiā hē chá. — Estoy tomando té en casa de un amigo. 🍵</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/妈妈" target="_blank">妈妈</a><a href="https://www.dong-chinese.com/wiki/正在" target="_blank">正在</a><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a><a href="https://www.dong-chinese.com/wiki/做饭" target="_blank">做饭</a>。</span><br>
+      <em>Wǒ māma zhèng zài jiā zuòfàn. — Mi mamá está cocinando en casa. 🍳🏠</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a> CCC <a href="https://www.dong-chinese.com/wiki/学" target="_blank">学</a><a href="https://www.dong-chinese.com/wiki/中文" target="_blank">中文</a>。</span><br>
+      <em>Wǒ zài CCC xué zhōngwén. — Estudio chino en el CCC. 🀄</em></li>
+  </ol>
+</div>
+
+<h3>🅴 Preguntas y respuestas — diálogos compuestos</h3>
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span><br><em>Nǐ de xiǎo māo zài nǎr? — ¿Dónde está tu gatito? 🐱</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/的" target="_blank">的</a><a href="https://www.dong-chinese.com/wiki/小" target="_blank">小</a><a href="https://www.dong-chinese.com/wiki/猫" target="_blank">猫</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/那儿" target="_blank">那儿</a>，<a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/椅子" target="_blank">椅子</a><a href="https://www.dong-chinese.com/wiki/上面" target="_blank">上面</a>。</span><br><em>Wǒ de xiǎo māo zài nàr, zài yǐzi shàngmiàn. — Mi gatito está allá, encima de la silla. 🐱⬆️🪑</em></div>
+</div>
+
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/现在" target="_blank">现在</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span><br><em>Nǐ xiànzài zài nǎr? — ¿Dónde estás ahora?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/咖啡馆" target="_blank">咖啡馆</a>，<a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/正在" target="_blank">正在</a><a href="https://www.dong-chinese.com/wiki/喝" target="_blank">喝</a><a href="https://www.dong-chinese.com/wiki/咖啡" target="_blank">咖啡</a>。</span><br><em>Wǒ zài kāfēi guǎn, wǒ zhèng zài hē kāfēi. — Estoy en la cafetería, estoy tomando café. ☕</em></div>
+</div>
+
+<div class="dialog">
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/儿子" target="_blank">儿子</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？</span><br><em>Nǐ érzi zài nǎr? — ¿Dónde está tu hijo?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/学校" target="_blank">学校</a><a href="https://www.dong-chinese.com/wiki/学习" target="_blank">学习</a>。</span><br><em>Tā zài xuéxiào xuéxí. — Está estudiando en la escuela. 🏫📚</em></div>
+  <div class="da"><strong>A:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/爸爸" target="_blank">爸爸</a><a href="https://www.dong-chinese.com/wiki/呢" target="_blank">呢</a>？</span><br><em>Nǐ bàba ne? — ¿Y tu papá?</em></div>
+  <div class="db"><strong>B:</strong> <span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/爸爸" target="_blank">爸爸</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/医院" target="_blank">医院</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>，<a href="https://www.dong-chinese.com/wiki/他" target="_blank">他</a><a href="https://www.dong-chinese.com/wiki/是" target="_blank">是</a><a href="https://www.dong-chinese.com/wiki/兽医" target="_blank">兽医</a>。</span><br><em>Wǒ bàba zài yīyuàn gōngzuò, tā shì shòuyī. — Mi papá trabaja en el hospital, es veterinario. 🏥🐾</em></div>
+</div>
+
+<h3>🅵 Frase enojada y otras prácticas</h3>
+<div class="ex">
+  <ol>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/你" target="_blank">你</a><a href="https://www.dong-chinese.com/wiki/现在" target="_blank">现在</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/哪儿" target="_blank">哪儿</a>？？？</span><br>
+      <em>Nǐ xiànzài zài nǎr??? — ¿Tú AHORA dónde ESTÁS??? 😡📞</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/有" target="_blank">有</a><a href="https://www.dong-chinese.com/wiki/工作" target="_blank">工作</a>。</span><br>
+      <em>Wǒ yǒu gōngzuò. — Tengo trabajo. 💼</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/朋友" target="_blank">朋友</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/学校" target="_blank">学校</a>。</span><br>
+      <em>Wǒ péngyou zài xuéxiào. — Mi amigo está en la escuela. 🏫</em></li>
+    <li><span class="hz"><a href="https://www.dong-chinese.com/wiki/我" target="_blank">我</a><a href="https://www.dong-chinese.com/wiki/妈妈" target="_blank">妈妈</a><a href="https://www.dong-chinese.com/wiki/在" target="_blank">在</a><a href="https://www.dong-chinese.com/wiki/家" target="_blank">家</a>。</span><br>
+      <em>Wǒ māma zài jiā. — Mi mamá está en casa. 🏠</em></li>
+  </ol>
+</div>
+
+<div class="box note">
+  📝 <strong>Repaso de las 5 reglas clave de esta clase:</strong>
+  <ol style="margin: 6px 0 0 18px;">
+    <li><strong>在 = punto de ubicación</strong> 📍 — va antes del verbo</li>
+    <li><strong>Objeto + posición</strong> (al revés del español): 椅子下面 = "debajo de la silla"</li>
+    <li><strong>的 con cosas</strong> (我的手机), pero <strong>NO con personas cercanas</strong> (我妈妈)</li>
+    <li><strong>正在 = ahora mismo</strong> ⏱️ — el 正 es opcional cuando el contexto es claro</li>
+    <li><strong>这儿 / 那儿 / 哪儿</strong> = aquí / allá / ¿dónde?</li>
+  </ol>
+</div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- NAV PREVIO/SIGUIENTE                     -->
+<!-- ═══════════════════════════════════════ -->
+<div style="display: flex; justify-content: space-between; margin-top: 40px; padding: 16px; background: #fff; border-radius: 10px; border: 1px solid #e5e5e5;">
+  <a href="clase06.html" style="color: #c0392b; text-decoration: none;">← Clase 06</a>
+  <a href="/" style="color: #c0392b; text-decoration: none;">↑ Índice</a>
+  <span style="color: #ccc;">Clase 08 →</span>
+</div>
+
+<footer>Básico 2 · Clase 07 · 25 abr 2026 · <a href="https://basti.cl" style="color:inherit">basti.cl</a></footer>
+
+<button class="pinyin-toggle" onclick="document.body.classList.toggle('hide-pinyin'); this.textContent = document.body.classList.contains('hide-pinyin') ? '👁 Mostrar pinyin' : '🙈 Ocultar pinyin';">🙈 Ocultar pinyin</button>
+
+<script>
+const AUDIO_BASE = '/audio/';
+const audioMap = {
+  "X + 家": "zh_68fc253939.mp3",
+  "①": "zh_aba1dd9afd.mp3",
+  "②": "zh_6ac2397867.mp3",
+  "③": "zh_f6f77a1616.mp3",
+  "④": "zh_ed80de20df.mp3",
+  "⑤": "zh_4d2898cc51.mp3",
+  "⑥": "zh_6929b940e4.mp3",
+  "⑦": "zh_b54091b9ea.mp3",
+  "上面": "zh_2221389445.mp3",
+  "下": "zh_3850a186c3.mp3",
+  "下面": "zh_933defc128.mp3",
+  "中医": "zh_6c9ac67135.mp3",
+  "中学": "zh_041da43136.mp3",
+  "中间": "zh_5cb0f0021b.mp3",
+  "他在学校学习。": "zh_bd6e24fb8a.mp3",
+  "他正在学习中文。": "zh_bf03210366.mp3",
+  "会计": "zh_c810258f63.mp3",
+  "体育馆": "zh_1800a879f6.mp3",
+  "你儿子在哪儿工作？": "zh_0e3efe71b8.mp3",
+  "你儿子在哪儿？": "zh_48aa835712.mp3",
+  "你在哪儿工作？": "zh_6317785a67.mp3",
+  "你在哪儿？": "zh_84b82aa0e9.mp3",
+  "你朋友": "zh_f64718754b.mp3",
+  "你朋友呢？": "zh_5cefb41bd1.mp3",
+  "你朋友在哪儿？": "zh_bc7f68dde0.mp3",
+  "你爸爸呢？": "zh_daf0e585d1.mp3",
+  "你现在在哪儿？": "zh_9d79ed763a.mp3",
+  "你现在在哪儿？？？": "zh_a5ce4b82a4.mp3",
+  "你的小猫": "zh_550b55b283.mp3",
+  "你的小猫在哪儿？": "zh_62fbb5b8f0.mp3",
+  "你的手机在桌子上面。": "zh_16369187ef.mp3",
+  "你的钱包在椅子下面。": "zh_711ab32db4.mp3",
+  "儿": "zh_e90f3430e9.mp3",
+  "儿子": "zh_4f11098f34.mp3",
+  "公": "zh_7d6c6b0efe.mp3",
+  "公司": "zh_41716f87c3.mp3",
+  "兽医": "zh_f5736c3714.mp3",
+  "初中": "zh_b219148728.mp3",
+  "前面": "zh_0c3ea1e092.mp3",
+  "办": "zh_cb52ac5f3a.mp3",
+  "办公室": "zh_93cfc1e110.mp3",
+  "助手": "zh_f0cc120ba7.mp3",
+  "医": "zh_c1fad4ce89.mp3",
+  "医师": "zh_b486d5fcef.mp3",
+  "医生": "zh_6d7c1afb07.mp3",
+  "医院": "zh_071bd02a36.mp3",
+  "博士": "zh_7d27be0093.mp3",
+  "卧室": "zh_749e19ca5c.mp3",
+  "厨师": "zh_19daf821e0.mp3",
+  "司机": "zh_7094b0e116.mp3",
+  "后面": "zh_518ffd2761.mp3",
+  "员": "zh_d70ef8390e.mp3",
+  "咖啡馆": "zh_c30b22ccb1.mp3",
+  "哪": "zh_e0bcc1fa08.mp3",
+  "哪儿": "zh_92c5455654.mp3",
+  "商场": "zh_861f5f23be.mp3",
+  "喝茶": "zh_43354521aa.mp3",
+  "图书馆": "zh_9e08ed8ec5.mp3",
+  "在": "zh_241d47a3ee.mp3",
+  "在 + lugar + verbo": "zh_9b8bd8eaab.mp3",
+  "在 + verbo": "zh_442ee53fd7.mp3",
+  "在 + 哪儿 + verbo": "zh_9cb1f9d283.mp3",
+  "在椅子下面": "zh_20e3b3e558.mp3",
+  "在盒子前面": "zh_a624d4c767.mp3",
+  "外面": "zh_0f7738748f.mp3",
+  "大学": "zh_572a6791c3.mp3",
+  "学校": "zh_413b738061.mp3",
+  "室": "zh_9d730376f5.mp3",
+  "家": "zh_a6cdd2a00b.mp3",
+  "小": "zh_391b8fa9c7.mp3",
+  "小学": "zh_79898d25cb.mp3",
+  "小狗": "zh_541167ce90.mp3",
+  "小狗在哪儿？": "zh_c33fb188db.mp3",
+  "小狗在椅子下面。": "zh_0d44ab196d.mp3",
+  "小狗在椅子下面睡觉。": "zh_f8e289566b.mp3",
+  "小狗正在椅子下面睡觉。": "zh_a492c7bbf2.mp3",
+  "小猫": "zh_acf5547a8c.mp3",
+  "小猫和小狗在家里面。": "zh_2d37e819df.mp3",
+  "小猫在哪儿？": "zh_a6411ef4ec.mp3",
+  "小猫在电脑后面。": "zh_a02108d766.mp3",
+  "小猫在那儿。": "zh_deb688245e.mp3",
+  "工作": "zh_9a018b21ab.mp3",
+  "师": "zh_2928bba232.mp3",
+  "床": "zh_1696a59602.mp3",
+  "店员": "zh_bd2bfccff1.mp3",
+  "我": "zh_1681525453.mp3",
+  "我儿子在医院工作，他是医生。": "zh_66f0ade638.mp3",
+  "我儿子在银行工作，他是会计。": "zh_fdc2b26127.mp3",
+  "我在 CCC 学中文。": "zh_5e16027ff2.mp3",
+  "我在 Centro Cultural Chino 上课。": "zh_fb5a0e9783.mp3",
+  "我在中国文化中心上课": "zh_71b454edd9.mp3",
+  "我在公司工作。": "zh_8d872966a0.mp3",
+  "我在公司工作，我是会计。": "zh_55c4289a7e.mp3",
+  "我在办公室工作。": "zh_ae6f610c74.mp3",
+  "我在医院工作，我是医生。": "zh_dd559cbf84.mp3",
+  "我在咖啡馆工作。": "zh_14f54f1589.mp3",
+  "我在咖啡馆，我正在喝咖啡。": "zh_d6fbde78de.mp3",
+  "我在学校学习。": "zh_2e0dc00c17.mp3",
+  "我在学校工作。": "zh_6cec94901f.mp3",
+  "我在学校工作，我是老师。": "zh_4c3ba75875.mp3",
+  "我在家工作。": "zh_42bbf529eb.mp3",
+  "我在朋友家吃中国菜。": "zh_a61f03703c.mp3",
+  "我在这儿。": "zh_6951f5fe51.mp3",
+  "我在银行工作。": "zh_4ea6dd796d.mp3",
+  "我妈妈": "zh_c40ea4334f.mp3",
+  "我妈妈在家。": "zh_4560ac7261.mp3",
+  "我妈妈正在做饭。": "zh_c367b5fd14.mp3",
+  "我妈妈正在家做饭。": "zh_efc18c438e.mp3",
+  "我家": "zh_b190ee0c98.mp3",
+  "我有工作。": "zh_b3ef9edf84.mp3",
+  "我朋友在咖啡馆工作。": "zh_479cd1e003.mp3",
+  "我朋友在咖啡馆工作，他是老板。": "zh_dffeefbee7.mp3",
+  "我朋友在学校。": "zh_beabfad533.mp3",
+  "我朋友在学校学习": "zh_7a1cdf4926.mp3",
+  "我正在朋友家喝茶。": "zh_626141a667.mp3",
+  "我爸爸在医院工作。": "zh_ad7fed8e40.mp3",
+  "我爸爸在医院工作，他是兽医。": "zh_8e3aa32b08.mp3",
+  "我爸爸在医院工作，他是医生。": "zh_1c4b1eb6fb.mp3",
+  "我爸爸在那儿工作。": "zh_6ff93f16af.mp3",
+  "我的书": "zh_a3ef3dcc15.mp3",
+  "我的小猫在那儿，在椅子上面。": "zh_e6045c8438.mp3",
+  "我的手机在哪儿？": "zh_45fdd13ac5.mp3",
+  "我的手机在桌子上面。": "zh_1e235d8fc8.mp3",
+  "我的钥匙在哪儿？": "zh_9389b3e06a.mp3",
+  "我的钱包在哪儿？": "zh_c9c48619d2.mp3",
+  "手": "zh_3c7d183f1b.mp3",
+  "手机": "zh_9f9d36327d.mp3",
+  "教室": "zh_28c2fc3de8.mp3",
+  "旁边": "zh_0a50d8e569.mp3",
+  "是": "是_0a60ac8f02.mp3",
+  "朋友家": "zh_c70c903bc3.mp3",
+  "服务员": "zh_787c5438c7.mp3",
+  "桌子": "zh_9e2fde20b6.mp3",
+  "椅子": "zh_43876e0825.mp3",
+  "椅子 下面": "zh_2f90324aa2.mp3",
+  "歌手": "zh_801e352668.mp3",
+  "正": "zh_0f756c3fad.mp3",
+  "正在": "zh_e7c3012c3b.mp3",
+  "水手": "zh_f9bf9f1e17.mp3",
+  "爸爸": "zh_0d00c80f61.mp3",
+  "狗": "zh_5090e44ef9.mp3",
+  "猫": "zh_b655de688e.mp3",
+  "现在": "zh_505ccfb0e8.mp3",
+  "电脑": "zh_e855972ea9.mp3",
+  "电脑 后面": "zh_d028a5dd3c.mp3",
+  "电视": "zh_3a2f904027.mp3",
+  "电视在小猫和小狗中间。": "zh_7ed395a925.mp3",
+  "电视在电脑和椅子中间。": "zh_862447b54e.mp3",
+  "的": "zh_01d7aa494b.mp3",
+  "盒子 前面": "zh_3102024b34.mp3",
+  "研究生": "zh_951b26a4a4.mp3",
+  "硕士": "zh_e6de6983db.mp3",
+  "秘书": "zh_cafefe9c15.mp3",
+  "老师": "zh_295af37e05.mp3",
+  "老师家": "zh_f01018d0a4.mp3",
+  "老板": "zh_db3ac57de8.mp3",
+  "职员": "zh_760ba4ddfc.mp3",
+  "西医": "zh_132aca2cee.mp3",
+  "警察": "zh_e160a832cf.mp3",
+  "超市": "zh_faeff5efd3.mp3",
+  "边": "zh_34cfaae151.mp3",
+  "这儿": "zh_4146aab4b3.mp3",
+  "那": "zh_995c3ec9d7.mp3",
+  "那儿": "zh_751af044c6.mp3",
+  "里面": "zh_0bf6a4f167.mp3",
+  "钥匙": "zh_02b66eb5cb.mp3",
+  "钥匙在钱包里面。": "zh_2afa21043c.mp3",
+  "钱包": "zh_2f47473cb1.mp3",
+  "钱包在电脑旁边。": "zh_44a44f95cb.mp3",
+  "银行": "zh_f14b4f28c4.mp3",
+  "门": "zh_a4960087a9.mp3",
+  "间": "zh_e04aa3f347.mp3",
+  "面": "zh_fd6a0e7d36.mp3",
+  "餐馆": "zh_2580b40553.mp3",
+  "馆": "zh_fbc000daef.mp3",
+  "高中": "zh_fefa7c8483.mp3"
+};
+
+function speak(text) {
+  const file = audioMap[text];
+  if (file) { new Audio(AUDIO_BASE + file).play(); return; }
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'zh-CN'; u.rate = 0.8;
+  speechSynthesis.speak(u);
+}
+
+// Botones de audio en cada td.hz y .da/.db .hz
+document.querySelectorAll('td.hz, .dialog .hz').forEach(el => {
+  const text = el.textContent.trim();
+  if (!text) return;
+  const btn = document.createElement('button');
+  btn.textContent = '🔊';
+  btn.style.cssText = 'background:none;border:none;cursor:pointer;margin-left:6px;font-size:0.9em;opacity:0.5;';
+  btn.onmouseover = () => btn.style.opacity = '1';
+  btn.onmouseout = () => btn.style.opacity = '0.5';
+  btn.onclick = (e) => { e.preventDefault(); e.stopPropagation(); speak(text); };
+  el.appendChild(btn);
+});
+</script>
+</body>
+</html>

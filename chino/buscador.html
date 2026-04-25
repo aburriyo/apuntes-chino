@@ -26,7 +26,9 @@
   .r-info { flex: 1; }
   .r-py { font-size: 1em; font-weight: 600; color: #333; }
   .r-es { font-size: 0.85em; color: #888; }
-  .r-source { font-size: 0.72em; color: #bbb; margin-top: 4px; }
+  .r-source { font-size: 0.72em; color: #888; margin-top: 4px; }
+  .r-source a { color: #c0392b; text-decoration: none; border-bottom: 1px dotted #c0392b; }
+  .r-source a:hover { color: #e74c3c; border-bottom: 1px solid #e74c3c; }
   .r-audio { background: none; border: none; font-size: 1.2em; cursor: pointer; opacity: 0.5; transition: opacity .2s; }
   .r-audio:hover { opacity: 1; }
   .empty { text-align: center; color: #ccc; font-size: 1.1em; margin-top: 60px; }
@@ -40,8 +42,8 @@
 </div>
 
 <div class="search-area">
-  <input type="text" class="search-box" id="searchInput" placeholder="Buscar: 你, nǐ, tú, hablar..." autofocus>
-  <div class="search-hint">Busca en todo el vocabulario de Básico 2 (clases 01-06) · 300+ palabras</div>
+  <input type="text" class="search-box" id="searchInput" placeholder="Buscar: 你, ni, hao, tú, hablar..." autofocus>
+  <div class="search-hint">📝 No necesitas escribir tildes ni tonos · usa "v" para "ü" (ej: "lv" = lǜ) · click en "📖 Clase X →" para ir a la sección · 350+ palabras de Básico 2</div>
 </div>
 
 <div class="results" id="results">
@@ -353,12 +355,84 @@ const vocab = [
   {hz:"两斤",py:"liǎng jīn",es:"⚖️ 2 jin = 1 kg",src:"Clase 06"},
   {hz:"公斤",py:"gōngjīn",es:"⚖️ Kilogramo (formal/occidental)",src:"Clase 06"},
   {hz:"多少钱一斤？",py:"Duōshao qián yì jīn?",es:"❓ ¿Cuánto cuesta por jin?",src:"Clase 06"},
+  // === Clase 07 (25 abr 2026) ===
+  // Sección 1: 在 + lugar
+  {hz:"在",py:"zài",es:"📍 En / estar en (punto de ubicación)",src:"Clase 07",anchor:"s1",section:"在 + lugar"},
+  {hz:"哪儿",py:"nǎr",es:"❓ ¿Dónde?",src:"Clase 07",anchor:"s1",section:"在 + lugar"},
+  {hz:"工作",py:"gōngzuò",es:"💼 Trabajar / trabajo",src:"Clase 07",anchor:"s1",section:"在 + lugar"},
+  {hz:"儿子",py:"érzi",es:"👦 Hijo",src:"Clase 07",anchor:"s2",section:"Familia"},
+  // Sección 2: Vocab nuevo
+  {hz:"医生",py:"yīshēng",es:"👨‍⚕️ Doctor / médico",src:"Clase 07",anchor:"s2",section:"Profesiones"},
+  {hz:"椅子",py:"yǐzi",es:"🪑 Silla",src:"Clase 07",anchor:"s2",section:"Objetos"},
+  {hz:"小",py:"xiǎo",es:"🤏 Pequeño",src:"Clase 07",anchor:"s2",section:"Adjetivos"},
+  {hz:"小猫",py:"xiǎo māo",es:"🐱 Gatito",src:"Clase 07",anchor:"s2",section:"Animales"},
+  {hz:"小狗",py:"xiǎo gǒu",es:"🐶 Perrito / cachorro",src:"Clase 07",anchor:"s2",section:"Animales"},
+  // Preposiciones de lugar
+  {hz:"上面",py:"shàngmiàn",es:"⬆️ Arriba / encima de",src:"Clase 07",anchor:"s2",section:"Preposiciones de lugar"},
+  {hz:"下面",py:"xiàmiàn",es:"⬇️ Abajo / debajo de",src:"Clase 07",anchor:"s2",section:"Preposiciones de lugar"},
+  {hz:"前面",py:"qiánmiàn",es:"➡️ En frente de / delante de",src:"Clase 07",anchor:"s2",section:"Preposiciones de lugar"},
+  {hz:"后面",py:"hòumiàn",es:"⬅️ Detrás de",src:"Clase 07",anchor:"s2",section:"Preposiciones de lugar"},
+  {hz:"里面",py:"lǐmiàn",es:"📦 Dentro de / adentro",src:"Clase 07",anchor:"s2",section:"Preposiciones de lugar"},
+  {hz:"外面",py:"wàimiàn",es:"🌳 Fuera de / afuera",src:"Clase 07",anchor:"s2",section:"Preposiciones de lugar"},
+  {hz:"中间",py:"zhōngjiān",es:"🎯 En medio de / entre",src:"Clase 07",anchor:"s2",section:"Preposiciones de lugar"},
+  {hz:"旁边",py:"pángbiān",es:"↔️ Al lado de / a un costado",src:"Clase 07",anchor:"s2",section:"Preposiciones de lugar"},
+  // Objetos
+  {hz:"电脑",py:"diànnǎo",es:"💻 Computador",src:"Clase 07",anchor:"s2",section:"Objetos"},
+  {hz:"电视",py:"diànshì",es:"📺 Televisión",src:"Clase 07",anchor:"s2",section:"Objetos"},
+  {hz:"手机",py:"shǒujī",es:"📱 Celular / teléfono móvil",src:"Clase 07",anchor:"s2",section:"Objetos"},
+  {hz:"钱包",py:"qiánbāo",es:"👛 Billetera",src:"Clase 07",anchor:"s2",section:"Objetos"},
+  {hz:"钥匙",py:"yàoshi",es:"🔑 Llave / llaves",src:"Clase 07",anchor:"s2",section:"Objetos"},
+  // Tiempo
+  {hz:"现在",py:"xiànzài",es:"⏰ Ahora / en este momento",src:"Clase 07",anchor:"s2",section:"Tiempo"},
+  {hz:"正在",py:"zhèng zài",es:"⏱️ Estar haciendo (progresivo)",src:"Clase 07",anchor:"s5",section:"Progresivo 正在"},
+  // Lugares
+  {hz:"公司",py:"gōngsī",es:"🏢 Empresa / compañía",src:"Clase 07",anchor:"s2",section:"Lugares"},
+  {hz:"咖啡馆",py:"kāfēi guǎn",es:"☕ Cafetería",src:"Clase 07",anchor:"s2",section:"Lugares"},
+  {hz:"办公室",py:"bàngōngshì",es:"🏢 Oficina",src:"Clase 07",anchor:"s2",section:"Lugares"},
+  // Profesiones
+  {hz:"会计",py:"kuàijì",es:"🧾 Contador / contadora",src:"Clase 07",anchor:"s2",section:"Profesiones"},
+  {hz:"司机",py:"sījī",es:"🚗 Conductor / chófer",src:"Clase 07",anchor:"s2",section:"Profesiones"},
+  {hz:"职员",py:"zhíyuán",es:"🧑‍💼 Oficinista / empleado",src:"Clase 07",anchor:"s2",section:"Profesiones"},
+  {hz:"秘书",py:"mìshū",es:"📋 Secretaria / secretario",src:"Clase 07",anchor:"s2",section:"Profesiones"},
+  {hz:"兽医",py:"shòuyī",es:"🐾 Veterinario (médico de animales)",src:"Clase 07",anchor:"s2",section:"Profesiones"},
+  {hz:"助手",py:"zhùshǒu",es:"🤝 Ayudante / asistente",src:"Clase 07",anchor:"s2",section:"Profesiones"},
+  {hz:"警察",py:"jǐngchá",es:"👮 Policía",src:"Clase 07",anchor:"s2",section:"Profesiones"},
+  {hz:"老板",py:"lǎobǎn",es:"👔 Jefe / dueño (de negocio)",src:"Clase 07",anchor:"s2",section:"Profesiones"},
+  // Sistema educativo
+  {hz:"小学",py:"xiǎoxué",es:"📒 Escuela básica (1°-6°)",src:"Clase 07",anchor:"s2",section:"Educación"},
+  {hz:"中学",py:"zhōngxué",es:"📕 Enseñanza media (general)",src:"Clase 07",anchor:"s2",section:"Educación"},
+  {hz:"初中",py:"chūzhōng",es:"📕 Media inicial (1°-2° medio aprox.)",src:"Clase 07",anchor:"s2",section:"Educación"},
+  {hz:"高中",py:"gāozhōng",es:"📗 Media superior (3°-4° medio)",src:"Clase 07",anchor:"s2",section:"Educación"},
+  {hz:"研究生",py:"yánjiūshēng",es:"🎓 Estudiante de postgrado",src:"Clase 07",anchor:"s2",section:"Educación"},
+  {hz:"硕士",py:"shuòshì",es:"🎓 Magíster / máster",src:"Clase 07",anchor:"s2",section:"Educación"},
+  {hz:"博士",py:"bóshì",es:"🎓 Doctorado / PhD",src:"Clase 07",anchor:"s2",section:"Educación"},
+  // Sección 3: 医
+  {hz:"医",py:"yī",es:"🩺 Medicina / curar",src:"Clase 07",anchor:"s3",section:"Componente 医"},
+  {hz:"医院",py:"yīyuàn",es:"🏥 Hospital",src:"Clase 07",anchor:"s3",section:"Componente 医"},
+  {hz:"中医",py:"zhōngyī",es:"🌿 Medicina china tradicional",src:"Clase 07",anchor:"s3",section:"Componente 医"},
+  {hz:"西医",py:"xīyī",es:"💊 Medicina occidental",src:"Clase 07",anchor:"s3",section:"Componente 医"},
+  // Sección 4: 这儿/那儿/哪儿
+  {hz:"这儿",py:"zhèr",es:"📍 Aquí",src:"Clase 07",anchor:"s4",section:"Demostrativos de lugar"},
+  {hz:"那儿",py:"nàr",es:"📌 Allá / ahí",src:"Clase 07",anchor:"s4",section:"Demostrativos de lugar"},
+  // Sección 5: 正在
+  // (正在 ya está arriba)
+  // Frases clave
+  {hz:"你儿子在哪儿工作？",py:"Nǐ érzi zài nǎr gōngzuò?",es:"💼 ¿Dónde trabaja tu hijo?",src:"Clase 07",anchor:"s1",section:"Diálogo central"},
+  {hz:"小猫在椅子下面",py:"Xiǎo māo zài yǐzi xiàmiàn",es:"🐱 El gatito está debajo de la silla",src:"Clase 07",anchor:"s4",section:"Diálogo animales"},
+  {hz:"我妈妈在家",py:"Wǒ māma zài jiā",es:"🏠 Mi mamá está en casa",src:"Clase 07",anchor:"s4",section:"Ejemplos"},
+  {hz:"我朋友在学校",py:"Wǒ péngyou zài xuéxiào",es:"🏫 Mi amigo está en la escuela",src:"Clase 07",anchor:"s4",section:"Listening"},
+  {hz:"你的小猫在哪儿？",py:"Nǐ de xiǎo māo zài nǎr?",es:"🐱 ¿Dónde está tu gatito? (con 的, no humano)",src:"Clase 07",anchor:"s4",section:"Regla del 的"},
+  {hz:"我正在朋友家喝茶",py:"Wǒ zhèng zài péngyou jiā hē chá",es:"🍵 Estoy tomando té en casa de un amigo",src:"Clase 07",anchor:"s5",section:"Progresivo 正在"},
+  {hz:"你现在在哪儿？",py:"Nǐ xiànzài zài nǎr?",es:"😡 ¿Tú AHORA dónde ESTÁS??? (frase enojada)",src:"Clase 07",anchor:"s5",section:"Frase enojada"},
+  {hz:"电视在小猫和小狗中间",py:"Diànshì zài xiǎo māo hé xiǎo gǒu zhōngjiān",es:"📺 La televisión está entre el gatito y el perrito",src:"Clase 07",anchor:"s2",section:"Estructura A 和 B 中间"},
+  {hz:"你在哪儿工作？",py:"Nǐ zài nǎr gōngzuò?",es:"💼 ¿Dónde trabajas?",src:"Clase 07",anchor:"s6",section:"¿Dónde trabajas?"},
 ];
 
 function normalize(str) {
   return str.toLowerCase()
     .normalize('NFD').replace(/[\u0300-\u036f]/g, '')
-    .replace(/[üǖǘǚǜ]/g, 'u');
+    .replace(/[üǖǘǚǜ]/g, 'u')
+    .replace(/v/g, 'u');
 }
 
 let audioMap = {};
@@ -391,6 +465,14 @@ function search(query) {
   );
 }
 
+function srcToUrl(src, anchor) {
+  const match = src.match(/Clase (\d+)/i);
+  if (!match) return null;
+  const num = match[1].padStart(2, '0');
+  const url = `/basico2/clase${num}.html`;
+  return anchor ? `${url}#${anchor}` : url;
+}
+
 function render(results, query) {
   const container = document.getElementById('results');
   if (!query.trim()) {
@@ -404,12 +486,17 @@ function render(results, query) {
   let html = `<div class="result-count">${results.length} resultado${results.length > 1 ? 's' : ''}</div>`;
   results.forEach(v => {
     const link = `https://www.dong-chinese.com/wiki/${encodeURIComponent(v.hz.charAt(0))}`;
+    const classUrl = srcToUrl(v.src, v.anchor);
+    const sectionLabel = v.section ? ` · ${v.section}` : '';
+    const sourceHtml = classUrl
+      ? `<a href="${classUrl}" onclick="event.stopPropagation()">📖 ${v.src}${sectionLabel} →</a>`
+      : v.src;
     html += `<div class="result-card" onclick="speak('${v.hz}')">
       <div class="r-hz"><a href="${link}" target="_blank" onclick="event.stopPropagation()">${v.hz}</a></div>
       <div class="r-info">
         <div class="r-py">${v.py}</div>
         <div class="r-es">${v.es}</div>
-        <div class="r-source">${v.src}</div>
+        <div class="r-source">${sourceHtml}</div>
       </div>
       <button class="r-audio" onclick="event.stopPropagation(); speak('${v.hz}')">🔊</button>
     </div>`;

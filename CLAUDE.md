@@ -6,9 +6,9 @@ Tiene toda la info clave: estructura, convenciones HTML, sistema de audio (Eleve
 deploy, preferencias del usuario, etc. **Ahorra muchísimos tokens.**
 
 ## Estado actual
-Estamos tomando apuntes de la **Clase 06 — Básico 2** (18 de abril, 2026).
+Última clase tomada: **Clase 07 — Básico 2** (25 de abril, 2026).
 
-El archivo se está armando en: `chino/basico2/clase06.html`
+Archivo: `chino/basico2/clase07.html`. Próxima clase será la 08.
 
 ## Formato
 - Seguir el mismo estilo HTML de clase05.html (ver `CONTEXT.md` para detalles)
