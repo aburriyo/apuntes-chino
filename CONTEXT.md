@@ -56,7 +56,7 @@ chino/
 | 10 | Repaso | iniciales + vocabulario |
 | apéndice | Hoja de Trucos | estructuras, partículas, clasificadores |
 
-### Básico 2 (marzo-abril 2026) — 6 clases
+### Básico 2 (marzo-abril 2026) — 7 clases
 | Clase | Fecha | Temas principales |
 |-------|-------|-------------------|
 | 01 | 7 mar 2026 | 会, 有, 的, 很 — familia, adjetivos |
@@ -65,6 +65,7 @@ chino/
 | 04 | 28 mar 2026 | 生日, 去+lugar+verbo, 回家, 逛, tipos de lugares |
 | 05 | 11 abr 2026 | 和, 想, 哪儿/做什么, 周 vs 星期, bebidas, 杯子 vs 杯 |
 | 06 | 18 abr 2026 | 想 vs 要, 这/那, 多少, 块/元/人民币, números |
+| 07 | 25 abr 2026 | 在+lugar+verbo, 这儿/那儿/哪儿, preposiciones (上下前后里外中旁), 正在, 的 (humanos vs cosas), profesiones, sistema educativo |
 
 ---
 
